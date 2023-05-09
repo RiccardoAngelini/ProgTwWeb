@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>creafaq</title>
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      
+            tinymce.init({
+              selector: '#mytextarea'
+            });
+    </script>
+  
+
+</head>
+<body>
+    <h2>CREA UNA NUOVA FAQ</h2>
+    <form class="addfaq" action="#" method="post">
+        <div class="domanda">
+            <label class="" for="#">Domanda</label>
+            <input type="text" class="form-control" name="domanda" placeholder="Title">
+        </div>
+
+        <div class="risposta">
+            <label class="" for="#">Risposta</label>
+             <textarea id="mytextarea">Aggiungi una risposta</textarea>
+        </div>
+
+        <div >
+            <a href="faq.html" class="sub">Aggiungi</a>
+        <!-- </div><button class="sub" type="submit"></button> -->
+    </form>
+</body>
+</html>
