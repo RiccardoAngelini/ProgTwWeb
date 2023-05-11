@@ -12,7 +12,7 @@
   padding: 50px;
   border: 3px solid #ff7a57;
   background: white;
-  border-radius: 10px;
+  border-radius: 50px;
   box-shadow: -3px -3px 7px #ff7a57,
                2px 2px 5px #ff7a57(94,104,121,0.288);
 }
@@ -42,8 +42,6 @@
   background:white;
   color: #595959;
   border-radius: 25px;
-  box-shadow: inset 2px 2px 5px #ff7a57,
-              inset -5px -5px 10px #ff7a57;
 }
 .field input:focus{
   box-shadow: inset 1px 1px 2px #ff7a57,
