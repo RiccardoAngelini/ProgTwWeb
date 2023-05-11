@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu',sans-serif;
+}
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 5rem;
+}
+
+.checkBtn {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.checkBtn {
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+  color: brown;
+  line-height: 80px;
+}
+
+.right ul {
+  display: flex;
+  list-style: none;
+}
+
+.right ul li a {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #2c2c2a;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.right ul li a:hover {
+  border-radius: 7px;
+  color: #ff7a57;
+}
+
+@media screen and (max-width:805px) {
+  .list {
+      width: 100%;
+      height: 100vh;
+      background-color: #f8efea;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 120px;
+      left: 100%;
+      transition: all 1s;
+  }
+
+  #check {
+      display: none;
+  }
+
+  .checkBtn {
+      display: block;
+  }
+
+  #check:checked~ul {
+      left: 0%;
+  }
+
+}
+
+.left img{
+  padding-top: 20px;
+  width: 300px;
+}
+.list li{
+  padding: 0 10px;
+}
+/*resonsive table*/
+@media screen and (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* potremmo nascondere l'header, ma lo spostiamo solo, per questioni di accessibilità */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  /* i campi di ogni riga diventano la colonna destra */
+  td {
+    position: relative;
+    padding-left: 50% !important;
+  }
+  /* la descrizione del campo diventa la colonna sinistra */
+  td:before {
+    position: absolute;
+    left: 6px;
+    content: attr(data-th);
+    font-weight: bold;
+  }
+  /* evidenziamo il primo dato e separiamo visivamente i blocchi */
+  td:first-of-type {
+    font-weight: bold;
+    border-top: 2px solid rgb(46, 123, 199);
+  }
+}
+.content-catalogo{
+  padding: 20px;
+ /* display: grid;*/
+  align-items: center;
+  justify-content: center;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 79%;
+  margin-top: 3em;
+  margin-left:12.5em;
+  margin-left: em;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #ffffff;}
+
+#customers tr:hover {background-color: white;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #996600;
+  color: white;
+}
+
+
+  /* add faq */
+
+  .addfaq{
+    margin-top: 90px;
+    margin-left: 12em;
+    margin-right: 12em;
+  }
+  
+  .domanda{
+    font-size: 25px;
+    margin-top: 10px;
+  }
+ .domanda .form-control{
+    width: 99%;
+    font-size: 30px;
+  }
+  .risposta{
+    margin-top: 40px;
+    font-size: 30px;
+  }
+  .sub{
+    background-color: #148310;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 0.2em;
+    display: block; margin: 0 auto;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 21em;
+    margin-right: 21em;
+    margin-top: 25px;
+  }
+  .sub:hover{
+    color:#9491EC;
+    background-color:#493636;
+  }
+  /* footer */
+.container1{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+    clear: both;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #ff7a57;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+  

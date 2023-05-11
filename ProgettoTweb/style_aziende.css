@@ -1,0 +1,23 @@
+.content-catalogo{
+    padding: 1em 0.5em;
+    clear: right;
+    background-color: white;
+    }
+    .coupon{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .coupon1{
+        width: 100%;
+        border: 3px solid #ff7a57;
+        background-color: white;
+        text-align: center;
+        height: 250px;
+        max-width: 250px;
+        float: left;
+        margin-left: 30px;
+        padding: 30px;
+        color: #ff7a57;
+    }
