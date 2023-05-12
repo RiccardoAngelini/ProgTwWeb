@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coupon</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_aziende.css">
+
+    <script src="https://kit.fontawesome.com/6abce55f7a.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <nav class="navbar" id="myTopnav">
+
+        <div class="left">
+
+            <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+
+        </div>
+
+        <div class="right">
+
+            <input type="checkbox" id="check">
+
+            <label for="check" class="checkBtn">
+
+                <i id="hamburger" class="fa fa-bars"></i>
+
+            </label>
+
+            <ul class="list">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="catalogo.html">Catalogo</a></li>
+
+                <li><a href="aziende.html">Aziende</a></li>
+
+                <li><a id="login" href="login.html">Login</a></li>
+
+                <li><a href="registrazione.html" id="registrati">Registrati</a></li>
+                <li> <a href="javascript:void(5);" class="icon" style="display: none;" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    
+  
+    <h2 class="testo">Dettaglio Offerta</h2>
+
+
+  <!--==Product-Page=================================-->
+  <section id="product-page">
+    <div class="product-details">
+        <div class="product-img">
+
+         <!-- Swiper Slider -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    <img style="width:70vw; height: 360vh; max-width: 900%;max-height: 670px;" src="./img/1.jpeg" />  
+                      <!-- <img style="max-width:400%; height:auto;" src="./img/1.jpeg" />  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**Text************************-->
+        <div class="product-text">
+            <!--category-->
+            <span class="product-category" >Categoria Prodotto</span>
+            <h3>Titolo Prodotto</h3>
+            <div class="product-price">
+                <h4>Sconto: 20 %</h4>
+                <span ><strike> 135 €</strike></span>
+                <strong><span >100 €</span></strong>
+            </div>
+           
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis laboriosam vitae ab aspernatur qui facere a commodi cupiditate praesentium. Aliquam, voluptatem est debitis consequuntur ex autem exercitationem quas dolorem alias?
+                <br/>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic illo, enim non molestias dolores eos officia minima quidem architecto labore soluta? Expedita officiis voluptas sapiente officia debitis, mollitia eum quia.
+            </p>
+            <!--size-->
+            <div class="product-coupon-container">
+                <strong><h3 class="deco1"> Codice coupon: <span class="deco">WE3H56K </span></h3>
+            </div>
+
+            <!--btn-->
+            <div class="product-button">
+                <a href="#" class="add-bag-btn">Salva L'offerta</a></i>
+                <a class="add-scarica-btn" href="./img/1.jpeg" download>Scarica Coupon</a>
+            </div>
+            <span class="product-category">Scadenza: 02/09/2023</span>
+        </div>
+    </div>
+    </section>
+
+    <!--==Jquery===========================-->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+   <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          450: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          820: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          }, 
+          1024: {
+            slidesPerView: 2,
+            spaceBetween:1,
+          },
+        },
+      });
+
+
+      $('.s-checkbox').on('change', function() {
+		    $('.s-checkbox').not(this).prop('checked', false);  
+		});
+    </script>   
+
+
+
+    <footer class="footer">
+        <div class="containerf">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="chisiamo.html">Chi siamo</a></li>
+                        <li><a href="dovesiamo.html">Dove siamo</a></li>
+                        
+                    </ul>
+                </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contattaci.html">Contatti</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+   </footer>
+
+</body>
+</html>
