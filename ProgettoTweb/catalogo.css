@@ -1,11 +1,14 @@
 .navbar{
     position: fixed;
 }
+
 #aziende{
     font-size: 25px;
     text-align: left;
-    padding-left: 10px;
     padding-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .lista-aziende{
     padding-top: 30px;
@@ -14,9 +17,14 @@
 .lista-aziende li{
     list-style-type : none;
     padding-bottom: 10px;
+    font-weight: bold;
+    padding-left: 10px;
 }
 .radio{
     margin-right: 10px;
+    font-weight: bold;
+   display: inline;
+
 }
 .reset{
     padding-left: 20px;
