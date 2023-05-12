@@ -337,11 +337,6 @@ article .p{
 }
 
 article a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #28666e;
-
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -353,23 +348,8 @@ article a {
   border-radius: 1.5em;
   margin-top: 20px;
   font-weight: bold;
-  /* margin-left: 3.5em; */
   width: 100%;
-}
-
-
-article a:focus {
-  outline: 1px dotted #28666e;
-}
-
-article a .icon {
-  min-width: 24px;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  transform: translateX(var(--link-icon-translate));
-  opacity: var(--link-icon-opacity);
-  transition: all 0.3s;
+  text-transform: uppercase;
 }
 
 /* using the has() relational pseudo selector to update our custom properties */
