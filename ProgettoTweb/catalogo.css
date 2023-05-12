@@ -49,7 +49,9 @@
     width: 14em;
     padding: 1em 0.5em;
     float: left;
-    margin-left: -15em;
+    margin-left: -12em;
+    margin-top: 4em;
+    border-radius: 1em;
 }
 
 .content-catalogo{
