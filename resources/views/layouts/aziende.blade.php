@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('content')
-<div class="main">
+<div class="main-aziende">
                 <div class="content-catalogo">
                     <div class="coupon">
                 <div class="coupon1">AZIENDA1</div>

@@ -20,6 +20,8 @@
 
             <ul class="list">
 
+                <li><input type="search" placeholder="Cerca" class="search"></li>
+
                 <li><a href="{{ route('Home') }}">Home</a></li>
 
                 <li><a href="{{ route('catalogo')}}">Catalogo</a></li>

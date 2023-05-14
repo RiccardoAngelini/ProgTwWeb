@@ -16,7 +16,7 @@
        </div>
    </section>
    <h2 class="testo">Le nostre migliori aziende</h2>
-   <div class="main">
+   <div class="main-home">
     <div class="content-catalogo">
         <div class="coupon">
     <div class="coupon1">AZIENDA1</div>
@@ -25,7 +25,7 @@
     <div class="coupon1">AZIENDA4</div>
     <div class="clear"></div>
     </div>
-    <div class="veditutte"><a href="aziende.html">Vedi tutte</a></div>
+    <div class="veditutte"><a href="{{route('aziende')}}">Vedi tutte</a></div>
     </div>
 </div>
 @endsection

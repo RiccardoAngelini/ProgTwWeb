@@ -58,7 +58,7 @@
             <div class="footer-col">
                 <h4>Help</h4>
                 <ul>
-                    <li><a href="">FAQ</a></li>
+                    <li><a href="{{route('faq')}}">FAQ</a></li>
                     <li><a href="{{route('contatti')}}">Contatti</a></li>
                 </ul>
                 </div>

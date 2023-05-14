@@ -14,7 +14,7 @@
                 Se ci stai scrivendo perché hai riscontrato dei problemi con un'offerta o un codice sconto, ricordati di specificare il titolo o di indicare l'url dell'offerta.
                 <h2 class="contatti_compila"> Compila il modulo </h2>
             </p>
-        <form action="mailto:coupon@example.com" method="post" enctype="text/plain">
+        <form action="mailto:coupon@example.com" method="post" enctype="text/plain" class="form">
             <div class="form-group">
             <div class="contatti_indirizzo_nome">
             <label for="name">Nome:</label>
