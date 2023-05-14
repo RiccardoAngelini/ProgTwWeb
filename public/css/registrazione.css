@@ -80,7 +80,7 @@ form .input-box span.details{
    background: #ff7a57;
    border-color: #d9d9d9;
  }
- form input[type="radio"]{
+.radiobtn{
    display: none;
  }
  form .button0{

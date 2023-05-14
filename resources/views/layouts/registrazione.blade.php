@@ -27,13 +27,13 @@
             <input type="text" placeholder="Enter your password" required>
           </div>
           <div class="input-box">
-            <span class="details">telefono</span>
+            <span class="details">Telefono</span>
             <input type="text" placeholder="Numero di telefono" required>
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-1" class="radiobtn">
+          <input type="radio" name="gender" id="dot-2" class="radiobtn">
           <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
