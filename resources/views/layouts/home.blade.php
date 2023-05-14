@@ -7,10 +7,10 @@
          <button class="carousel-button next" data-carousel-button="next">&#10095;</button>
          <ul data-slides>
            <li class="slide" data-active>
-             <img src="images/1.jpeg" alt="#1">
+             <img src="images/1.jpeg" alt="#1" class="img-slide">
            </li>
            <li class="slide">
-             <img src="images/2.jpeg" alt="Nature Image #2">
+             <img src="images/2.jpeg" alt="Nature Image #2" class="img-slide">
            </li>
          </ul>
        </div>
