@@ -21,8 +21,8 @@ Route::get('/', [PublicController::class,'showHome'])
 Route::view('/dovesiamo', 'dovesiamo')
         ->name('dovesiamo');
 
-Route::view('/FAQ', 'faq')
-        ->name('faq');
+Route::view('/FAQ', 'faq2')
+        ->name('faq2');
 
 Route::view('/chisiamo', 'chisiamo')
         ->name('chisiamo');

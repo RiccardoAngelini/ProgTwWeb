@@ -22,10 +22,6 @@ class PublicController extends Controller
         return view('layouts/aziende');
     }
 
-    public function showFaq(){ 
-        return view('faq');
-    }
-
     public function showLogin(){ 
         return view('layouts/login');
     }

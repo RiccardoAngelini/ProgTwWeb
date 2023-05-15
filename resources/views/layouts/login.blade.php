@@ -19,7 +19,7 @@
             <button class="button-login">Sign in</button>
             <div class="sign-up">
                Not a member?
-               <a href="#">signup now</a>
+               <a href="{{route('registrati')}}">signup now</a>
             </div>
          </form>
       </div>

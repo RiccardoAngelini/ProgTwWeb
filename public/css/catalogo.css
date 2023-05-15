@@ -15,12 +15,17 @@
 .radio{
     margin-right: 10px;
 }
+input.button-reset, input.button-submit {
+    border-color: #ff7a57;
+    border-style: none;
+}
 .reset{
     padding-left: 20px;
     padding-bottom: 20px;
     float: left;
 }
 .button-reset{
+    height: 30px;
     width: 70px;
     border-radius: 15px;
     background-color: #ff7a57;
@@ -32,6 +37,7 @@
     float: left;
 }
 .button-submit{
+    height: 30px;
     width: 70px;
     border-radius: 15px;
     background-color: #ff7a57;
@@ -75,7 +81,6 @@
 .coupon1{
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
-    border: 3px solid #ff7a57;
     background-color: white;
     text-align: center;
     height: 250px;
