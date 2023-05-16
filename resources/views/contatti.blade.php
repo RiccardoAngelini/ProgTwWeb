@@ -23,7 +23,7 @@
                             <label for="fname">Nome</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="nome" name="nome" placeholder="Your name..">
+                            <input type="text" class="modulo" id="nome" name="nome" placeholder="Your name..">
                         </div>
                     </div>
                     <div class="row">
@@ -31,7 +31,7 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="email" name="email" placeholder="Your mail">
+                            <input type="text" class="modulo" id="email" name="email" placeholder="Your mail">
                         </div>
                     </div>
                     <div class="row">
