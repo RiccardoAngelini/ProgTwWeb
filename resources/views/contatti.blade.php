@@ -44,7 +44,7 @@
                     </div>
                     <br>
                     <div class="row">
-                    <input type="submit" value="Invia">
+                    <input class="submit-button-con" type="submit" value="Invia">
                     </div>
                 </form>
                 </div>

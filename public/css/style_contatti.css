@@ -52,7 +52,7 @@ font-size: 20px;
     display: inline-block;
   }
   
-  input[type=submit] {
+  .submit-button-con {
     background-color: #04AA6D;
     color: white;
     padding: 12px 20px;
