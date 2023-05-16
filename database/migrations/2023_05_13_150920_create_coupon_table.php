@@ -16,9 +16,7 @@ class CreateCouponTable extends Migration
         Schema::create('coupon', function (Blueprint $table) {
             $table->bigIncrements('couponId');
             $table->date('date_emiss'); //date emission
-            $table->date('date_exp');  //data expiration
-          //  $table->text('image')->nullable(); //immagine coupon 
-           
+            $table->date('date_exp');  //data expiration       
         });
     }
 

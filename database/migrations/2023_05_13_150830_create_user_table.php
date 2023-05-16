@@ -14,18 +14,16 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->bigIncrements('userId');
-            $table->string('name',30);
-            $table->string('username',30);
-            $table->integer('phone',30);
-            $table->foreign('couponId')->references('couponId')->on('coupon'); //chiave esterna coupon 
-           // $table->string('type',20);  //indica il genere 
-            $table->string('email',30);
-            $table->string('status',30);
-            $table->string('password',30);
-            $table->integer('age',10);
-            //$table->string('conf_password',20); //conferma password
-            $table->string('gender',10);
+            $table->bigIncrements('userId')->unsigned()->index();
+            $table->string('role',10)->default('public');
+            $table->string('name');
+            $table->string('surname');
+            $table->string('email');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('username',20);
+            $table->string('password');
+            $table->Integer('age');
+            $table->string('gender');
         });
     }
 
