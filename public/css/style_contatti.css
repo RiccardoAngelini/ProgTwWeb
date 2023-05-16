@@ -1,14 +1,21 @@
 .contatti{
 display: block;
 padding-top: 20px;
+margin-left: 1em;
 }
 .contatti_indirizzo{
-text-align: left;
-margin: 40px;
+text-align: center;
+margin: 50px;
 
 }
 .contatti_indirizzo_nome{
     margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.contatti_indirizzo_numero{
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .contatti_modulo{
@@ -17,45 +24,88 @@ text-align: center;
 margin-bottom: 10px;
 padding-left: 300px;
 padding-right: 300px;
+font-size: 20px;
 
 }
 .contatti_compila{
     padding-top: 20px;
-text-align: center;
-margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
-.contatti_campo{
-    position: relative;
-    align-content: center;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
 
-}
-.contatti_text{
-    text-align: center;
-    padding-right: 35px;
-}
-.contatti_a_invio{
-    background-color: #ff7a57;
-    border-radius: 15px;
-    text-align: center;
-    height: 30px;
-    width: 50px;
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
     color: white;
-}
-.contatti_a_invio:hover{
-    color: black;
-}
-.contatti_invia{
-text-align: center;
-padding: 30px;
-}
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 25px;
+    width: 350px;
+    outline: dashed 1px black;
+    /* position: absolute; */ 
+    position: relative;
+    right: 50%;
+    left: 30%;
+  }
+ 
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
 .riga{
     padding: 10px;
     border-bottom: 2px solid #ff7a57;
-}
-.form{
-    text-align: center;
-}
+} 

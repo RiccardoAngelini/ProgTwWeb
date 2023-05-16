@@ -14,23 +14,39 @@
                 Se ci stai scrivendo perché hai riscontrato dei problemi con un'offerta o un codice sconto, ricordati di specificare il titolo o di indicare l'url dell'offerta.
                 <h2 class="contatti_compila"> Compila il modulo </h2>
             </p>
-        <form action="mailto:coupon@example.com" method="post" enctype="text/plain" class="form">
-            <div class="form-group">
-            <div class="contatti_indirizzo_nome">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            </div>
-            <div class="contatti_campo">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="contatti_text">
-            <label for="message">Messaggio:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="contatti_invia">
-            <input class="contatti_a_invio" type="submit" value="Invia">
-        </div>
-        </div>
-        </form>
+
+
+            <div class="container">
+                       <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Nome</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="nome" name="nome" placeholder="Your name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="email" name="email" placeholder="Your mail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="massage">Messaggio</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="massage" name="massage" placeholder="Inserisci il messaggio" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                    <input type="submit" value="Invia">
+                    </div>
+                </form>
+                </div>
+             
 @endsection
