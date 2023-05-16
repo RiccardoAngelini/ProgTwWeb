@@ -16,7 +16,7 @@
             </p>
 
 
-            <div class="container">
+            <div class="container1">
                        <form action="/action_page.php">
                     <div class="row">
                         <div class="col-25">
