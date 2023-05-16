@@ -11,22 +11,22 @@ class PublicController extends Controller
 {
 
     public function showHome(){ 
-        return view('layouts/home');
+        return view('home');
     }
 
     public function showCatalogo(){ 
-        return view('layouts/catalogo');
+        return view('catalogo');
     }
 
     public function showAziende(){ 
-        return view('layouts/aziende');
+        return view('aziende');
     }
 
     public function showLogin(){ 
-        return view('layouts/login');
+        return view('login');
     }
     public function showRegistrati(){ 
-        return view('layouts/registrazione');
+        return view('registrazione');
     }
 
 }
