@@ -16,8 +16,8 @@ class CreatePromotionTable extends Migration
         Schema::create('promotion', function (Blueprint $table) {
             $table->bigIncrements('promoId');
             $table->string('cod_promo',50);
-            $table->bigInteger('couponId')->unsigned()->index();
-            $table->foreign('couponId')->references('couponId')->on('coupon'); //chiave esterna coupon
+            $table->bigInteger('coupon_Id')->unsigned()->index();
+            $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
             $table->date('date_start');
             $table->date('date_end');
         });

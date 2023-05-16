@@ -19,11 +19,14 @@ class CreateUserTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email');
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('conf_password')->nullable();
             $table->string('username',20);
             $table->string('password');
             $table->Integer('age');
             $table->string('gender');
+           // $table->bigInteger('coupon_Id')->unsigned()->index();
+           // $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
+
         });
     }
 

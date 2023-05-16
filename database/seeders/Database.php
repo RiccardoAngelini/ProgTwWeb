@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 
-class Database extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
