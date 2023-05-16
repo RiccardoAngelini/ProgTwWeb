@@ -16,12 +16,16 @@ class CreateProductTable extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('prodId');
             $table->string('name',70);
-            $table->foreign('catId')->references('catId')->on('category');  //chiave esterna categoria
-            $table->foreign('userId')->references('userId')->on('user');  //chiave esterna user
-            //$table->string('type',200);
+           $table->bigInteger('catId')->unsigned()->index();
+            $table->foreign('catId')->references('catId')->on('category'); 
+            $table->bigInteger('userId')->unsigned()->index(); 
+            $table->foreign('userId')->references('userId')->on('user');  
+        
+           //$table->string('type',200);
             $table->float('price');
             $table->date('data_pubb'); //datapubblicazione
             $table->string('desc',1000); //descrizione
+           
            
         });
     }

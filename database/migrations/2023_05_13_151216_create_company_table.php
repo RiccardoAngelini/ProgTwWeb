@@ -16,8 +16,10 @@ class CreateCompanyTable extends Migration
         Schema::create('company', function (Blueprint $table) {
             $table->bigIncrements('compId');
             $table->string('name',50);
-            $table->foreign('userId')->references('userId')->on('user');  //chiave esterna user
-            $table->foreign('promoId')->references('promoId')->on('promotion');  //chiave esterna promotion
+            $table->bigInteger('userId')->unsigned()->index();
+            $table->foreign('userId')->references('userId')->on('user');
+            $table->bigInteger('promoId')->unsigned()->index();  
+            $table->foreign('promoId')->references('promoId')->on('promotion');  
             $table->string('location',50);
         });
     }
