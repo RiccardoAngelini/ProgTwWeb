@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-     const DESCPROD = '<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est. </p><p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>';
+     const DESCPROD = '<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum.</p>';
 
     public function run()
     {
@@ -30,25 +30,25 @@ class DatabaseSeeder extends Seeder
         ]);
          
         DB::table('user')->insert([
-            ['name' => 'Franco','username' => 'francofranco','userID'=>1, 'phone'=>338854565,'coupon_Id'=>1,'email'=>'franco@user.it','ruolo'=>'user','password'=>Hash::make('francofranco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Lino','username' => 'linolino', 'phone'=>33585402,'coupon_Id'=>'','email'=>'lino@admin.it','ruolo'=>'admin','password'=>Hash::make('linolino'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Luigi','username' => 'luigiluigi','userID'=>2, 'phone'=>36685841,'coupon_Id'=>2,'email'=>'luigi@user.it','ruolo'=>'user','password'=>Hash::make('luigiluigi'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Mara','username' => 'maramara', 'phone'=>389840523,'coupon_Id'=>'','email'=>'mara@staff.it','ruolo'=>'staff','password'=>Hash::make('maramara'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Lisa','username' => 'lisalisa', 'phone'=>37275841,'coupon_Id'=>'','email'=>'lisa@staff.it','ruolo'=>'staff','password'=>Hash::make('lisalisa'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Pina','username' => 'pinapina','userID'=>3, 'phone'=>339656210,'coupon_Id'=>3,'email'=>'pina@user.it','ruolo'=>'user','password'=>Hash::make('pinapina'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Mirco','username' => 'mircomirco','userID'=>4, 'phone'=>336525420,'coupon_Id'=>4,'email'=>'mirco@user.it','ruolo'=>'user','password'=>Hash::make('mircomirco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Franco','username' => 'francofranco','userID'=>1, 'phone'=>338854565,'email'=>'franco@user.it','ruolo'=>'user','password'=>Hash::make('francofranco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Lino','username' => 'linolino','userID'=>2, 'phone'=>33585402,'email'=>'lino@admin.it','ruolo'=>'admin','password'=>Hash::make('linolino'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Luigi','username' => 'luigiluigi','userID'=>3, 'phone'=>36685841,'email'=>'luigi@user.it','ruolo'=>'user','password'=>Hash::make('luigiluigi'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Mara','username' => 'maramara', 'userID'=>4,'phone'=>389840523,'email'=>'mara@staff.it','ruolo'=>'staff','password'=>Hash::make('maramara'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
+            ['name' => 'Lisa','username' => 'lisalisa', 'userID'=>5,'phone'=>37275841,'email'=>'lisa@staff.it','ruolo'=>'staff','password'=>Hash::make('lisalisa'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
+            ['name' => 'Pina','username' => 'pinapina','userID'=>6, 'phone'=>339656210,'email'=>'pina@user.it','ruolo'=>'user','password'=>Hash::make('pinapina'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
+            ['name' => 'Mirco','username' => 'mircomirco','userID'=>7, 'phone'=>336525420,'email'=>'mirco@user.it','ruolo'=>'user','password'=>Hash::make('mircomirco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
             
         ]);
 
 
        
         DB::table('product')->insert([
-            ['name' => 'Camicia Armani Exchange','catId' => 3,'userID'=>4, 'price'=>220.15,'desc'=>self::DESCPROD,'data_pubb'=>'10/02/2022' ],
-            ['name' => 'Apple Iphone X 256GB', 'catId'=>2,'userID'=>1,'price'=>1299.99,'desc'=>self::DESCPROD,'data_pubb'=>'05/06/2019'],
-            ['name' => 'Nike running sneaker ','catId' => 5,'userID'=>2, 'price'=>159.00,'desc'=>self::DESCPROD,'data_pubb'=>'06/09/2018' ],
-            ['name' => 'Tenerife weekend in hotel a 4 stelle','catId' => 1,'userID'=>'', 'price'=>520.15,'desc'=>self::DESCPROD,'data_pubb'=>'16/10/2021' ],
-            ['name' => 'Lampadario Tiffany','catId' => 4,'userID'=>'', 'price'=>399.99,'desc'=>self::DESCPROD,'data_pubb'=>'15/01/2022' ],
-            ['name' => 'Profumo Chanel ','catId' => 6,'userID'=>3, 'price'=>90.00,'desc'=>self::DESCPROD,'data_pubb'=>'19/03/2023' ],
+            ['name' => 'Camicia Armani Exchange','userID'=>4, 'price'=>220.15,'desc'=>self::DESCPROD,'data_pubb'=>'2022-10-20' ],
+            ['name' => 'Apple Iphone X 256GB','userID'=>1,'price'=>1299.99,'desc'=>self::DESCPROD,'data_pubb'=>'2019-06-05'],
+            ['name' => 'Nike running sneaker ','userID'=>2, 'price'=>159.00,'desc'=>self::DESCPROD,'data_pubb'=>'2018-09-06' ],
+            ['name' => 'Tenerife weekend in hotel a 4 stelle','userID'=>5, 'price'=>520.15,'desc'=>self::DESCPROD,'data_pubb'=>'2022-07-10' ],
+            ['name' => 'Lampadario Tiffany','userID'=>6, 'price'=>399.99,'desc'=>self::DESCPROD,'data_pubb'=>'2021-08-20' ],
+            ['name' => 'Profumo Chanel ','userID'=>3, 'price'=>90.00,'desc'=>self::DESCPROD,'data_pubb'=>'2020-01-20' ],
         
         ]);
 
@@ -63,12 +63,12 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('promotion')->insert([
-            ['promo_Id'=>1, 'cod_promo'=> str_random(10),'coupon_Id'=> 1, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") ],
-            ['promo_Id'=>2, 'cod_promo'=> str_random(10),'coupon_Id'=> 2, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>3, 'cod_promo'=> str_random(10),'coupon_Id'=> 3, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>4, 'cod_promo'=> str_random(10),'coupon_Id'=> 4, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>5, 'cod_promo'=> str_random(10),'coupon_Id'=> 5, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>6, 'cod_promo'=> str_random(10),'coupon_Id'=> 6, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
+            ['promo_Id'=>1, 'cod_promo'=> Str::random(10),'coupon_Id'=> 1, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") ],
+            ['promo_Id'=>2, 'cod_promo'=> Str::random(10),'coupon_Id'=> 2, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
+            ['promo_Id'=>3, 'cod_promo'=> Str::random(10),'coupon_Id'=> 3, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
+            ['promo_Id'=>4, 'cod_promo'=> Str::random(10),'coupon_Id'=> 4, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
+            ['promo_Id'=>5, 'cod_promo'=> Str::random(10),'coupon_Id'=> 5, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
+            ['promo_Id'=>6, 'cod_promo'=> Str::random(10),'coupon_Id'=> 6, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
 
 
         ]);
@@ -82,8 +82,8 @@ class DatabaseSeeder extends Seeder
             ['comp_Id'=>1, 'name'=>'Apple Inc.','userId'=>1, 'promo_Id'=>1,'location'=>''],
             ['comp_Id'=>2, 'name'=>'Nike Inc.','userId'=>2, 'promo_Id'=>2,'location'=>''],
             ['comp_Id'=>3, 'name'=>'Giorgio Armani s.p.a.','userId'=>4, 'promo_Id'=>4,'location'=>''],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','userId'=>'', 'promo_Id'=>'','location'=>''],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co','userId'=>'', 'promo_Id'=>'','location'=>''],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','userId'=>5, 'promo_Id'=>5,'location'=>''],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co','userId'=>6, 'promo_Id'=>6,'location'=>''],
             ['comp_Id'=>6, 'name'=>'Chanel S.A.','userId'=>3, 'promo_Id'=>3,'location'=>''],
         ]);
 

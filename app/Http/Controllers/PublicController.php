@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalog;
+use App\Models\Resources\Company;
 use Illuminate\Support\Facades\Log;
 use View;
+
 
 
 class PublicController extends Controller
 {
 
+    protected $_companyModel;
+
+    public function __construct() {
+        $this->_companyModel = new Company;
+       
+    }
     public function showHome(){ 
         return view('home');
     }
@@ -19,7 +27,8 @@ class PublicController extends Controller
     }
 
     public function showAziende(){ 
-        return view('aziende');
+        $aziende=Company::select('name')->get();
+        return view('aziende',['aziende'=>$aziende]);
     }
 
     public function showLogin(){ 

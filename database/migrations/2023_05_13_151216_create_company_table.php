@@ -14,12 +14,12 @@ class CreateCompanyTable extends Migration
     public function up()
     {
         Schema::create('company', function (Blueprint $table) {
-            $table->bigIncrements('compId');
+            $table->bigIncrements('comp_Id');
             $table->string('name',50);
             $table->bigInteger('userId')->unsigned()->index();
             $table->foreign('userId')->references('userId')->on('user');
-            $table->bigInteger('promoId')->unsigned()->index();  
-            $table->foreign('promoId')->references('promoId')->on('promotion');  
+            $table->bigInteger('promo_Id')->unsigned()->index();  
+            $table->foreign('promo_Id')->references('promo_Id')->on('promotion');  
             $table->string('location',50);
         });
     }
