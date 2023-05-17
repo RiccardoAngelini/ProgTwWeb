@@ -1,5 +1,7 @@
 @extends('layouts.public')
 @section('content')
-Hello
+Prodotto
+
+@include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
 
 @endsection
