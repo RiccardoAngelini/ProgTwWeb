@@ -24,11 +24,21 @@
                    
             <div class="coupon1">
             <div class="nome-prom">
-                {{$promotion->price}} &#8364;
+                {{$promotion->price}} &#8364;<br>
+                Sconto
             </div>
             <div class="cont-img">
                     @include('helpers/promotionImg', ['imgFile' => $promotion->image])
                 </div>
+                <div class="cont-data">
+                    <div class="data">
+                   Scade il {{ date('d/m/Y', strtotime($promotion->date_end)) }}
+                    </div>
+                    <button class="scopri">
+                        Scopri l'offerta
+                </button>
+                </div>
+                
                 </div>
             @endforeach 
         </div>
