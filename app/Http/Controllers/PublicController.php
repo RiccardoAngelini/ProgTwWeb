@@ -44,5 +44,4 @@ class PublicController extends Controller
     public function showRegistrati(){ 
         return view('registrazione');
     }
-
 }

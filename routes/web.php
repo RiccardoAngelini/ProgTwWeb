@@ -58,3 +58,8 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
 
 
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
+
+
+
+Route::get('/offerta', [UserController::class,'showOfferta'])
+        ->name('offerta');
