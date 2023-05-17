@@ -44,4 +44,12 @@ class PublicController extends Controller
     public function showRegistrati(){ 
         return view('registrazione');
     }
+    public function showOfferta($cod_promo){ 
+        //$company=$this->_companyModel->getCompany();
+       
+        $sel_promId=$this->_promotionModel->where('cod_promo',$cod_promo)->first();
+        return view('offerta')
+                 ->with('sel_promId',$sel_promId);
+
+    }
 }

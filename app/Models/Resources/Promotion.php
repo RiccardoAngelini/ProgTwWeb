@@ -12,4 +12,7 @@ class Promotion extends Model {
     public function getPromotion(){
         return Promotion::all();
     }
+    public function getPromotionId($cod_promo){
+        return Promotion::where('cod_promo',$cod_promo)->get();
+    }
 }

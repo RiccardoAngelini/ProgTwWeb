@@ -42,10 +42,6 @@ Route::get('/aziende', [PublicController::class,'showAziende'])
 Route::get('/registrati', [PublicController::class,'showRegistrati'])
         ->name('registrati');
 
-
-
-
-
 Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin');
 
@@ -61,5 +57,6 @@ Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->n
 
 
 
-Route::get('/offerta', [UserController::class,'showOfferta'])
+Route::get('/offerta/{cod_promo}', [PublicController::class,'showOfferta'])
         ->name('offerta');
+

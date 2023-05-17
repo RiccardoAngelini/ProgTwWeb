@@ -1,18 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Resources\Company;
+use App\Models\Resources\Promotion;
 
 class UserController extends Controller {
+
+    protected $_companyModel;
+    protected $_promotionModel;
+    public function __construct() {
+        $this->_companyModel = new Company;
+        $this->_promotionModel = new Promotion;
+    }
 
     public function index() {
         return view('user');
     }
 
-    public function showOfferta(){ 
-        $company_name=$this->_companyModel->getCompanyNameId();
-        $promotions=$this->_promotionModel->getPromotion();
-        return view('offerta')
-                 ->with('company_namesids',$company_name)
-                 ->with('promotions',$promotions);
-    }
+ 
 }
