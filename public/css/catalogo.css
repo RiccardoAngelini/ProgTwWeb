@@ -61,7 +61,7 @@ input.button-reset, input.button-submit {
 }
 
 .content-catalogo{
-    padding: 1em 0.5em;
+    padding: 0 0.5em;
     clear: right;
     background-color: white;
     }
@@ -78,7 +78,6 @@ input.button-reset, input.button-submit {
     }
     }*/
 .coupon{
-    padding: 20px;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -94,6 +93,7 @@ input.button-reset, input.button-submit {
         width: 250px;
         float: left;
         margin: 30px;
+        margin-top: 0;
         color:white;
         padding: 30px;
         border-radius: 15px;
@@ -120,11 +120,11 @@ input.button-reset, input.button-submit {
     margin-left: 15em;
 }
 .searchbar{
-    background-color: whitesmoke;
+    background-color: white;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 .search{
@@ -132,13 +132,13 @@ input.button-reset, input.button-submit {
     width: 600px;
     border-radius: 15px;
     font-size: 1rem;
-    background: white;
     height: 30px;
     color: black;
-    border: none;
     padding-left: 20px;
     padding-right: 10px;
     box-sizing: border-box;
+    border-color: gray;
+    border-style: solid;
   }
 
 .nome-prom{
