@@ -25,7 +25,7 @@
             <div class="coupon1">
             <div class="nome-prom">
                 {{$promotion->price}} &#8364;<br>
-                Sconto
+                Sconto del {{$promotion->discountPerc}} &#37;
             </div>
             <div class="cont-img">
                     @include('helpers/promotionImg', ['imgFile' => $promotion->image])
