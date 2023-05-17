@@ -7,7 +7,9 @@
                     <div class="azienda">
                     @foreach ($aziende as $company)
                 <div class="azienda1">
+                <div class="nome-az">
                     {{$company->name}}  
+</div>
                     <div class="cont-img">
                     @include('helpers/companyImg', ['imgFile' => $company->image])
                 </div>

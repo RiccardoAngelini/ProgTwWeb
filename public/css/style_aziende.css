@@ -11,7 +11,7 @@
         flex-wrap: wrap;
     }
     .azienda1{ 
-        font-weight: 400px;
+        font-weight: bold;
         font-size: 20px;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
         width: 100%;
@@ -21,7 +21,7 @@
         width: 250px;
         float: left;
         margin: 30px;
-        color: #ff7a57;
+        color:white;
         padding: 30px;
         border-radius: 15px;
         
@@ -30,7 +30,7 @@
         display: flex;
     }
 .cont-img{
-    border-top: 2px solid #ff7a57;
+    border-top: 3px solid #ff7a57;
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -39,4 +39,11 @@
         padding-top: 10px;
         height: 150px;
         border-radius: 15px;
+    }
+
+    .nome-az{
+        width: 100%;
+        background-color: #ff7a57;
+        border-radius: 15px;
+        padding: 5px;
     }
