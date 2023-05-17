@@ -173,3 +173,7 @@ input.button-reset, input.button-submit {
     width: 130px;
     cursor: pointer;
 }
+.scopri:hover{
+    background-color: #dbdee5;
+    color: #201f1f;
+}

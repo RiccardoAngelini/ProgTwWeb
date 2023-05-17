@@ -28,13 +28,13 @@
                 Sconto del {{$promotion->discountPerc}} &#37;
             </div>
             <div class="cont-img">
-                    @include('helpers/promotionImg', ['imgFile' => $promotion->image])
+                    @include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $promotion->image])
                 </div>
                 <div class="cont-data">
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($promotion->date_end)) }}
                     </div>
-                    <a href="{{route('offerta',[$promotion->cod_promo])}}"><button class="scopri" >
+                    <a href="{{route('offerta',[$promotion->promo_Id])}}"><button class="scopri" >
                         Scopri l'offerta
                 </button></a>
                 </div>
