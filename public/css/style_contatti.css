@@ -4,7 +4,7 @@ padding-top: 20px;
 }
 .contatti_indirizzo{
 text-align: center;
-margin: 50px;
+margin: 20px;
 
 }
 .contatti_indirizzo_nome{
@@ -29,10 +29,7 @@ font-size: 20px;
 .contatti_compila{
     padding-top: 20px;
     text-align: center;
-    margin-bottom: 50px;
 }
-
-
 
 * {
     box-sizing: border-box;
@@ -64,16 +61,17 @@ font-size: 20px;
   input[type=submit]:hover {
     background-color: #45a049;
   }
-  
+  .container2{
+    display: flex;
+    justify-content: center;
+  }
   .container1 {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 25px;
+    margin: 30px;
     width: 700px;
     position: relative;
-    right: 50%;
-    left: 30%;
   }
  
   
@@ -103,7 +101,6 @@ font-size: 20px;
     }
   }
 .riga{
-    padding: 10px;
     border-bottom: 2px solid #ff7a57;
 } 
 

@@ -14,7 +14,7 @@
                 <h2 class="contatti_compila"> Compila il modulo </h2>
             </p>
 
-
+<div class="container2">
             <div class="container1">
                        <form action="/action_page.php">
                     <div class="row">
@@ -47,5 +47,6 @@
                     </div>
                 </form>
                 </div>
-             
+</div>
+</div>
 @endsection
