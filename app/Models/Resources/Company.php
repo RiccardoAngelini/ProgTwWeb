@@ -12,5 +12,8 @@ class Company extends Model {
     public function getCompany(){
         return Company::all();
     }
+    public function getCompanyNameId(){
+        return Company::select('name','comp_Id')->get();
+    }
 
 }

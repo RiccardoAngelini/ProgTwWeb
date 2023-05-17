@@ -1,16 +1,17 @@
 @extends('layouts.public')
 @section('content')
+<div class="searchbar">
+<form class="form-aziende">  <input type="search" placeholder="Cerca" class="search"></form>
+</div>
 <div class="main">
         <div class="leftnav">
+      
             <div id="aziende">Aziende</div>
             <form class="form-aziende">
                 <ul class="lista-aziende">
-                    <li><label><input class="radio" type="radio" name="Azienda1">Azienda1</label></li>
-                    <li><label><input class="radio" type="radio" name="Azienda2">Azienda2</label></li>
-                    <li><label><input class="radio" type="radio" name="Azienda3">Azienda3</label></li>
-                    <li><label><input class="radio" type="radio" name="Azienda4">Azienda4</label></li>
-                    <li><label><input class="radio" type="radio" name="Azienda5">Azienda5</label></li>
-                    <li><label><input class="radio" type="radio" name="Azienda6">Azienda6</label></li>
+                    @foreach($company_namesids as $company_nameid)
+                    <li><label><input class="radio" type="radio" name="azienda {{$company_nameid->comp_Id}}" value="{{$company_nameid->name}}">{{$company_nameid->name}}</label></li>
+                    @endforeach
                 </ul>
                 <div class="reset"><input class="button-reset" type="reset" value="Reset"></div>
                 <div class="submit"><input class="button-submit" type="submit" value="Cerca"></div>

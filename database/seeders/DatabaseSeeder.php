@@ -85,6 +85,12 @@ class DatabaseSeeder extends Seeder
             ['comp_Id'=>4, 'name'=>'Airbnb Inc.','userId'=>5, 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
             ['comp_Id'=>5, 'name'=>'Tiffany & Co','userId'=>6, 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
             ['comp_Id'=>6, 'name'=>'Chanel S.A.','userId'=>3, 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.','userId'=>1, 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.','userId'=>2, 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify','userId'=>4, 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','userId'=>5, 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co','userId'=>6, 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.','userId'=>3, 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
         ]);
 
     }

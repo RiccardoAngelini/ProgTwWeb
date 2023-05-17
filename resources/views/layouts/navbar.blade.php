@@ -10,17 +10,7 @@
 
         <div class="right">
 
-            <input type="checkbox" id="check">
-
-            <label for="check" class="checkBtn">
-
-                <i id="hamburger" class="fa fa-bars"></i>
-
-            </label>
-
             <ul class="list">
-
-                <li><input type="search" placeholder="Cerca" class="search"></li>
 
                 <li><a href="{{ route('Home') }}">Home</a></li>
 

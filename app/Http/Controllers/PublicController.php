@@ -23,7 +23,9 @@ class PublicController extends Controller
     }
 
     public function showCatalogo(){ 
-        return view('catalogo');
+        $company_namesids=$this->_companyModel->getCompanyNameId();
+        return view('catalogo')
+                 ->with('company_namesids',$company_namesids);
     }
 
     public function showAziende(){ 
