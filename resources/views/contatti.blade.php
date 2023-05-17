@@ -1,12 +1,11 @@
 @extends('layouts.public')
 @section('content')
-<asid
-        e class="contatti_indirizzo">
+<div class="contatti_indirizzo">
             <h1 > Contatti </h1>
 
             <div class="contatti_indirizzo_nome">Indirizzo: Via Brecce Bianche, 12, 60131 Ancona </div>
             <div class="contatti_indirizzo_numero">Telefono: 071 220 4708 </div>
-        </aside>
+</div>
         <div class="riga"></div>
         <div class="contatti">
             <p class="contatti_modulo">
