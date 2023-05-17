@@ -27,8 +27,9 @@ class PublicController extends Controller
     }
 
     public function showAziende(){ 
-        $aziende=Company::select('name')->get();
-        return view('aziende',['aziende'=>$aziende]);
+        $aziende=$this->_companyModel->getCompany();
+        return view('aziende')
+                ->with('aziende',$aziende);
     }
 
     public function showLogin(){ 

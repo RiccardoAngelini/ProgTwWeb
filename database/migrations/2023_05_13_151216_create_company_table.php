@@ -21,6 +21,7 @@ class CreateCompanyTable extends Migration
             $table->bigInteger('promo_Id')->unsigned()->index();  
             $table->foreign('promo_Id')->references('promo_Id')->on('promotion');  
             $table->string('location',50);
+            $table->text('image')->nullable();
         });
     }
 

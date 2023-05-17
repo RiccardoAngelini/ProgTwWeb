@@ -11,7 +11,9 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .azienda1{
+    .azienda1{ 
+        font-weight: bold;
+        font-size: 20px;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
         width: 100%;
         background-color: white;
@@ -23,7 +25,19 @@
         padding: 30px;
         color:#ff7a57;
         border-radius: 15px;
+        
     }
     .main-aziende{
         display: flex;
+    }
+.cont-img{
+    border-top: 1px solid #ff7a57;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+    .img{
+        padding-top: 10px;
+        height: 150px;
+        border-radius: 15px;
     }

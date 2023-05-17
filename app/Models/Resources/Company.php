@@ -9,4 +9,8 @@ class Company extends Model {
     protected $table = 'company';
     protected $primaryKey = 'compId';
 
+    public function getCompany(){
+        return Company::all();
+    }
+
 }
