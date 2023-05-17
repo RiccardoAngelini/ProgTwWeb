@@ -20,10 +20,15 @@ class PublicController extends Controller
         $this->_companyModel = new Company;
         $this->_promotionModel = new Promotion;
     }
-    public function showHome(){ 
-        return view('home');
-    }
 
+    public function showHome(){
+        $companies=$this->_companyModel->getCompany()->take(4);
+        $promotionst=$this->_promotionModel->getPromotion();
+        $proms=$this->_promotionModel->getPromotionByTime($promotionst);
+        return view('home')
+                ->with('proms',$proms)
+                ->with('companies',$companies);
+    }
     public function showCatalogo(){ 
         $company_namesids=$this->_companyModel->getCompanyNameId();
         $promotions=$this->_promotionModel->getPromotion();
@@ -45,10 +50,11 @@ class PublicController extends Controller
         return view('registrazione');
     }
     public function showOfferta($promo_Id){ 
-               
+
         $sel_promId=$this->_promotionModel->where('promo_Id',$promo_Id)->first();
         return view('offerta')
                  ->with('sel_promId',$sel_promId);
 
     }
+
 }

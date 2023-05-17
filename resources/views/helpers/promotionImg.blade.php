@@ -2,7 +2,7 @@
     $class = '';
     $currentRoute = Route::currentRouteName();
 
-    if ($currentRoute === 'catalogo') {
+    if ($currentRoute === 'catalogo' || $currentRoute === 'Home') {
         $class = 'img';
     } elseif ($currentRoute === 'offerta') {
         $class = 'img-offerta';

@@ -249,7 +249,10 @@ ul{
   padding-top: 20px;
 }
 .veditutte{
+  font-size: 18px;
   padding-left: 1350px;
+  padding-bottom: 20px;
+  font-weight: 600;
 }
 .veditutte a{
   text-decoration: none;
@@ -259,10 +262,16 @@ ul{
   color: #ff7a57;
   text-decoration: underline;
 }
-hr{
-  border: 1px solid #ff7a57;;
-}
+
 .azienda2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.coupon-home{
   display: flex;
   justify-content: center;
   align-items: center;
