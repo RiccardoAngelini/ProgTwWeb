@@ -4,7 +4,7 @@
 
         <div class="left">
 
-            <a href="{{route('Home')}}"><img src="images/logo.png" alt="logo"></a>
+            <a href="{{route('Home')}}"><img src="{{ asset('images/logo.png')}}" alt="logo"></a>
 
         </div>
 

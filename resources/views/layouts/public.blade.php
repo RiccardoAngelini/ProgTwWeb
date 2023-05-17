@@ -12,20 +12,19 @@
 
     <title>Coupon</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_aziende.css">
-    <link rel="stylesheet" href="css/style_login.css">
-    <link rel="stylesheet" href="css/style_faq2.css">
-    <link rel="stylesheet" href="css/style_chisiamo.css">
-    <link rel="stylesheet" href="css/style_contatti.css">
-    <link rel="stylesheet" href="css/catalogo.css">
-    <link rel="stylesheet" href="css/dovesiamo.css">
-    <link rel="stylesheet" href="css/registrazione.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_aziende.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_login.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_faq2.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_chisiamo.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_contatti.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/catalogo.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/dovesiamo.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/registrazione.css')}}">
 
 
 
     <script src="js/script.js" defer></script>
-    <script src="js/JS_FAQ.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
