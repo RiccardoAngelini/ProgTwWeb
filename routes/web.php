@@ -41,3 +41,20 @@ Route::get('/aziende', [PublicController::class,'showAziende'])
 
 Route::get('/registrati', [PublicController::class,'showRegistrati'])
         ->name('registrati');
+
+
+
+
+
+Route::get('/admin', [AdminController::class, 'index'])
+        ->name('admin');
+
+
+Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
+        ->name('newproduct');
+
+Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
+        ->name('newproduct.store');
+
+
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');

@@ -32,6 +32,7 @@
 
                 <li><a href="{{ route('registrati') }}" id="registrati">Registrati</a></li>
 
+                <li><a href="{{ route('admin') }}" id="admin">Admin</a></li>
             </ul>
 
         </div>
