@@ -13,8 +13,6 @@
                     <div class="cont-img">
                     @include('helpers/companyImg', ['imgFile' => $company->image])
                 </div>
-                <div class="cont-data">
-                </div>
                 </div>
                 
                 

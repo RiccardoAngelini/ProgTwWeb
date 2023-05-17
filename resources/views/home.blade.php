@@ -18,11 +18,11 @@
    <h2 class="testo">Le nostre migliori aziende</h2>
    <div class="main-home">
     <div class="content-catalogo">
-        <div class="coupon">
-    <div class="coupon1">AZIENDA1</div>
-    <div class="coupon1">AZIENDA2</div>
-    <div class="coupon1">AZIENDA3</div>
-    <div class="coupon1">AZIENDA4</div>
+        <div class="azienda2">
+    <div class="azienda1">AZIENDA1</div>
+    <div class="azienda1">AZIENDA2</div>
+    <div class="azienda1">AZIENDA3</div>
+    <div class="azienda1">AZIENDA4</div>
     <div class="clear"></div>
     </div>
     <div class="veditutte"><a href="{{route('aziende')}}">Vedi tutte</a></div>

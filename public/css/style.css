@@ -262,3 +262,9 @@ ul{
 hr{
   border: 1px solid #ff7a57;;
 }
+.azienda2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
