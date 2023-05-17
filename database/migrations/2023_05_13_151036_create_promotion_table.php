@@ -20,6 +20,9 @@ class CreatePromotionTable extends Migration
             $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
             $table->date('date_start');
             $table->date('date_end');
+            $table->Integer('price');
+            $table->integer('discountPerc');
+            $table->text('image')->nullable();
         });
     }
 

@@ -60,17 +60,21 @@ class DatabaseSeeder extends Seeder
             ['coupon_Id'=>4, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
             ['coupon_Id'=>5, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
             ['coupon_Id'=>6, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
+            ['coupon_Id'=>7, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
+            ['coupon_Id'=>8, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
+            ['coupon_Id'=>9, 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s")  ],
         ]);
         
         DB::table('promotion')->insert([
-            ['promo_Id'=>1, 'cod_promo'=> Str::random(10),'coupon_Id'=> 1, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") ],
-            ['promo_Id'=>2, 'cod_promo'=> Str::random(10),'coupon_Id'=> 2, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>3, 'cod_promo'=> Str::random(10),'coupon_Id'=> 3, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>4, 'cod_promo'=> Str::random(10),'coupon_Id'=> 4, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>5, 'cod_promo'=> Str::random(10),'coupon_Id'=> 5, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-            ['promo_Id'=>6, 'cod_promo'=> Str::random(10),'coupon_Id'=> 6, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s")  ],
-
-
+            ['promo_Id'=>1, 'cod_promo'=> Str::random(10),'coupon_Id'=>1 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s"), 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg'],
+            ['promo_Id'=>2, 'cod_promo'=> Str::random(10),'coupon_Id'=>2 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg' ],
+            ['promo_Id'=>3, 'cod_promo'=> Str::random(10),'coupon_Id'=>3 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg'],
+            ['promo_Id'=>4, 'cod_promo'=> Str::random(10),'coupon_Id'=>4 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg'],
+            ['promo_Id'=>5, 'cod_promo'=> Str::random(10),'coupon_Id'=>5 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s"), 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg'],
+            ['promo_Id'=>6, 'cod_promo'=> Str::random(10),'coupon_Id'=>6 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg'],
+            ['promo_Id'=>7, 'cod_promo'=> Str::random(10),'coupon_Id'=>7 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg'],
+            ['promo_Id'=>8, 'cod_promo'=> Str::random(10),'coupon_Id'=>8, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg'],
+            ['promo_Id'=>9, 'cod_promo'=> Str::random(10),'coupon_Id'=>9, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> date("Y-m-d H:i:s") , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg'],
         ]);
         DB::table('faq')->insert([
             ['faq_Id'=>1, 'question'=>'','answer'=>''],

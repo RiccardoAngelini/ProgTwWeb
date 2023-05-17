@@ -20,12 +20,19 @@
         </div>
             <div class="content-catalogo">
                 <div class="coupon">
-            <div class="coupon1">PROMOZIONE1</div>
-            <div class="coupon1">PROMOZIONE2</div>
-            <div class="coupon1">PROMOZIONE3</div>
-            <div class="coupon1">PROMOZIONE4</div>
-            <div class="clear"></div>
+                    @foreach($promotions as $promotion)
+                   
+            <div class="coupon1">
+            <div class="nome-prom">
+                {{$promotion->price}} &#8364;
             </div>
+            <div class="cont-img">
+                    @include('helpers/promotionImg', ['imgFile' => $promotion->image])
+                </div>
+                </div>
+            @endforeach 
+        </div>
+            <div class="clear"></div>
             </div>
         </div>
 @endsection

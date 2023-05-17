@@ -9,7 +9,7 @@
                 <div class="azienda1">
                 <div class="nome-az">
                     {{$company->name}}  
-</div>
+                </div>
                     <div class="cont-img">
                     @include('helpers/companyImg', ['imgFile' => $company->image])
                 </div>
@@ -17,7 +17,7 @@
                 
                 
                     
-                @endforeach()
+                @endforeach
                 </div>
                 </div>
             </div>
