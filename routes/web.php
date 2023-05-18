@@ -22,8 +22,8 @@ Route::get('/', [PublicController::class,'showHome'])
 Route::view('/dovesiamo', 'dovesiamo')
         ->name('dovesiamo');
 
-Route::view('/FAQ', 'faq2')
-        ->name('faq2');
+
+
 
 Route::view('/chisiamo', 'chisiamo')
         ->name('chisiamo');
@@ -42,7 +42,7 @@ Route::get('/aziende', [PublicController::class,'showAziende'])
 
 
 // GESTIONE FAQ
-
+Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2');
 Route::get('/index', [FaqController::class, 'index'])->name('index');
 Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');

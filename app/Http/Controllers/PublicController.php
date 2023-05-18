@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use View;
+use App\Models\Faq;
 use App\Models\Catalog;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
 use Illuminate\Support\Facades\Log;
-use View;
 
 
 
@@ -55,6 +56,13 @@ class PublicController extends Controller
         return view('offerta')
                  ->with('sel_promId',$sel_promId);
 
+    }
+
+    public function faq(){
+        $listafaq = Faq::all();
+        return view('faq2',[
+            'listafaq' => $listafaq,
+        ]);
     }
 
 }

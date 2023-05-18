@@ -25,12 +25,9 @@
                     <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
-{{-- {{route('edit',['faq_id' => $faqs->faq_id])}}
-{{route('show',['faq_id' => $faqs->faq_id])}}
-"{{route('destroy',['faq_id' => $faqs->faq_id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')"  --}}
-                    <td><a href="">Edit</a></td>
-                    <td><a href="">Visualizza</a></td>
-                    <td><a href=>Cancella</a></td>
+                    <td><a href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
+                    <td><a href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
+                    <td><a href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
                 </tr> 
             @endforeach  
            
