@@ -30,6 +30,7 @@ class PublicController extends Controller
                 ->with('companies',$companies);
     }
     public function showCatalogo(){ 
+        
         $company_namesids=$this->_companyModel->getCompanyNameId();
         $promotions=$this->_promotionModel->getPromotion();
         return view('catalogo')
@@ -56,5 +57,6 @@ class PublicController extends Controller
                  ->with('sel_promId',$sel_promId);
 
     }
+
 
 }

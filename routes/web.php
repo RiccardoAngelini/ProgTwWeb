@@ -63,3 +63,6 @@ Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
 Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
+
+Route::get('/catalogoperaziende', [UserController::class,'showfiltr'])
+        ->name('filtro_aziende');

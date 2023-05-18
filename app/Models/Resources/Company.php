@@ -16,4 +16,12 @@ class Company extends Model {
         return Company::select('name','comp_Id')->get();
     }
 
+    public function filterByCompany(){
+        $nike= Company::whereIn('name', 'Apple Inc.')->get();
+        $filteredData = Company::where('name', $nike)->get();
+
+        return $nike;
+
+    }
+
 }
