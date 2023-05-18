@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateFaqRequest;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FaqController extends Controller
 {
@@ -15,12 +16,21 @@ class FaqController extends Controller
      * 
      */
 
-    public function index()
+    public function index(Request $request)
     {
-        $faq = Faq::all();
-        return view('admin.faqs.index', [
-            'faq' => $faq
-        ]);
+        // $faq = Faq::all();
+        // return view('admin.faqs.index', [
+        //     'faq' => $faq
+        // ]);
+
+            $faq = Faq::all();
+
+            if(!empty($request->keword)){
+                $faq = $faq->where('question', 'like', '%' .$request->keyword. '%');
+            }
+            // $faq = $faq->paginate(6);
+            $data['faq'] = $faq;
+            return view('admin.faqs.index', $data);
 
     }
 
@@ -29,13 +39,27 @@ class FaqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $faq =  Faq::all();
+         $faq =  Faq::all();
         return view('admin.faqs.create',[
-            'faq' => $faq
-        ]);
+             'faq' => $faq
+         ]);
+        return view('admin.faqs.create');
     }
+    // public function save(Request $request){
+    //     $validator = Validator::make($request->all(),[
+    //         'question' => 'required'
+    //     ]);
+    //     if($validator->passes()){
+
+    //     }else{
+    //         return response()->json([
+    //             'status' = 0,
+    //             'error' => $validator->errors()
+    //         ]);
+    //     }
+    //}
 
     /**
      * Store a newly created resource in storage.
@@ -51,7 +75,7 @@ class FaqController extends Controller
         $faq ->question = $request->question;
         $faq ->answer = $request->answer;
         $faq ->save();
-        return redirect()->route('index')->with('succes', 'La domanda è stato inserita');
+        return redirect('index')->with('succes', 'La domanda è stato inserita');
      }
 
     /**
@@ -62,7 +86,7 @@ class FaqController extends Controller
      */
     public function show()
     {
-        // return view('faq', compact('faq'));
+        
 
     }
 
@@ -72,9 +96,13 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( )
+    public function edit($faq_Id)
     {
        
+        $faq = Faq::find($faq_Id);
+        return view('admin.faq.edit', [
+            'faq' => $faq,
+        ]);
     }
 
     /**
@@ -84,9 +112,13 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $faq_Id)
     {
-      
+        $faq =  Faq::find($faq_Id);
+        $faq ->question = $request -> question;
+        $faq ->answer = $request -> answer;
+        $faq -> save();
+        return redirect('index');
     }
 
     /**
@@ -95,8 +127,15 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($faq_Id)
     {
-       
+       $faq = Faq::find($faq_Id);
+       if($faq == null){
+        $faq =  $this ->Faq ->getFaqBuId($faq_Id)->first();
+            return redirect(route('index'))->with('error', 'Faq non existe !');
+       }else{
+        $faq -> delete();
+        return redirect(route('index'))->with('message', 'Faq eliminata corretamente');
+       }
     }
 }

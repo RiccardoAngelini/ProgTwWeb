@@ -60,7 +60,7 @@ Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
 Route::get('/edit/{faq_Id}', [FaqController::class, 'edit'])->name('edit');
 Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
-Route::get('/destroy', [FaqController::class, 'destroy'])->name('destroy');
+Route::get('/destroy/{faq_Id}', [FaqController::class, 'destroy'])->name('destroy');
 
 
 
