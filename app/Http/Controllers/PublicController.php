@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use View;
+use App\Models\Faq;
 use App\Models\Catalog;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
 use Illuminate\Support\Facades\Log;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use View;
+=======
+>>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
 
 
 
@@ -31,7 +36,6 @@ class PublicController extends Controller
                 ->with('companies',$companies);
     }
     public function showCatalogo(){ 
-        
         $company_namesids=$this->_companyModel->getCompanyNameId();
         $promotions=$this->_promotionModel->getPromotion();
         return view('catalogo')
@@ -79,9 +83,19 @@ class PublicController extends Controller
         }
         $proms_by_comp = json_decode(json_encode($proms_by_comp));
 
+<<<<<<< HEAD
         return view('catalogo2')
             ->with('proms_by_comp', $proms_by_comp);
     }
     
     
+=======
+    public function faq(){
+        $listafaq = Faq::all();
+        return view('faq2',[
+            'listafaq' => $listafaq,
+        ]);
+    }
+
+>>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
 }
