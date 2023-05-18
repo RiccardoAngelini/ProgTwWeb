@@ -15,14 +15,47 @@
          </ul>
        </div>
    </section>
-   <h2 class="testo">Le nostre migliori aziende</h2>
+   <h2 class="testo">Offerte più recenti</h2>
+   <div class="coupon-home">
+   @foreach($proms as $prom)     
+            <div class="coupon1">
+            <div class="nome-prom">
+                {{$prom->price}} &#8364;<br>
+                Sconto del {{$prom->discountPerc}} &#37;
+            </div>
+            <div class="cont-img">
+                    @include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $prom->image])
+                </div>
+                <div class="cont-data">
+                    <div class="data">
+                   Inizia il {{ date('d/m/Y', strtotime($prom->date_start)) }}
+                    </div>
+                    <a href="{{route('offerta',[$prom->promo_Id])}}"><button class="scopri" >
+                        Scopri l'offerta
+                </button></a>
+                </div>
+                
+                </div>
+            @endforeach 
+        </div>
+            <div class="clear"></div>
+            </div>
+        </div>
+   <h2 class="testo">Alcune delle nostre aziende</h2>
    <div class="main-home">
     <div class="content-catalogo">
         <div class="azienda2">
-    <div class="azienda1">AZIENDA1</div>
-    <div class="azienda1">AZIENDA2</div>
-    <div class="azienda1">AZIENDA3</div>
-    <div class="azienda1">AZIENDA4</div>
+        @foreach ($companies as $company)
+                <div class="azienda1">
+                <div class="nome-az">
+                    {{$company->name}}  
+                </div>
+                    <div class="cont-img">
+                    @include('helpers/companyImg', ['imgFile' => $company->image])
+                </div>
+                </div>   
+                @endforeach
+
     <div class="clear"></div>
     </div>
     <div class="veditutte"><a href="{{route('aziende')}}">Vedi tutte</a></div>

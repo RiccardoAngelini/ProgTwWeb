@@ -12,7 +12,12 @@ class Promotion extends Model {
     public function getPromotion(){
         return Promotion::all();
     }
-    public function getPromotionId($cod_promo){
-        return Promotion::where('cod_promo',$cod_promo)->get();
+    public function getPromotionId($promo_Id){
+        return Promotion::where('promo_Id',$promo_Id)->get();
+    }
+
+    public function getPromotionByTime($promotions){
+        $prom_by_time = $promotions->sortByDesc('date_start')->take(5);
+        return $prom_by_time;
     }
 }

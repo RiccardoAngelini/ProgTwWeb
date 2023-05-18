@@ -81,6 +81,7 @@ input.button-reset, input.button-submit {
     display: flex;
     align-items: center;
     padding: 20px;
+    padding-left: 65px;
     flex-wrap: wrap;
 }
 .coupon1{
@@ -172,4 +173,8 @@ input.button-reset, input.button-submit {
     height: 35px;
     width: 130px;
     cursor: pointer;
+}
+.scopri:hover{
+    background-color: #dbdee5;
+    color: #201f1f;
 }

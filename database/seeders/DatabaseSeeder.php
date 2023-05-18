@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-     const DESCPROD = '<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum.</p>';
+     const DESCPROD = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor posuere odio, vitae cursus enim luctus non. Fusce efficitur est ut fringilla facilisis. Curabitur at dui tincidunt, finibus mauris sed, pulvinar tellus. Nulla at condimentum mauris, at sollicitudin nulla. Nunc interdum dolor id ligula auctor, a sagittis mauris volutpat. Proin vel rutrum dui. Aliquam erat volutpat. Fusce semper sollicitudin risus, nec finibus enim blandit nec. Suspendisse potenti. Nullam ultrices, sapien sed tincidunt varius, turpis dolor vulputate velit, vel luctus felis tortor sed sem.</p>';
 
     public function run()
     {
@@ -66,16 +66,17 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('promotion')->insert([
-            ['promo_Id'=>1, 'cod_promo'=> Str::random(10),'coupon_Id'=>1 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2022/11/05', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg'],
-            ['promo_Id'=>2, 'cod_promo'=> Str::random(10),'coupon_Id'=>2 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2020/10/05' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg' ],
-            ['promo_Id'=>3, 'cod_promo'=> Str::random(10),'coupon_Id'=>3 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2023/01/10' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg'],
-            ['promo_Id'=>4, 'cod_promo'=> Str::random(10),'coupon_Id'=>4 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2022/03/20' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg'],
-            ['promo_Id'=>5, 'cod_promo'=> Str::random(10),'coupon_Id'=>5 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2023/01/05', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg'],
-            ['promo_Id'=>6, 'cod_promo'=> Str::random(10),'coupon_Id'=>6 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2020/11/17' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg'],
-            ['promo_Id'=>7, 'cod_promo'=> Str::random(10),'coupon_Id'=>7 , 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2022/05/03' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg'],
-            ['promo_Id'=>8, 'cod_promo'=> Str::random(10),'coupon_Id'=>8, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2020/01/01' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg'],
-            ['promo_Id'=>9, 'cod_promo'=> Str::random(10),'coupon_Id'=>9, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2022/09/23' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg'],
+            ['promo_Id'=>1, 'coupon_Id'=>1 ,'name'=>'Apple iPhone 13 Pro', 'date_Start'=> '2022/10/05', 'date_end'=> '2022/11/05', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>2, 'coupon_Id'=>2 ,'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '2020/09/03', 'date_end'=> '2020/10/05' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc' => self::DESCPROD ],
+            ['promo_Id'=>3, 'coupon_Id'=>3 ,'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '2022/12/24', 'date_end'=> '2023/01/10' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>4, 'coupon_Id'=>4 ,'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '2022/02/07', 'date_end'=> '2022/03/20' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>5, 'coupon_Id'=>5 ,'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '2022/12/14', 'date_end'=> '2023/01/05', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>6, 'coupon_Id'=>6 ,'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '2020/10/16', 'date_end'=> '2020/11/17' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>7, 'coupon_Id'=>7 ,'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '2022/04/02', 'date_end'=> '2022/05/03' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>8, 'coupon_Id'=>8,'name'=>'CHANEL-N°5','date_Start'=> '2019/11/30', 'date_end'=> '2020/01/01' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc' => self::DESCPROD],
+            ['promo_Id'=>9, 'coupon_Id'=>9,'name'=>'Abbonamento 6 mesi Spotify Premium', 'date_Start'=> '2022/07/19', 'date_end'=> '2022/09/23' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc' => self::DESCPROD],
         ]);
+
         DB::table('faq')->insert([
             ['faq_Id'=>1, 'question'=>'Come posso acquistare i coupon?','answer'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'],
             ['faq_Id'=>2, 'quesiton'=>'Come mi posso registrare?','answer'=>'Lorem 5858ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'],
