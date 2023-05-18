@@ -16,9 +16,13 @@
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($prom_by_comp->date_end)) }}
                     </div>
+                    <div class="nome">
+                    {{$prom_by_comp->name }}
+                    </div>
+                    <div calss="scopri-off">
                     <a href="{{route('offerta',[$prom_by_comp->promo_Id])}}"><button class="scopri" >
                         Scopri l'offerta
-                </button></a>
+                </button></a></div>
                 </div>
                 
                 </div>

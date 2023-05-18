@@ -22,14 +22,30 @@ class UserController extends Controller {
         return view('coupon');
     }
 
-    //public function showCatalogFiltr(Request $request){
-     //   $selectedCompany = $request->input('aziende');
-    // Filtra i dati in base all'azienda selezionata utilizzando il modello Company
-      //  $filteredData = $this->_companyModel->filterByCompany($selectedCompany);
+    public function filtro(Request $request)
+    {
+        $aziendeSelezionate = $request->input('aziende');
+        $ricerca= $request->input('ricerca');
+        $comp_names = $this->_companyModel->getcompanyname();
+        $proms_by_comp = [];
+    
+        foreach ($aziendeSelezionate as $aziendaSelezionata) {
+            foreach ($comp_names as $comp_name) {
+                if ($aziendaSelezionata == $comp_name->name || $ricerca==$comp_name->name || ($aziendaSelezionata == $comp_name->name && $ricerca==$comp_name->name)) {
+                    $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
+                    foreach ($proms as $prom) {
+                        if (!in_array($prom, $proms_by_comp)) {
+                            $proms_by_comp[] = $prom;
+                        }
+                    }
+                }
+            }
+        }
+        $proms_by_comp = json_decode(json_encode($proms_by_comp));
 
-    // Restituisci i dati filtrati alla vista
-   // return view('catalogo')->with('filteredData', $filteredData);
-    //}
+        return view('catalogo2')
+            ->with('proms_by_comp', $proms_by_comp);
+    }
 
 
 }

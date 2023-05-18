@@ -30,9 +30,13 @@
                     <div class="data">
                    Inizia il {{ date('d/m/Y', strtotime($prom->date_start)) }}
                     </div>
+                    <div class="nome">
+                    {{$prom->name }}
+                    </div>
+                    <div calss="scopri-off">
                     <a href="{{route('offerta',[$prom->promo_Id])}}"><button class="scopri" >
                         Scopri l'offerta
-                </button></a>
+                </button></a></div>
                 </div>
                 
                 </div>

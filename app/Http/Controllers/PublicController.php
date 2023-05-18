@@ -65,12 +65,13 @@ class PublicController extends Controller
     public function filtro(Request $request)
     {
         $aziendeSelezionate = $request->input('aziende');
+        $ricerca= $request->input('ricerca');
         $comp_names = $this->_companyModel->getcompanyname();
         $proms_by_comp = [];
     
         foreach ($aziendeSelezionate as $aziendaSelezionata) {
             foreach ($comp_names as $comp_name) {
-                if ($aziendaSelezionata == $comp_name->name) {
+                if ($aziendaSelezionata == $comp_name->name || $ricerca==$comp_name->name || ($aziendaSelezionata == $comp_name->name && $ricerca==$comp_name->name)) {
                     $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
                     foreach ($proms as $prom) {
                         if (!in_array($prom, $proms_by_comp)) {

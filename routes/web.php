@@ -90,7 +90,7 @@ Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
 
-Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
+Route::get('/catalogo/filtro', [UserController::class,'filtro'])
         ->name('catalogo2');
 
 
