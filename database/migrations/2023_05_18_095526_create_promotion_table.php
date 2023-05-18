@@ -17,13 +17,13 @@ class CreatePromotionTable extends Migration
             $table->string('name');
             $table->bigIncrements('promo_Id');
             $table->string('desc',600);
-            $table->bigInteger('coupon_Id')->unsigned()->index();
-            $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
             $table->date('date_start');
             $table->date('date_end');
             $table->Integer('price');
             $table->integer('discountPerc');
             $table->text('image')->nullable();
+            $table->string('comp_name');
+            $table->bigInteger('coupon_Id')->index();
         });
     }
 

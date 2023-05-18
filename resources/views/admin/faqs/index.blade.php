@@ -22,9 +22,21 @@
         <tbody>
              @foreach ($faq  as $faqs)
                 <tr>
+
+                    <td>{{$faqs-> faq_id}}</td>
+                    <td>{{$faqs->question}}</td>
+                    <td>{{$faqs->answer}}</td>
+{{-- {{route('edit',['faq_id' => $faqs->faq_id])}}
+{{route('show',['faq_id' => $faqs->faq_id])}}
+"{{route('destroy',['faq_id' => $faqs->faq_id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')"  --}}
+                    <td><a href="">Edit</a></td>
+                    <td><a href="">Visualizza</a></td>
+                    <td><a href=>Cancella</a></td>
+
                     <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
+<<<<<<< HEAD
                     {{-- <td>{{date('d/m/y', strtoime($faqs->created_at))}}</td> --}}
                     {{-- @if ($faqs->status ==1)
                         <span class="badge bg-succes">Active</span>
@@ -32,6 +44,12 @@
                     <td><a class="btn1" href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
                     <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
                     <td><a class="btn3" href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
+=======
+                    <td><a href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
+                    <td><a href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
+                    <td><a href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
+
+>>>>>>> b145dcec6724c9a7d60fb7097ce41710676d6ad9
                 </tr> 
             @endforeach  
            

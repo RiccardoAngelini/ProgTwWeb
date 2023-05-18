@@ -41,6 +41,16 @@ Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
 
 
+        
+// GESTIONE FAQ
+
+Route::get('/index', [FaqController::class, 'index'])->name('index');
+Route::get('/create', [FaqController::class, 'create'])->name('create');
+Route::post('/store', [FaqController::class, 'store'])->name('store');
+Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
+Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
+
+
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
@@ -68,7 +78,8 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
 
-Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
+        ->name('updateproduct');
 
 
 
@@ -77,4 +88,9 @@ Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
 
 Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
+
+
+Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
+        ->name('catalogo2');
+
 
