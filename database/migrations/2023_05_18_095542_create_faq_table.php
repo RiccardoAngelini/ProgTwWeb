@@ -14,11 +14,8 @@ class CreateFaqTable extends Migration
     public function up()
     {
         Schema::create('faq', function (Blueprint $table) {
-<<<<<<< HEAD
+
             $table->bigIncrements('faq_Id');
-=======
-            $table->autoIncrement('faq_Id');
->>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
             $table->string('question');
             $table->string('answer');
         });

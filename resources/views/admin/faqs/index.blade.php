@@ -22,7 +22,7 @@
         <tbody>
              @foreach ($faq  as $faqs)
                 <tr>
-<<<<<<< HEAD
+
                     <td>{{$faqs-> faq_id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
@@ -32,14 +32,14 @@
                     <td><a href="">Edit</a></td>
                     <td><a href="">Visualizza</a></td>
                     <td><a href=>Cancella</a></td>
-=======
+
                     <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
                     <td><a href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
                     <td><a href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
                     <td><a href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
->>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
+
                 </tr> 
             @endforeach  
            
