@@ -22,8 +22,8 @@ Route::get('/', [PublicController::class,'showHome'])
 Route::view('/dovesiamo', 'dovesiamo')
         ->name('dovesiamo');
 
-Route::view('/FAQ', 'faq2')
-        ->name('faq2');
+
+
 
 Route::view('/chisiamo', 'chisiamo')
         ->name('chisiamo');
@@ -40,14 +40,16 @@ Route::get('/login', [PublicController::class,'showLogin'])
 Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
 
-        
-// GESTIONE FAQ
 
+// GESTIONE FAQ
+Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
+
+//Acesso admin, vincolli di acesso non ancore definito
 Route::get('/index', [FaqController::class, 'index'])->name('index');
 Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
-Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
-Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
+Route::get('/edit/{faq_Id}', [FaqController::class, 'edit'])->name('edit');
+Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
 Route::get('/destroy', [FaqController::class, 'destroy'])->name('destroy');
 
 
@@ -66,8 +68,7 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
 
-Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
-        ->name('updateproduct');
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
 
 
 
@@ -77,5 +78,3 @@ Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
 Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
-Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
-        ->name('catalogo2');

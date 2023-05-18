@@ -17,8 +17,8 @@ class Faq extends Model
         return Faq::all();
     }
 
-    public function getFaqBuId(int $id){
-        $faq = Faq::where('id', $id);
+    public function getFaqBuId(int $faq_id){
+        $faq = Faq::where('faq_id', $faq_id);
         return $faq;
     }
 }
