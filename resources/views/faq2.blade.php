@@ -7,9 +7,9 @@
         <input id="q1" type="checkbox" class="panel">
         <div class="plus">+</div>
         <label for="q1" class="panel-title">{{$faqs->question}}</label>
-        <div class="panel-content">{{$faqs->answer}}</div>
-      </div>
+        <br>
+        <div class="panel-content">
+            {{$faqs->answer}}
+        </div>  
 @endforeach 
-
-
 @endsection

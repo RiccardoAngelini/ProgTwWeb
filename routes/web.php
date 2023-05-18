@@ -42,7 +42,9 @@ Route::get('/aziende', [PublicController::class,'showAziende'])
 
 
 // GESTIONE FAQ
-Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2');
+Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
+
+//Acesso admin, vincolli di acesso non ancore definito
 Route::get('/index', [FaqController::class, 'index'])->name('index');
 Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
