@@ -40,7 +40,7 @@ Route::get('/login', [PublicController::class,'showLogin'])
 Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
 
-<<<<<<< HEAD
+
         
 // GESTIONE FAQ
 
@@ -49,7 +49,7 @@ Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
 Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
 Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
-=======
+
 
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
@@ -60,7 +60,6 @@ Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
 Route::get('/edit/{faq_Id}', [FaqController::class, 'edit'])->name('edit');
 Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
->>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
 Route::get('/destroy', [FaqController::class, 'destroy'])->name('destroy');
 
 
@@ -90,8 +89,8 @@ Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
 Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
-<<<<<<< HEAD
+
 Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
         ->name('catalogo2');
-=======
->>>>>>> 2f19594e1efcc6625c1c0098fda9796c0d5513c1
+
+
