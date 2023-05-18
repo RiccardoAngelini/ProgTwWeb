@@ -22,7 +22,7 @@
         <tbody>
              @foreach ($faq  as $faqs)
                 <tr>
-                    <td>{{$faqs-> faq_id}}</td>
+                    <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
 {{-- {{route('edit',['faq_id' => $faqs->faq_id])}}
