@@ -20,4 +20,9 @@ class Promotion extends Model {
         $prom_by_time = $promotions->sortByDesc('date_start')->take(5);
         return $prom_by_time;
     }
+
+    public function getPromotionByComp($comp_name){
+        return Promotion::where('comp_name',$comp_name)->get();
+    }
+
 }

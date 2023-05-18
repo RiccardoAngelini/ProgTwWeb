@@ -1,0 +1,14 @@
+.chisiamo{
+display: block;
+padding-top: 20px;
+}
+.chisiamo_title{
+text-align: left;
+margin: 40px;
+
+}
+.chisiamo_text{
+text-align: center;      
+font-family: 'Ubuntu', sans-serif;
+margin: 40px; 
+}

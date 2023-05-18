@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -39,6 +40,18 @@ Route::get('/login', [PublicController::class,'showLogin'])
 Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
 
+        
+// GESTIONE FAQ
+
+Route::get('/index', [FaqController::class, 'index'])->name('index');
+Route::get('/create', [FaqController::class, 'create'])->name('create');
+Route::post('/store', [FaqController::class, 'store'])->name('store');
+Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
+Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
+Route::get('/destroy', [FaqController::class, 'destroy'])->name('destroy');
+
+
+
 Route::get('/registrati', [PublicController::class,'showRegistrati'])
         ->name('registrati');
 
@@ -53,7 +66,8 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
 
-Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
+        ->name('updateproduct');
 
 
 
@@ -63,6 +77,5 @@ Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
 Route::get('/coupon}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
-
-Route::get('/catalogoperaziende', [UserController::class,'showfiltr'])
-        ->name('filtro_aziende');
+Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
+        ->name('catalogo2');

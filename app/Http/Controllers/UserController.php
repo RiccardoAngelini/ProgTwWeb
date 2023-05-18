@@ -31,10 +31,5 @@ class UserController extends Controller {
    // return view('catalogo')->with('filteredData', $filteredData);
     //}
 
-    public function showfiltr(){
-        $filtr=$this->_companyModel->filterByCompany();
-        return view('catalogo2')
-                ->with('filtr',$filtr);
-    }
- 
+
 }
