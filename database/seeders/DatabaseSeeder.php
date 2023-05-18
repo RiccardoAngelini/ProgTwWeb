@@ -77,9 +77,9 @@ class DatabaseSeeder extends Seeder
             ['promo_Id'=>9, 'cod_promo'=> Str::random(10),'coupon_Id'=>9, 'date_Start'=> date("Y-m-d H:i:s"), 'date_end'=> '2022/09/23' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg'],
         ]);
         DB::table('faq')->insert([
-            ['faq_Id'=>1, 'question'=>'','answer'=>''],
-            ['faq_Id'=>2, 'quesiton'=>'','answer'=>''],
-            ['faq_Id'=>3, 'question'=>'','answer'=>''],
+            ['faq_Id'=>1, 'question'=>'Come posso acquistare i coupon?','answer'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'],
+            ['faq_Id'=>2, 'quesiton'=>'Come mi posso registrare?','answer'=>'Lorem 5858ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'],
+            ['faq_Id'=>3, 'question'=>'Quanti coupon posso acquistare?','answer'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'],
         ]);
         
         DB::table('company')->insert([

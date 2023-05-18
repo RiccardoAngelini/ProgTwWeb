@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -38,6 +39,18 @@ Route::get('/login', [PublicController::class,'showLogin'])
 
 Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
+
+        
+// GESTIONE FAQ
+
+Route::get('/index', [FaqController::class, 'index'])->name('index');
+Route::get('/create', [FaqController::class, 'create'])->name('create');
+Route::post('/store', [FaqController::class, 'store'])->name('store');
+Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
+Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
+Route::get('/destroy', [FaqController::class, 'destroy'])->name('destroy');
+
+
 
 Route::get('/registrati', [PublicController::class,'showRegistrati'])
         ->name('registrati');
