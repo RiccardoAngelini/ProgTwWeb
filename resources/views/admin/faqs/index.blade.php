@@ -25,9 +25,13 @@
                     <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
-                    <td><a href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
-                    <td><a href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
-                    <td><a href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
+                    {{-- <td>{{date('d/m/y', strtoime($faqs->created_at))}}</td> --}}
+                    {{-- @if ($faqs->status ==1)
+                        <span class="badge bg-succes">Active</span>
+                    @endif --}}
+                    <td><a class="btn1" href="{{route('edit',['faq_Id' => $faqs->faq_Id])}}">Edit</a></td>
+                    <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
+                    <td><a class="btn3" href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')" =>Cancella</a></td>
                 </tr> 
             @endforeach  
            
@@ -51,6 +55,45 @@
     table th {
         background-color: #f2f2f2;
         font-weight: bold;
+    }
+    .btn1 {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 17px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 1.5em;
+    }
+    .btn2 {
+        background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 17px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 1.5em;
+    }
+    .btn3 {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 17px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 1.5em;
     }
 </style>
     

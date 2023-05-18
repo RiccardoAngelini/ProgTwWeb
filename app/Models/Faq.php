@@ -9,7 +9,7 @@ class Faq extends Model
 {
     use HasFactory;
     protected $table = 'faq';
-    protected $primarykey = 'faq_id';
+    protected $primarykey = 'faq_Id';
     public $timestamps = false;
     protected $filllable = ['question', 'answer'];
 
@@ -17,8 +17,8 @@ class Faq extends Model
         return Faq::all();
     }
 
-    public function getFaqBuId(int $faq_id){
-        $faq = Faq::where('faq_id', $faq_id);
+    public function getFaqBuId(int $faq_Id){
+        $faq = Faq::where('faq_Id', $faq_Id)->first();
         return $faq;
     }
 }
