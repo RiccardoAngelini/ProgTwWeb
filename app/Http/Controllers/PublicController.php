@@ -98,38 +98,43 @@ class PublicController extends Controller
 
        public function ricercaPerAzienda(Request $request)
        {
+           $aziendaSelezionata = $request->input('opzioni');
            $ricerca = $request->input('ricerca');
-           $comp_names = $this->_companyModel->getcompanyname();
-           $promos_by_comp = [];
-           $proms = [];
-           $proms_by_name = [];
-           $matched=false;
-           $company_namesids=$this->_companyModel->getCompanyNameId();                                                                                                                                                      
-       
-           foreach ($comp_names as $comp_name) {
-               $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
-               $promos_by_comp = array_merge($promos_by_comp, $proms);
+           $matched = false;
+           $company_namesids = $this->_companyModel->getCompanyNameId();
+           
+           $names = $this->_promotionModel->getPromotionByName($ricerca);
+           $proms_by_name = $this->_promotionModel->getPromotionByCompName($ricerca, $aziendaSelezionata);
+           
 
-               if(stripos(strtolower($comp_name->name),strtolower($ricerca))!==false){
-                $proms_by_name = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
-                $matched=true;
-           }
-           $proms_by_name=json_decode(json_encode($proms_by_name));
-
+           foreach ($names as $name) {
+            if (stripos($name->name, $ricerca) !== false) {
+                $matched = true;
+                break; 
+            }
         }
 
-        if($matched){
-           return view('catalogo')   
+         if(!$matched){
+         return view('errore');
+         }
+
+
+          elseif (!empty($proms_by_name)) {
+               return view('catalogo')
+                   ->with('proms_by_name', $proms_by_name)
+                   ->with('company_namesids', $company_namesids);
+           }
+        else{
+           return view('catalogo')
                ->with('proms_by_name', $proms_by_name)
-               ->with('company_namesids',$company_namesids)
-               ->with('ricerca', $ricerca);
-       }else{
-        return view('errore');
+               ->with('company_namesids', $company_namesids);
        }
-       
+
+ }
 
 
-}
+
+ 
 
     public function faq(){
         $listafaq = Faq::all();

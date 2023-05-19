@@ -1,17 +1,21 @@
 @extends('layouts.public')
 @section('content')
+
 <div class="searchbar">
 <form class="form-aziende1" action="{{route('catalogo3')}}" method="GET"> <label class="search-cont"><input type="search" placeholder="Cerca" class="search" name="ricerca" required></label>
 <div class="search-container">
+    <h4>Aziende</h4>
 <label class="menu-sel"><select id="menu" name="opzioni">
+    <option></option>
 @foreach($company_namesids as $company_nameid)
-<option value="">
+<option>
 
 {{$company_nameid->name}}
 
 </option>
 @endforeach
 </select></label>
+<div class="cont-lente"><button class="lente" type="submit">&#128269;</button></div>
 </div>
 </form>
 </div>
@@ -134,6 +138,39 @@
                 
                 </div>
 @endforeach
+@endisset
+
+@isset($names)
+        <div class="coupon">
+        @foreach($names as $name)
+
+        <div class="coupon1">
+            <div class="nome-prom">
+                {{$name->price}} &#8364;<br>
+                Sconto del {{$name->discountPerc}} &#37;
+</div>
+<div class="cont-img">
+@include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $name->image])
+</div>
+<div class="cont-data">
+                    <div class="data">
+                   Scade il {{ date('d/m/Y', strtotime($name->date_end)) }}
+                    </div>
+                    <div class="nome">
+                    {{$name->name }}
+                    </div>
+                    <div calss="scopri-off">
+                    <a href="{{route('offerta',[$name->promo_Id])}}"><button class="scopri" >
+                        Scopri l'offerta
+                </button></a></div>
+                </div>
+                
+                </div>
+@endforeach
+</div>
+            <div class="clear"></div>
+            </div>
+        </div> 
 @endisset
 
 </div>

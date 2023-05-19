@@ -185,13 +185,15 @@ input.button-reset, input.button-submit {
 }
 #menu{
     border-radius: 25px;
-    height: 40px;
+    height: 20px;
     padding: 0;
     padding-left: 10px;
+    width: 20px;
   }
 
   .menu-sel{
-    padding-top: 0;
+    margin-left: 5px;
+    padding-top: 10px;
   }
   .search-cont{
     padding: 0;
@@ -202,4 +204,25 @@ input.button-reset, input.button-submit {
     display: flex;
     align-items: center;
   }
+
+  .form-aziende1{
+    display: flex;
+    align-items: center;
+  }
   
+  .lente{
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    background-color: white;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    
+  }
+
+  .lente:hover{
+    background-color: #edf0f4;
+     color: #ff7a57;
+  }
