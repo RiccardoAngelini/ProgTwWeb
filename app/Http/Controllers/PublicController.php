@@ -104,7 +104,7 @@ class PublicController extends Controller
            $proms = [];
            $proms_by_name = [];
            $matched=false;
-           $company_namesids=$this->_companyModel->getCompanyNameId();
+           $company_namesids=$this->_companyModel->getCompanyNameId();                                                                                                                                                      
        
            foreach ($comp_names as $comp_name) {
                $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
