@@ -18,7 +18,7 @@
 <div class="div-faq">
         <thead>
             <tr>
-                <th>faq_id</th>
+                <th>Id</th>
                 <th>Question</th>
                 <th>Answer</th> 
                 <th style="width: 40px">Update</th>
