@@ -270,6 +270,18 @@ ul{
   padding: 20px;
   padding-bottom: 0;
 }
+.cont-errore{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.errore{
+  font-size: 34px;
+  text-align: center;
+  font-weight: bold;
+ 
+}
 
 .coupon-home{
   display: flex;
@@ -277,3 +289,4 @@ ul{
   align-items: center;
   padding: 20px;
 }
+

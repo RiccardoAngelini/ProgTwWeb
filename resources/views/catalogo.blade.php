@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
 <div class="searchbar">
-<form class="form-aziende1"> <label><input type="search" placeholder="Cerca" class="search" name="ricerca"></label>
+<form class="form-aziende1" action="{{route('catalogo3')}}" method="GET"> <label><input type="search" placeholder="Cerca" class="search" name="ricerca"></label>
 <div class="lente"><input class="" type="submit" value="&#128269;"></div>
 </form>
 </div>
