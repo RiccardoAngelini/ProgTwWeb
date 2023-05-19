@@ -72,7 +72,7 @@ class PublicController extends Controller
         $proms_by_comp = [];
 
         if (is_null($aziendeSelezionate)) {
-        //    $ricerca;
+        return view('errore2');
         }else {
             foreach ($aziendeSelezionate as $aziendaSelezionata) {
             foreach ($comp_names as $comp_name) {
@@ -96,7 +96,7 @@ class PublicController extends Controller
 
        }
 
-       public function ricercaPerAzienda(Request $request)
+       public function ricercaPerAziendaNome(Request $request)
        {
            $aziendaSelezionata = $request->input('opzioni');
            $ricerca = $request->input('ricerca');
@@ -132,9 +132,6 @@ class PublicController extends Controller
 
  }
 
-
-
- 
 
     public function faq(){
         $listafaq = Faq::all();

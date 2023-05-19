@@ -93,8 +93,6 @@ Route::get('/coupon}', [UserController::class,'showCoupon'])
 Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
         ->name('catalogo2');
 
-Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAzienda'])
+Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])
         ->name('catalogo3');
 
-Route::get('/catalogo/prova', [PublicController::class,'ricerca2'])
-        ->name('catalogo4');
