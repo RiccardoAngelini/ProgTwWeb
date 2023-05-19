@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionController extends Controller {
+  
 
     /**
      * Display the login view.
@@ -41,7 +43,9 @@ class AuthenticatedSessionController extends Controller {
                 break;
             case 'user': return redirect()->route('user');
                 break;
-            default: return redirect('/');
+            case 'staff' : return redirect()->route('staff'); 
+              break;
+            default: return redirect()->route('login');
         }
     }
 
@@ -58,7 +62,7 @@ class AuthenticatedSessionController extends Controller {
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('login');
     }
 
 }

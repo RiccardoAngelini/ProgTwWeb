@@ -1,8 +1,18 @@
 @extends('layouts.public')
 @section('content')
 <div class="searchbar">
-<form class="form-aziende1" action="{{route('catalogo3')}}" method="GET"> <label><input type="search" placeholder="Cerca" class="search" name="ricerca"></label>
-<div class="lente"><input class="" type="submit" value="&#128269;"></div>
+<form class="form-aziende1" action="{{route('catalogo3')}}" method="GET"> <label class="search-cont"><input type="search" placeholder="Cerca" class="search" name="ricerca" required></label>
+<div class="search-container">
+<label class="menu-sel"><select id="menu" name="opzioni">
+@foreach($company_namesids as $company_nameid)
+<option value="">
+
+{{$company_nameid->name}}
+
+</option>
+@endforeach
+</select></label>
+</div>
 </form>
 </div>
 <div class="main">

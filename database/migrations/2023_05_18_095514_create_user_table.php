@@ -15,7 +15,7 @@ class CreateUserTable extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->bigIncrements('userId')->unsigned()->index();
-            $table->string('ruolo',10)->default('public');
+            $table->string('ruolo',10)->default('user');
             $table->string('name');
             $table->Integer('phone');
             $table->string('email');
@@ -24,6 +24,7 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->Integer('age');
             $table->string('gender');
+            $table->rememberToken();
            // $table->bigInteger('coupon_Id')->unsigned()->index();
            // $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
 

@@ -17,10 +17,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'surname',
         'email',
+        'phone',
         'username',
+        'age',
+        'gender',
         'password',
+        'phone',
+        'conf_password',
+        'age'
+
     ];
 
     /**
@@ -48,4 +54,9 @@ class User extends Authenticatable
         return in_array($this->role, $role);
     }
 
+    public function getUser(){
+        return User:: all();
+    }
+   
+    
 }

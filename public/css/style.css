@@ -283,6 +283,11 @@ ul{
  
 }
 
+#menu{
+  border-radius: 25px;
+  height: 30px;
+}
+
 .coupon-home{
   display: flex;
   justify-content: center;

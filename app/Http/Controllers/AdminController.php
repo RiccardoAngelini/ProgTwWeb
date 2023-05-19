@@ -18,7 +18,10 @@ class AdminController extends Controller {
 
     public function __construc(){
         $this->_adminModel = new Admin;
-    }
+        $this->middleware('can:isAdmin');
+            
+        }
+    
 
     public function index() {
         return view('admin');
