@@ -128,6 +128,7 @@ class PublicController extends Controller
        }
        
 
+
 }
 
     public function faq(){
