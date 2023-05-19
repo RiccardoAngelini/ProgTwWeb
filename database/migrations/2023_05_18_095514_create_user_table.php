@@ -24,6 +24,7 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->Integer('age');
             $table->string('gender');
+            $table->rememberToken();
            // $table->bigInteger('coupon_Id')->unsigned()->index();
            // $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
 
