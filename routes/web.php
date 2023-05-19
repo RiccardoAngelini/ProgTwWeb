@@ -74,12 +74,9 @@ Route::get('/registrati', [PublicController::class,'showRegistrati'])
         
 Route::post('/registrati/load',[RegisteredUserController::class,'store']);
 
-<<<<<<< Updated upstream
-=======
 
 Route::middleware('can:isAdmin')->group(function(){
 
->>>>>>> Stashed changes
 Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin');
 
@@ -91,7 +88,6 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
         ->name('newproduct.store');
 
 
-<<<<<<< Updated upstream
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
         ->name('updateproduct');
 
@@ -109,7 +105,7 @@ Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
 
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAzienda'])
         ->name('catalogo3');
-=======
+
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
 
 });
@@ -118,5 +114,4 @@ Route::get('/update',[UpdateUserController::class,'store'])
          ->name('update');
 
 Route::post('/update/newdata',[UpdateUserController::class,'update']);
->>>>>>> Stashed changes
 
