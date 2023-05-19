@@ -12,9 +12,6 @@ use Illuminate\Http\Request;
 
 
 
-
-
-
 class PublicController extends Controller
 {
 
@@ -67,7 +64,6 @@ class PublicController extends Controller
     public function filtro(Request $request)
     {
         $aziendeSelezionate = $request->input('aziende');
-        $ricerca= $request->input('ricerca');
         $comp_names = $this->_companyModel->getcompanyname();
         $proms_by_comp = [];
 
@@ -90,8 +86,7 @@ class PublicController extends Controller
         $proms_by_comp = json_decode(json_encode($proms_by_comp));
         return view('catalogo')
             ->with('proms_by_comp', $proms_by_comp)
-            ->with('company_namesids',$company_namesids)
-            ->with('ricerca', $ricerca);
+            ->with('company_namesids',$company_namesids);
     }
 
        }
