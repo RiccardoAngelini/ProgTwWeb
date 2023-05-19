@@ -58,7 +58,8 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
 Route::get('/index', [FaqController::class, 'index'])->name('index');
 Route::get('/create', [FaqController::class, 'create'])->name('create');
 Route::post('/store', [FaqController::class, 'store'])->name('store');
-Route::get('/edit/{faq_Id}', [FaqController::class, 'edit'])->name('edit');
+Route::get('/update/{faq_Id}', [FaqController::class, 'update'])->name('update');
+Route::post('/updatefaq', [FaqController::class, 'updatefaq'])->name('updatefaq');
 Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
 Route::get('/destroy/{faq_Id}', [FaqController::class, 'destroy'])->name('destroy');
 
