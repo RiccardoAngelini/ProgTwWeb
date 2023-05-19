@@ -86,9 +86,11 @@ class PublicController extends Controller
                 }
             }
         }
+        $company_namesids=$this->_companyModel->getCompanyNameId();
         $proms_by_comp = json_decode(json_encode($proms_by_comp));
-        return view('catalogo2')
+        return view('catalogo')
             ->with('proms_by_comp', $proms_by_comp)
+            ->with('company_namesids',$company_namesids)
             ->with('ricerca', $ricerca);
     }
 
@@ -102,6 +104,7 @@ class PublicController extends Controller
            $proms = [];
            $proms_by_name = [];
            $matched=false;
+           $company_namesids=$this->_companyModel->getCompanyNameId();
        
            foreach ($comp_names as $comp_name) {
                $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
@@ -116,8 +119,9 @@ class PublicController extends Controller
         }
 
         if($matched){
-           return view('catalogo2')   
+           return view('catalogo')   
                ->with('proms_by_name', $proms_by_name)
+               ->with('company_namesids',$company_namesids)
                ->with('ricerca', $ricerca);
        }else{
         return view('errore');
