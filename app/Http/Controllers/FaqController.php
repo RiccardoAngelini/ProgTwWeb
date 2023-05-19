@@ -62,10 +62,16 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($faq_Id)
     {
-        
-
+        $faq = Faq::find($faq_Id);
+        if ($faq) {
+            return view('show', [
+                'faq' => $faq
+            ]);
+        } else {
+            return redirect('index')->with('status', 'Fan non esiste');
+        }
     }
 
     /**
@@ -118,7 +124,15 @@ class FaqController extends Controller
     public function destroy($faq_Id)
      {
         $faq = Faq::find($faq_Id);
-        $faq -> delete();
-        return redirect('index')->with('status', 'Faq cancelata con sucesso.');
+        if ($faq) {
+            $faq -> delete();
+            return redirect('index')->with('succes', 'Faq cancelata con sucesso.');
+            $latestId = Faq::latest()->value('faq_Id');
+            return view('index')->with('latestId', $latestId);
+        } else {
+            return redirect()-> back()->with('error', 'Faq non esiste.');
+        }
+        
+        
     }
 }

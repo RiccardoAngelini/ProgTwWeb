@@ -63,7 +63,16 @@
 
     <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
     <div class="faq-form" style="margin-top: 30px;">
-        
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-danger">
+                {{ session('error')}}
+            </div>
+        @endif
         <form  role="form" action="{{route('store')}}" method="POST">
             @csrf
             <div class="form-group">

@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
-<<<<<<< Updated upstream
+
 class UpdateUserController extends Controller{
 
     public function __construct(){
         $this->middleware('can::isUser');
     }
 }
-=======
+
 class ModifiedUSerController extends Controller{
 
     
@@ -84,4 +84,4 @@ public function create(){
 }
 
 
->>>>>>> Stashed changes
+

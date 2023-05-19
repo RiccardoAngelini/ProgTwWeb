@@ -3,18 +3,23 @@
 <div class="faq-header"></div>
     
 <div class="title" style="margin-top: 50px;">
-     <table><h1 style="text-align: center; font-size:50px;">Lista Faq</h1>
+     <table><h1 style="text-align: center; font-size:50px;">LISTA FAQ</h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
-    <a class="creat" href="{{route('create')}}">Crea nuova Faq</a>
+    <a class="creat" href="{{route('create')}}">Crea nuova FAQ</a>
 </div>
-<div class="status">
-    @if (session('status'))
+
+    @if (session('success'))
     <div class="alert alert-success">
-        {{session('status')}}
+        {{session('success')}}
     </div>
     @endif
-</div>
+    @if (session('success'))
+        <div class="alert alert-danger">
+            {{ session('error')}}
+        </div>
+    @endif
+
 <div class="div-faq">
         <thead>
             <tr>
@@ -33,23 +38,18 @@
                     <td>{{$faqs-> faq_Id}}</td>
                     <td>{{$faqs->question}}</td>
                     <td>{{$faqs->answer}}</td>
-
-                    {{-- <td>{{date('d/m/y', strtoime($faqs->created_at))}}</td> --}}
-                    {{-- @if ($faqs->status ==1)
-                        <span class="badge bg-succes">Active</span>
-                    @endif --}}
                     <td><a class="btn1" href="{{route('update',['faq_Id' => $faqs->faq_Id])}}">Modifica</a></td>
-                    <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
+                    <td><a class="btn2" href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
                     <td><a class="btn3" href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')">Cancella</a></td>
                 </tr> 
-            @endforeach  
-           
+            @endforeach
         </tbody>
     </table>
     {{-- {!! $faq -> links() !!} --}}
     <div class="pag">{{$faq -> withQueryString()->links('pagination.paginator')}}</div> 
 </div>
 <style>
+
     body {
         font-family: Arial, sans-serif;
     }
