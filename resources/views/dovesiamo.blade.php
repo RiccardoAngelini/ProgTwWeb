@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Dove Siamo')
 @section('content')
 <h3 class="testo">Ci troviamo qui</h3>
     <div class="container-map">

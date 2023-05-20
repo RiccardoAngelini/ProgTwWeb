@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Promozione')
 @section('content')
 <div class="cont-off">
 <div class="cont-img-off">

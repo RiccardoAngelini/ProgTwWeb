@@ -71,7 +71,8 @@ Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
 Route::get('/destroy/{faq_Id}', [FaqController::class, 'destroy'])->name('destroy');
 
 
-
+Route::get('/user', [UserController::class, 'index'])
+        ->name('user')->middleware('can:isUser');
 
 Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin');

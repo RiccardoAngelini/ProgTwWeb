@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Aziende')
 @section('content')
    
 <div class="main-aziende">

@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Catalogo')
 @section('content')
 
 <div class="searchbar">
