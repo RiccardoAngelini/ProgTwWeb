@@ -35,13 +35,13 @@
             @if ($faq -> isNotEmpty())
                 @foreach ($faq  as $faqs)
                     <tr>
-                        <td>{{$faqs-> faq_Id}}</td>
+                        <td>{{$faqs-> id}}</td>
                         <td>{{$faqs->question}}</td>
                         <td>{{$faqs->answer}}</td>
-                        <td><a class="btn1" href="{{route('adminfaq.edit', $faqs -> faq_Id )}}">Modifica</a></td> 
-                        <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
-                        <td><a class="btn3" href="#" onclick="deleteFaq({{$faqs -> faq_Id}})">Cancella</a></td>
-                        <form id="faq-edit-action-{{$faqs -> faq_Id }}" action="{{route('adminfaq.destroy', $faqs->faq_Id )}}" method="post">
+                        <td><a class="btn1" href="{{route('adminfaq.edit', $faqs -> id )}}">Modifica</a></td> 
+                        <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->id])}}">Visualizza</a></td>
+                        <td><a class="btn3" href="#" onclick="deleteFaq({{$faqs -> id}})">Cancella</a></td>
+                        <form id="faq-edit-action-{{$faqs -> id }}" action="{{route('adminfaq.destroy', $faqs->id )}}" method="post">
                             @csrf
                             @method('delete')
                         </form>
@@ -58,9 +58,9 @@
 </div>
 
 <script>
-    function deleteFaq(faq_Id){
+    function deleteFaq(id){
         if(confirm('Vuoi cancelare questa Faq ?')){
-            document.getElementById('faq-edit-action-' + faq_Id).submit();
+            document.getElementById('faq-edit-action-' + id).submit();
         }
     }
 </script>

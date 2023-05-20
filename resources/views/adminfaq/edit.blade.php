@@ -56,14 +56,14 @@
     </style> 
 
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('adminfaq.index')}}">Back</a></div>
+<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
 <div class="title" style="margin-top: 50px;">
     <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
 </div>
 
     <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
     <div class="faq-form" style="margin-top: 30px;">
-        <form  role="form" action="{{route('adminfaq.update', $faq -> faq_Id)}}" method="POST">
+        <form  role="form" action="{{route('adminfaq.update', $faq -> id)}}" method="POST">
             @csrf
             @method('put')
             <div class="form-group">
