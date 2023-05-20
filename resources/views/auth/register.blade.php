@@ -21,6 +21,17 @@
                 @endif
             </div>
             <div class="input-box">
+               {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
+               {{ Form::text('surname', null, ['placeholder' => 'Enter your surname']) }}
+               @if ($errors->first('surname'))
+                <ul class="errors">
+                    @foreach ($errors->get('surname') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+            <div class="input-box">
                {{ Form::label('username', 'Username', ['class' => 'details']) }}
                {{ Form::text('username', null, ['placeholder' => 'Enter your username']) }}
                @if ($errors->first('username'))
@@ -74,6 +85,10 @@
                     @endforeach
                 </ul>
                 @endif
+            </div>
+            <div class="input-box">
+               {{ Form::label('password-confirm', 'Conferma Password', ['class' => 'details']) }}
+               {{ Form::password('password_confirmation', ['placeholder' => 'Conferma Password']) }}
             </div>
          </div>
          <div class="gender-details">
