@@ -46,28 +46,18 @@ Route::post('/login/user',[AuthenticatedUserController::class,'store']);
 
 
 
-        
-// GESTIONE FAQ
-
-// Route::get('/index', [FaqController::class, 'index'])->name('index');
-// Route::get('/create', [FaqController::class, 'create'])->name('create');
-// Route::post('/store', [FaqController::class, 'store'])->name('store');
-// Route::get('/edit/{faq_id}', [FaqController::class, 'edit'])->name('edit');
-// Route::get('/show/{faq_id}', [FaqController::class, 'show'])->name('show');
-
-
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
 //Acesso admin, vincolli di acesso non ancore definito
-Route::get('/index', [FaqController::class, 'index'])->name('index');
-Route::get('/create', [FaqController::class, 'create'])->name('create');
-Route::post('/store', [FaqController::class, 'store'])->name('store');
-Route::get('/update/{faq_Id}', [FaqController::class, 'update'])->name('update');
-Route::post('/updatefaq', [FaqController::class, 'updatefaq'])->name('updatefaq');
-Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
-Route::get('/destroy/{faq_Id}', [FaqController::class, 'destroy'])->name('destroy');
-
+ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+ Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create');
+ Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store');
+ Route::get('faq/{faq_Id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
+ Route::put('/faq/{faq_Id}', [FaqController::class, 'update'])->name('adminfaq.update');
+ Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
+ Route::delete('/faq/{faq_Id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
+// Route::resource('faq', FaqController::class);
 
 
 Route::get('/registrati', [PublicController::class,'showRegistrati'])

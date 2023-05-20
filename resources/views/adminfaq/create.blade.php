@@ -39,44 +39,47 @@
         }
         .faq-form button:hover {
             background-color: #45a049;
+            
         }
+        .btn a{
+        background-color: #2854e3;
+        border: none;
+        color: white;
+        padding: 5px 20px; 
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        style="margin-left: 17%
+    }
     </style> 
-<div class="btn" style="text-align: center; margin-top: 50px;"><a href="{{route('index')}}">Back</a></div>
+
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; margin-top: 50px;"><a href="{{route('index')}}">Back</a></div>
+<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
 <div class="title" style="margin-top: 50px;">
-    <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
+    <table><h1 style="text-align: center; font-size:50px;">Aggiungi Faq</h1>
 </div>
 
-    @if (session('status'))
-        <div class="alert alert-succes">
-            {{session('status')}}
-        </div>
-    @endif
-
-    @foreach ($error->all() as $error)
-        <li class="alert alert-danger">{{$error}}</li>
-    @endforeach
     <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
     <div class="faq-form" style="margin-top: 30px;">
-        
-        <form  role="form" action="{{route('updatefaq', [faq_Id => $faq -> faq_Id])}}" method="POST">
+        <form  role="form" action="{{route('adminfaq.store')}}" method="POST">
             @csrf
-            {{-- <input type="text" name="faq_Id" style="display: none;" > --}}
             <div class="form-group">
                 <label for="question">Question :</label>
-                <input type="text" id="question" name="question" value="{{$faq->question}}">
+                <input type="text" id="question" name="question" placeholder="Inserire la domanda" class="form-control @error('question') is-invalid @enderror" value="{{old('question')}}" >
+                    @error('question')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
             </div>
             <div class="form-group">
                 <label for="answer">Answer :</label>
-                <textarea id="answer" name="answer" rows="4">{{$faq->answer}}</textarea>
+                <textarea id="answer" name="answer" rows="4" placeholder="Inserire una risposta" class="form-control @error('answer') is-invalid @enderror" >{{old('answer')}}</textarea>
+                    @error('answer')
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
             </div>
             <button type="submit">Agguingi</button>
-            {{-- @if (@isset($message))
-                <div class="alert-success">
-                    {{ session ('message')}}
-                </div>
-            @endif --}}
         </form>
     </div>
 @endsection

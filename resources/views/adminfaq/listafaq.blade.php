@@ -6,24 +6,24 @@
      <table><h1 style="text-align: center; font-size:50px;">LISTA FAQ</h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
-    <a class="creat" href="{{route('create')}}">Crea nuova FAQ</a>
+    <a class="creat" href="{{route('adminfaq.create')}}">Crea nuova FAQ</a>
 </div>
 
-    @if (session('success'))
+    @if (Session::has('success'))
     <div class="alert alert-success">
-        {{session('success')}}
+        {{Session::get('success')}}
     </div>
     @endif
-    @if (session('success'))
+    @if (Session::has('success'))
         <div class="alert alert-danger">
-            {{ session('error')}}
+            {{ Session::get('error')}}
         </div>
     @endif
 
 <div class="div-faq">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>faq_Id</th>
                 <th>Question</th>
                 <th>Answer</th> 
                 <th style="width: 40px">Update</th>
@@ -32,22 +32,39 @@
             </tr>
         </thead>
         <tbody>
-             @foreach ($faq  as $faqs)
-                <tr>
-
-                    <td>{{$faqs-> faq_Id}}</td>
-                    <td>{{$faqs->question}}</td>
-                    <td>{{$faqs->answer}}</td>
-                    <td><a class="btn1" href="{{route('update',['faq_Id' => $faqs->faq_Id])}}">Modifica</a></td>
-                    <td><a class="btn2" href="{{route('show',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
-                    <td><a class="btn3" href="{{route('destroy',['faq_Id' => $faqs->faq_Id])}}"onclick="return confirm('Vuoi cancelare questa Faq ?')">Cancella</a></td>
-                </tr> 
-            @endforeach
+            @if ($faq -> isNotEmpty())
+                @foreach ($faq  as $faqs)
+                    <tr>
+                        <td>{{$faqs-> faq_Id}}</td>
+                        <td>{{$faqs->question}}</td>
+                        <td>{{$faqs->answer}}</td>
+                        <td><a class="btn1" href="{{route('adminfaq.edit', $faqs -> faq_Id )}}">Modifica</a></td> 
+                        <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->faq_Id])}}">Visualizza</a></td>
+                        <td><a class="btn3" href="#" onclick="deleteFaq({{$faqs -> faq_Id}})">Cancella</a></td>
+                        <form id="faq-edit-action-{{$faqs -> faq_Id }}" action="{{route('adminfaq.destroy', $faqs->faq_Id )}}" method="post">
+                            @csrf
+                            @method('delete')
+                        </form>
+                    </tr>  
+                @endforeach 
+            @else
+                    <tr>
+                        <td colspan="6">Inserimento non trovato</td>
+                    </tr>
+            @endif
         </tbody>
     </table>
-    {{-- {!! $faq -> links() !!} --}}
-    <div class="pag">{{$faq -> withQueryString()->links('pagination.paginator')}}</div> 
+ <div class="pag">{{$faq -> withQueryString()->links('pagination.paginator')}}</div>
 </div>
+
+<script>
+    function deleteFaq(faq_Id){
+        if(confirm('Vuoi cancelare questa Faq ?')){
+            document.getElementById('faq-edit-action-' + faq_Id).submit();
+        }
+    }
+</script>
+
 <style>
 
     body {
