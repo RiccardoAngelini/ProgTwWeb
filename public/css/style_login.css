@@ -27,9 +27,6 @@
   display: flex;
   position: relative;
 }
-.field:nth-child(2){
-  margin-top: 20px;
-}
 
 .field input{
   height: 100%;
@@ -39,7 +36,7 @@
   border: none;
   font-size: 18px;
   background:white;
-  color: #595959;
+  color: black;
   border-radius: 25px;
 }
 .field input:focus{
