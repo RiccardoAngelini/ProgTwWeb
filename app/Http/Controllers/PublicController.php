@@ -46,12 +46,6 @@ class PublicController extends Controller
                 ->with('aziende',$aziende);
     }
 
-    public function showLogin(){ 
-        return view('auth.login');
-    }
-    public function showRegistrati(){ 
-        return view('auth.register');
-    }
     public function showOfferta($promo_Id){ 
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
