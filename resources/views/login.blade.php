@@ -24,7 +24,7 @@
          </form>
       </div>
     </div>-->
-    
+<!--   
 <div class="content0">
       <div class="content">
          <div class="text">
@@ -57,5 +57,5 @@
          </div>
          {{ Form::close() }}
       </div>  
-</div>
+</div>-->
 @endsection

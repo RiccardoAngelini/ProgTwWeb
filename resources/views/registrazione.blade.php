@@ -57,7 +57,7 @@
     </div>
   </div>
 </div>-->
-
+<!--
 <div class="content1-registrazione">
   <div class="container">
     <h3>Registrazione</h3>
@@ -181,5 +181,5 @@
             </div>
             {{ Form::close() }}
     </div>
-</div>
+</div>-->
 @endsection

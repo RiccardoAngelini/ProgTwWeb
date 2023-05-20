@@ -47,10 +47,10 @@ class PublicController extends Controller
     }
 
     public function showLogin(){ 
-        return view('login');
+        return view('auth.login');
     }
     public function showRegistrati(){ 
-        return view('registrazione');
+        return view('auth.register');
     }
     public function showOfferta($promo_Id){ 
 
