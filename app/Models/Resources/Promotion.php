@@ -25,4 +25,22 @@ class Promotion extends Model {
         return Promotion::where('comp_name',$comp_name)->get();
     }
 
+    public function getPromotionByName($name)
+    {
+        return Promotion::where('name', 'LIKE', '%' . $name . '%')->orWhere('name', 'LIKE', $name . '%')->get();
+    }
+    
+    public function getPromotionByCompName($name, $comp) {
+        return Promotion::where('name', 'LIKE', '%' . $name . '%')
+                        ->where(function ($query) use ($comp) {
+                            $query->where('comp_name', 'LIKE', '%' . $comp . '%');
+                        })
+                        ->get();
+    }
+    
+
+    public function getPromotionname(){
+        return Promotion::select('name')->get();
+    }
+
 }

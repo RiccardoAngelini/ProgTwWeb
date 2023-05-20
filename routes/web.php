@@ -5,8 +5,6 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route\Auth;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +34,11 @@ Route::view('/contatti', 'contatti')
 Route::get('/catalogo', [PublicController::class,'showCatalogo'])
         ->name('catalogo');
 
-        Route::get('/aziende', [PublicController::class,'showAziende'])
-        ->name('aziende');
-
 Route::get('/login', [PublicController::class,'showLogin'])
         ->name('login');
 
-Route::post('/login/user',[AuthenticatedUserController::class,'store']);
-
+Route::get('/aziende', [PublicController::class,'showAziende'])
+        ->name('aziende');
 
 
 // GESTIONE FAQ
@@ -60,49 +55,36 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
 // Route::resource('faq', FaqController::class);
 
 
+
 Route::get('/registrati', [PublicController::class,'showRegistrati'])
         ->name('registrati');
-        
-Route::post('/registrati/load',[RegisteredUserController::class,'store']);
+
+Route::get('/admin', [AdminController::class, 'index'])
+        ->name('admin');
 
 
-Route::middleware('can:isAdmin')->group(function(){
+Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
+        ->name('newproduct');
 
-        Route::get('/admin', [AdminController::class, 'index'])
-                ->name('admin');
-
-
-        Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
-                ->name('newproduct');
-
-        Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
-                ->name('newproduct.store');
+Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
+        ->name('newproduct.store');
 
 
-        Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
-                ->name('updateproduct');
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
+        ->name('updateproduct');
 
 
 
-        Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
-                ->name('offerta');
+Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
+        ->name('offerta');
 
-        Route::get('/coupon}', [UserController::class,'showCoupon'])
-                ->name('coupon');
+Route::get('/coupon}', [UserController::class,'showCoupon'])
+        ->name('coupon');
 
 
-        Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
-                ->name('catalogo2');
+Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
+        ->name('catalogo2');
 
-        Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAzienda'])
-                ->name('catalogo3');
-
-        Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
-
-});
-
-Route::get('/update',[UpdateUserController::class,'store'])
-         ->name('update');
-
-Route::post('/update/newdata',[UpdateUserController::class,'update']);
+Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])
+        ->name('catalogo3');
 
