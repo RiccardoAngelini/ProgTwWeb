@@ -96,3 +96,5 @@ Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])
         ->name('catalogo3');
 
+
+        
