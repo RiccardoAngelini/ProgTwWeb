@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller {
          */
 //        return redirect()->intended(RouteServiceProvider::HOME);
 
-        $role = auth()->user()->ruolo;
+        $role = auth()->user()->role;
         switch ($role) {
             case 'admin': return redirect()->route('admin');
                 break;

@@ -16,8 +16,8 @@ class CreateCompanyTable extends Migration
         Schema::create('company', function (Blueprint $table) {
             $table->bigIncrements('comp_Id');
             $table->string('name',50);
-            $table->bigInteger('userId')->unsigned()->index();
-            $table->foreign('userId')->references('userId')->on('users');
+           // $table->bigInteger('userId')->unsigned()->index();
+           // $table->foreign('userId')->references('id')->on('users');
             $table->bigInteger('promo_Id')->unsigned()->index();  
             $table->foreign('promo_Id')->references('promo_Id')->on('promotion');  
             $table->string('location',50);

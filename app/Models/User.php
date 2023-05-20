@@ -18,15 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'phone',
         'username',
-        'age',
-        'gender',
-        'password',
-        'phone',
+        'password', 
+        'age', 
         'conf_password',
-        'age'
-
     ];
 
     /**
@@ -49,14 +44,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
+    /*
+     * metodo aggiunto che prede come parametri il ruolo che gli passo durante l attivazione e ritorna il valore true se il ruolo asscoiato a quell utente è equivakente al parametro passato.
+     * 
+     * è un array perchè posso vedere se un utente è o admin o user
+     */
+    
     public function hasRole($role) {
         $role = (array)$role;
         return in_array($this->role, $role);
     }
 
-    public function getUser(){
-        return User:: all();
-    }
-   
-    
 }

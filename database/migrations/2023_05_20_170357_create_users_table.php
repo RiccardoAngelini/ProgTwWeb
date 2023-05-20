@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,20 +14,19 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('userId')->unsigned()->index();
-            $table->string('ruolo',10)->default('user');
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->Integer('phone');
             $table->string('email');
-            $table->string('conf_password')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('username',20);
             $table->string('password');
-            $table->Integer('age');
+            $table->string('role',10)->default('user');
+            $table->integer('age')->nullable();
+            $table->string('conf_password');
+            $table->bigInteger('phone');
             $table->string('gender');
             $table->rememberToken();
-           // $table->bigInteger('coupon_Id')->unsigned()->index();
-           // $table->foreign('coupon_Id')->references('coupon_Id')->on('coupon'); //chiave esterna coupon
-
+            $table->timestamps();                        
         });
     }
 
@@ -40,4 +39,5 @@ class CreateUserTable extends Migration
     {
         Schema::dropIfExists('users');
     }
-};
+}
+

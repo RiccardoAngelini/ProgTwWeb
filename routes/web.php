@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,9 @@ Route::get('/destroy/{faq_Id}', [FaqController::class, 'destroy'])->name('destro
 
 Route::get('/user', [UserController::class, 'index'])
         ->name('user')->middleware('can:isUser');
+
+Route::get('/staff', [StaffController::class, 'index'])
+        ->name('staff')->middleware('can:isStaff');
 
 Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin');

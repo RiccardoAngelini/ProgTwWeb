@@ -34,7 +34,7 @@
 <body>
      <!--Navbar-->
     <div id="nav">
-        @include('layouts/navbar')
+        @include('layouts/navuser')
     </div>
 
     <!--Content-->

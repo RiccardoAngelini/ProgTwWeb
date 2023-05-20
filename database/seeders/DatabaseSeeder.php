@@ -30,14 +30,18 @@ class DatabaseSeeder extends Seeder
         ]);
          
         DB::table('users')->insert([
-            ['name' => 'Franco','username' => 'francofranco', 'phone'=>338854565,'email'=>'franco@user.it','ruolo'=>'user','password'=>Hash::make('francofranco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Lino','username' => 'linolino', 'phone'=>33585402,'email'=>'lino@admin.it','ruolo'=>'admin','password'=>Hash::make('linolino'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Luigi','username' => 'luigiluigi', 'phone'=>36685841,'email'=>'luigi@user.it','ruolo'=>'user','password'=>Hash::make('luigiluigi'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Mara','username' => 'maramara', 'phone'=>389840523,'email'=>'mara@staff.it','ruolo'=>'staff','password'=>Hash::make('maramara'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Lisa','username' => 'lisalisa', 'phone'=>37275841,'email'=>'lisa@staff.it','ruolo'=>'staff','password'=>Hash::make('lisalisa'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Pina','username' => 'pinapina', 'phone'=>339656210,'email'=>'pina@user.it','ruolo'=>'user','password'=>Hash::make('pinapina'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'F'],
-            ['name' => 'Mirco','username' => 'mircomirco', 'phone'=>336525420,'email'=>'mirco@user.it','ruolo'=>'user','password'=>Hash::make('mircomirco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
-            
+            ['name' => 'Alex', 'email' => 'alex@verdi.it', 'username' => 'alexalex',
+                'password' => Hash::make('alexalex'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),'age'=>20, 'phone'=>338854565,'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Marco', 'email' => 'marco@bianchi.it', 'username' => 'useruser',
+                'password' => Hash::make('useruser'), 'role' => 'user', 'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),'age'=>26, 'phone'=>33585402,'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Mario',  'email' => 'mario@rossi.it', 'username' => 'adminadmin',
+                'password' => Hash::make('adminadmin'), 'role' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),'age'=>21, 'phone'=>36685841,'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Luigi',  'email' => 'luigi@bianchi.it', 'username' => 'luigiluigi',
+                'password' => Hash::make('luigiluigi'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),'age'=>29, 'phone'=>389840523,'conf_password'=>'','gender'=>'M']
         ]);
 
  
@@ -82,19 +86,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('company')->insert([
-            ['comp_Id'=>1, 'name'=>'Apple Inc.','userId'=>1, 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.','userId'=>2, 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify','userId'=>4, 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','userId'=>5, 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co','userId'=>6, 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>6, 'name'=>'Chanel S.A.','userId'=>3, 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.','userId'=>1, 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.','userId'=>2, 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify','userId'=>4, 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','userId'=>5, 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co','userId'=>6, 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.','userId'=>3, 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon','userId'=>7, 'promo_Id'=>7,'location'=>'','image'=>'Amazon.jpg'],
+            ['comp_Id'=>1, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
+            ['comp_Id'=>13, 'name'=>'Amazon', 'promo_Id'=>7,'location'=>'','image'=>'Amazon.jpg'],
         ]);
 
     }
