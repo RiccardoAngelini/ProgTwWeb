@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         
         ]);
          
-        DB::table('user')->insert([
+        DB::table('users')->insert([
             ['name' => 'Franco','username' => 'francofranco', 'phone'=>338854565,'email'=>'franco@user.it','ruolo'=>'user','password'=>Hash::make('francofranco'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
             ['name' => 'Lino','username' => 'linolino', 'phone'=>33585402,'email'=>'lino@admin.it','ruolo'=>'admin','password'=>Hash::make('linolino'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],
             ['name' => 'Luigi','username' => 'luigiluigi', 'phone'=>36685841,'email'=>'luigi@user.it','ruolo'=>'user','password'=>Hash::make('luigiluigi'),'age'=> rand (19 , 60),'conf_password'=>'','gender'=>'M'],

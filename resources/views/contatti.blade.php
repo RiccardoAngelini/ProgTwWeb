@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Contatti')
 @section('content')
 <div class="contatti_indirizzo">
             <h1 > Contatti </h1>

@@ -7,13 +7,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller {
 
-    protected $_companyModel;
-    protected $_promotionModel;
-    public function __construct() {
-        $this->_companyModel = new Company;
-        $this->_promotionModel = new Promotion;
-    }
-
     public function index() {
         return view('user');
     }

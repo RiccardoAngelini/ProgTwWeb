@@ -34,17 +34,17 @@ Route::view('/contatti', 'contatti')
 Route::get('/catalogo', [PublicController::class,'showCatalogo'])
         ->name('catalogo');
 
-Route::get('/login', [PublicController::class,'showLogin'])
-        ->name('login');
 
 Route::get('/aziende', [PublicController::class,'showAziende'])
         ->name('aziende');
 
 
+        
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
 //Acesso admin, vincolli di acesso non ancore definito
+
  Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
  Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create');
  Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store');
@@ -52,7 +52,7 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
  Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update');
  Route::get('/show/{id}', [FaqController::class, 'show'])->name('show');
  Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
-// Route::resource('faq', FaqController::class);
+
 
 // ROUTE USER
 Route::get('/user', [UserController::class, 'index']);
@@ -66,8 +66,9 @@ Route::delete('/user/{userId}', [UserController::class, 'destroy']);
 
 
 
-Route::get('/registrati', [PublicController::class,'showRegistrati'])
-        ->name('registrati');
+
+Route::get('/user', [UserController::class, 'index'])
+        ->name('user')->middleware('can:isUser');
 
 Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin');
@@ -98,3 +99,4 @@ Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])
         ->name('catalogo3');
 
+require __DIR__.'/auth.php';

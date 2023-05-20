@@ -295,3 +295,8 @@ ul{
   padding: 20px;
 }
 
+.errors li{
+  padding-top: 10px;
+  color:red;
+}
+

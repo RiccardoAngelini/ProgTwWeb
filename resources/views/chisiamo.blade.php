@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title', 'Chi siamo')
 @section('content')
 <div class=" chisiamo">
                 <h1 class="chisiamo_title">Autori </h1>
