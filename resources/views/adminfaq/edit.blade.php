@@ -56,39 +56,31 @@
     </style> 
 
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('index')}}">Back</a></div>
+<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('adminfaq.index')}}">Back</a></div>
 <div class="title" style="margin-top: 50px;">
-    <table><h1 style="text-align: center; font-size:50px;">Aggiungi Faq</h1>
+    <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
 </div>
 
     <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
     <div class="faq-form" style="margin-top: 30px;">
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{session('success')}}
-        </div>
-        @endif
-        @if (session('success'))
-            <div class="alert alert-danger">
-                {{ session('error')}}
-            </div>
-        @endif
-        <form  role="form" action="{{route('store')}}" method="POST">
+        <form  role="form" action="{{route('adminfaq.update', $faq -> faq_Id)}}" method="POST">
             @csrf
+            @method('put')
             <div class="form-group">
                 <label for="question">Question :</label>
-                <input type="text" id="question" name="question" required>
+                <input type="text" id="question" name="question" placeholder="Inserire la domanda" class="form-control @error('question') is-invalid @enderror" value="{{old('question', $faq -> question)}}" >
+                    @error('question')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
             </div>
             <div class="form-group">
                 <label for="answer">Answer :</label>
-                <textarea id="answer" name="answer" rows="4" required></textarea>
+                <textarea id="answer" name="answer" rows="4" placeholder="Inserire una risposta" class="form-control @error('answer') is-invalid @enderror" >{{old('answer', $faq -> answer)}}</textarea>
+                    @error('answer')
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
             </div>
-            <button type="submit">Agguingi</button>
-            {{-- @if (@isset($message))
-                <div class="alert-success">
-                    {{ session ('message')}}
-                </div>
-            @endif --}}
+            <button type="submit">Salva</button>
         </form>
     </div>
 @endsection

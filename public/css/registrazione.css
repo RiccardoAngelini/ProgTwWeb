@@ -20,22 +20,22 @@
   display: flex;
   justify-content: center;
 }
-.content-registrazione form .user-details{
+ .user-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .user-details .input-box{
+ .input-box{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input-box span.details{
+form .details{
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input-box input{
+.user-details input{
   height: 45px;
   width: 100%;
   outline: none;
@@ -50,7 +50,7 @@ form .input-box span.details{
 .user-details .input-box input:valid{
   border-color: #ff7a57;
 }
- form .gender-details .gender-title{
+ .gender-title{
   font-size: 20px;
   font-weight: 500;
  }
@@ -75,24 +75,31 @@ form .input-box span.details{
   transition: all 0.3s ease;
 }
  #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
+ #dot-2:checked ~ .category label .two{
    background: #ff7a57;
    border-color: #d9d9d9;
  }
 .radiobtn{
    display: none;
  }
- form .button0{
-   height: 45px;
-   margin: 35px 0
- }
  
- form .button{
-  height: 45px;
-  margin: 35px 0
+ .button{
+  /*height: 45px;
+  margin: 35px 0*/
+
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ff7a57;
 }
- form .button input{
+ form .button_input {
    height: 100%;
    width: 100%;
    border-radius: 5px;
@@ -108,29 +115,7 @@ form .input-box span.details{
  form .button input:hover{
   background: 660000;
   }
-
-  form .button1{
-    height: 45px;
-    margin: 35px 0
-  }
-  form .button1 input{
-    padding-top: 20px;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: 996600;
-  }
-  form .button1 input:hover{
-   /* transform: scale(0.99); */
-   background: 660000;
-   }
+/*
  @media(max-width: 584px){
  .container{
   max-width: 100%;
@@ -153,5 +138,5 @@ form .user-details .input-box{
   @media(max-width: 459px){
   .container .content .category{
     flex-direction: column;
-  }
+  
 }

@@ -74,7 +74,7 @@
                       <i class="fa-solid fa-chevron-left"></i>
                     Visualizza Tutti i FAQ
                   </div>
-                  <li class="item"><a href="{{route('index')}}">Lista FAQ</a></li>
+                  <li class="item"><a href="{{route('faq.index')}}">Lista FAQ</a></li>
               </ul>
             </li>
             <li class="item">
