@@ -40,10 +40,22 @@
         .faq-form button:hover {
             background-color: #45a049;
         }
+        .btn a{
+        background-color: #2854e3;
+        border: none;
+        color: white;
+        padding: 5px 20px; 
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        style="margin-left: 17%
+    }
     </style> 
-<div class="btn" style="text-align: center; margin-top: 50px;"><a href="{{route('index')}}">Back</a></div>
+
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; margin-top: 50px;"><a href="{{route('index')}}">Back</a></div>
+<div class="btn" style="text-align: center; margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
 <div class="title" style="margin-top: 50px;">
     <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
 </div>
@@ -60,7 +72,7 @@
     <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
     <div class="faq-form" style="margin-top: 30px;">
         
-        <form  role="form" action="{{route('updatefaq', [faq_Id => $faq -> faq_Id])}}" method="POST">
+        <form  role="form" action="{{route('updatefaq', [id => $faq -> id])}}" method="POST">
             @csrf
             {{-- <input type="text" name="faq_Id" style="display: none;" > --}}
             <div class="form-group">

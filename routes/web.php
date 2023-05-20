@@ -48,11 +48,21 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
  Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
  Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create');
  Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store');
- Route::get('faq/{faq_Id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
- Route::put('/faq/{faq_Id}', [FaqController::class, 'update'])->name('adminfaq.update');
- Route::get('/show/{faq_Id}', [FaqController::class, 'show'])->name('show');
- Route::delete('/faq/{faq_Id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
+ Route::get('faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
+ Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update');
+ Route::get('/show/{id}', [FaqController::class, 'show'])->name('show');
+ Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
 // Route::resource('faq', FaqController::class);
+
+// ROUTE USER
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/create', [UserController::class, 'create']);
+Route::post('/users', [UserController::class, 'store']);
+Route::get('/users/{user}', [UserController::class, 'show']);
+Route::get('/users/{user}/edit', [UserController::class, 'edit']);
+Route::put('/users/{user}', [UserController::class, 'update']);
+Route::delete('/users/{user}', [UserController::class, 'destroy']);
+
 
 
 

@@ -19,7 +19,7 @@ class FaqController extends Controller
     public function index(Request $faq)
     {
          
-         $faq = Faq::orderBy('faq_Id', 'DESC')->get();
+         $faq = Faq::orderBy('id', 'DESC')->get();
          $faq = Faq::paginate(7);
          return view('adminfaq.listafaq', [
              'faq' => $faq
@@ -58,7 +58,7 @@ class FaqController extends Controller
               $faq ->answer = $request->answer;
               $faq ->save();
 
-             return redirect('faq.index')->with('success', 'FAQ creata con sucesso');
+             return redirect('faq')->with('success', 'FAQ creata con sucesso');
          } else {
               return redirect()->route('adminfaq.create')->withErrors($validator)->withInput();
          }
@@ -69,10 +69,11 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function edit($faq_Id)
+     public function edit($id)
      {
        
-         $faq = Faq::findOrFail($faq_Id);
+         $faq = Faq::findOrFail($id);
+        //  $faq = Faq::where('faq_Id', $faq_Id);
          return view('adminfaq.edit', ['faq' => $faq]);
      }
 
@@ -83,7 +84,7 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function  update($faq_Id, Request $request){
+     public function  update($id, Request $request){
         
         $validator = Validator::make($request -> all(),[
 
@@ -91,13 +92,13 @@ class FaqController extends Controller
             'answer' => 'required',
         ]);
         if($validator -> passes()){
-            $faq = Faq::find($faq_Id);
+            $faq = Faq::find($id);
             $faq ->question = $request->question;
             $faq ->answer = $request->answer;
             $faq ->save();
-            return redirect('adminfaq.index')->with('success', 'FAQ modificata con sucesso');
+            return redirect('faq')->with('success', 'FAQ modificata con sucesso');
         }else{
-            return redirect()->route('adminfaq.edit', $faq_Id)->withErrors($validator)->withInput();
+            return redirect()->route('adminfaq.edit', $id)->withErrors($validator)->withInput();
         }
      }
   
@@ -108,10 +109,10 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($faq_Id, Request $request)
+    public function destroy($id, Request $request)
       {
-         $faq = Faq::findOrFail($faq_Id);
+         $faq = Faq::findOrFail($id);
          $faq -> delete();
-         return redirect()->route('adminfaq.index')->with('success', 'Faq cancelata con sucesso.');
+         return redirect()->route('faq.index')->with('success', 'Faq cancelata con sucesso.');
      }
 }
