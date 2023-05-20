@@ -30,7 +30,7 @@
          <div class="text">
             Login
          </div>
-         {{ Form::open(array('route' => 'login','method' => 'POST' 'class' => 'contact-form')) }}
+         {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
             <div  class="field">
                 {{ Form::label('username', 'Nome Utente', ['class' => 'label-input']) }}
                 {{ Form::text('username', '', ['class' => 'field','id' => 'username']) }}
