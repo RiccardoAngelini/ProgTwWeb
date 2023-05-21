@@ -6,6 +6,8 @@ use App\Models\Resources\Promotion;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\NewUsernameRequest;
+use App\Http\Requests\NewPasswordRequest;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller {
@@ -29,9 +31,11 @@ class UserController extends Controller {
     }
 
     public function storeUsername(NewUsernameRequest $request){
+
+        $validatedData = $request->validated();
  
-        $usernameIns=$request->input('username');
-        $newUsername=$request->input('newusername');
+        $usernameIns = $validatedData['username'];
+        $newUsername = $validatedData['newusername'];
         
         $username=$this->_userModel->getUsername($usernameIns);
       
@@ -45,22 +49,26 @@ class UserController extends Controller {
 }
 
 public function changePassword(){
-    return view('users.updateUsername');
+    return view('users.updatePassword');
 }
 
-public function storePassword(NewUsernameRequest $request){
+public function storePassword(NewPasswordRequest $request)
+    {
+        $validatedData = $request->validated();
+        $passwordIns = $validatedData['password'];
+        $newPassword = $validatedData['newpassword'];
 
-    $usernameIns=$request->input('username');
-    $newUsername=$request->input('newusername');
-    
-    $username=$this->_userModel->getUsername($usernameIns);
-  
-    if($username){
-        $username->username=$newUsername;
-        $username->save();
+        $user = auth()->user();
 
-}
-return redirect()->action([UserController::class, 'index']);
+        if (Hash::check($passwordIns, $user->password)) {
+            $user->password = Hash::make($newPassword);
+            $user->save();
 
+            return redirect()->back()->with("status", "Password cambiata correttamente!");
+        } else {
+            return redirect()->back()->with("error", "La vecchia password non è corretta");
+        }
+    }
 }
-}
+
+

@@ -41,8 +41,11 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s"),'age'=>21, 'phone'=>36685841,'conf_password'=>'','gender'=>'M'],
             ['name' => 'Luigi', 'surname' => 'Bianchi',  'email' => 'luigi@bianchi.it', 'username' => 'luigiluigi',
                 'password' => Hash::make('luigiluigi'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),'age'=>29, 'phone'=>389840523,'conf_password'=>'','gender'=>'M'],
+            ['name' => 'Prova', 'surname' => 'Test',  'email' => 'luigi@bianchi.it', 'username' => 'provaprova',
+                'password' => Hash::make('provaprova'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),'age'=>29, 'phone'=>389840523,'conf_password'=>'','gender'=>'M']
-        ]);
+            ]);
 
  
         DB::table('coupon')->insert([

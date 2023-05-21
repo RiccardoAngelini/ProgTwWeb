@@ -25,7 +25,12 @@ class NewUsernameRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'username' => 'required|max:25',
+            'username' => [
+                'required',
+                Rule::exists('users', 'username')->where(function ($query) {
+                    $query->where('username', $this->input('username'));
+                })
+            ],
             'newusername'=>'required|max:25'
         ];
     }
