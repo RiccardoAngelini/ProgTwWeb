@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
+use App\Models\Resources\Coupon;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\NewUsernameRequest;
@@ -14,18 +15,31 @@ class UserController extends Controller {
 
     protected $_userModel;
 
+    protected $_couponModel;
+    protected $_promotionModel;
+
     public function __construct(){
         $this->_userModel = new User;
+        $this->_promotionModel = new Promotion;
+        $this->_couponModel = new Coupon;
     }
 
     public function index() {
         return view('user');
     }
 
-    public function showCoupon($coupon_Id){
-        $scelta_coupon=$this->_promotionModel->getPromotionCouponId($coupon_Id)->first();
+    public function showCoupon($promo_Id, $coupon_Id)
+    {
+
+        $promo_byid=$this->_promotionModel->getPromotionId($promo_Id);
+        $scelta_coupon = $this->_couponModel->getCouponIdByProm($coupon_Id);
+
+        $coupon=$this->_couponModel->getCouponById($scelta_coupon)->first();
+
         return view('coupon')
-            ->with('scelta_coupon',$scelta_coupon);
+        ->with('coupon', $coupon)
+        ->with('promo_byid', $promo_byid)
+            ->with('scelta_coupon', $scelta_coupon);
     }
     
     public function changeUsername(){

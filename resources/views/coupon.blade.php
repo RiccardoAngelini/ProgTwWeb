@@ -1,12 +1,19 @@
 @extends('layouts.public')
 @section('title', 'Coupon')
 @section('content')
-<div class="tutto">
+<div class="cont-coupon">
+<div class="nome-coupon">
+@foreach($promo_byid as $promo)
+Coupon per {{$promo->name}}
+@endforeach
+
+</div>
 <div class="con">
-Coupon
-<p> identificaote coupon: {{ $scelta_coupon->coupon_Id}}
-<p>Data di emissione:{{ date('d/m/Y', strtotime($scelta_coupon->date_emiss)) }}</p>
-<p>Data di scadenza:{{ date('d/m/Y', strtotime($scelta_coupon->date_exp)) }}</p>
+
+
+<p> Codice coupon: {{ $coupon->code}}
+<p>Data di emissione:{{ date('d/m/Y', strtotime($coupon->date_emiss)) }}</p>
+<p>Data di scadenza:{{ date('d/m/Y', strtotime($coupon->date_exp)) }}</p>
 usufruibile sia in negozio che online 
 </div>
 </div>
