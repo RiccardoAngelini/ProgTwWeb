@@ -18,8 +18,6 @@
 
                 <li><a href="{{ route('aziende')}}">Aziende</a></li>
 
-                <li><a href="{{ route('admin') }}" id="admin">Admin</a></li>
-
                 @guest
                 <li><a href="{{ route('register') }}" id="registrati">Registrati</a></li>
                 @endguest
