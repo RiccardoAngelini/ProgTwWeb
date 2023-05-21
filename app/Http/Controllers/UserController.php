@@ -22,8 +22,10 @@ class UserController extends Controller {
         return view('user');
     }
 
-    public function showCoupon(){
-        return view('coupon');
+    public function showCoupon($coupon_Id){
+        $scelta_coupon=$this->_promotionModel->getPromotionCouponId($coupon_Id)->first();
+        return view('coupon')
+            ->with('scelta_coupon',$scelta_coupon);
     }
     
     public function changeUsername(){
