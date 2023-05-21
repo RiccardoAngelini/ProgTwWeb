@@ -59,8 +59,9 @@ class User extends Authenticatable
         return User::where('username',$username)->first();
     }
 
-    public function getPassword($password){
+    public function getEmail($password){
         return User::where('password',$password)->first();
     }
+
 
 }
