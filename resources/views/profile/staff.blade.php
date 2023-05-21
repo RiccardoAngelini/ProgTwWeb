@@ -6,16 +6,17 @@
         <section class="about-dev">
           <header class="profile-card_header">
             <div class="profile-card_header-container">
-              <h2>Nome : </h2>
+              <h2>Nome : {{ Auth::user()->name }} </h2>
+              <h2>Cognome : {{ Auth::user()->surname }} </h2>
             </div>
           </header>
           <div class="profile-card_about">
-            <h2>Username : </h2>
-            <h2>Email : </h2>
-            <h2>Eta : </h2>
-            <h2>Genere : </h2>
-            <h2>Telefono : </h2>
-            <h2>Ruolo : </h2>
+            <h2>Username : {{ Auth::user()->username }}</h2>
+            <h2>Email : {{ Auth::user()->email }}</h2>
+            <h2>Eta : {{ Auth::user()->age }}</h2>
+            <h2>Genere : {{ Auth::user()->gender }}</h2>
+            <h2>Telefono : {{ Auth::user()->phone }}</h2>
+            <h2>Ruolo : {{ Auth::user()->role }}</h2>
           </div>
           
         </section>
