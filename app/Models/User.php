@@ -55,4 +55,8 @@ class User extends Authenticatable
         return in_array($this->role, $role);
     }
 
+    public function getUsername($username){
+        return User::where('username',$username)->first();
+    }
+
 }

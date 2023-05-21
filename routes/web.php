@@ -58,8 +58,17 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
 // ROUTE USER
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
+
 Route::post('/user', [UserController::class, 'store']);
-Route::get('/user/{userId}', [UserController::class, 'show']);
+
+Route::get('/user/updateUser', [UserController::class, 'changeUsername'])
+->name('newusername');
+
+
+Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])
+->name('newusername.store');
+
+
 Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
 Route::put('/user/{userId}', [UserController::class, 'update']);
 Route::delete('/user/{userId}', [UserController::class, 'destroy']);

@@ -17,7 +17,7 @@
 
 <ul class="list-user">
     <li><a href="">Cambia Password</a></li>
-    <li><a href="">Modifica nome utente</a></li>
+    <li><a href="{{ route('newusername') }}">Modifica nome utente</a></li>
     <li><a href="">Modifica email</a></li>
     <li><a href="">Modifica Nome</a></li>
     <li><a href="">Modifica Cognome</a></li>
