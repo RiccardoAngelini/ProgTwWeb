@@ -29,8 +29,8 @@
                 <th>Descrizione</th> 
                 <th>Prezzo</th>
                 <th>Sconto</th>
-                <th>Imagine</th>
-                <th>Categoria</th>
+                <th>Immagine</th>
+                <th>Azienda</th>
                 <th style="width: 40px">Update</th>
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>

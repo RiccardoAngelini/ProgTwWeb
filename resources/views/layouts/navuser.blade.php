@@ -14,11 +14,7 @@
 
                 <li><a href="{{ route('Home') }}">Home</a></li>
 
-                <li><a href="{{ route('catalogo')}}">Catalogo</a></li>
-
-                <li><a href="{{ route('aziende')}}">Aziende</a></li>
-
-                <li><a href="{{ route('user') }}" title="Home User">Area User</a></li>
+                <li><a href="{{ route('user') }}" title="Home User">Profilo</a></li>
 
                 @auth
         <li><a href="" class="highlight" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
