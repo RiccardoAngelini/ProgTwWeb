@@ -1,4 +1,4 @@
-@can('isUser')
+@can('show-coupon')
 
 <div class="ottieni-coup">
         <a href="{{route('coupon')}}"><button class="button-ottieni" >
@@ -6,4 +6,4 @@
                 </button></a></div>
 
 
-@endcan
+@endauth
