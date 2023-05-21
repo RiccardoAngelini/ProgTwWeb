@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
         ]);
          
         DB::table('users')->insert([
-            ['name' => 'Alex', 'email' => 'alex@verdi.it', 'username' => 'alexalex',
-                'password' => Hash::make('alexalex'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
+            ['name' => 'Alex', 'email' => 'alex@verdi.it', 'username' => 'staffstaff',
+                'password' => Hash::make('staffstaff'), 'role' => 'staff','created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),'age'=>20, 'phone'=>338854565,'conf_password'=>'','gender'=>'M'],
             ['name' => 'Marco', 'email' => 'marco@bianchi.it', 'username' => 'useruser',
                 'password' => Hash::make('useruser'), 'role' => 'user', 'created_at' => date("Y-m-d H:i:s"),

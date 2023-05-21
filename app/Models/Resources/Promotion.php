@@ -8,7 +8,7 @@ class Promotion extends Model {
 
     protected $table = 'promotion';
     protected $primaryKey = 'promo_Id';
-
+    protected $filllable = ['question', 'answer'];
     public function getPromotion(){
         return Promotion::all();
     }

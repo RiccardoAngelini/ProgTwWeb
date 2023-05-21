@@ -1,5 +1,33 @@
 @extends('layouts.admin')
 @section('content')
+<div class="faq-header"></div>
+<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
+<div class="title" style="margin-top: 50px;">
+    <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
+</div>
+
+    <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
+    <div class="faq-form" style="margin-top: 30px;">
+        <form  role="form" action="{{route('adminfaq.update', $faq -> id)}}" method="POST">
+            @csrf
+            @method('put')
+            <div class="form-group">
+                <label for="question">Question :</label>
+                <input type="text" id="question" name="question" placeholder="Inserire la domanda" class="form-control @error('question') is-invalid @enderror" value="{{old('question', $faq -> question)}}" >
+                    @error('question')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer :</label>
+                <textarea id="answer" name="answer" rows="4" placeholder="Inserire una risposta" class="form-control @error('answer') is-invalid @enderror" >{{old('answer', $faq -> answer)}}</textarea>
+                    @error('answer')
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
+            </div>
+            <button type="submit">Salva</button>
+        </form>
+    </div>
    <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,32 +83,5 @@
     }
     </style> 
 
-<div class="faq-header"></div>
-<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
-<div class="title" style="margin-top: 50px;">
-    <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
-</div>
 
-    <h2 style="margin-left: 25%; margin-top:70px;">inserisci la domanda</h2>
-    <div class="faq-form" style="margin-top: 30px;">
-        <form  role="form" action="{{route('adminfaq.update', $faq -> id)}}" method="POST">
-            @csrf
-            @method('put')
-            <div class="form-group">
-                <label for="question">Question :</label>
-                <input type="text" id="question" name="question" placeholder="Inserire la domanda" class="form-control @error('question') is-invalid @enderror" value="{{old('question', $faq -> question)}}" >
-                    @error('question')
-                        <p class="invalid-feedback">{{$message}}</p>
-                    @enderror
-            </div>
-            <div class="form-group">
-                <label for="answer">Answer :</label>
-                <textarea id="answer" name="answer" rows="4" placeholder="Inserire una risposta" class="form-control @error('answer') is-invalid @enderror" >{{old('answer', $faq -> answer)}}</textarea>
-                    @error('answer')
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @enderror
-            </div>
-            <button type="submit">Salva</button>
-        </form>
-    </div>
 @endsection

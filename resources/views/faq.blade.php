@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('content')
-<div class="content-catalogo">
+{{-- <div class="content-catalogo">
           <div class="coupon">
               <table id="customers">
                   <tr>
@@ -13,5 +13,5 @@
                   </tr>
               </table>
           </div>
-      </div>
+      </div> --}}
 @endsection

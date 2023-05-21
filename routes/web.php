@@ -17,27 +17,18 @@ use App\Http\Controllers\StaffController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PublicController::class,'showHome'])
-        ->name('Home');
+Route::get('/', [PublicController::class,'showHome'])->name('Home');
 
-Route::view('/dovesiamo', 'dovesiamo')
-        ->name('dovesiamo');
+Route::view('/dovesiamo', 'dovesiamo') ->name('dovesiamo');
+  
+Route::view('/chisiamo', 'chisiamo')->name('chisiamo');
 
+Route::view('/contatti', 'contatti')->name('contatti');
 
+Route::get('/catalogo', [PublicController::class,'showCatalogo'])->name('catalogo');
 
-
-Route::view('/chisiamo', 'chisiamo')
-        ->name('chisiamo');
-
-Route::view('/contatti', 'contatti')
-        ->name('contatti');
-
-Route::get('/catalogo', [PublicController::class,'showCatalogo'])
-        ->name('catalogo');
-
-
-Route::get('/aziende', [PublicController::class,'showAziende'])
-        ->name('aziende');
+Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende');
+        
 
 
         
@@ -56,51 +47,60 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
 
 
 // ROUTE USER
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class, 'create']);
-Route::post('/user', [UserController::class, 'store']);
-Route::get('/user/{userId}', [UserController::class, 'show']);
-Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
-Route::put('/user/{userId}', [UserController::class, 'update']);
-Route::delete('/user/{userId}', [UserController::class, 'destroy']);
+// Route::get('/user', [UserController::class, 'index']);
+// Route::get('/user/create', [UserController::class, 'create']);
+// Route::post('/user', [UserController::class, 'store']);
+// Route::get('/user/{userId}', [UserController::class, 'show']);
+// Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
+// Route::put('/user/{userId}', [UserController::class, 'update']);
+// Route::delete('/user/{userId}', [UserController::class, 'destroy']);
+
+//ROUTE PROFILO STAFF
+use App\Http\Controllers\ProfileController;
+
+Route::get('/profiles', [ProfileController::class, 'index'])->name('profiles.index');
+Route::get('/profiles/create', [ProfileController::class, 'create'])->name('profiles.create');
+Route::post('/profiles', [ProfileController::class, 'store'])->name('profiles.store');
+Route::get('/profiles/{profile}', [ProfileController::class, 'show'])->name('profiles.show');
+Route::get('/profiles/{profile}/edit', [ProfileController::class, 'edit'])->name('profiles.edit');
+Route::put('/profiles/{profile}', [ProfileController::class, 'update'])->name('profiles.update');
+Route::delete('/profiles/{profile}', [ProfileController::class, 'destroy'])->name('profiles.destroy');
+
+
+Route::middleware('auth')->group(function(){
+        Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
+        Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 
 
 
-
-Route::get('/user', [UserController::class, 'index'])
-        ->name('user')->middleware('can:isUser');
-
-Route::get('/staff', [StaffController::class, 'index'])
-        ->name('staff')->middleware('can:isStaff');
-
-Route::get('/admin', [AdminController::class, 'index'])
-        ->name('admin');
-
-
-Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
-        ->name('newproduct');
-
-Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
-        ->name('newproduct.store');
-
-
-Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
-        ->name('updateproduct');
+Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
 
 
-Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
-        ->name('offerta');
-
-Route::get('/coupon}', [UserController::class,'showCoupon'])
-        ->name('coupon');
+Route::get('/staff', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
+Route::get('/staff/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
 
 
-Route::get('/catalogo/filtro', [PublicController::class,'filtro'])
-        ->name('catalogo2');
 
-Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])
-        ->name('catalogo3');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])->name('newproduct');
+
+Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])->name('newproduct.store');
+
+Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
+
+Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
+
+Route::get('/coupon}', [UserController::class,'showCoupon'])->name('coupon');
+
+Route::get('/catalogo/filtro', [PublicController::class,'filtro'])->name('catalogo2');
+
+Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])->name('catalogo3');
+        
 
 require __DIR__.'/auth.php';

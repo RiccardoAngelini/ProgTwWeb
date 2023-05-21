@@ -49,9 +49,7 @@ class PublicController extends Controller
     public function showOfferta($promo_Id){ 
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
-        return view('offerta')
-                 ->with('sel_promId',$sel_promId);
-
+        return view('offerta')->with('sel_promId',$sel_promId);
     }
     
     

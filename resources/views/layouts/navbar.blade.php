@@ -17,14 +17,13 @@
                 <li><a href="{{ route('catalogo')}}">Catalogo</a></li>
 
                 <li><a href="{{ route('aziende')}}">Aziende</a></li>
-
-                <li><a href="{{ route('admin') }}" id="admin">Admin</a></li>
-
-
-                <li><a href="{{ route('register') }}" id="registrati">Registrati</a></li>
                 
                 @can('isAdmin')
         <li><a href="{{ route('admin') }}" class="highlight" title="Home Admin">Home Admin</a></li>
+    @endcan
+
+    @can('isStaff')
+        <li><a href="{{ route('staff') }}" class="highlight" title="Home Staff">Home Staff</a></li>
     @endcan
                
                 @can('isUser')
