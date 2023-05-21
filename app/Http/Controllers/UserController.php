@@ -58,10 +58,10 @@ class UserController extends Controller {
         if($username){
             $username->username=$newUsername;
             $username->save();
+
+            return redirect()->back()->with("status", "Username cambiato correttamente!");
     
     }
-    return redirect()->action([UserController::class, 'index']);
-
 }
 
 public function changePassword(){
@@ -82,7 +82,7 @@ public function storePassword(NewPasswordRequest $request)
 
             return redirect()->back()->with("status", "Password cambiata correttamente!");
         } else {
-            return redirect()->back()->with("error", "La vecchia password non è corretta");
+            return redirect()->back()->with("error", "La password inserita non è corretta!");
         }
     }
 }

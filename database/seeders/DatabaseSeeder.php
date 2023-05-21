@@ -49,16 +49,16 @@ class DatabaseSeeder extends Seeder
 
  
         DB::table('coupon')->insert([
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8) ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8) ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s"),'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
-            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(8)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15) ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15) ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s"),'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
+            [ 'date_emiss'=> date("Y-m-d H:i:s"),'date_exp'=> date("Y-m-d H:i:s") ,'code'=>Str::random(15)  ],
         ]);
         
         DB::table('promotion')->insert([

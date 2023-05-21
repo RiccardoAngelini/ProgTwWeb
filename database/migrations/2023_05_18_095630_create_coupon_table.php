@@ -17,7 +17,7 @@ class CreateCouponTable extends Migration
             $table->bigIncrements('coupon_Id');
             $table->date('date_emiss'); //date emission
             $table->date('date_exp');  //data expiration 
-            $table->string('code')->unique()->default(Str::random(8));   
+            $table->string('code')->unique()->default(Str::random(15));   
         });
     }
 

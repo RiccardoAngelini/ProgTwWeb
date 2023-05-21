@@ -4,9 +4,20 @@
 
 @section('content')
 <div class="content1-registrazione">
+
    <div class="container">
+ 
       <h2>Modifica Username</h2>
     <div class="content-registrazione">
+    @if (session('status'))
+       <div class="alert alert-success" role="alert">
+         {{ session('status') }}
+        </div>
+          @elseif (session('error'))
+        <div class="alert alert-danger" role="alert">
+         {{ session('error') }}
+         </div>
+     @endif
          {{ Form::open(array('route' => 'newusername.store')) }}
         <div class="user-details">
             <div class="input-box">
