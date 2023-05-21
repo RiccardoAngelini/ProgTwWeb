@@ -1,6 +1,22 @@
-@extends('layouts.public')
-@section('title', 'Coupon')
-@section('content')
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coupon | Coupon</title>
+
+    <link rel="stylesheet" href="{{ asset('css/coupon.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+</head>
+<body>
+
 
 <div class="content1">
 <div class="content2">
@@ -9,19 +25,22 @@
 Coupon per {{$promo->name}}
 @endforeach
       </div>
+      <div class="info">
       <div class="field_coupon">
-          Identificaote coupon: {{ $coupon->code}}
+      <b>Identificaote coupon</b>: {{ $coupon->code}}
 </div>
 <div class="field_coupon">
-Data di emissione: {{ date('d/m/Y', strtotime($coupon->date_emiss)) }}
+<b>Data di emissione</b>: {{ date('d/m/Y', strtotime($coupon->date_emiss)) }}
 </div>
 <div class="field_coupon">
-Data di scadenza: {{ date('d/m/Y', strtotime($coupon->date_exp)) }}
+<b>Data di scadenza</b>: {{ date('d/m/Y', strtotime($coupon->date_exp)) }}
 </div>
 <div class="field_coupon">
-    <p>il buono è usufruibile sia in negozio che online </p>
+    <p>Il buono è usufruibile sia in negozio che online </p>
 </div>
 
 </div>
+<div class="stampa"><a href="">Stampa</a>
 </div>
-@endsection
+</div>
+</div>
