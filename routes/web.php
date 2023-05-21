@@ -102,7 +102,7 @@ Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
         ->name('offerta');
 
-Route::get('/coupon}', [UserController::class,'showCoupon'])
+Route::get('/coupon/{coupon_Id}', [UserController::class,'showCoupon'])
         ->name('coupon');
 
 
