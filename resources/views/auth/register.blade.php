@@ -11,7 +11,7 @@
          <div class="user-details">
             <div class="input-box">
                {{ Form::label('name', 'Name', ['class' => 'details']) }}
-               {{ Form::text('name', null, ['placeholder' => 'Enter your name']) }}
+               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome']) }}
                @if ($errors->first('name'))
                 <ul class="errors">
                     @foreach ($errors->get('name') as $message)
@@ -22,7 +22,7 @@
             </div>
             <div class="input-box">
                {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
-               {{ Form::text('surname', null, ['placeholder' => 'Enter your surname']) }}
+               {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
                @if ($errors->first('surname'))
                 <ul class="errors">
                     @foreach ($errors->get('surname') as $message)
@@ -33,7 +33,7 @@
             </div>
             <div class="input-box">
                {{ Form::label('username', 'Username', ['class' => 'details']) }}
-               {{ Form::text('username', null, ['placeholder' => 'Enter your username']) }}
+               {{ Form::text('username', null, ['placeholder' => 'Inserisci l\'username']) }}
                @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)
@@ -44,7 +44,7 @@
             </div>
             <div class="input-box">
                {{ Form::label('email', 'Email', ['class' => 'details']) }}
-               {{ Form::text('email', null, ['placeholder' => 'Enter your email']) }}
+               {{ Form::text('email', null, ['placeholder' => 'Inserisci l\'email']) }}
                @if ($errors->first('email'))
                 <ul class="errors">
                     @foreach ($errors->get('email') as $message)
@@ -66,7 +66,7 @@
             </div>
             <div class="input-box">
                {{ Form::label('password', 'Password', ['class' => 'details']) }}
-               {{ Form::password('password', ['placeholder' => 'Enter your password']) }}
+               {{ Form::password('password', ['placeholder' => 'Inserici la password']) }}
                @if ($errors->first('password'))
                 <ul class="errors">
                     @foreach ($errors->get('password') as $message)
@@ -94,20 +94,20 @@
          <div class="gender-details">
             <input type="radio" name="gender" id="dot-1" class="radiobtn">
             <input type="radio" name="gender" id="dot-2" class="radiobtn">
-            <span class="gender-title">Gender</span>
+            <span class="gender-title">Genere</span>
             <div class="category">
                <label for="dot-1">
                   <span class="dot one"></span>
-                  <span class="gender">Male</span>
+                  <span class="gender">Maschio</span>
                </label>
                <label for="dot-2">
                   <span class="dot two"></span>
-                  <span class="gender">Female</span>
+                  <span class="gender">Femmina</span>
                </label>
             </div>
          </div>
          <div>
-            {{ Form::submit('Register',['class' => 'button-login']) }}
+            {{ Form::submit('Registrati',['class' => 'button-login']) }}
          </div>
          {{ Form::close() }}
       </div>
