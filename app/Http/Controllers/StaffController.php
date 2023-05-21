@@ -15,7 +15,7 @@ class StaffController extends Controller {
 
     public function listapromo(Request $promotion){
         $promotion = Promotion::all();
-        $promotion = Promotion::paginate(5);
+        $promotion = Promotion::paginate(6);
         return view('product.listaofferte',[
             'promotion' => $promotion
         ]);
