@@ -17,7 +17,12 @@
                 <li><a href="{{ route('catalogo')}}">Catalogo</a></li>
 
                 <li><a href="{{ route('aziende')}}">Aziende</a></li>
-                
+
+
+                @guest
+                <li><a href="{{ route('register') }}" id="registrati">Registrati</a></li>
+                @endguest
+
                 @can('isAdmin')
         <li><a href="{{ route('admin') }}" class="highlight" title="Home Admin">Home Admin</a></li>
     @endcan
@@ -27,7 +32,7 @@
     @endcan
                
                 @can('isUser')
-        <li><a href="{{ route('user') }}" class="highlight" title="Home User">Home User</a></li>
+        <li><a href="{{ route('user') }}" class="highlight" title="Home User">Area User</a></li>
     @endcan
 
     @auth

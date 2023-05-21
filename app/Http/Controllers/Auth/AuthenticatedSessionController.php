@@ -45,7 +45,7 @@ class AuthenticatedSessionController extends Controller {
                 break;
             case 'staff' : return redirect()->route('staff'); 
               break;
-            default: return redirect('/register');
+            default: return redirect('/');
         }
     }
 
@@ -62,7 +62,7 @@ class AuthenticatedSessionController extends Controller {
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect('/');
     }
 
 }

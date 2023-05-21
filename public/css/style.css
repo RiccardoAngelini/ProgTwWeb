@@ -299,4 +299,86 @@ ul{
   padding-top: 10px;
   color:red;
 }
+.area{
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+.benvenuto{
+  font-size: 18px;
+  padding-left: 10px;
+  padding: 5px;
+  padding-top: 40px;
+  border-bottom:2px solid #ff7a57;
+}
+.Cont{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  padding-bottom: 40px;
+}
+.cont-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+  width: 400px;
+  height: 40vh;
+  font-size: 18px;
+  padding: 10px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.seleziona{
+  color: #ff7a57;
+  font-size: 25px;
+  padding-top: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+.list-user{
+  padding-top: 30px;
+}
+.list-user li{
+  padding-top: 10px;
+  list-style: disc;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.alert.alert-danger {
+  font-weight: bold;
+  color: #5a2322;
+  background-color: #e4605e;
+  height: 40px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-top:15px
+}
+
+.alert.alert-success {
+  font-weight: bold;
+  color: #324d37;
+  background-color: #81c18e;
+  height: 40px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.list-user a{
+  color: black;
+text-decoration: none;
+}
+.list-user a:hover{
+  text-decoration: underline;
+  color: #ff7a57;
+}
+
 

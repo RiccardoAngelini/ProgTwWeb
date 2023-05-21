@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Catalog;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
+use App\Models\Resources\Coupon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,12 @@ class PublicController extends Controller
 
     protected $_companyModel;
     protected $_promotionModel;
+    protected $_couponModel;
 
     public function __construct() {
         $this->_companyModel = new Company;
         $this->_promotionModel = new Promotion;
+        $this->_couponModel= new Coupon;
     }
 
     public function showHome(){
@@ -49,7 +52,16 @@ class PublicController extends Controller
     public function showOfferta($promo_Id){ 
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
+
         return view('offerta')->with('sel_promId',$sel_promId);
+
+        
+        $scelta_coupon=$this->_couponModel->getCouponIdByProm($promo_Id);
+        return view('offerta')
+        ->with('scelta_coupon',$scelta_coupon)
+                 ->with('sel_promId',$sel_promId);
+                 
+
     }
     
     

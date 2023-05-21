@@ -46,14 +46,6 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
  Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
 
 
-// ROUTE USER
-// Route::get('/user', [UserController::class, 'index']);
-// Route::get('/user/create', [UserController::class, 'create']);
-// Route::post('/user', [UserController::class, 'store']);
-// Route::get('/user/{userId}', [UserController::class, 'show']);
-// Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
-// Route::put('/user/{userId}', [UserController::class, 'update']);
-// Route::delete('/user/{userId}', [UserController::class, 'destroy']);
 
 //ROUTE PROFILO STAFF
 use App\Http\Controllers\ProfileController;
@@ -73,15 +65,45 @@ Route::middleware('auth')->group(function(){
         Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class, 'create']);
+
+Route::post('/user', [UserController::class, 'store']);
+
+Route::get('/user/updateUser', [UserController::class, 'changeUsername'])
+->name('newusername');
+
+
+Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])
+->name('newusername.store');
+
+
+Route::get('/user/updatePsw', [UserController::class, 'changePassword'])
+->name('newpassword');
+
+Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])
+->name('newpassword.store');
+
+Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
+Route::put('/user/{userId}', [UserController::class, 'update']);
+Route::delete('/user/{userId}', [UserController::class, 'destroy']);
+
+
 
 
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
 
-
 Route::get('/staff', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
 Route::get('/staff/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
+
+Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
+        ->name('offerta');
+
+Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])
+        ->name('coupon');
+
 
 
 

@@ -61,7 +61,7 @@
                 Sconto del {{$promotion->discountPerc}} &#37;
             </div>
             <div class="cont-img">
-                    @include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $promotion->image])
+                    @include('helpers/promotionImg', ['imgFile' => $promotion->image])
                 </div>
                 <div class="cont-data">
                     <div class="data">
@@ -91,7 +91,7 @@
                 Sconto del {{$prom_by_name->discountPerc}} &#37;
 </div>
 <div class="cont-img">
-@include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $prom_by_name->image])
+@include('helpers/promotionImg', ['imgFile' => $prom_by_name->image])
 </div>
 <div class="cont-data">
                     <div class="data">
@@ -122,7 +122,7 @@
                 Sconto del {{$prom_by_comp->discountPerc}} &#37;
 </div>
 <div class="cont-img">
-@include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $prom_by_comp->image])
+@include('helpers/promotionImg', ['imgFile' => $prom_by_comp->image])
 </div>
 <div class="cont-data">
                     <div class="data">
@@ -151,7 +151,7 @@
                 Sconto del {{$name->discountPerc}} &#37;
 </div>
 <div class="cont-img">
-@include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $name->image])
+@include('helpers/promotionImg', ['imgFile' => $name->image])
 </div>
 <div class="cont-data">
                     <div class="data">

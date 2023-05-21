@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coupon | @yield('title', '')</title>
+    <title>Coupon | @yield('title', 'User')</title>
 
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style_aziende.css')}}">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{ asset('css/dovesiamo.css')}}">
     <link rel="stylesheet" href="{{ asset('css/registrazione.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style_offerta.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/coupon.css')}}">
 
 
 
@@ -35,7 +34,7 @@
 <body>
      <!--Navbar-->
     <div id="nav">
-        @include('layouts/navbar')
+        @include('layouts/navuser')
     </div>
 
     <!--Content-->
