@@ -1,27 +1,14 @@
 
 @extends('layouts.staff')
 @section('content')
-    {{-- <h1 style="text-align: center; margin-top:2em;">LISTA PROMOZIONI</h1> --}}
     
 <div class="title" style="margin-top: 50px;">
      <table><h1 style="text-align: center; font-size:50px;">LISTA PROMOZIONI</h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
-    <a class="creat" href="">Crea nuova promozione</a>
+    <a class="creat" href="{{route('product.create')}}">Crea nuova promozione</a>
 </div>
-{{-- 
-    @if (Session::has('success'))
-    <div class="alert alert-success">
-        {{Session::get('success')}}
-    </div>
-    @endif
-    @if (Session::has('success'))
-        <div class="alert alert-danger">
-            {{ Session::get('error')}}
-        </div>
-    @endif
---}}
-<div class="div-faq">
+<div class="div-prom">
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,15 +18,14 @@
                 <th>Sconto</th>
                 <th>Imagine</th>
                 <th>Categoria</th>
-                <th style="width: 40px">Update</th>
+                <th>Data Inizio</th>
+                <th>Data fine</th>
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>
             </tr>
         </thead>
         <tbody>
-            @if ($promotion -> isNotEmpty())
-                
-            
+            @if ($promotion -> isNotEmpty())            
                 @foreach ($promotion as $promotions)
                     <tr>
                         <td>{{$promotions -> promo_Id}}</td>
@@ -49,9 +35,14 @@
                         <td>{{$promotions->discountPerc}}%</td>
                         <td>{{$promotions->image}}</td>
                         <td>{{$promotions->comp_name}}</td>
-                        <td><a class="btn1" href="">Modifica</a></td>
-                        <td><a class="btn2" href="">Visualizza</a></td> 
-                        <td><a class="btn3" href="#" onclick="deleteFaq({{$promotions -> promp_Id}})">Cancella</a></td>
+                        <td>{{$promotions->date_start}}</td>
+                        <td>{{$promotions->date_end}}</td>
+                        <td><a  href="{{route('product.show', [$promotions -> promo_Id])}}">Visualizza</a></td> 
+                        <form action="{{route('product.delete', $promotion -> promo_Id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn2" type="submit">Cancelli</button>
+                        </form>
                     </tr>
                 @endforeach
                 @else
@@ -62,16 +53,8 @@
             
         </tbody>
     </table>
-<div class="pag">{{$promotion -> withQueryString()->links('pagination.paginator')}}</div> 
+<div class="pag">{{$promotion -> withQueryString()->links('pagination.paginator')}}</div>  
 </div>
-
-{{-- <script>
-    function deleteFaq(id){
-        if(confirm('Vuoi cancelare questa Faq ?')){
-            document.getElementById('faq-edit-action-' + id).submit();
-        }
-    } 
-</script> --}}
 
 <style>
 
@@ -97,14 +80,14 @@
         padding-bottom: 5em;
     }
     table {
-        width: 80%;
+        width: 90%;
         border-collapse: collapse;
-        margin-left: 16%;
+        margin-left: 5%;
         margin-top: 3em;
         
     }
     table th, table td {
-        padding: 10px;
+        padding: 5px;
         border: 1px solid #ccc;
     }
     table th {

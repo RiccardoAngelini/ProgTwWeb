@@ -90,13 +90,12 @@ Route::delete('/user/{userId}', [UserController::class, 'destroy']);
 
 
 
-
-
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
 
 Route::get('/staff', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
 Route::get('/staff/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
+Route::get('')
 
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
         ->name('offerta');
