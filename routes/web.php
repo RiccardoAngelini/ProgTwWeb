@@ -95,13 +95,17 @@ Route::get('/user', [UserController::class, 'index'])->name('user')->middleware(
 
 Route::get('/staff', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
 Route::get('/staff/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
-Route::get('')
+Route::get('staff/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
+Route::post('/staff/store', [StaffController::class, 'store'])->name('product.store');
+Route::get('/staff/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
+Route::get('/staff/{promo_Id}/edit', [StaffController::class. 'modificapromo'])->name('product.edit');
+Route::put('/staff/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
+Route::delete('/ataff/{id}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
-Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])
-        ->name('offerta');
 
-Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])
-        ->name('coupon');
+Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
+Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])->name('coupon');
+        
 
 
 
