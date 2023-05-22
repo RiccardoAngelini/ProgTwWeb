@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers; 
 
-use view;
+use App\Http\Requests\NewProductRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
-use App\Http\Requests\NewProductRequest;
+use APP\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Helper\Table;
+
 
 class AdminController extends Controller {
 
     protected $_adminModel;
-
+    
     // public function __construct() {
     //     $this->_adminModel = new Admin;
     //     $this->middleware('can:isAdmin');
     // }
 
-    public function __construc(){
+    public function __construct(){
         $this->_adminModel = new Admin;
+       
         $this->middleware('can:isAdmin');
             
         }
@@ -55,5 +61,22 @@ class AdminController extends Controller {
         return response()->json(['redirect' => route('admin')]);
         ;
     }
-
+   
+  Public function listaUser()
+{
+    $users = User::where('role','user')->get();
+    return view('admin.listautenti', ['users' => $users]);
 }
+
+public function deleteUser(Request $request)
+{
+    $userIds = $request->input('user_ids', []);
+
+        if (!empty($userIds)) {
+            User::whereIn('id', $userIds)->delete();
+        }
+    return redirect()->route('admin.listautenti')->with('success', 'Utenti eliminati con successo.');
+}
+}
+
+
