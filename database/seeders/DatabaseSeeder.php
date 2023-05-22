@@ -25,28 +25,30 @@ class DatabaseSeeder extends Seeder
             [ 'name' => 'Casa e giardino'],
             [ 'name' => 'Sport'],
             [ 'name' => 'Salute e bellezza'],
-        
-        
+
         ]);
          
         DB::table('users')->insert([
-            ['name' => 'Alex', 'email' => 'alex@verdi.it', 'username' => 'staffstaff',
-                'password' => Hash::make('staffstaff'), 'role' => 'staff','created_at' => date("Y-m-d H:i:s"),
+            ['name' => 'Alex', 'surname' => 'Gialli', 'email' => 'alex@verdi.it', 'username' => 'staffstaff',
+                'role' => 'staff','age'=>20, 'gender'=>'M','phone'=>338854565, 'password' => Hash::make('staffstaff'),
+                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+            
+            ['name' => 'Marco', 'surname' => 'Gialli', 'email' => 'marco@bianchi.it','username' => 'useruser', 
+                'role' => 'user','age'=>26,'gender'=>'M','phone'=>33585402,'password' => Hash::make('useruser'),
+                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],  
 
-                'updated_at' => date("Y-m-d H:i:s"),'age'=>20, 'phone'=>338854565,'conf_password'=>'','gender'=>'M'],
-            ['name' => 'Marco', 'surname' => 'Gialli', 'email' => 'marco@bianchi.it', 'username' => 'useruser',
-                'password' => Hash::make('useruser'), 'role' => 'user', 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),'age'=>26, 'phone'=>33585402,'conf_password'=>'','gender'=>'M'],
             ['name' => 'Mario', 'surname' => 'Rossi',  'email' => 'mario@rossi.it', 'username' => 'adminadmin',
-                'password' => Hash::make('adminadmin'), 'role' => 'admin', 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),'age'=>21, 'phone'=>36685841,'conf_password'=>'','gender'=>'M'],
+                'role' => 'admin','age'=>21,'gender'=>'M','phone'=>36685841,'password' => Hash::make('adminadmin'),
+                'conf_password'=>'password',  'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")], 
+
             ['name' => 'Luigi', 'surname' => 'Bianchi',  'email' => 'luigi@bianchi.it', 'username' => 'luigiluigi',
-                'password' => Hash::make('luigiluigi'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),'age'=>29, 'phone'=>389840523,'conf_password'=>'','gender'=>'M'],
+                'role' => 'user','age'=>29, 'gender'=>'M','phone'=>389840523,'password' => Hash::make('luigiluigi'),
+                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+
             ['name' => 'Prova', 'surname' => 'Test',  'email' => 'luigi@bianchi.it', 'username' => 'provaprova',
-                'password' => Hash::make('provaprova'), 'role' => 'user','created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),'age'=>29, 'phone'=>389840523,'conf_password'=>'','gender'=>'M']
-            ]);
+                'role' => 'user','age'=>29,'gender'=>'M','phone'=>389840523,'password' => Hash::make('provaprova'), 
+                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+        ]);
 
  
         DB::table('coupon')->insert([
