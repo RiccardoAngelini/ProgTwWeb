@@ -9,17 +9,15 @@
     <a class="creat" href="{{route('adminfaq.create')}}">Crea nuova FAQ</a>
 </div>
 
-    @if (Session::has('success'))
-    <div class="alert alert-success">
-        {{Session::get('success')}}
+@if (session('status'))
+       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;">
+         {{ session('status') }}
     </div>
     @endif
-    @if (Session::has('success'))
-        <div class="alert alert-danger">
-            {{ Session::get('error')}}
-        </div>
-    @endif
-
+    @if (session('error'))
+       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;">
+         {{ session('error') }}
+         @endif
 <div class="div-faq">
         <thead>
             <tr>
