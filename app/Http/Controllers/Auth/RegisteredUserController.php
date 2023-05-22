@@ -42,7 +42,6 @@ class RegisteredUserController extends Controller
             'age' => ['required','int','min:18'],
             'gender' => ['required','string','min:1'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-           ' conf_password' => ['required', 'confirmed', ]
         ]);
 
         $user = User::create([
@@ -54,7 +53,6 @@ class RegisteredUserController extends Controller
             'age' =>$request->age,
             'gender' => $request->gender,
             'password' => Hash::make($request->password),
-            'conf_password' => $request->conf_password,
         ]);
 
         event(new Registered($user));

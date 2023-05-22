@@ -31,23 +31,23 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             ['name' => 'Alex', 'surname' => 'Gialli', 'email' => 'alex@verdi.it', 'username' => 'staffstaff',
                 'role' => 'staff','age'=>20, 'gender'=>'M','phone'=>338854565, 'password' => Hash::make('staffstaff'),
-                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+                'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
             
             ['name' => 'Marco', 'surname' => 'Gialli', 'email' => 'marco@bianchi.it','username' => 'useruser', 
                 'role' => 'user','age'=>26,'gender'=>'M','phone'=>33585402,'password' => Hash::make('useruser'),
-                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],  
+                'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],  
 
             ['name' => 'Mario', 'surname' => 'Rossi',  'email' => 'mario@rossi.it', 'username' => 'adminadmin',
                 'role' => 'admin','age'=>21,'gender'=>'M','phone'=>36685841,'password' => Hash::make('adminadmin'),
-                'conf_password'=>'password',  'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")], 
+              'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")], 
 
             ['name' => 'Luigi', 'surname' => 'Bianchi',  'email' => 'luigi@bianchi.it', 'username' => 'luigiluigi',
                 'role' => 'user','age'=>29, 'gender'=>'M','phone'=>389840523,'password' => Hash::make('luigiluigi'),
-                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+                'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
 
             ['name' => 'Prova', 'surname' => 'Test',  'email' => 'luigi@bianchi.it', 'username' => 'provaprova',
                 'role' => 'user','age'=>29,'gender'=>'M','phone'=>389840523,'password' => Hash::make('provaprova'), 
-                'conf_password'=>'password','created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+                'created_at' => date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
         ]);
 
  
