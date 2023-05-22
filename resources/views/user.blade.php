@@ -19,7 +19,7 @@
     <li><a href="{{ route('newpassword') }}">Cambia Password</a></li>
     <li><a href="{{ route('newusername') }}">Modifica nome utente</a></li>
     <li><a href="{{ route('newemail') }}">Modifica email</a></li>
-    <li><a href="{{ route('newnamesurname') }}">Modifica Nome e Cognome</a></li>
+    <li><a href="{{ route('newnamesurname') }}">Modifica Dati Personali</a></li>
 </ul>
 </div>
 </div>

@@ -57,13 +57,4 @@ class User extends Authenticatable
         return in_array($this->role, $role);
     }
 
-    public function getUsername($username){
-        return User::where('username',$username)->first();
-    }
-
-    public function getEmail($password){
-        return User::where('password',$password)->first();
-    }
-
-
 }

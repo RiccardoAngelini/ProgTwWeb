@@ -17,8 +17,7 @@ class NewNameSurnameRequest extends FormRequest
         return [
             'name' => 'required',
             'surname' => 'required',
-            'newname' => 'required',
-            'newsurname' => 'required',
+            'phone' => 'required',
         ];
     }
 }

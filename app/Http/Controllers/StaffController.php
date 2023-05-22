@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
 use App\Http\Requests\PromotionRequest;
+use App\Http\Requests\NewNameSurnameRequest;
+use App\Http\Requests\NewPasswordRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller {
 
     public function staff() {
-        return view('profile.staff');
+        return view('staff.staff');
     }    
 
     public function listapromo(Request $promotion){
@@ -41,13 +45,6 @@ class StaffController extends Controller {
         return redirect()->route('product.index');
     }
     
-    public function visualizapromo($promo_Id){
-        $promotion = Promotion::where('promo_Id', $promo_Id)->first();
-        // dd($promotion);
-        return view('product.visualizapromo',[
-            'promotion' => $promotion
-        ]);
-    }
 
      public function modificapromo($promo_Id){
         $promotion = Promotion::find($promo_Id);
@@ -59,10 +56,86 @@ class StaffController extends Controller {
 
     }
 
+    public function visualizapromo($promo_Id){
+        $promotion = Promotion::where('promo_Id', $promo_Id)->first();
+        return view('product.visualizapromo')->with('promotion',$promotion);
+    }
+
     public function delete(Promotion $promotion){
         dd($promotion);
         // return view('index',[
         //     'promotion' => $promotion
         // ]);
     }
+
+
+    public function changeNameSurname(){
+        return view('staff.updateDatiStaff');
+    }
+    
+    public function storeNameSurname(NewNameSurnameRequest $request){
+    
+        $validatedData = $request->validated();
+    
+        $nameIns = $validatedData['name'];
+        $surnameIns = $validatedData['surname'];
+        
+        $staff = Auth::user();
+    
+        
+            $staff->name = $nameIns;
+            $staff->surname = $surnameIns;
+            $staff->save();
+    
+            return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+        
+    
+    }
+
+    public function changePasswordStaff(){
+        return view('staff.updatePasswordStaff');
+    }
+    
+    public function storePasswordStaff(NewPasswordRequest $request)
+        {
+            $validatedData = $request->validated();
+            $passwordIns = $validatedData['password'];
+            $newPassword = $validatedData['newpassword'];
+    
+            $staff = auth()->user();
+    
+            if (Hash::check($passwordIns, $staff->password)) {
+                $staff->password = Hash::make($newPassword);
+                $staff->save();
+    
+                return redirect()->back()->with("status", "Password cambiata correttamente!");
+            } else {
+                return redirect()->back()->with("error", "La password inserita non è corretta!");
+            }
+        }
+
+        public function changeDatiStaff(){
+            return view('staff.updateDatiStaff');
+        }
+        
+        public function storeDatiStaff(NewNameSurnameRequest $request)
+            {
+            $validatedData = $request->validated();
+
+            $nameIns = $validatedData['name'];
+            $surnameIns = $validatedData['surname'];
+
+            $user = Auth::user();
+
+    
+            $user->name = $nameIns;
+            $user->surname = $surnameIns;
+            $user->save();
+
+        return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+    
+
+}
+
+
 }

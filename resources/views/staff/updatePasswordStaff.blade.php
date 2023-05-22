@@ -1,13 +1,13 @@
-@extends('layouts.user')
+@extends('layouts.staff')
 
-@section('title', 'Area User')
+@section('title', 'Area Staff')
 
 @section('content')
 
 <div class="content1-registrazione">
    <div class="container">
    
-      <h2>Modifica Dati Personali</h2>
+      <h2>Modifica Password</h2>
     <div class="content-registrazione">
     @if (session('status'))
        <div class="alert alert-success" role="alert">
@@ -18,13 +18,13 @@
          {{ session('error') }}
          </div>
      @endif
-         {{ Form::open(array('route' => 'newnamesurname.store')) }}
+         {{ Form::open(array('route' => 'newPasswordStaff.store')) }}
         <div class="user-details">
             
             <div class="input-box">
-               {{ Form::label('name', 'Nome', ['class' => 'details']) }}
-               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome']) }}
-               @error('name')
+               {{ Form::label('password', 'Password', ['class' => 'details']) }}
+               {{ Form::text('password', null, ['placeholder' => 'Enter your password']) }}
+               @error('password')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
@@ -35,22 +35,9 @@
         </div>
         <div class="user-details">
             <div class="input-box">
-               {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
-               {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
-               @error('surname')
-                <ul class="errors">
-                    
-                    <li>{{ $message }}</li>
-               
-                </ul>
-                @enderror
-            </div>
-        </div>
-        <div class="user-details">
-            <div class="input-box">
-               {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
-               {{ Form::text('phone', null, ['placeholder' => 'Inserisci il numero di telefono']) }}
-               @error('phone')
+               {{ Form::label('newpassword', 'Nuova Password', ['class' => 'details']) }}
+               {{ Form::text('newpassword', null, ['placeholder' => 'Enter your new password']) }}
+               @error('newpassword')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
