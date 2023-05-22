@@ -6,45 +6,48 @@
         <section class="about-dev">
           <header class="profile-card_header">
             <div class="profile-card_header-container">
-              <h2>Nome : </h2>
+              <h2>Nome : {{ Auth::user()->name }} </h2>
+              <h2>Cognome : {{ Auth::user()->surname }} </h2>
             </div>
           </header>
           <div class="profile-card_about">
-            <h2>Username : </h2>
-            <h2>Email : </h2>
-            <h2>Eta : </h2>
-            <h2>Genere : </h2>
-            <h2>Telefono : </h2>
-            <h2>Ruolo : </h2>
+            <h2>Username : {{ Auth::user()->username }}</h2>
+            <h2>Email : {{ Auth::user()->email }}</h2>
+            <h2>Eta : {{ Auth::user()->age }}</h2>
+            <h2>Genere : {{ Auth::user()->gender }}</h2>
+            <h2>Telefono : {{ Auth::user()->phone }}</h2>
+            <h2>Ruolo : {{ Auth::user()->role }}</h2>
           </div>
           
         </section>
-        <a class="p" href="">Modifica profilo</a>
+        <div style="display:flex; justify-content:center;">
+        <a class="p" href="">Modifica profilo</a></div>
       </div>
 
 <style>
 
 .p{
   background-color: #4CAF50;
+  width: 250px;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 1em; 
-  margin-left: 45%;
   margin-top: 2em;
   
 }
+
 h1{
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
 }
 .about-dev {
+  border-radius:20px;
   width: 100%;
   max-width: 30rem;
   margin: auto;
@@ -52,8 +55,9 @@ h1{
   animation: profile_in 0.8s;
 }
  .profile-card_header {
-  background: #eca7a7;
-  border-left: 0.625rem solid #97ece1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: #ff7a57;
   padding: 5em 1.5em 1em;
   text-align: center;
 }
@@ -64,6 +68,8 @@ h1{
   position: relative;
 } 
 .profile-card_about {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   line-height: 1.5;
   background: #ededed;
   padding: 1.5em 2rem;

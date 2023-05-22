@@ -84,6 +84,18 @@ Route::get('/user/updatePsw', [UserController::class, 'changePassword'])
 Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])
 ->name('newpassword.store');
 
+Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])
+->name('newemail');
+
+Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])
+->name('newemail.store');
+
+Route::get('/user/updateNameSurname', [UserController::class, 'changeNameSurname'])
+->name('newnamesurname');
+
+Route::POST('/user/updateNameSurname', [UserController::class, 'storeNameSurname'])
+->name('newnamesurname.store');
+
 Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
 Route::put('/user/{userId}', [UserController::class, 'update']);
 Route::delete('/user/{userId}', [UserController::class, 'destroy']);

@@ -20,6 +20,8 @@
                 <th>Categoria</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
+                <th>Immagine</th>
+                <th>Azienda</th>
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>
             </tr>

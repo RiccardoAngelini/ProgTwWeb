@@ -14,7 +14,7 @@
 
             <li><a href="{{ route('Home') }}">Home</a></li>
 
-            <li><a href="{{ route('staff') }}" title="Va alla Home dello Staff">Profile</a></li>
+            <li><a href="{{ route('staff') }}" title="Va alla Home dello Staff">Profilo</a></li>
 
              <li><a href="{{ route('product.index')}}">Offerte</a></li>
 

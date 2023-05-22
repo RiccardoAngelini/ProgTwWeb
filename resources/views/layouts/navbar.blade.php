@@ -24,11 +24,11 @@
                 @endguest
 
                 @can('isAdmin')
-        <li><a href="{{ route('admin') }}" class="highlight" title="Home Admin">Home Admin</a></li>
+        <li><a href="{{ route('admin') }}" class="highlight" title="Home Admin">Area Admin</a></li>
     @endcan
 
     @can('isStaff')
-        <li><a href="{{ route('staff') }}" class="highlight" title="Home Staff">Home Staff</a></li>
+        <li><a href="{{ route('staff') }}" class="highlight" title="Home Staff">Area Staff</a></li>
     @endcan
                
                 @can('isUser')
