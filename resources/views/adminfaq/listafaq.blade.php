@@ -10,12 +10,12 @@
 </div>
 
 @if (session('status'))
-       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;">
+       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
          {{ session('status') }}
     </div>
     @endif
     @if (session('error'))
-       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;">
+       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;margin-left:260px;">
          {{ session('error') }}
          @endif
 <div class="div-faq">
