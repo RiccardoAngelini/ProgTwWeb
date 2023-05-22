@@ -21,5 +21,4 @@
           
         </section>
     </main>
-    <script src="js/admin.js"></script>
 @endsection

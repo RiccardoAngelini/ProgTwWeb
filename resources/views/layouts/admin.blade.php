@@ -44,9 +44,8 @@
 
     <div id="content">
         @yield('content')
-        <script src="js/admin.js"></script>
     </div>
-
+    <script src="{{ asset('js/admin.js') }}"></script>
 
 </body>
 </html>

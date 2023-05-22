@@ -23,7 +23,6 @@
         </section>
     </div>
 </main>
-<script src="{{ asset('js/admin.js') }}"></script>
 @endsection
 
 
