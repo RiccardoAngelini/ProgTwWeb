@@ -112,10 +112,8 @@ Route::post('/staff/store', [StaffController::class, 'store'])->name('product.st
 Route::get('/staff/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
 Route::get('/staff/{promo_Id}/edit', [StaffController::class. 'modificapromo'])->name('product.edit');
 Route::put('/staff/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
-Route::delete('/ataff/{id}/delete', [StaffController::class, 'delete'])->name('product.delete');
+Route::delete('/staff/{id}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
-
-Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
 Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])->name('coupon');
         
 
@@ -132,8 +130,6 @@ Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])->name
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
 
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
-
-Route::get('/coupon}', [UserController::class,'showCoupon'])->name('coupon');
 
 Route::get('/catalogo/filtro', [PublicController::class,'filtro'])->name('catalogo2');
 

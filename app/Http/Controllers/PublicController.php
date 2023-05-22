@@ -53,7 +53,7 @@ class PublicController extends Controller
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
 
-        return view('offerta')->with('sel_promId',$sel_promId);
+
 
         
         $scelta_coupon=$this->_couponModel->getCouponIdByProm($promo_Id);
