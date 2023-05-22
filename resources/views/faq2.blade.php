@@ -1,4 +1,5 @@
 @extends('layouts.public')
+@section('title','FAQ')
 @section('content')
 <div class="faq-header">Frequently Asked Questions</div>
 @foreach ($listafaq as $index => $faqs)
