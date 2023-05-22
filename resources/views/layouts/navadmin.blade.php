@@ -32,7 +32,7 @@
                     <i class="fa-solid fa-chevron-left"></i>
                   Visualizza Utenti
                 </div>
-                <li class="item"><a href="#">Lista Utenti</a></li>
+                <li class="item"><a href="{{route('admin.listautenti')}}">Lista Utenti</a></li>
             </ul>
           </li>
           <li class="item">

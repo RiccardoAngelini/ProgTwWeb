@@ -138,6 +138,12 @@ Route::get('/coupon}', [UserController::class,'showCoupon'])->name('coupon');
 Route::get('/catalogo/filtro', [PublicController::class,'filtro'])->name('catalogo2');
 
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])->name('catalogo3');
-        
+
+
+//elimina utenti admin
+Route::get('/admin/listautenti',[AdminController::class ,'listaUser'])->name('admin.listautenti');
+
 
 require __DIR__.'/auth.php';
+
+Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');
