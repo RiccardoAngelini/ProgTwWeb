@@ -16,9 +16,7 @@
                     <i class="fa-solid fa-chevron-left"></i>
                     Visualizza Aziende
                   </div>
-                  <li class="item"><a href="#">Lista Aziende</a></li>
-                  <li class="item"><a href="#">1212</a></li>
-                  <li class="item"><a href="#">1222</a></li>
+                  <li class="item"><a href="">Lista Aziende</a></li>
             </ul>
           </li>
           <li class="item">
@@ -79,7 +77,7 @@
             </li>
             <li class="item">
               <div class="submenu-item">
-                <span>Tatistiche</span>
+                <span>Statistiche</span>
                 <i class="fa-solid fa-chevron-right"></i>
               </div>
 
@@ -96,18 +94,15 @@
           </li>
             <li class="item">
                 <div class="submenu-item">
-                  <span> <a href="#">Log Out</a></span>
+                @auth
+        <li><a href="" class="item" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+    @endauth 
                 </div>
             </li>
-            <div class="submenu-item">
-                <li><span> <a href="{{route('chisiamo')}}">Chi siamo</a></span></li>
-            </div>
-            <div class="submenu-item">
-                <li><span> <a href="{{route('dovesiamo')}}">Dove siamo</a></span></li>
-            </div>
-            <div class="submenu-item">
-                <li><span> <a href="{{route('contatti')}}">Contatti</a></span></li>
-            </div>
+            
             
             
       </div>
