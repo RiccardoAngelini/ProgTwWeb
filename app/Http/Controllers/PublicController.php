@@ -37,6 +37,7 @@ class PublicController extends Controller
     public function showCatalogo(){ 
         $company_namesids=$this->_companyModel->getCompanyNameId();
         $promotions=$this->_promotionModel->getPromotion();
+        $promotions=Promotion::paginate(8);
         return view('catalogo')
                  ->with('company_namesids',$company_namesids)
                  ->with('promotions',$promotions);
@@ -45,6 +46,7 @@ class PublicController extends Controller
 
     public function showAziende(){ 
         $aziende=$this->_companyModel->getCompany();
+        $aziende=Company::paginate(10);
         return view('aziende')
                 ->with('aziende',$aziende);
     }
@@ -53,7 +55,7 @@ class PublicController extends Controller
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
 
-        return view('offerta')->with('sel_promId',$sel_promId);
+
 
         
         $scelta_coupon=$this->_couponModel->getCouponIdByProm($promo_Id);
@@ -88,6 +90,7 @@ class PublicController extends Controller
         }
         $company_namesids=$this->_companyModel->getCompanyNameId();
         $proms_by_comp = json_decode(json_encode($proms_by_comp));
+
         return view('catalogo')
             ->with('proms_by_comp', $proms_by_comp)
             ->with('company_namesids',$company_namesids);
@@ -104,7 +107,7 @@ class PublicController extends Controller
            
            $names = $this->_promotionModel->getPromotionByName($ricerca);
            $proms_by_name = $this->_promotionModel->getPromotionByCompName($ricerca, $aziendaSelezionata);
-           
+
 
            foreach ($names as $name) {
             if (stripos($name->name, $ricerca) !== false) {

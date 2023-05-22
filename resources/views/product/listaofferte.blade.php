@@ -20,8 +20,7 @@
                 <th>Categoria</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
-                <th>Immagine</th>
-                <th>Azienda</th>
+                {{-- <th>Azienda</th> --}}
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>
             </tr>
@@ -30,7 +29,7 @@
             @if ($promotion -> isNotEmpty())            
                 @foreach ($promotion as $promotions)
                     <tr>
-                        <td>{{$promotions -> promo_Id}}</td>
+                        <td>©</td>
                         <td>{{$promotions->name}}</td>
                         <td>{{$promotions->desc}}</td>
                         <td>{{$promotions->price}}</td>
@@ -39,12 +38,13 @@
                         <td>{{$promotions->comp_name}}</td>
                         <td>{{$promotions->date_start}}</td>
                         <td>{{$promotions->date_end}}</td>
-                        <td><a  href="{{route('product.show', [$promotions -> promo_Id])}}">Visualizza</a></td> 
-                        <form action="{{route('product.delete', $promotion -> promo_Id)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn2" type="submit">Cancelli</button>
-                        </form>
+                        <td><a class="btn1" href="{{route('product.show',[$promotions->promo_Id])}}">Visualizza</a></td>
+                        <td><button class="btn2" type="submit">Cancelli</button></td> 
+                        {{-- <form action="{{route('product.delete', $promotion -> promo_Id)}}" method="POST">
+                             @method('DELETE')
+                             @csrf
+                            
+                        </form> --}}
                     </tr>
                 @endforeach
                 @else

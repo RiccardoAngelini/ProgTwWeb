@@ -94,16 +94,17 @@
          <div class="gender-details">
             <input type="radio" name="gender" id="dot-1" class="radiobtn">
             <input type="radio" name="gender" id="dot-2" class="radiobtn">
-            <span class="gender-title">Genere</span>
+            {{ Form::label('gender', 'Genere', ['class' => 'gender-title']) }}
             <div class="category">
-               <label for="dot-1">
-                  <span class="dot one"></span>
-                  <span class="gender">Maschio</span>
-               </label>
-               <label for="dot-2">
-                  <span class="dot two"></span>
-                  <span class="gender">Femmina</span>
-               </label>
+               <div class="uomo">
+               {{ Form::radio('gender', 'M',false, ['class' => 'dot-1']) }}
+               {{ Form::label('Uomo', 'Uomo') }}
+</div>
+<div class="donna">
+
+               {{ Form::radio('gender', 'F',false, ['class' => 'dot-2']) }}
+               {{ Form::label('Donna', 'Donna') }}
+</div>
             </div>
          </div>
          <div>

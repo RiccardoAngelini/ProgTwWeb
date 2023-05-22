@@ -19,9 +19,11 @@ class User extends Authenticatable
         'name',
         'email',
         'username',
+        'surname',
         'password', 
-        'age', 
-        'conf_password',
+        'age',
+        'gender',
+        'phone', 
     ];
 
     /**
@@ -54,14 +56,5 @@ class User extends Authenticatable
         $role = (array)$role;
         return in_array($this->role, $role);
     }
-
-    public function getUsername($username){
-        return User::where('username',$username)->first();
-    }
-
-    public function getEmail($password){
-        return User::where('password',$password)->first();
-    }
-
 
 }

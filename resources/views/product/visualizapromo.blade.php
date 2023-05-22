@@ -1,20 +1,20 @@
 @extends('layouts.staff')
 @section('title', 'Promozione')
 @section('content')
+@isset($promotion)
 <div class="cont-off">
     <div class="cont-img-off">
 
 
         <div class="wrapper">
-            <div class="product-img" style="height=420; width=327">
-                {{-- @include('helpers/promotionImg', ['imgFile' => $promotion->image])  --}}
-            <img src="/public/images/2.jpeg" height="550" width="327">
+            <div class="product-img" style="height=300; width=327">
+                 @include('helpers/promotionImg', ['imgFile' => $promotion->image]) 
             </div>
             <div class="product-info">
               <div class="product-text">
                     <h1>{{$promotion->name}}</h1>
-                    <h3 style="margin-left: 5em; margin-top:0.5em;">Categoria: {{$promotion->comp_name}}</h3>
-                    <p>{{$promotion->desc}}</p>
+                    <h3 style="margin-left: 5em; margin-top:0.5em;">Azienda: {{$promotion->comp_name}}</h3>
+                    {!!$promotion->desc!!}
                     <h6 class="h6"></h6>
                     <h6 class="d1">Data inizio: {{$promotion->date_start}}</h6>
                     <h6 class="d1">Data fine: {{$promotion->date_end}}</h6>
@@ -26,18 +26,23 @@
               </div>
             </div>
           </div>
+    @endisset
 
           <style>
+
+            .cont-off{
+              display:flex;
+              justify-content:center;
+            }
           
 .wrapper {
     height: 550px;
-    width: 954px;
+    width: 1100px;
     margin: 50px auto;
     border-radius: 7px 7px 7px 7px;
     -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    margin-left: 50%;
   }
 .d1{
     display:inline-flex;
@@ -61,10 +66,12 @@
   .product-img {
     float: left;
     height: 420px;
-    width: 327px;
+    width: 420px;
   }
   
   .product-img img {
+    height:100%;
+    width:100%;
     border-radius: 7px 0 0 7px;
   }
   

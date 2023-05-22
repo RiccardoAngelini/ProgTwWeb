@@ -99,6 +99,22 @@ form .details{
   transition: all 0.3s ease;
   background: #ff7a57;
 }
+.donna {
+    display: inline-flex;
+}
+
+.donna label{
+  padding-left: 10px;
+}
+
+.uomo label{
+  padding-left: 10px;
+}
+
+.uomo {
+  display: inline-flex;
+}
+
  form .button_input {
    height: 100%;
    width: 100%;
@@ -115,6 +131,8 @@ form .details{
  form .button input:hover{
   background: 660000;
   }
+
+
 /*
  @media(max-width: 584px){
  .container{

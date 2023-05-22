@@ -1,6 +1,6 @@
-@extends('layouts.user')
+@extends('layouts.staff')
 
-@section('title', 'Area User')
+@section('title', 'Area Staff')
 
 @section('content')
 
@@ -18,7 +18,7 @@
          {{ session('error') }}
          </div>
      @endif
-         {{ Form::open(array('route' => 'newnamesurname.store')) }}
+         {{ Form::open(array('route' => 'newDatiStaff.store')) }}
         <div class="user-details">
             
             <div class="input-box">
@@ -38,19 +38,6 @@
                {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
                {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
                @error('surname')
-                <ul class="errors">
-                    
-                    <li>{{ $message }}</li>
-               
-                </ul>
-                @enderror
-            </div>
-        </div>
-        <div class="user-details">
-            <div class="input-box">
-               {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
-               {{ Form::text('phone', null, ['placeholder' => 'Inserisci il numero di telefono']) }}
-               @error('phone')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>

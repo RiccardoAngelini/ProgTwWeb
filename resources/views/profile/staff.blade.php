@@ -20,9 +20,12 @@
           </div>
           
         </section>
-        <div style="display:flex; justify-content:center;">
-        <a class="p" href="">Modifica profilo</a></div>
-      </div>
+        <div style="display:flex; justify-content:center; align-items:center;">
+        <a class="p" href="{{ route('newDatiStaff') }}">Modifica Dati Personali</a>
+ 
+     
+        <a class="p" href="{{ route('newPasswordStaff') }}">Modifica password</a></div>
+</div>
 
 <style>
 

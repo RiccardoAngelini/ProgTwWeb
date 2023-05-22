@@ -55,11 +55,11 @@ class UserController extends Controller {
         $usernameIns = $validatedData['username'];
         $newUsername = $validatedData['newusername'];
         
-        $username=$this->_userModel->getUsername($usernameIns);
+        $user=Auth::user();
       
-        if($username){
-            $username->username=$newUsername;
-            $username->save();
+        if ($user->username === $usernameIns){
+            $user->username=$newUsername;
+            $user->save();
 
             return redirect()->back()->with("status", "Username cambiato correttamente!");
     
@@ -120,19 +120,19 @@ public function storeNameSurname(NewNameSurnameRequest $request){
     $validatedData = $request->validated();
 
     $nameIns = $validatedData['name'];
-    $newName = $validatedData['newname'];
     $surnameIns = $validatedData['surname'];
-    $newSurname = $validatedData['newsurname'];
+    $phoneIns = $validatedData['phone'];
     
     $user = Auth::user();
 
-    if (($user->name === $nameIns)&&($user->surname === $surnameIns)) {
-        $user->name = $newName;
-        $user->surname = $newSurname;
+    
+        $user->name = $nameIns;
+        $user->surname = $surnameIns;
+        $user->phone=$phoneIns;
         $user->save();
 
-        return redirect()->back()->with("status", "Nome e Cognome cambiati correttamente!");
-    }
+        return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+    
 
 }
 

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/dovesiamo.css')}}">
     <link rel="stylesheet" href="{{ asset('css/registrazione.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style_offerta.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/staff.css')}}">
 
 
 

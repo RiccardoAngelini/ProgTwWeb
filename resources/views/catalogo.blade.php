@@ -78,6 +78,7 @@
                 
                 </div>
             @endforeach 
+            
             @endisset
 
             @isset($proms_by_name)
@@ -175,6 +176,10 @@
 @endisset
 
 </div>
+@isset($promotions)
+@include('pagination.paginator',['paginator'=>$promotions])
+@endisset
+
             <div class="clear"></div>
             </div>
         </div> 
