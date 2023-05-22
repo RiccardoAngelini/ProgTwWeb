@@ -92,18 +92,18 @@
             </div>
          </div>
          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1" class="radiobtn">
-            <input type="radio" name="gender" id="dot-2" class="radiobtn">
+            
             {{ Form::label('gender', 'Genere', ['class' => 'gender-title']) }}
             <div class="category">
                <div class="uomo">
-               {{ Form::radio('gender', 'M',false, ['class' => 'dot-1']) }}
-               {{ Form::label('Uomo', 'Uomo') }}
+               {{ Form::radio('gender', 'M', false, ['id' => 'dot-1', 'class' => 'dot-1']) }}
+               {{ Form::label('dot-1', 'Uomo', ['class' => 'gender-label', 'for' => 'dot-1']) }}
+                
 </div>
 <div class="donna">
 
-               {{ Form::radio('gender', 'F',false, ['class' => 'dot-2']) }}
-               {{ Form::label('Donna', 'Donna') }}
+               {{ Form::radio('gender', 'F', false, ['id' => 'dot-2', 'class' => 'dot-2']) }}
+               {{ Form::label('dot-2', 'Donna', ['class' => 'gender-label', 'for' => 'dot-2']) }}
 </div>
             </div>
          </div>
