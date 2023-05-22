@@ -11,11 +11,12 @@ use App\Http\Requests\NewNameSurnameRequest;
 use App\Http\Requests\NewPasswordRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\Staff;
+use App\Http\Requests\NewDatiStaffRequest;
 class StaffController extends Controller {
 
     public function staff() {
-        return view('staff.staff');
+        return view('profile.staff');
     }    
 
     public function listapromo(Request $promotion){
@@ -68,32 +69,8 @@ class StaffController extends Controller {
         // ]);
     }
 
-
-    public function changeNameSurname(){
-        return view('staff.updateDatiStaff');
-    }
-    
-    public function storeNameSurname(NewNameSurnameRequest $request){
-    
-        $validatedData = $request->validated();
-    
-        $nameIns = $validatedData['name'];
-        $surnameIns = $validatedData['surname'];
-        
-        $staff = Auth::user();
-    
-        
-            $staff->name = $nameIns;
-            $staff->surname = $surnameIns;
-            $staff->save();
-    
-            return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
-        
-    
-    }
-
     public function changePasswordStaff(){
-        return view('staff.updatePasswordStaff');
+        return view('profile.updatePasswordStaff');
     }
     
     public function storePasswordStaff(NewPasswordRequest $request)
@@ -115,27 +92,25 @@ class StaffController extends Controller {
         }
 
         public function changeDatiStaff(){
-            return view('staff.updateDatiStaff');
+            return view('profile.updateDatiStaff');
         }
         
-        public function storeDatiStaff(NewNameSurnameRequest $request)
-            {
+        public function storeDatiStaff(NewDatiStaffRequest $request)
+        {
             $validatedData = $request->validated();
-
             $nameIns = $validatedData['name'];
             $surnameIns = $validatedData['surname'];
-
-            $user = Auth::user();
-
-    
-            $user->name = $nameIns;
-            $user->surname = $surnameIns;
-            $user->save();
-
-        return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
-    
-
-}
-
+            
+            $staff = auth()->user();
+            
+            $staff->name = $nameIns;
+            $staff->surname = $surnameIns;
+            $staff->save();
+            
+            return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+        }
+        
 
 }
+
+
