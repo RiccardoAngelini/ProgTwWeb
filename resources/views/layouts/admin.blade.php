@@ -12,17 +12,17 @@
 
     <title>Admin</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_aziende.css">
-    <link rel="stylesheet" href="css/style_login.css">
-    <link rel="stylesheet" href="css/style_faq2.css">
-    <link rel="stylesheet" href="css/style_chisiamo.css">
-    <link rel="stylesheet" href="css/style_contatti.css">
-    <link rel="stylesheet" href="css/catalogo.css">
-    <link rel="stylesheet" href="css/dovesiamo.css">
-    <link rel="stylesheet" href="css/registrazione.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_aziende.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_login.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_faq2.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_chisiamo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_contatti.css')}}">
+    <link rel="stylesheet" href="{{asset('css/catalogo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dovesiamo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/registrazione.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('css/staff.css')}}">
 
     
 
@@ -44,8 +44,9 @@
 
     <div id="content">
         @yield('content')
+        <script src="js/admin.js"></script>
     </div>
-<script src="js/admin.js"></script>
+
 
 </body>
 </html>

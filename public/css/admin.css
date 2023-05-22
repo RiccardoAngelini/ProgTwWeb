@@ -109,6 +109,7 @@
 }
 
 .maina {
+  font-size:18px ;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -122,4 +123,44 @@
   color: #11101d;
   font-size: 40px;
   text-align: center;
+}
+
+
+.side_wrapper_utenti{
+  border-radius: 15px;
+  background-color: white;
+  margin:2rem auto;
+  width: 400px;
+  height: auto;
+}
+
+.lista_utenti li{
+  padding: 10px 20px;
+}
+
+.elimina_utenti button{
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #ff7a57;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  box-shadow: 2px 2px 5px #BABECC,
+             -5px -5px 10px #ffffff73;
+}
+
+.elimina_utenti button:hover{
+
+  background-color: green;
+ }
+
+.elimina_utenti{
+  display: flex;
+  padding: 15px 0;
+  justify-content: center;
 }

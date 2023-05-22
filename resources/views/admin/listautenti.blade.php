@@ -2,14 +2,16 @@
 @section('content')
 
 
-<div class="lista-header">
-   <h2>Lista Utenti </h2>
-    <hr>
-    <p> Seleziona l'utente da eliminare</p>
-   <form action="{{ route('admin.eliminautenti') }}" method="POST">
+
+<main class="maina">
+        <h1>Lista Utenti </h1>
+        <p> Seleziona l'utente da eliminare</p>
+        <div class="side_wrapper_utenti">
+        <section class="about-dev">
+        <form action="{{ route('admin.eliminautenti') }}" method="POST" class="form_utenti">
    @csrf
    @method('DELETE')
-   <ul>
+   <ul class="lista_utenti">
            @foreach ($users as $user)
            <li>
                <input type="checkbox" name="user_ids[]" value="{{ $user->id }}">
@@ -18,9 +20,13 @@
            @endforeach
          </ul>       
   
-   <button type="submit">Elimina selezionati</button>
+   <div  class="elimina_utenti"><button type="submit">Elimina selezionati</button></div>
 </form>
-
+          
+        </section>
+    </main>
+    <script src="js/admin.js"></script>
+@endsection
 
 
 
