@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/style_offerta.css')}}">
     <link rel="stylesheet" href="{{ asset('css/coupon.css')}}">
     <link rel="stylesheet" href="{{ asset('css/staff.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/listaaziende.css')}}">
 
 
 

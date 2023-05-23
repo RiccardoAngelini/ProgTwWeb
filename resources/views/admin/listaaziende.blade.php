@@ -39,7 +39,7 @@
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
-                        <td><a class="btn1" href="">Modifica</a></td> 
+                        <td><a class="btn1" href="#">Modifica</a></td> 
                         <td><a class="btn2" href="#">Visualizza</a></td>
                         <td>
                             <form  action="{{route('adminCompany.destroy', $companies->comp_Id )}}"
@@ -64,83 +64,80 @@
         }
     }
 </script>
-
- <style>
-
+<style>
 body {
-    font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
 }
-
 .creat {
-    background-color: #2854e3;
-    border: none;
-    color: white;
-    padding: 5px 20px; 
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 0.5px 0px;
-    cursor: pointer;
-    style="margin-left: 17%;
+background-color: #2854e3;
+border: none;
+color: white;
+padding: 5px 20px; 
+text-align: center;
+text-decoration: none;
+font-size: 17px;
+margin: 0.5px 0px;
+cursor: pointer;
+margin-left: 20px;
 }
 .pag{
-    text-align: center; 
-    margin-top: 1em;
-    padding-bottom: 5em;
+text-align: center; 
+margin-top: 1em;
+padding-bottom: 5em;
 }
 table {
-    width: 80%;
-    border-collapse: collapse;
-    margin-left: 16%;
-    margin-top: 3em;
-    
+width: 80%;
+border-collapse: collapse;
+margin-left: 16%;
+margin-top: 3em;
+
 }
 table th, table td {
-    padding: 10px;
-    border: 1px solid #ccc;
+padding: 10px;
+border: 1px solid #ccc;
 }
 table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+background-color: #f2f2f2;
+font-weight: bold;
 }
 .btn1 {
-    background-color: #4caf50;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    margin: 0.5px 0px;
-    cursor: pointer;
-    border-radius: 1.5em;
+background-color: #4caf50;
+border: none;
+color: white;
+padding: 5px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 17px;
+margin: 0.5px 0px;
+cursor: pointer;
+border-radius: 1.5em;
 }
 .btn2 {
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    margin: 0.5px 0px;
-    cursor: pointer;
-    border-radius: 1.5em;
+background-color: #008CBA;
+border: none;
+color: white;
+padding: 5px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 17px;
+margin: 0.5px 0px;
+cursor: pointer;
+border-radius: 1.5em;
 }
 .btn3 {
-    background-color: #f44336;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 17px;
-    margin: 0.5px 0px;
-    cursor: pointer;
-    border-radius: 1.5em;
+background-color: #f44336;
+border: none;
+color: white;
+padding: 5px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 17px;
+margin: 0.5px 0px;
+cursor: pointer;
+border-radius: 1.5em;
 }
 </style>
 @endsection
