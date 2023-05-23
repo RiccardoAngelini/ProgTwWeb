@@ -151,7 +151,7 @@ Route::get('/admin/listautenti',[AdminController::class ,'listaUser'])->name('ad
 //aiende
 Route::get('/admin/listaAziende',[AdminController::class ,'listaCompany'])->name('admin.listaziende');
 Route::get('/admin/newCompany',[AdminController::class ,'createCompany'])->name('newCompany');
-//Route::get('/admin/newCompany',[AdminController::class ,'storeCompany'])->name('newCompany.store');
+Route::get('/admin/listaAziende{azienda_Id}', [AdminController::class, 'modificaAzienda'])->name('company.edit');
 Route::delete('/listaAziende/{azienda_Id}', [AdminController::class, 'destroyCompany'])->name('adminCompany.destroy');
 require __DIR__.'/auth.php';
 

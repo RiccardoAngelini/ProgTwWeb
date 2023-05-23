@@ -19,4 +19,7 @@ class Company extends Model {
   public function getcompanyname(){
     return Company::select('name')->get();
   }
+  public function getcompanyId($comp_Id){
+    return Company::where('comp_Id',$comp_Id)->get();
+}
 }
