@@ -85,69 +85,18 @@ public function deleteUser(Request $request)
         $company =$this->_companyModel->getCompany();
         return view('admin.listaaziende', ['company' => $company ]);
    }
-/*
-public function createAziende(Request $request)
-{
-     $company =  company::all();
-    return view('admin.creazioneazienda',[ 'company' => $company]);
-}
 
-  public function storeAziende(Request $request)
-  {
-     $validator = Validator::make($request -> all(),[
+public function destroyCompany($comp_Id, Request $request) {
+    $companies = Company::findOrFail($comp_Id);
+    $companies -> delete();
+     return redirect()->route('admin.listaziende')->with('success', 'Azienda cancelata con sucesso.');
+ }
 
-        'name' => 'required',
-        'location' => 'required',
-        'image' => 'required',
-     ]);
-     if($validator -> passes())
-     {
-        $company = company::find($comp_Id);
-        $company ->name = $request->name;
-        $company ->location = $request->location;
-        $company ->image = $request->image;
-        $company ->save();
-       
-         return redirect('listaaziende')->with('success', 'Azienda creata con sucesso');
-     } else {
-          return redirect()->route('admin.listaaziende.create')->withErrors($validator)->withInput();
-     }
-  }
-
- public function edit($comp_Id)
+ public function createCompany(Request $request)
  {
-   
-     $company = company::findOrFail($comp_Id);
-    //  $faq = Faq::where('faq_Id', $faq_Id);
-     return view('adminfaq.edit', ['company' => $company]);
+      $company =  Company::all();
+     return view('admin.creazioneazienda',[ 'company' => $company]);
  }
-
- public function  update($comp_Id, Request $request){
-    
-    $validator = Validator::make($request -> all(),[
-
-        'name' => 'required',
-        'location' => 'required',
-        'image' => 'required',
-    ]);
-    if($validator -> passes()){
-        $company = company::find($comp_Id);
-        $company ->name = $request->name;
-        $company ->location = $request->location;
-        $company ->image = $request->image;
-        $company ->save();
-        return redirect('listaaziende')->with('success', 'Azienda modificata con sucesso');
-    }else{
-        return redirect()->route('adminfaq.edit', $id)->withErrors($validator)->withInput();
-    }
- }
-
-public function destroy($comp_Id, Request $request)
-  {
-     $company = company::findOrFail($id);
-     $company -> delete();
-     return redirect()->route('faq.index')->with('success', 'Azienda cancelata con sucesso.');
- }*/
 }
 
 

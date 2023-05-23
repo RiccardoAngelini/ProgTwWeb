@@ -6,7 +6,7 @@
      <table><h1 style="text-align: center; font-size:50px;">LISTA AZIENDE</h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
-    <a class="creat" href="#">Crea nuova AZIENDA</a>
+    <a class="creat" href="{{route('newCompany' )}}">Crea nuova AZIENDA</a>
 </div>
 @if (Session::has('success'))
     <div class="alert alert-success">
@@ -22,6 +22,7 @@
 <div class="div-faq">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nome Azienda</th>
                 <th>Location</th>
                 <th>Immagine</th> 
@@ -34,13 +35,14 @@
         @if ($company -> isNotEmpty())
                 @foreach ($company  as $companies)
                     <tr>
+                        <td>{{$companies->comp_Id}}</td>
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
-                        <td><a class="btn1" href="#">Modifica</a></td> 
+                        <td><a class="btn1" href="">Modifica</a></td> 
                         <td><a class="btn2" href="#">Visualizza</a></td>
                         <td>
-                            <form  action="#"
+                            <form  action="{{route('adminCompany.destroy', $companies->comp_Id )}}"
                                 onclick="return confirm('Sei sicuro di voler cancellare questa Azienda ?') " method="post">
                                 <button class="btn3" type="submit">Elimina</button>
                             @csrf
@@ -58,7 +60,7 @@
 <script>
     function deleteFaq(comp_Id){
         if(confirm('Vuoi cancelare questa Azienda ?')){
-            document.getElementById('azienda-edit-action-' + id).submit();
+            document.getElementById('azienda-edit-action-' + comp_Id).submit();
         }
     }
 </script>
