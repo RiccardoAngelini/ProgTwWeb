@@ -2,6 +2,17 @@
 @extends('layouts.staff')
 @section('content')
     
+
+@if (session('status'))
+<div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+ {{ session('status') }}
+</div>
+@endif
+@if (session('error'))
+<div class="alert alert-success" role="alert" style="display:flex; justify-content:center;margin-left:260px;">
+ {{ session('error') }}
+@endif
+
 <div class="title" style="margin-top: 50px;">
      <table><h1 style="text-align: center; font-size:50px;">LISTA PROMOZIONI</h1>
 </div>
@@ -29,7 +40,7 @@
             @if ($promotion -> isNotEmpty())            
                 @foreach ($promotion as $promotions)
                     <tr>
-                        <td>©</td>
+                        <td>{{$promotions->promo_Id}}</td>
                         <td>{{$promotions->name}}</td>
                         <td>{{$promotions->desc}}</td>
                         <td>{{$promotions->price}}</td>
@@ -39,20 +50,19 @@
                         <td>{{$promotions->date_start}}</td>
                         <td>{{$promotions->date_end}}</td>
                         <td><a class="btn1" href="{{route('product.show',[$promotions->promo_Id])}}">Visualizza</a></td>
-                        <td><button class="btn2" type="submit">Cancelli</button></td> 
-                        {{-- <form action="{{route('product.delete', $promotion -> promo_Id)}}" method="POST">
-                             @method('DELETE')
-                             @csrf
-                            
-                        </form> --}}
+                        <td>
+                            <form action="{{route('product.delete', $promotions -> promo_Id)}}"
+                                onclick="return confirm('Sei sicuro di voler cancellare questa promozione ?') " method="POST">
+                                <button class="btn3" type="submit">Cancelli</button>
+                                @method('DELETE')
+                                @csrf 
+                                 
+                            </form>
+                        </td>  
                     </tr>
                 @endforeach
                 @else
-                <tr>
-                    <td colspan="6">Inserimento non trovato</td>
-                </tr>
             @endif
-            
         </tbody>
     </table>
 <div class="pag">{{$promotion -> withQueryString()->links('pagination.paginator')}}</div>  

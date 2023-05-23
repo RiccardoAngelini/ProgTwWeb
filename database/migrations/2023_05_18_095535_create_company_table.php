@@ -19,7 +19,7 @@ class CreateCompanyTable extends Migration
            // $table->bigInteger('userId')->unsigned()->index();
            // $table->foreign('userId')->references('id')->on('users');
             $table->bigInteger('promo_Id')->unsigned()->index();  
-            $table->foreign('promo_Id')->references('promo_Id')->on('promotion');  
+            $table->foreign('promo_Id')->references('promo_Id')->on('promotion')->onDelete('CASCADE');  
             $table->string('location',50);
             $table->text('image')->nullable();
         });

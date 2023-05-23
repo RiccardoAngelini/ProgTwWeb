@@ -30,10 +30,10 @@
 
           <style>
 
-            .cont-off{
-              display:flex;
-              justify-content:center;
-            }
+ .cont-off{
+    display:flex;
+    justify-content:center;
+  }
           
 .wrapper {
     height: 550px;

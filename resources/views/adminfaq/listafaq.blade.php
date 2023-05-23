@@ -9,15 +9,15 @@
     <a class="creat" href="{{route('adminfaq.create')}}">Crea nuova FAQ</a>
 </div>
 
-@if (session('status'))
-       <div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+    @if (session('status'))
+        <div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
          {{ session('status') }}
-    </div>
-    @endif
+        </div>
+     @endif
     @if (session('error'))
        <div class="alert alert-success" role="alert" style="display:flex; justify-content:center;margin-left:260px;">
          {{ session('error') }}
-         @endif
+    @endif
 <div class="div-faq">
         <thead>
             <tr>
@@ -38,11 +38,15 @@
                         <td>{{$faqs->answer}}</td>
                         <td><a class="btn1" href="{{route('adminfaq.edit', $faqs -> id )}}">Modifica</a></td> 
                         <td><a class="btn2" href="{{route('faq2',['faq_Id' => $faqs->id])}}">Visualizza</a></td>
-                        <td><a class="btn3" href="#" onclick="deleteFaq({{$faqs -> id}})">Cancella</a></td>
-                        <form id="faq-edit-action-{{$faqs -> id }}" action="{{route('adminfaq.destroy', $faqs->id )}}" method="post">
+                        <td>
+                            <form  action="{{route('adminfaq.destroy', $faqs->id )}}"
+                                onclick="return confirm('Sei sicuro di voler cancellare questa FAQ ?') " method="post">
+                                <button class="btn3" type="submit">Cancelli</button>
                             @csrf
                             @method('delete')
                         </form>
+                        </td>
+                        
                     </tr>  
                 @endforeach 
             @else

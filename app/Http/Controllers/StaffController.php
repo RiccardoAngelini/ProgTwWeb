@@ -32,7 +32,7 @@ class StaffController extends Controller {
     }
 
     public function store(PromotionRequest $request){
-        $validated = $request->validated();
+        $validator = $request->validated();
         dd($request->all());
         Promotion::create([
             'name' => $request -> input('name'),
@@ -63,12 +63,10 @@ class StaffController extends Controller {
     }
 
     public function delete(Promotion $promotion){
-        dd($promotion);
-        // return view('index',[
-        //     'promotion' => $promotion
-        // ]);
+        // dd($promotion);
+        $promotion -> delete();
+        return redirect()->route('product.index')->with('status', 'Promozione cancellata con sucesso');
     }
-
     public function changePasswordStaff(){
         return view('profile.updatePasswordStaff');
     }

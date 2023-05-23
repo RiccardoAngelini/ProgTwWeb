@@ -96,7 +96,7 @@ class FaqController extends Controller
             $faq ->question = $request->question;
             $faq ->answer = $request->answer;
             $faq ->save();
-            return redirect('faq')->with('success', 'FAQ modificata con sucesso!');
+            return redirect('faq')->with('status', 'FAQ modificata con sucesso!');
         }else{
             return redirect()->route('adminfaq.edit', $id)->withErrors($validator)->withInput();
         }
@@ -113,6 +113,6 @@ class FaqController extends Controller
       {
          $faq = Faq::findOrFail($id);
          $faq -> delete();
-         return redirect()->route('faq.index')->with('success', 'Faq cancellata con sucesso!');
+         return redirect()->route('faq.index')->with('status', 'Faq cancellata con sucesso!');
      }
 }
