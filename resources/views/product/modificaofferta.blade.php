@@ -1,6 +1,6 @@
 @extends('layouts.staff')
 @section('content')
-    <h1 >Agggiungi una nuova promozione</h1>
+    <h1 >Modifica promozione</h1>
 
     <div class="container">
         <form action="{{route('product.store')}}" method="POST">
@@ -10,7 +10,7 @@
                     <label for="fname"> Nome prodotto: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="name" name="name"  placeholder="Nome del prodotto">
+                    <input type="text" id="name" value="{{$promotion->name}}" name="name"  placeholder="Nome del prodotto">
                     @error('name')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -21,7 +21,7 @@
                     <label for="price">Prezzo: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="price" name="price" placeholder="prezzo del prodotto">
+                    <input type="text" id="price" value="{{$promotion->price}}" name="price" placeholder="prezzo del prodotto">
                     @error('price')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -32,10 +32,10 @@
                     <label for="categoria">Categoria</label>
                 </div>
                 <div class="col-75">
-                    <select id="categoria" name="categoria">
-                        <option value="australia">Australia</option>
-                        <option value="canada">Canada</option>
-                        <option value="usa">USA</option>
+                    <select id="categoria"  name="categoria">
+                        <option value="australia">cat1</option>
+                        <option value="canada">cat2</option>
+                        <option value="usa">cat3</option>
                     </select>
                     @error('comp_name')
                         <span role="alert"> <strong>{{$message}}</strong></span>
@@ -47,7 +47,7 @@
                     <label for="data">Data Inizio Promozione: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="data1" name="data1" placeholder="Data Inizio Promozione">
+                    <input type="text" id="data1" value="{{$promotion->date_start}}" name="data1" placeholder="Data Inizio Promozione">
                     @error('date_start')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -58,7 +58,7 @@
                     <label for="data">Data Fine Promozione: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="data2" name="data2" placeholder="Data Fine Promozione">
+                    <input type="text" id="data2" value="{{$promotion->date_end}}" name="data2" placeholder="Data Fine Promozione">
                     @error('date_end')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -69,7 +69,7 @@
                     <label for="data">Sconto Promozione: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="sconto" name="sconto" placeholder="Inserisci lo sconto Promozione">
+                    <input type="text" id="sconto" value="{{$promotion->discounetPerc}}" name="sconto" placeholder="Inserisci lo sconto Promozione">
                     @error('discountPerc')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -80,7 +80,7 @@
                     <label for="desc">Descrizione</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="desc" name="desc" placeholder="Descrizione del prodotto" style="height:200px"></textarea>
+                    <textarea id="desc" name="desc" value="{{$promotion->desc}}" placeholder="Descrizione del prodotto" style="height:200px"></textarea>
                     @error('desc')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -88,7 +88,7 @@
             </div>
             <div class="row1">
                 {{-- <a class="btn11" href="">Salva</a> --}}
-                <button type="submit">Aguingi</button>
+                <button type="submit">Salva</button>
             </div>
         </form>
     </div>

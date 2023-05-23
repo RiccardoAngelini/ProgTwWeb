@@ -47,19 +47,19 @@ class StaffController extends Controller {
     }
     
 
-     public function modificapromo($promo_Id){
-        $promotion = Promotion::find($promo_Id);
-        return view('product.modificapromo',[
+     public function modificapromo(Promotion $promotion){
+        // $promotion = Promotion::find($promo_Id);
+        return view('product.modificaofferta',[
             'promotion' => $promotion
         ]);
     }
-    public function updatepromo($promo_Id, Request $request){
+    public function updatepromo($promo_Id, PromotionRequest $request){
 
     }
 
     public function visualizapromo($promo_Id){
         $promotion = Promotion::where('promo_Id', $promo_Id)->first();
-        return view('product.visualizapromo')->with('promotion',$promotion);
+        return view('product.visualizaofferta')->with('promotion',$promotion);
     }
 
     public function delete(Promotion $promotion){

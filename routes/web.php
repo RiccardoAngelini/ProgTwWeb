@@ -110,8 +110,8 @@ Route::get('/staff/product/', [StaffController::class, 'staff'])->name('staff')-
 Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
 Route::get('staff/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
 Route::post('/staff/product/store', [StaffController::class, 'store'])->name('product.store');
-Route::get('/staff/product/visualizapromo/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
-Route::get('/staff/product/{promo_Id}/edit', [StaffController::class. 'modificapromo'])->name('product.edit');
+Route::get('/staff/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
+Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class. 'modificapromo'])->name('product.edit');
 // Route::put('/staff/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
 Route::delete('/staff/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
