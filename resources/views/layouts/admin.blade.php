@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{asset('css/registrazione.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('css/staff.css')}}">
+    <link rel="stylesheet" href="{{asset('css/formaziende.css')}}">
+    <link rel="stylesheet" href="{{asset('css/listaaziende.css')}}">
 
     
 

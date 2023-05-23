@@ -31,6 +31,7 @@
                     <div class="data">
                    Inizia il {{ date('d/m/Y', strtotime($prom->date_start)) }}
                     </div>
+                    @include('helpers/remainingDays',['expirationDate' => $prom->date_end])
                     <div class="nome">
                     {{$prom->name }}
                     </div>

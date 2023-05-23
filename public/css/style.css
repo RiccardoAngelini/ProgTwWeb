@@ -385,6 +385,19 @@ text-decoration: none;
 
 div#pagination {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px 0;
+}
+.inizio{
+  color: #ff7a57;
 }
 
+.fine{
+  color: #ff7a57;
+}
+
+.precedente{
+  color: #ff7a57;
+}
+.successivo{
+  color: #ff7a57;
+}
