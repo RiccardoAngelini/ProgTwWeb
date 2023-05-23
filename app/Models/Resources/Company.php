@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model {
 
     protected $table = 'company';
-    protected $primaryKey = 'compId';
+    protected $primaryKey = 'comp_Id';
 
     public function getCompany(){
         return Company::all();
@@ -19,7 +19,8 @@ class Company extends Model {
   public function getcompanyname(){
     return Company::select('name')->get();
   }
-  public function getcompanyId($comp_Id){
-    return Company::where('comp_Id',$comp_Id)->get();
-}
+  public function getcompanyId($comp_Id) {
+      return Company::find($comp_Id);
+  }
+  
 }

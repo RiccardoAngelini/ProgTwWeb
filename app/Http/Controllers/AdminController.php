@@ -87,10 +87,10 @@ public function deleteUser(Request $request)
         return view('admin.listaaziende', ['company' => $company ]);
    }
 
-public function destroyCompany($comp_Id,Request $request) {
-    $companies = Company::where('Id',$comp_Id)->first();
-    if($companies){
-    $companies -> delete();
+public function destroyCompany($comp_Id) {
+    $company = $this->_companyModel->getcompanyId($comp_Id);
+    if ($company) {
+    $company -> delete();
      return redirect()->route('admin.listaziende')->with('success', 'Azienda cancelata con sucesso.');
     }else{
         return redirect()->route('admin.listaziende')->with('error', 'Azienda non trovata.'); 

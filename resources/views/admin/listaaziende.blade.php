@@ -9,12 +9,12 @@
     <a class="creat" href="{{route('newCompany' )}}">Crea nuova AZIENDA</a>
 </div>
 @if (Session::has('success'))
-    <div class="alert alert-success">
+<div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
         {{Session::get('success')}}
     </div>
     @endif
-    @if (Session::has('success'))
-        <div class="alert alert-danger">
+    @if (Session::has('error'))
+    <div class="alert alert-danger" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
             {{ Session::get('error')}}
         </div>
     @endif
