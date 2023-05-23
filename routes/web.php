@@ -111,7 +111,7 @@ Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])
 Route::get('staff/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
 Route::post('/staff/product/store', [StaffController::class, 'store'])->name('product.store');
 Route::get('/staff/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
-Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class. 'modificapromo'])->name('product.edit');
+Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
 // Route::put('/staff/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
 Route::delete('/staff/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
@@ -148,8 +148,10 @@ Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'
 
 //elimina utenti admin
 Route::get('/admin/listautenti',[AdminController::class ,'listaUser'])->name('admin.listautenti');
-
-
+//aiende
+Route::get('/admin/listaAziende',[AdminController::class ,'listaCompany'])->name('admin.listaziende');
+Route::get('/admin/newCompany',[AdminController::class ,'createCompany'])->name('newCompany');
+Route::get('/admin/newCompany',[AdminController::class ,'storeCompany'])->name('newCompany.store');
 require __DIR__.'/auth.php';
 
 Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');

@@ -77,6 +77,76 @@ public function deleteUser(Request $request)
         }
     return redirect()->route('admin.listautenti')->with('success', 'Utenti eliminati con successo.');
 }
+//lista aziende
+public function listaCompany()
+{          
+     $company = Company::where('comp_Id', 'name','location','image')->get();
+     return view('admin.listaaziende', ['company' => $company ]);
+
+}
+
+public function createAziende(Request $request)
+{
+     $company =  company::all();
+    return view('admin.creazioneazienda',[ 'company' => $company]);
+}
+
+  public function storeAziende(Request $request)
+  {
+     $validator = Validator::make($request -> all(),[
+
+        'name' => 'required',
+        'location' => 'required',
+        'image' => 'required',
+     ]);
+     if($validator -> passes())
+     {
+        $company = company::find($comp_Id);
+        $company ->name = $request->name;
+        $company ->location = $request->location;
+        $company ->image = $request->image;
+        $company ->save();
+       
+         return redirect('listaaziende')->with('success', 'Azienda creata con sucesso');
+     } else {
+          return redirect()->route('admin.listaaziende.create')->withErrors($validator)->withInput();
+     }
+  }
+
+ public function edit($comp_Id)
+ {
+   
+     $company = company::findOrFail($comp_Id);
+    //  $faq = Faq::where('faq_Id', $faq_Id);
+     return view('adminfaq.edit', ['company' => $company]);
+ }
+
+ public function  update($comp_Id, Request $request){
+    
+    $validator = Validator::make($request -> all(),[
+
+        'name' => 'required',
+        'location' => 'required',
+        'image' => 'required',
+    ]);
+    if($validator -> passes()){
+        $company = company::find($comp_Id);
+        $company ->name = $request->name;
+        $company ->location = $request->location;
+        $company ->image = $request->image;
+        $company ->save();
+        return redirect('listaaziende')->with('success', 'Azienda modificata con sucesso');
+    }else{
+        return redirect()->route('adminfaq.edit', $id)->withErrors($validator)->withInput();
+    }
+ }
+
+public function destroy($comp_Id, Request $request)
+  {
+     $company = company::findOrFail($id);
+     $company -> delete();
+     return redirect()->route('faq.index')->with('success', 'Azienda cancelata con sucesso.');
+ }
 }
 
 
