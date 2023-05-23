@@ -65,22 +65,22 @@
                 @endif
             </div>
             <div class="input-box">
-               {{ Form::label('password', 'Password', ['class' => 'details']) }}
-               {{ Form::password('password', ['placeholder' => 'Inserici la password']) }}
-               @if ($errors->first('password'))
+               {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
+               {{ Form::text('phone', null, ['placeholder' => 'Numero di telefono']) }}
+               @if ($errors->first('phone'))
                 <ul class="errors">
-                    @foreach ($errors->get('password') as $message)
+                    @foreach ($errors->get('phone') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
                 @endif
             </div>
             <div class="input-box">
-               {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
-               {{ Form::text('phone', null, ['placeholder' => 'Numero di telefono']) }}
-               @if ($errors->first('phone'))
+               {{ Form::label('password', 'Password', ['class' => 'details']) }}
+               {{ Form::password('password', ['placeholder' => 'Inserici la password']) }}
+               @if ($errors->first('password'))
                 <ul class="errors">
-                    @foreach ($errors->get('phone') as $message)
+                    @foreach ($errors->get('password') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
