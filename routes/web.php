@@ -148,11 +148,12 @@ Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'
 
 //elimina utenti admin
 Route::get('/admin/listautenti',[AdminController::class ,'listaUser'])->name('admin.listautenti');
-//aiende
+Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');
+//aziende
 Route::get('/admin/listaAziende',[AdminController::class ,'listaCompany'])->name('admin.listaziende');
 Route::get('/admin/newCompany',[AdminController::class ,'createCompany'])->name('newCompany');
-Route::get('/admin/listaAziende{azienda_Id}', [AdminController::class, 'modificaAzienda'])->name('company.edit');
 Route::delete('/listaAziende/{azienda_Id}', [AdminController::class, 'destroyCompany'])->name('adminCompany.destroy');
+Route::get('/listaAzienze/aizenda_Id/{azienda_Id}', [AdminController::class, 'updateCompany'])->name('adminCompany.update');
+
 require __DIR__.'/auth.php';
 
-Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');

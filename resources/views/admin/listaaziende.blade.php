@@ -39,7 +39,7 @@
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
-                        <td><a class="btn1" href="{{route('company.edit',$companies->comp_Id)}}">Modifica</a></td> 
+                        <td><a class="btn1" href="{{route('adminCompany.update',$companies->comp_Id)}}">Modifica</a></td> 
                         <td><a class="btn2" href="{{route('aziende')}}">Visualizza</a></td>
                         <td>
                             <form  action="{{route('adminCompany.destroy', $companies->comp_Id )}}"

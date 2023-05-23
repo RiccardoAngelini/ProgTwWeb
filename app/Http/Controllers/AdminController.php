@@ -102,7 +102,7 @@ public function destroyCompany($comp_Id) {
       $company =  Company::all();
      return view('admin.creazioneazienda',[ 'company' => $company]);
  }
- public function modificaAzienda($comp_Id){
+ public function updateCompany($comp_Id){
     $company=$this->_companyModel->getcompanyId($comp_Id);
     return view('admin.editCompany')
         ->with('company',$company);
