@@ -93,19 +93,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('company')->insert([
-            ['comp_Id'=>1, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon', 'promo_Id'=>7,'location'=>'','image'=>'Amazon.jpg'],
+            ['comp_Id'=>1, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'New York','image'=>'Apple.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'milano','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'san Francisco','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'california','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'Parigi','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'Parigi','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'New York','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'milano','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'san Francisco','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'california','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'Parigi','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'Parigi','image'=>'Chanel.jpg'],
+            ['comp_Id'=>13, 'name'=>'Amazon', 'promo_Id'=>7,'location'=>'miami','image'=>'Amazon.jpg'],
         ]);
 
     }
