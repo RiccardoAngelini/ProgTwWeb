@@ -130,7 +130,8 @@
   border-radius: 15px;
   background-color: white;
   margin:2rem auto;
-  width: 700px;
+  max-width: 700px;
+  width: auto;
   min-height: 300px;
   height: auto;
 }
@@ -167,6 +168,8 @@
 }
 
 .about-dev-utenti{
+  display: flex;
+  align-items: center;
   border-radius: 20px;
   height: 100%;
   width: 100%;
