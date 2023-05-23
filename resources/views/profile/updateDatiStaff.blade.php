@@ -18,7 +18,7 @@
          {{ session('error') }}
          </div>
      @endif
-         {{ Form::open(array('route' => 'newDatiStaff.store')) }}
+     {{ Form::open(array('route' => 'newDatiStaff.store')) }}
         <div class="user-details">
             
             <div class="input-box">

@@ -21,7 +21,10 @@
                 @endforeach
                 </div>
                 </div>
+                
             </div>
-        
+            @isset($aziende)
+                @include('pagination.paginator',['paginator'=>$aziende])
+                @endisset
         
 @endsection
