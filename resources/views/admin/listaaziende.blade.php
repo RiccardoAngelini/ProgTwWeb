@@ -22,7 +22,7 @@
 <div class="div-faq">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Azienda_Id</th>
                 <th>Nome Azienda</th>
                 <th>Location</th>
                 <th>Immagine</th> 
@@ -40,7 +40,7 @@
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
                         <td><a class="btn1" href="#">Modifica</a></td> 
-                        <td><a class="btn2" href="#">Visualizza</a></td>
+                        <td><a class="btn2" href="{{route('aziende')}}">Visualizza</a></td>
                         <td>
                             <form  action="{{route('adminCompany.destroy', $companies->comp_Id )}}"
                                 onclick="return confirm('Sei sicuro di voler cancellare questa Azienda ?') " method="post">
