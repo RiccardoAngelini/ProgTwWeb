@@ -137,6 +137,7 @@ class PublicController extends Controller
 
     public function faq(){
         $listafaq = Faq::all();
+        $listafaq = Faq::paginate(6);
         return view('faq2',[
             'listafaq' => $listafaq,
         ]);

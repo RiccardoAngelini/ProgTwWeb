@@ -83,6 +83,7 @@ public function deleteUser(Request $request)
         
     public function listaCompany(){          
         $company =$this->_companyModel->getCompany();
+        $company=Company::paginate(8);
         return view('admin.listaaziende', ['company' => $company ]);
    }
 
