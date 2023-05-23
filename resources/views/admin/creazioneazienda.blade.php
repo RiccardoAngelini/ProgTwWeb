@@ -28,7 +28,7 @@
                 </ul>
                 @endif
             </div>
-            <div  class="input-box">
+            <div  class="input-box0">
                 {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
                 {{ Form::file('image', [ 'id' => 'image']) }}
                 @if ($errors->first('image'))
@@ -66,6 +66,7 @@
     padding-top: 50px;
   display: flex;
   justify-content: center;
+  
 }
  .user-details{
   display: flex;
@@ -74,6 +75,10 @@
   margin: 20px 0 12px 0;
 }
  .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.input-box0{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
@@ -92,6 +97,17 @@ form .details{
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
+}
+.input-box0 input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  border:none;
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
@@ -131,9 +147,6 @@ form .details{
  }
  
  .button{
-  /*height: 45px;
-  margin: 35px 0*/
-
   height: 100%;
   width: 100%;
   border-radius: 5px;

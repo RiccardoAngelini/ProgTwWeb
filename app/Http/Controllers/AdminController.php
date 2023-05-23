@@ -6,6 +6,7 @@ use App\Http\Requests\NewProductRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
 use APP\Models\User;
+use App\Models\Resources\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,7 @@ use Symfony\Component\Console\Helper\Table;
 class AdminController extends Controller {
 
     protected $_adminModel;
+    protected $_companyModel;
     
     // public function __construct() {
     //     $this->_adminModel = new Admin;
@@ -23,7 +25,7 @@ class AdminController extends Controller {
 
     public function __construct(){
         $this->_adminModel = new Admin;
-       
+        $this->_companyModel = new Company;
         $this->middleware('can:isAdmin');
             
         }
@@ -78,74 +80,22 @@ public function deleteUser(Request $request)
     return redirect()->route('admin.listautenti')->with('success', 'Utenti eliminati con successo.');
 }
 //lista aziende
-public function listaCompany()
-{          
-     $company = Company::where('comp_Id', 'name','location','image')->get();
-     return view('admin.listaaziende', ['company' => $company ]);
+        
+    public function listaCompany(){          
+        $company =$this->_companyModel->getCompany();
+        return view('admin.listaaziende', ['company' => $company ]);
+   }
 
-}
+public function destroyCompany($comp_Id, Request $request) {
+    $companies = Company::findOrFail($comp_Id);
+    $companies -> delete();
+     return redirect()->route('admin.listaziende')->with('success', 'Azienda cancelata con sucesso.');
+ }
 
-public function createAziende(Request $request)
-{
-     $company =  company::all();
-    return view('admin.creazioneazienda',[ 'company' => $company]);
-}
-
-  public function storeAziende(Request $request)
-  {
-     $validator = Validator::make($request -> all(),[
-
-        'name' => 'required',
-        'location' => 'required',
-        'image' => 'required',
-     ]);
-     if($validator -> passes())
-     {
-        $company = company::find($comp_Id);
-        $company ->name = $request->name;
-        $company ->location = $request->location;
-        $company ->image = $request->image;
-        $company ->save();
-       
-         return redirect('listaaziende')->with('success', 'Azienda creata con sucesso');
-     } else {
-          return redirect()->route('admin.listaaziende.create')->withErrors($validator)->withInput();
-     }
-  }
-
- public function edit($comp_Id)
+ public function createCompany(Request $request)
  {
-   
-     $company = company::findOrFail($comp_Id);
-    //  $faq = Faq::where('faq_Id', $faq_Id);
-     return view('adminfaq.edit', ['company' => $company]);
- }
-
- public function  update($comp_Id, Request $request){
-    
-    $validator = Validator::make($request -> all(),[
-
-        'name' => 'required',
-        'location' => 'required',
-        'image' => 'required',
-    ]);
-    if($validator -> passes()){
-        $company = company::find($comp_Id);
-        $company ->name = $request->name;
-        $company ->location = $request->location;
-        $company ->image = $request->image;
-        $company ->save();
-        return redirect('listaaziende')->with('success', 'Azienda modificata con sucesso');
-    }else{
-        return redirect()->route('adminfaq.edit', $id)->withErrors($validator)->withInput();
-    }
- }
-
-public function destroy($comp_Id, Request $request)
-  {
-     $company = company::findOrFail($id);
-     $company -> delete();
-     return redirect()->route('faq.index')->with('success', 'Azienda cancelata con sucesso.');
+      $company =  Company::all();
+     return view('admin.creazioneazienda',[ 'company' => $company]);
  }
 }
 
