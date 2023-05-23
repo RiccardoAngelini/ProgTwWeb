@@ -12,7 +12,16 @@
             $remainingTime = $expiration->diff(Carbon::now());
             $remainingDays = $remainingTime->format('%a giorni rimasti');
         }
-    
+        
+    $class = '';
+    $currentRoute = Route::currentRouteName();
+
+    if ($currentRoute === 'catalogo' || $currentRoute === 'Home'|| $currentRoute === 'catalogo2'||$currentRoute==='catalogo3') {
+        $class = 'scadenza';
+    } elseif ($currentRoute === 'offerta') {
+        $class = 'scadenza2';
+    }
+
 @endphp
 
-<div class="scadenza">{{ $remainingDays }}</div>
+<div class="{{ $class }}">{{ $remainingDays }}</div>

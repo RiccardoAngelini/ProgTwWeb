@@ -19,7 +19,7 @@
         <div class="prezzo-off">Prezzo: {{$sel_promId->price}}  &#8364;
         </div>
         <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
-      @include('helpers/promotionCoupon')
+      @include('helpers/promotionCoupon',['expirationDate' => $sel_promId->date_end])
          <div style=" clear:right"></div>
     </div>
    
