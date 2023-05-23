@@ -6,7 +6,7 @@
      <table><h1 style="text-align: center; font-size:50px;">LISTA AZIENDE</h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
-    <a class="creat" href="{{route('admin.newCompany')}}">Crea nuova AZIENDA</a>
+    <a class="creat" href="#">Crea nuova AZIENDA</a>
 </div>
 @if (Session::has('success'))
     <div class="alert alert-success">
@@ -22,18 +22,18 @@
 <div class="div-faq">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nome Azienda</th>
                 <th>Location</th>
                 <th>Immagine</th> 
-                <th style="width: 40px">Options</th>
+                <th style="width: 40px">modifica</th>
+                <th style="width: 40px">visualizza</th>
+                <th style="width: 40px">elimina</th>
             </tr>
         </thead>
         <tbody>
         @if ($company -> isNotEmpty())
                 @foreach ($company  as $companies)
                     <tr>
-                        <td>{{$companies-> comp_Id}}</td>
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
@@ -50,14 +50,9 @@
                         
                     </tr>  
                 @endforeach 
-            @else
-                    <tr>
-                        <td colspan="6">Inserimento non trovato</td>
-                    </tr>
             @endif
         </tbody>
     </table>
- <div class="pag">{{$company -> withQueryString()->links('pagination.paginator')}}</div>
 </div>
 
 <script>

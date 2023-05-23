@@ -6,6 +6,7 @@ use App\Http\Requests\NewProductRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
 use APP\Models\User;
+use App\Models\Resources\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,7 @@ use Symfony\Component\Console\Helper\Table;
 class AdminController extends Controller {
 
     protected $_adminModel;
+    protected $_companyModel;
     
     // public function __construct() {
     //     $this->_adminModel = new Admin;
@@ -23,7 +25,7 @@ class AdminController extends Controller {
 
     public function __construct(){
         $this->_adminModel = new Admin;
-       
+        $this->_companyModel = new Company;
         $this->middleware('can:isAdmin');
             
         }
@@ -78,13 +80,12 @@ public function deleteUser(Request $request)
     return redirect()->route('admin.listautenti')->with('success', 'Utenti eliminati con successo.');
 }
 //lista aziende
-public function listaCompany()
-{          
-     $company = Company::where('comp_Id', 'name','location','image')->get();
-     return view('admin.listaaziende', ['company' => $company ]);
-
-}
-
+        
+    public function listaCompany(){          
+        $company =$this->_companyModel->getCompany();
+        return view('admin.listaaziende', ['company' => $company ]);
+   }
+/*
 public function createAziende(Request $request)
 {
      $company =  company::all();
@@ -146,7 +147,7 @@ public function destroy($comp_Id, Request $request)
      $company = company::findOrFail($id);
      $company -> delete();
      return redirect()->route('faq.index')->with('success', 'Azienda cancelata con sucesso.');
- }
+ }*/
 }
 
 
