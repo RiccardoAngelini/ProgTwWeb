@@ -66,7 +66,9 @@
                 <div class="cont-data">
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($promotion->date_end)) }}
+               
                     </div>
+                   @include('helpers/remainingDays',['expirationDate' => $promotion->date_end])
                     <div class="nome">
                     {{$promotion->name }}
                     </div>
@@ -97,6 +99,7 @@
 <div class="cont-data">
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($prom_by_name->date_end)) }}
+                   {{$prom_by_name->date_end}}
                     </div>
                     <div class="nome">
                     {{$prom_by_name->name}}
@@ -157,6 +160,7 @@
 <div class="cont-data">
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($name->date_end)) }}
+                
                     </div>
                     <div class="nome">
                     {{$name->name }}

@@ -7,6 +7,7 @@
 </div>
 
 <div class="descrizione"> 
+
     <div><h3><u>Descrizione</u></h3></div><br>
 {!!$sel_promId->desc!!}
 </div>

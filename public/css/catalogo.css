@@ -90,7 +90,7 @@ input.button-reset, input.button-submit {
         width: 100%;
         background-color: white;
         text-align: center;
-        height: 450px;
+        height: 500px;
         width: 270px;
         float: left;
         margin: 30px;
@@ -154,7 +154,7 @@ input.button-reset, input.button-submit {
     width: 100%;
     background-color: #393c44;
     color: white;
-    height: 160px;
+    height: 200px;
     border-radius: 15px;
     margin-top: 10px;
     text-align: center;
@@ -225,4 +225,10 @@ input.button-reset, input.button-submit {
   .lente:hover{
     background-color: #edf0f4;
      color: #ff7a57;
+  }
+
+  .scadenza{
+    font-weight: bold;
+    padding-top: 10px;
+    color: red;
   }
