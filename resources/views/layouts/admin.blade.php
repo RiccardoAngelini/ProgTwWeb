@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{asset('css/staff.css')}}">
     <link rel="stylesheet" href="{{asset('css/formaziende.css')}}">
     <link rel="stylesheet" href="{{asset('css/listaaziende.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_faq2.css')}}">
+
 
     
 

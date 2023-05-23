@@ -41,7 +41,7 @@
                         <td>
                             <form  action="{{route('adminfaq.destroy', $faqs->id )}}"
                                 onclick="return confirm('Sei sicuro di voler cancellare questa FAQ ?') " method="post">
-                                <button class="btn3" type="submit">Cancelli</button>
+                                <button class="btn3" type="submit">Elimina</button>
                             @csrf
                             @method('delete')
                         </form>
@@ -66,84 +66,5 @@
         }
     }
 </script>
-
-<style>
-
-    body {
-        font-family: Arial, sans-serif;
-    }
-
-    .creat {
-        background-color: #2854e3;
-        border: none;
-        color: white;
-        padding: 5px 20px; 
-        text-align: center;
-        text-decoration: none;
-        font-size: 17px;
-        margin: 0.5px 0px;
-        cursor: pointer;
-        style="margin-left: 17%;
-    }
-    .pag{
-        text-align: center; 
-        margin-top: 1em;
-        padding-bottom: 5em;
-    }
-    table {
-        width: 80%;
-        border-collapse: collapse;
-        margin-left: 16%;
-        margin-top: 3em;
-        
-    }
-    table th, table td {
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-    table th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-    }
-    .btn1 {
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        padding: 5px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 17px;
-        margin: 0.5px 0px;
-        cursor: pointer;
-        border-radius: 1.5em;
-    }
-    .btn2 {
-        background-color: #008CBA;
-        border: none;
-        color: white;
-        padding: 5px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 17px;
-        margin: 0.5px 0px;
-        cursor: pointer;
-        border-radius: 1.5em;
-    }
-    .btn3 {
-        background-color: #f44336;
-        border: none;
-        color: white;
-        padding: 5px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 17px;
-        margin: 0.5px 0px;
-        cursor: pointer;
-        border-radius: 1.5em;
-    }
-</style>
     
 @endsection
