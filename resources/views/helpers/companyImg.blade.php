@@ -2,9 +2,9 @@
     $class = '';
     $currentRoute = Route::currentRouteName();
 
-    if ($currentRoute === 'aziende') {
+    if ($currentRoute === 'aziende'||$currentRoute==='Home') {
         $class = 'img';
-    } elseif ($currentRoute === 'offerta') {
+    } elseif ($currentRoute === 'azienda') {
         $class = 'img-azienda';
     }
 @endphp
