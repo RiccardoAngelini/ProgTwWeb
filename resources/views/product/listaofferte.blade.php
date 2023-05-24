@@ -31,9 +31,9 @@
                 <th>Azienda</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
-                <th style="width: 40px">Edit</th>
-                <th style="width: 40px">Show</th>
-                <th style="width: 40px">Delete</th>
+                <th style="width: 40px">Modifica</th>
+                <th style="width: 40px">Visualizza</th>
+                <th style="width: 40px">Elimina</th>
 
             </tr>
         </thead>

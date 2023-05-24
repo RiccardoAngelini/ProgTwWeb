@@ -30,7 +30,7 @@ class UserController extends Controller {
         return view('user');
     }
 
-    public function showCoupon($promo_Id, $coupon_Id)
+   /* public function showCoupon($promo_Id, $coupon_Id)
     {
 
         $promo_byid=$this->_promotionModel->getPromotionId($promo_Id);
@@ -43,7 +43,7 @@ class UserController extends Controller {
         ->with('promo_byid', $promo_byid)
             ->with('scelta_coupon', $scelta_coupon);
     }
-    
+    */
     public function changeUsername(){
         return view('users.updateUsername');
     }

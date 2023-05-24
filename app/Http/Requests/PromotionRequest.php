@@ -31,7 +31,6 @@ class PromotionRequest extends FormRequest
             'date_end' => 'required',
             'discountPerc' => 'required',
             'desc' => 'required',
-            'categoria' => 'required'
         ];
     }
 }

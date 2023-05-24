@@ -401,3 +401,24 @@ div#pagination {
 .successivo{
   color: #ff7a57;
 }
+
+
+.button-back{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.button-back a{
+background-color: #ff7a57;
+}
+.button-back2{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.button-back2 a{
+background-color: #ff7a57;
+}

@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('content')
-<div class="content1-registrazione">                                                                                                
+<div class="faq-header"></div>
+<div class="button-back2">
+<a class="btn2" href="{{route('admin.listaziende')}}">Indietro</a></div>
+<div class="content1-registrazione"> 
+                                                                                                   
    <div class="container">
       <h2>Inserisci Azienda</h2>
       <div class="content-registrazione">

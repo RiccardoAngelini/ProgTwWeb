@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('admin.listaziende')}}">Indietro</a></div>
+<div class="button-back2">
+<a class="btn2" href="{{route('admin.listaziende')}}">Indietro</a></div>
 <div class="title" style="margin-top: 50px;">
     <table><h1 style="text-align: center; font-size:50px;">Modifica Azienda</h1>
 </div>
