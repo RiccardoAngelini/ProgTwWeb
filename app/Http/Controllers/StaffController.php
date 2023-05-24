@@ -99,11 +99,6 @@ class StaffController extends Controller {
         return redirect()->route('product.index')->with('Promozione modificata con successo.');
     }
 
-    public function visualizapromo($promo_Id){
-        $promotion = Promotion::where('promo_Id', $promo_Id)->first();
-        return view('product.visualizaofferta')->with('promotion',$promotion);
-    }
-
     public function delete(Promotion $promotion){
         // dd($promotion);
         $promotion -> delete();
