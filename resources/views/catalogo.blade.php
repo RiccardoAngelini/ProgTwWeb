@@ -53,25 +53,18 @@
            
                 <div class="coupon">
                     
-                    @foreach($promotions as $promotion)
-                   
-            <div class="coupon1">
-            <div class="nome-prom">
-                {{$promotion->price}} &#8364;<br>
-                Sconto del {{$promotion->discountPerc}} &#37;
-            </div>
-            <div class="cont-img">
-                    @include('helpers/promotionImg', ['imgFile' => $promotion->image])
-            </div>
-            <script>
-                $(document).ready(function() {
-                                // seleziono l'elemento in base a la sua classe
-                                var container = $('.cont-img');
-                                var image = container.find('img');
-                                image.animate({ opacity: 1, width: '300px' } ,10000); //applico l'animazione
-                            });
-            </script>
+                @foreach($promotions as $promotion)
+    <div class="coupon1">
+        <div class="nome-prom">
+            {{$promotion->price}} &#8364;<br>
+            Sconto del {{$promotion->discountPerc}} &#37;
+        </div>
 
+        <div class="cont-img">
+            <div class="cont-img-catalogo" id="cont-img-catalogo-{{$promotion->promo_Id}}">
+                @include('helpers/promotionImg', ['imgFile' => $promotion->image])
+            </div>
+        </div>
                 <div class="cont-data">
                     <div class="data">
                    Scade il {{ DateTime::createFromFormat('d/m/Y', $promotion->date_end)->format('d/m/Y') }}
