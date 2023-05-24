@@ -11,7 +11,7 @@
              <img src="images/1.jpeg" alt="#1" class="img-slide">
            </li>
            <li class="slide">
-             <img src="images/2.jpeg" alt="Nature Image #2" class="img-slide">
+             <img src="images/2.png" alt="Nature Image #2" class="img-slide">
            </li>
          </ul>
        </div>

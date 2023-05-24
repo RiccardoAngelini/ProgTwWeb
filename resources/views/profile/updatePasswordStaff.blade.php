@@ -4,6 +4,7 @@
 
 @section('content')
 
+<a class="btn2" href="{{route('staff')}}" >Back</a>
 <div class="content1-registrazione">
    <div class="container">
    
@@ -54,4 +55,21 @@
    </div>
 </div>
 
+<style>
+      .btn2 {
+        background-color: #ff7a57;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 0.3em;
+        margin-top: 1em;
+        margin-left:50%;
+    }
+</style>
 @endsection

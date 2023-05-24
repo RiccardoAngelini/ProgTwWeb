@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffController;
-
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,28 +36,17 @@ Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende')
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
 //Acesso admin, vincolli di acesso non ancore definito
-
  Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
  Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create');
  Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store');
- Route::get('faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
+ Route::get('/faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
  Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update');
- Route::get('/show/{id}', [FaqController::class, 'show'])->name('show');
+ Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show');
  Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
 
 
 
 //ROUTE PROFILO STAFF
-use App\Http\Controllers\ProfileController;
-
-// Route::get('/profiles', [ProfileController::class, 'index'])->name('profiles.index');
-// Route::get('/profiles/create', [ProfileController::class, 'create'])->name('profiles.create');
-// Route::post('/profiles', [ProfileController::class, 'store'])->name('profiles.store');
-// Route::get('/profiles/{profile}', [ProfileController::class, 'show'])->name('profiles.show');
-// Route::get('/profiles/{profile}/edit', [ProfileController::class, 'edit'])->name('profiles.edit');
-// Route::put('/profiles/{profile}', [ProfileController::class, 'update'])->name('profiles.update');
-// Route::delete('/profiles/{profile}', [ProfileController::class, 'destroy'])->name('profiles.destroy');
-
 
 Route::middleware('auth')->group(function(){
         Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
@@ -105,28 +94,22 @@ Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'sho
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
+Route::prefix('staff')->group(function(){
+        Route::get('/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
+        Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
+        Route::get('/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
+        Route::post('/product/store', [StaffController::class, 'store'])->name('product.store');
+        Route::get('/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
+        Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
+        Route::put('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
+        Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
-Route::get('/staff/product/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
-Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
-Route::get('staff/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
-Route::post('/staff/product/store', [StaffController::class, 'store'])->name('product.store');
-Route::get('/staff/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
-Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class. 'modificapromo'])->name('product.edit');
-// Route::put('/staff/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
-Route::delete('/staff/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
+        Route::get('/updatePsw', [StaffController::class, 'changePasswordStaff'])->name('newPasswordStaff');
+        Route::POST('/updatePsw', [StaffController::class, 'storePasswordStaff'])->name('newPasswordStaff.store');
+        Route::get('/updateDati', [StaffController::class, 'changeDatiStaff'])->name('newDatiStaff');
+        Route::POST('/updateDati', [StaffController::class, 'storeDatiStaff'])->name('newDatiStaff.store');   
 
-Route::get('/staff/updatePsw', [StaffController::class, 'changePasswordStaff'])
-->name('newPasswordStaff');
-
-Route::POST('/staff/updatePsw', [StaffController::class, 'storePasswordStaff'])
-->name('newPasswordStaff.store');
-
-Route::get('/staff/updateDati', [StaffController::class, 'changeDatiStaff'])
-->name('newDatiStaff');
-
-Route::POST('/staff/updateDati', [StaffController::class, 'storeDatiStaff'])
-->name('newDatiStaff.store');   
-
+});
 
 
 

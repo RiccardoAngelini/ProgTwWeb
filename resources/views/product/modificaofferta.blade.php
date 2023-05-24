@@ -1,10 +1,14 @@
 @extends('layouts.staff')
 @section('content')
+
+    <a class="btn2" href="{{route('product.show', [$promotion->promo_Id])}}" style="text-align: center; margin-left:50%;">Back</a>
+
     <h1 >Modifica promozione</h1>
 
     <div class="container">
-        <form action="{{route('product.store')}}" method="POST">
-            @csrf
+        <form action="{{route('product.update', [$promotion->promo_Id])}}" method="POST">
+            @method('put')
+            @csrf 
             <div class="row">
                 <div class="col-25">
                     <label for="fname"> Nome prodotto: </label>
@@ -29,7 +33,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="categoria">Categoria</label>
+                    <label for="categoria">Azienda : </label>
                 </div>
                 <div class="col-75">
                     <select id="categoria"  name="categoria">
@@ -44,10 +48,10 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="data">Data Inizio Promozione: </label>
+                    <label for="data">Data Inizio Promozione: </label> 
+                    <input type="date" id="data1" value="{{$promotion->date_start}}" name="data1" placeholder="Data Inizio Promozione">
                 </div>
                 <div class="col-75">
-                    <input type="text" id="data1" value="{{$promotion->date_start}}" name="data1" placeholder="Data Inizio Promozione">
                     @error('date_start')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -56,9 +60,9 @@
             <div class="row">
                 <div class="col-25">
                     <label for="data">Data Fine Promozione: </label>
+                    <input type="date" id="data2" value="{{$promotion->date_end}}" name="data2" placeholder="Data Fine Promozione">
                 </div>
                 <div class="col-75">
-                    <input type="text" id="data2" value="{{$promotion->date_end}}" name="data2" placeholder="Data Fine Promozione">
                     @error('date_end')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -69,7 +73,7 @@
                     <label for="data">Sconto Promozione: </label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="sconto" value="{{$promotion->discounetPerc}}" name="sconto" placeholder="Inserisci lo sconto Promozione">
+                    <input type="text" id="sconto" value="{{$promotion->discountPerc}}" name="sconto" placeholder="Inserisci lo sconto Promozione">
                     @error('discountPerc')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
@@ -80,15 +84,15 @@
                     <label for="desc">Descrizione</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="desc" name="desc" value="{{$promotion->desc}}" placeholder="Descrizione del prodotto" style="height:200px"></textarea>
+                    <textarea id="desc" name="desc" placeholder="Descrizione del prodotto" style="height:200px">{{$promotion->desc}}</textarea>
                     @error('desc')
                         <span role="alert"> <strong>{{$message}}</strong></span>
                     @enderror
                 </div>
             </div>
             <div class="row1">
-                {{-- <a class="btn11" href="">Salva</a> --}}
-                <button type="submit">Salva</button>
+                {{-- <a  href="">Salva</a> --}}
+                <button class="btn11" type="submit">Salva</button>
             </div>
         </form>
     </div>
@@ -117,7 +121,7 @@
           display: inline-block;
         }
         .btn11 {
-        background-color: #4caf50;
+        background-color: #ff7a57;
         border: none;
         color: white;
         padding: 5px 20px;
@@ -128,7 +132,21 @@
         margin: 0.5px 0px;
         cursor: pointer;
         border-radius: 0.3em;
-        width: 92%
+        width: 100%
+    }
+    .btn2 {
+        background-color: #edb707;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 0.3em;
+        margin-top: 1em;
     }
         a[type=btn11] {
           background-color: #deba29;
@@ -155,22 +173,22 @@
         
         .col-25 {
           float: left;
-          width: 45%;
+          width: 55%;
           margin-top: 6px;
-          margin-left: 3em;
+          margin-left: 1em;
         }
         
         .col-75 {
           float: left;
-          width: 85%;
+          width: 100%;
           margin-top: 6px;
-          margin-left: 3em;
+          margin-left: 1em;
         }
         
         /* Clear floats after the columns */
         .row1{
               margin-top: 1em;
-              margin-left: 3em;
+              margin-left: 1em;
               
         }
         .row:after {

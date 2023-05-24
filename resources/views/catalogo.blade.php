@@ -62,7 +62,16 @@
             </div>
             <div class="cont-img">
                     @include('helpers/promotionImg', ['imgFile' => $promotion->image])
-                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                                // seleziono l'elemento in base a la sua classe
+                                var container = $('.cont-img');
+                                var image = container.find('img');
+                                image.animate({ opacity: 1, width: '300px' } ,10000); //applico l'animazione
+                            });
+            </script>
+
                 <div class="cont-data">
                     <div class="data">
                    Scade il {{ date('d/m/Y', strtotime($promotion->date_end)) }}

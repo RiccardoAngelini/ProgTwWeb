@@ -1,5 +1,7 @@
 @extends('layouts.staff')
 @section('content')
+
+<a class="btn2" href="{{route('product.index')}}">Back</a>
     <h1 >Agggiungi una nuova promozione</h1>
 
     <div class="container">
@@ -33,9 +35,9 @@
                 </div>
                 <div class="col-75">
                     <select id="categoria" name="categoria">
-                        <option value="australia">Australia</option>
-                        <option value="canada">Canada</option>
-                        <option value="usa">USA</option>
+                        <option value="">cat1</option>
+                        <option value="">cat2</option>
+                        <option value="">cat3</option>
                     </select>
                     @error('comp_name')
                         <span role="alert"> <strong>{{$message}}</strong></span>
@@ -88,7 +90,7 @@
             </div>
             <div class="row1">
                 {{-- <a class="btn11" href="">Salva</a> --}}
-                <button type="submit">Aguingi</button>
+                <button class="btn11" type="submit">Aguingi</button>
             </div>
         </form>
     </div>
@@ -111,13 +113,8 @@
           border-radius: 4px;
           resize: vertical;
         }
-        
-        label {
-          padding: 12px 12px 12px 0;
-          display: inline-block;
-        }
-        .btn11 {
-        background-color: #4caf50;
+        .btn2 {
+        background-color: #edb707;
         border: none;
         color: white;
         padding: 5px 20px;
@@ -128,7 +125,27 @@
         margin: 0.5px 0px;
         cursor: pointer;
         border-radius: 0.3em;
-        width: 92%
+        margin-top: 1em;
+        margin-left:50%;
+    }
+        
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        .btn11 {
+        background-color:  #ff7a57;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 0.3em;
+        width: 100%
     }
         a[type=btn11] {
           background-color: #deba29;
@@ -155,16 +172,16 @@
         
         .col-25 {
           float: left;
-          width: 45%;
+          width: 55%;
           margin-top: 6px;
-          margin-left: 3em;
+          margin-left: 1em;
         }
         
         .col-75 {
           float: left;
-          width: 85%;
+          width: 100%;
           margin-top: 6px;
-          margin-left: 3em;
+          margin-left: 1em;
         }
         
         /* Clear floats after the columns */

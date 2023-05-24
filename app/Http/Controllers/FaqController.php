@@ -72,7 +72,7 @@ class FaqController extends Controller
      public function edit($id)
      {
        
-         $faq = Faq::findOrFail($id);
+         $faq = Faq::find($id);
         //  $faq = Faq::where('faq_Id', $faq_Id);
          return view('adminfaq.edit', ['faq' => $faq]);
      }

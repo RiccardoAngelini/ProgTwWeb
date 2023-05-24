@@ -4,7 +4,7 @@
 @isset($promotion)
 <div class="cont-off">
     <div class="cont-img-off">
-
+      <a class="btn2" href="{{route('product.index', [$promotion->promo_Id])}}" >Back</a>
 
         <div class="wrapper">
             <div class="product-img" style="height=300; width=327">
@@ -62,7 +62,21 @@
     margin: px;
     margin-left: 10em;
   }
-  
+  .btn2 {
+        background-color: #ff7a57;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 0.5px 0px;
+        cursor: pointer;
+        border-radius: 0.3em;
+        margin-top: 1em;
+        margin-left:50%;
+    }
   .product-img {
     float: left;
     height: 420px;
@@ -123,7 +137,7 @@
   }
 
   .bt{
-    background-color: #4caf50;
+    background-color: #ff7a57;
         border: none;
         color: white;
         padding: 15px 20px;

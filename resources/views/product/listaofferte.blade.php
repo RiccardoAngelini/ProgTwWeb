@@ -28,12 +28,13 @@
                 <th>Prezzo</th>
                 <th>Sconto</th>
                 <th>Imagine</th>
-                <th>Categoria</th>
+                <th>Azienda</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
-                {{-- <th>Azienda</th> --}}
+                
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>
+                {{-- <th style="width: 40px">Modifica</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -56,9 +57,9 @@
                                 <button class="btn3" type="submit">Cancelli</button>
                                 @method('DELETE')
                                 @csrf 
-                                 
                             </form>
-                        </td>  
+                        </td>
+                        {{-- <td><a class="btn1" href="{{route('product.edit',[$promotions->promo_Id])}}">Modifica</a></td>   --}}
                     </tr>
                 @endforeach
                 @else
