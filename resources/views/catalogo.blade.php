@@ -65,7 +65,7 @@
                 </div>
                 <div class="cont-data">
                     <div class="data">
-                   Scade il {{ date('d/m/Y', strtotime($promotion->date_end)) }}
+                   Scade il {{ DateTime::createFromFormat('d/m/Y', $promotion->date_end)->format('d/m/Y') }}
                     </div>
                    @include('helpers/remainingDays',['expirationDate' => $promotion->date_end])
                     <div class="nome">
@@ -97,7 +97,7 @@
 </div>
 <div class="cont-data">
                     <div class="data">
-                   Scade il {{ date('d/m/Y', strtotime($prom_by_name->date_end)) }}
+                   Scade il {{ DateTime::createFromFormat('d/m/Y', $prom_by_name->date_end)->format('d/m/Y') }}
                     </div>
                     @include('helpers/remainingDays',['expirationDate' => $prom_by_name->date_end])
                     <div class="nome">
@@ -129,7 +129,7 @@
 </div>
 <div class="cont-data">
                     <div class="data">
-                   Scade il {{ date('d/m/Y', strtotime($prom_by_comp->date_end)) }}
+                   Scade il {{ DateTime::createFromFormat('d/m/Y', $prom_by_comp->date_start)->format('d/m/Y') }}
                     </div>
                     @include('helpers/remainingDays',['expirationDate' => $prom_by_comp->date_end])
                     <div class="nome">
@@ -159,7 +159,7 @@
 </div>
 <div class="cont-data">
                     <div class="data">
-                   Scade il {{ date('d/m/Y', strtotime($name->date_end)) }}
+                   Scade il {{ DateTime::createFromFormat('d/m/Y', $name->date_start)->format('d/m/Y') }}
                 
                     </div>
                     @include('helpers/remainingDays',['expirationDate' => $name->date_end])

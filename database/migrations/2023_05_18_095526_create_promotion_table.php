@@ -17,8 +17,8 @@ class CreatePromotionTable extends Migration
             $table->string('name');
             $table->bigIncrements('promo_Id');
             $table->string('desc',600);
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->string('date_start');
+            $table->string('date_end');
             $table->Integer('price');
             $table->integer('discountPerc');
             $table->text('image')->nullable();

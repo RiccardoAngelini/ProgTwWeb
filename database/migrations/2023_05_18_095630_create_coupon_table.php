@@ -15,8 +15,8 @@ class CreateCouponTable extends Migration
     {
         Schema::create('coupon', function (Blueprint $table) {
             $table->bigIncrements('coupon_Id');
-            $table->date('date_emiss'); //date emission
-            $table->date('date_exp');  //data expiration 
+            $table->string('date_emiss'); //date emission
+            $table->string('date_exp');  //data expiration 
             $table->string('code')->unique()->default(Str::random(15));   
         });
     }

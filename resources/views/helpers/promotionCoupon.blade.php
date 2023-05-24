@@ -3,9 +3,6 @@
 
 
 @php
-    $formatDays=date('d/m/Y', strtotime($expirationDate));
-    $expirationDate=$formatDays;
-
     use Carbon\Carbon;
 
     $expiration = Carbon::createFromFormat('d/m/Y', $expirationDate);

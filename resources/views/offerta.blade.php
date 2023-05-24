@@ -15,7 +15,7 @@
         <div class="nome-off">{{$sel_promId->name}}
         </div>
         <br>
-        <div class="prezzo-off">Scade il {{ date('d/m/Y', strtotime($sel_promId->date_end))}} </div>
+        <div class="prezzo-off">Scade il {{ DateTime::createFromFormat('d/m/Y', $sel_promId->date_end)->format('d/m/Y') }} </div>
         <div class="prezzo-off">Prezzo: {{$sel_promId->price}}  &#8364;
         </div>
         <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
