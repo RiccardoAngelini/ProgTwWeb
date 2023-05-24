@@ -105,6 +105,41 @@ public function destroyCompany($comp_Id) {
       $company =  Company::all();
      return view('admin.creazioneazienda',[ 'company' => $company]);
  }
+
+ public function storeCompany(Request $request){
+
+    $validator = Validator::make($request -> all(),[
+
+             'name' => 'required',
+             'location' => 'required',
+             'image' => 'required',
+         ]);
+         if($validator -> passes())
+         {
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = $image->getClientOriginalName();
+            } else {
+                $imageName = NULL;
+            }
+              $company = new Company();
+              $company ->name = $request->name;
+              $company ->location = $request->location;
+              $company ->image = $request->image;
+              $company ->save();
+
+              if (!is_null($imageName)) {
+                $destinationPath = public_path() . '/images/promotions';
+                $image->move($destinationPath, $imageName);
+            };
+
+
+              return redirect()->route('admin.listaziende')->with('status', 'Azienda creata con sucesso!');
+            }else{
+                return redirect()->route('newCompany')->withErrors($validator)->withInput();
+            }
+      }
+
  public function editCompany($comp_Id){
     $company=$this->_companyModel->getcompanyId($comp_Id);
     return view('admin.editCompany')

@@ -4,7 +4,7 @@
    <div class="container">
       <h2>Inserisci Azienda</h2>
       <div class="content-registrazione">
-         {{ Form::open(array('route' => 'register')) }}
+         {{ Form::open(array('route' => 'newCompany.store')) }}
          <div class="user-details">
             <div class="input-box">
                {{ Form::label('name', 'Nome azienda', ['class' => 'details']) }}

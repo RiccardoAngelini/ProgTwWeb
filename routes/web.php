@@ -152,6 +152,8 @@ Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])
 //aziende
 Route::get('/admin/listaAziende',[AdminController::class ,'listaCompany'])->name('admin.listaziende');
 Route::get('/admin/newCompany',[AdminController::class ,'createCompany'])->name('newCompany');
+Route::post('/admin/newCompany', [AdminController::class, 'storeCompany'])->name('newCompany.store');
+
 Route::delete('/listaAziende/{azienda_Id}', [AdminController::class, 'destroyCompany'])->name('adminCompany.destroy');
 Route::get('/listaAzienze/edit/{azienda_Id}', [AdminController::class, 'editCompany'])->name('adminCompany.edit');
 Route::post('/listaAzienze/update/{azienda_Id}', [AdminController::class, 'updateCompany'])->name('adminCompany.update');
