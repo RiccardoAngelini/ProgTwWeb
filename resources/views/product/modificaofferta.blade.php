@@ -1,14 +1,14 @@
 @extends('layouts.staff')
 @section('content')
 
-    <a class="btn2" href="{{route('product.index', [$promotion->promo_Id])}}" style="text-align: center; margin-left:50%;">Back</a>
+    <a class="btn2" href="{{route('product.show', [$promotion->promo_Id])}}" style="text-align: center; margin-left:50%;">Back</a>
 
     <h1 >Modifica promozione</h1>
 
 <div class="container">
-    {{ Form::open(['route' => ['product.update', $promotion->promo_Id], 'role' => 'form']) }}
+    {{ Form::open('route' => ['product.update', $promotion->promo_Id], 'role' => 'form']) }}
     {{ csrf_field() }}
-    
+    <div class="user-details">
     <div class="input-box">
         {{ Form::label('name', 'Nome Prodotto :') }}
         {{ Form::text('name', old('name', $promotion->name), ['id' => 'name']) }}
@@ -39,16 +39,16 @@
                 </ul>  
     </div>
 
-      <div class="input-box">
-          {{ Form::label('date_start', 'Data Inizio Promozione:') }}
-          {{ Form::date('date_start', old('date_start', $promotion->date_start), ['id' => 'date_start']) }}
-          <ul class="errors">
-              @foreach ($errors->get('date_start') as $message)
-                  <li>{{ $message }}</li>
-              @endforeach
-          </ul>  
-     </div>
-    <div class="input-box1">
+    <div class="input-box">
+        {{ Form::label('date_start', 'Data Inizio Promozione:') }}
+        {{ Form::date('date_start', old('date_start', $promotion->date_start), ['id' => 'date_start']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('date_start') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+    <div class="input-box">
         {{ Form::label('date_end', 'Data Fine Promozione:') }}
         {{ Form::date('date_end', old('date_end', $promotion->date_end), ['id' => 'date_end']) }}
         <ul class="errors">
@@ -68,7 +68,7 @@
                 </ul>  
     </div>
 
-    <div class="input-box">
+    <div class="row1">
         {{ Form::label('desc', 'Descrizione :') }}
         {{ Form::textarea('desc', old('desc', $promotion->desc), ['id' => 'desc']) }}
         <ul class="errors">
@@ -78,9 +78,9 @@
                 </ul>  
     </div>
 
-            <div class="row1">
                 {{ Form::submit('Salva',['class' => 'button-login']) }}
-            </div>
+</div>
+          
     {{ Form::close() }}
 </div>
 
@@ -150,41 +150,44 @@
         }
         
         .container {
-          border-radius: 2px;
+          border-radius: 5px;
           background-color: #f2f2f2;
-          padding: 20px;
-          margin-left: 35%;
+          padding: 40px;
+          margin-left: 30%;
           margin-top:3em;
           margin-bottom: 2em;
         }
         
-        .input-box {
+        .col-25 {
+          float: left;
+          width: 55%;
+          margin-top: 6px;
+          margin-left: 1em;
+        }
+        
+        .col-75 {
           float: left;
           width: 100%;
           margin-top: 6px;
           margin-left: 1em;
         }
-        .input-box1 {
-          float: left;
-          width: 100%;
-          margin-top: 6px;
-          margin-left: 1em;
-        }
+        
+        /* Clear floats after the columns */
         .row1{
               margin-top: 1em;
               margin-left: 1em;
               
         }
-        .row1:after {
+        .row:after {
           content: "";
           display: table;
           clear: both;
         
-        } 
+        }
         
         /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 600px) {
-          .input-box, input[type=submit] {
+          .col-25, .col-75, input[type=submit] {
             width: 100%;
             margin-top: 0;
           }

@@ -23,7 +23,6 @@ class CreatePromotionTable extends Migration
             $table->integer('discountPerc');
             $table->text('image')->nullable();
             $table->string('comp_name');
-            $table->bigInteger('coupon_id')->index();
             $table->timestamps();
         });
     }

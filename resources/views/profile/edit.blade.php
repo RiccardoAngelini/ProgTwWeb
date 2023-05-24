@@ -4,7 +4,7 @@
     <div class="container">
        <h2>Modifica Profilo</h2>
        <div class="content-registrazione">
-          {{ Form::open(array('route' => 'product.edit')) }}
+          {{ Form::open(array('route' => 'register')) }}
           <div class="user-details">
              <div class="input-box">
                 {{ Form::label('name', 'Name', ['class' => 'details']) }}

@@ -7,6 +7,30 @@
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   }
+  .container-modifica-off{
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+
+  .row1{
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.row1 textarea{
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  border-color: #ff7a57;
+}
+
   .container .title{
     font-size: 25px;
     font-weight: 500;
@@ -15,7 +39,7 @@
   .content1-registrazione{
     margin-top: auto;
       padding-bottom: 50px;
-      padding-top: 50px;
+      padding-top: 20px;
     display: flex;
     justify-content: center;
     

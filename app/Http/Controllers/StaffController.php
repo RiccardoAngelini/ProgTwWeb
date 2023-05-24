@@ -12,7 +12,9 @@ use App\Http\Requests\NewPasswordRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Staff;
+use Carbon\Carbon;
 use App\Http\Requests\NewDatiStaffRequest;
+use Illuminate\Support\Facades\Validator;
 class StaffController extends Controller {
 
     public function staff() {
@@ -32,12 +34,7 @@ class StaffController extends Controller {
     }
 
     public function store(PromotionRequest $request){
-        // $validator = $request->validated();
-        
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/images/promotions');
-            $image = basename($imagePath);
-        }
+        $validator = $request->validated();
 
         Promotion::create([
             'name' => $request -> input('name'),
@@ -46,11 +43,39 @@ class StaffController extends Controller {
             'date_start' => $request -> input('date_start'),
             'date_end' => $request -> input('date_end'),
             'discountPerc' => $request -> input('discountPerc'),
-            'image' => $request ->input('image'),
             'desc' => $request -> input('desc'),
         ]);
-        return redirect()->route('product.index');
+        if($validator -> passes())
+        {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
+          $promotion = new Promotion();
+          $promotion ->name =$request->name;
+          $promotion -> price = $request->price;
+          $promotion -> comp_name = $request->comp_name;
+          $promotion -> date_start = $request->date_start;
+          $promotion -> date_end = $request->date_end;
+          $promotion -> discountPerc = $request->discountPerc;
+          $promotion -> desc = $request-> desc;
+          $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
+          $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
+          $promotion ->image = $imageName;
+          $promotion->save();
+        
+ 
+          
+
+          if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/promotions';
+            $image->move($destinationPath, $imageName);
+        };
+        return redirect()->route('product.index')->with('status', 'Promozione creata con sucesso');
     }
+}
     
 
      public function modificapromo($promo_Id){
@@ -68,6 +93,8 @@ class StaffController extends Controller {
         $promotion -> date_end = $request->date_end;
         $promotion -> discountPerc = $request->discountPerc;
         $promotion -> desc = $request-> desc;
+        $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
+        $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
         $promotion->save();
         return redirect()->route('product.index')->with('Promozione modificata con successo.');
     }

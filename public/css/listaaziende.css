@@ -73,3 +73,13 @@ margin: 0.5px 0px;
 cursor: pointer;
 border-radius: 1.5em;
 }
+
+.alert alert-danger2{
+    display: flex;
+    justify-content: center;
+}
+
+.alert alert-success2{
+    display: flex;
+    justify-content: center;
+}
