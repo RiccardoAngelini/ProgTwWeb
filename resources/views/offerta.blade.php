@@ -6,16 +6,15 @@
 <a class="btn2" href="{{route('catalogo')}}" >Back</a>
 
 <div class="cont-off">
-<div class="cont-img-off">
+<div id="imageContainer" class="cont-img-off">
 @include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
 </div>
 <script>
-    $(document).ready(function() {
-                    // seleziono l'elemento in base a la sua classe
-                    var container = $('.cont-img-off');
-                    var image = container.find('img');
-                    image.animate({ opacity: 1, width: '300px'},9000); //applico l'animazione
-                });
+$(document).ready(function() {
+  $('#imageContainer').animate({ opacity: 1 }, 500); // Imposta una durata di 2 secondi (2000 millisecondi)
+});
+
+
 </script>
 <div class="descrizione"> 
 

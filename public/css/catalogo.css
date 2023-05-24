@@ -226,3 +226,13 @@ input.button-reset, input.button-submit {
     background-color: #edf0f4;
      color: #ff7a57;
   }
+
+
+
+  .scadenza{
+    padding-top: 10px;
+    font-weight: bold;
+    color:red;
+  }
+
+ 
