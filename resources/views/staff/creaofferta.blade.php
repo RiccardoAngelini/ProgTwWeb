@@ -1,11 +1,10 @@
 @extends('layouts.staff')
 @section('content')
 <div class="button-back">
-<a class="btn2" href="{{route('product.index')}}">Indietro</a></div>
+<a class="btn2" href="{{route('staff.index')}}">Indietro</a></div>
 <div class="content1-registrazione">  
-<!--<a class="btn2" href="{{route('product.index')}}">Back</a>-->
-<div class="container">
-    <h1 >Agggiungi una nuova promozione</h1>
+<div class="container-modifica-off">
+    <h1 >Aggiungi una nuova promozione</h1>
     <div class="content-registrazione">
     @if (Session::has('success'))
 <div class="alert alert-success2" role="alert">
@@ -18,7 +17,7 @@
         </div>
     @endif
 
-    {{ Form::open(array('route' => 'product.store','files' => true)) }}
+    {{ Form::open(array('route' => 'staff.store','files' => true)) }}
     {{ csrf_field() }}
     <div class="user-details">
 

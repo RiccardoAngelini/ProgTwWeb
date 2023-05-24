@@ -153,17 +153,35 @@ public function destroyCompany($comp_Id) {
 
         'name' => 'required',
         'location' => 'required',
+        
     ]);
     if($validator -> passes()){
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
         $company = Company::find($comp_Id);
         $company ->name = $request->name;
         $company ->location = $request->location;
+        $company->image=$imageName;
         $company ->save();
+        if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/companies';
+            $image->move($destinationPath, $imageName);
+        };
         return redirect()->route('admin.listaziende')->with('success', 'Azienda modificata con sucesso!');
     }else{
         return redirect()->route('adminCompany.edit', $comp_Id)->withErrors($validator)->withInput();
     }
  }
+
+ public function showAzienda($comp_Id){
+        $azienda=$this->_companyModel->getcompanyId($comp_Id);
+        return view('admin.azienda')
+            ->with('azienda',$azienda);
+     }
 
 }
 

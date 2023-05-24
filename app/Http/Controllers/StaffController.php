@@ -18,19 +18,19 @@ use Illuminate\Support\Facades\Validator;
 class StaffController extends Controller {
 
     public function staff() {
-        return view('profile.staff');
+        return view('staff.staff');
     }    
 
     public function listapromo(Request $promotion){
         $promotion = Promotion::all();
         $promotion = Promotion::paginate(6);
-        return view('product.listaofferte',[
+        return view('staff.listaofferte',[
             'promotion' => $promotion
         ]);
     }
 
     public function creapromo(){
-        return view('product.creaofferta');
+        return view('staff.creaofferta');
     }
 
     public function store(PromotionRequest $request){
@@ -65,27 +65,30 @@ class StaffController extends Controller {
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
           $promotion ->image = $imageName;
           $promotion->save();
-        
- 
-          
 
           if (!is_null($imageName)) {
             $destinationPath = public_path() . '/images/promotions';
             $image->move($destinationPath, $imageName);
         };
-        return redirect()->route('product.index')->with('status', 'Promozione creata con sucesso');
+        return redirect()->route('staff.index')->with('status', 'Promozione creata con sucesso');
     }
 }
     
 
      public function modificapromo($promo_Id){
         $promotion = Promotion::find($promo_Id);
-        return view('product.modificaofferta',[
+        return view('staff.modificaofferta',[
             'promotion' => $promotion
         ]);
     }
     public function updatepromo($promo_Id, Request $request){
         $promotion = Promotion::find($promo_Id);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
         $promotion ->name =$request->name;
         $promotion -> price = $request->price;
         $promotion -> comp_name = $request->comp_name;
@@ -95,22 +98,22 @@ class StaffController extends Controller {
         $promotion -> desc = $request-> desc;
         $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
         $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
+        $promotion ->image = $imageName;
         $promotion->save();
-        return redirect()->route('product.index')->with('Promozione modificata con successo.');
-    }
-
-    public function visualizapromo($promo_Id){
-        $promotion = Promotion::where('promo_Id', $promo_Id)->first();
-        return view('product.visualizaofferta')->with('promotion',$promotion);
+        if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/promotions';
+            $image->move($destinationPath, $imageName);
+        };
+        return redirect()->route('staff.index')->with('Promozione modificata con successo.');
     }
 
     public function delete(Promotion $promotion){
         // dd($promotion);
         $promotion -> delete();
-        return redirect()->route('product.index')->with('status', 'Promozione cancellata con sucesso');
+        return redirect()->route('staff.index')->with('status', 'Promozione cancellata con sucesso');
     }
     public function changePasswordStaff(){
-        return view('profile.updatePasswordStaff');
+        return view('staff.updatePasswordStaff');
     }
     
     public function storePasswordStaff(NewPasswordRequest $request)
@@ -132,7 +135,7 @@ class StaffController extends Controller {
         }
 
         public function changeDatiStaff(){
-            return view('profile.updateDatiStaff');
+            return view('staff.updateDatiStaff');
         }
         
         public function storeDatiStaff(NewDatiStaffRequest $request)
