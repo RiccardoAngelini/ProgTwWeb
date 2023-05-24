@@ -31,7 +31,7 @@
                 </ul>  
     </div>
 
-    {{ Form::submit('Salva', ['class' => 'button-login']) }}
+    {{ Form::submit('Salva',['class' => 'button-login']) }}
     {{ Form::close() }}
 
     </div>
