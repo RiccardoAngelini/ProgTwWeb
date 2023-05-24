@@ -18,7 +18,7 @@
 @if ($remainingDays !== 'Offerta scaduta!')
     
         <div class="ottieni-coup">
-            <a href="{{ route('coupon', [$sel_promId->promo_Id, $scelta_coupon]) }}" target="_blank">
+            <a href="" target="_blank">
                 <button class="button-ottieni">
                     Acquista Coupon
                 </button>
