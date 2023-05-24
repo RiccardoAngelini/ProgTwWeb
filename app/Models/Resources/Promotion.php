@@ -3,6 +3,7 @@
 namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
+use DateTime;
 
 class Promotion extends Model {
 
@@ -17,9 +18,21 @@ class Promotion extends Model {
     }
 
     public function getPromotionByTime($promotions){
-        $prom_by_time = $promotions->sortByDesc('date_start')->take(5);
-        return $prom_by_time;
-    }
+            $currentDate = date('Y-m-d');
+            $recentPromotions = $promotions->filter(function ($promotion) use ($currentDate) {
+                $endDate = DateTime::createFromFormat('d/m/Y', $promotion->date_end);
+                return $endDate && $endDate >= new DateTime($currentDate);
+            })->sortBy(function ($promotion) use ($currentDate) {
+                $endDate = DateTime::createFromFormat('d/m/Y', $promotion->date_end);
+                $remainingDays = $endDate->diff(new DateTime($currentDate))->days;
+                return $remainingDays;
+            })->take(5);
+            return $recentPromotions;
+        }
+        
+        
+        
+
 
     public function getPromotionByComp($comp_name){
         return Promotion::where('comp_name',$comp_name)->get();
