@@ -1,13 +1,15 @@
 @extends('layouts.public')
-@section('title', 'Promozione')
+@section('title', 'Azienda')
 @section('content')
 
 
-<a class="btn2" href="{{route('catalogo')}}" >Indietro</a>
+<a class="btn2" href="{{route('admin.listaziende')}}" >Indietro</a>
 
-<div class="cont-off">
+<div class="cont-azienda">
+    
 <div id="imageContainer" class="cont-img-off">
-@include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
+@include('helpers/companyImg', ['imgFile' => $azienda->image])
+
 </div>
 <script>
 $(document).ready(function() {
@@ -16,26 +18,18 @@ $(document).ready(function() {
 
 
 </script>
-<div class="descrizione"> 
-
-    <div><h3><u>Descrizione</u></h3></div><br>
-{!!$sel_promId->desc!!}
-</div>
-    <div class="dettagli">
-        <div class="nome-off">{{$sel_promId->name}}
+<div class="dettagli-azienda">
+        <div class="nome-off">{{$azienda->name}}
         </div>
         <br>
-        <div class="prezzo-off">Scade il {{ DateTime::createFromFormat('d/m/Y', $sel_promId->date_end)->format('d/m/Y') }} </div>
-        <div class="prezzo-off">Prezzo: {{$sel_promId->price}}  &#8364;
-        </div>
-        <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
-        @can('isUser')
-      @include('helpers/promotionCoupon',['expirationDate' => $sel_promId->date_end])
-      @endcan
+        <div class="prezzo-off">{{$azienda->location}}</div>
+        
+        
          <div style=" clear:right"></div>
     </div>
-   
+
     </div>
+   
 <script>
    function handleResponsiveLayout() {
         var windowWidth = $(window).width();
@@ -54,5 +48,7 @@ $(document).ready(function() {
         handleResponsiveLayout();
     });
 </script>
+
+
 @endsection
 

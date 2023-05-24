@@ -165,6 +165,12 @@ public function destroyCompany($comp_Id) {
     }
  }
 
+ public function showAzienda($comp_Id){
+        $azienda=$this->_companyModel->getcompanyId($comp_Id);
+        return view('admin.azienda')
+            ->with('azienda',$azienda);
+     }
+
 }
 
 

@@ -47,19 +47,7 @@ margin: 0.5px 0px;
 cursor: pointer;
 border-radius: 1.5em;
 }
-.btn2 {
-background-color: #008CBA;
-border: none;
-color: white;
-padding: 5px 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 17px;
-margin: 0.5px 0px;
-cursor: pointer;
-border-radius: 1.5em;
-}
+
 .btn3 {
 background-color: #f44336;
 border: none;

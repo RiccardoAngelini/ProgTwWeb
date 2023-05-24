@@ -42,7 +42,7 @@
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->image}}</td>
                         <td><a class="btn1" href="{{route('adminCompany.edit',$companies->comp_Id)}}">Modifica</a></td> 
-                        <td><a class="btn2" href="{{route('aziende')}}">Visualizza</a></td>
+                        <td><a class="btn2" href="{{route('azienda',$companies->comp_Id)}}">Visualizza</a></td>
                         <td>
                             <form  action="{{route('adminCompany.destroy', $companies->comp_Id )}}"
                                 onclick="return confirm('Sei sicuro di voler cancellare questa Azienda ?') " method="post">

@@ -164,5 +164,7 @@ Route::delete('/listaAziende/{azienda_Id}', [AdminController::class, 'destroyCom
 Route::get('/listaAzienze/edit/{azienda_Id}', [AdminController::class, 'editCompany'])->name('adminCompany.edit');
 Route::post('/listaAzienze/update/{azienda_Id}', [AdminController::class, 'updateCompany'])->name('adminCompany.update');
 
+Route::get('/admin/listaAziende/azienda/{comp_Id}',[AdminController::class,'showAzienda'])->name('azienda');
+
 require __DIR__.'/auth.php';
 
