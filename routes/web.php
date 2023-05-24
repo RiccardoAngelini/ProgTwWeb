@@ -104,12 +104,35 @@ Route::prefix('staff')->group(function(){
         Route::put('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
         Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
+
         Route::get('/updatePsw', [StaffController::class, 'changePasswordStaff'])->name('newPasswordStaff');
         Route::POST('/updatePsw', [StaffController::class, 'storePasswordStaff'])->name('newPasswordStaff.store');
         Route::get('/updateDati', [StaffController::class, 'changeDatiStaff'])->name('newDatiStaff');
         Route::POST('/updateDati', [StaffController::class, 'storeDatiStaff'])->name('newDatiStaff.store');   
-
 });
+// Route::get('/staff/product/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
+// Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
+// Route::get('staff/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
+// Route::post('/staff/product/store', [StaffController::class, 'store'])->name('product.store');
+// Route::get('/staff/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
+// Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
+// // Route::put('/staff/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
+// Route::delete('/staff/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
+
+// Route::get('/staff/updatePsw', [StaffController::class, 'changePasswordStaff'])
+// ->name('newPasswordStaff');
+
+// Route::POST('/staff/updatePsw', [StaffController::class, 'storePasswordStaff'])
+// ->name('newPasswordStaff.store');
+
+// Route::get('/staff/updateDati', [StaffController::class, 'changeDatiStaff'])
+// ->name('newDatiStaff');
+
+// Route::POST('/staff/updateDati', [StaffController::class, 'storeDatiStaff'])
+// ->name('newDatiStaff.store');   
+
+
+
 
 
 
@@ -131,8 +154,15 @@ Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'
 
 //elimina utenti admin
 Route::get('/admin/listautenti',[AdminController::class ,'listaUser'])->name('admin.listautenti');
+Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');
+//aziende
+Route::get('/admin/listaAziende',[AdminController::class ,'listaCompany'])->name('admin.listaziende');
+Route::get('/admin/newCompany',[AdminController::class ,'createCompany'])->name('newCompany');
+Route::post('/admin/newCompany', [AdminController::class, 'storeCompany'])->name('newCompany.store');
 
+Route::delete('/listaAziende/{azienda_Id}', [AdminController::class, 'destroyCompany'])->name('adminCompany.destroy');
+Route::get('/listaAzienze/edit/{azienda_Id}', [AdminController::class, 'editCompany'])->name('adminCompany.edit');
+Route::post('/listaAzienze/update/{azienda_Id}', [AdminController::class, 'updateCompany'])->name('adminCompany.update');
 
 require __DIR__.'/auth.php';
 
-Route::delete('/admin/listautenti/delete',[AdminController::class,'deleteUser'])->name('admin.eliminautenti');

@@ -29,8 +29,9 @@
                 </div>
                 <div class="cont-data">
                     <div class="data">
-                   Inizia il {{ date('d/m/Y', strtotime($prom->date_start)) }}
+                    Inizia il {{ DateTime::createFromFormat('d/m/Y', $prom->date_start)->format('d/m/Y') }}
                     </div>
+                    @include('helpers/remainingDays',['expirationDate' => $prom->date_end])
                     <div class="nome">
                     {{$prom->name }}
                     </div>

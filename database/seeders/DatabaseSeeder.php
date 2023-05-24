@@ -65,17 +65,17 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('promotion')->insert([
-            [ 'coupon_id'=>1 ,'name'=>'Apple iPhone 13 Pro', 'date_Start'=> '2022/10/05', 'date_end'=> '2022/11/05', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'coupon_id'=>2 ,'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '2020/09/03', 'date_end'=> '2020/10/05' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.' ],
-            [ 'coupon_id'=>3 ,'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '2022/12/24', 'date_end'=> '2023/01/10' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'coupon_id'=>4 ,'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '2022/02/07', 'date_end'=> '2022/03/20' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
-            [ 'coupon_id'=>5 ,'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '2022/12/14', 'date_end'=> '2023/01/05', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
-            [ 'coupon_id'=>6 ,'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '2020/10/16', 'date_end'=> '2020/11/17' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc' => self::DESCPROD,'comp_name'=>'Airbnb Inc.'],
-            [ 'coupon_id'=>7 ,'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '2022/04/02', 'date_end'=> '2022/05/03' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc' => self::DESCPROD,'comp_name'=>'Tiffany & Co'],
-            [ 'coupon_id'=>8,'name'=>'CHANEL-N°5','date_Start'=> '2019/11/30', 'date_end'=> '2020/01/01' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc' => self::DESCPROD,'comp_name'=>'Chanel S.A.'],
-            [ 'coupon_id'=>9,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '2022/07/19', 'date_end'=> '2022/09/23' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc' => self::DESCPROD,'comp_name'=>'Spotify'],
-            [ 'coupon_id'=>10,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '2022/07/19', 'date_end'=> '2022/09/23' , 'price'=>35.00 ,'discountPerc'=>15,'image'=>'Apple2.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'coupon_id'=>11,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '2022/07/19', 'date_end'=> '2022/09/23' , 'price'=>40.00 ,'discountPerc'=>40,'image'=>'Amazon1.jpg','desc' => self::DESCPROD,'comp_name'=>'Amazon']
+            [ 'coupon_id'=>1 ,'name'=>'Apple iPhone 13 Pro', 'date_Start'=> '24/05/2023', 'date_end'=> '24/06/2023', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'coupon_id'=>2 ,'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '02/05/2023', 'date_end'=> '20/06/2023' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.' ],
+            [ 'coupon_id'=>3 ,'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '10/05/2023', 'date_end'=> '10/07/2023' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'coupon_id'=>4 ,'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '07/02/2022', 'date_end'=> '20/03/2022' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
+            [ 'coupon_id'=>5 ,'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
+            [ 'coupon_id'=>6 ,'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc' => self::DESCPROD,'comp_name'=>'Airbnb Inc.'],
+            [ 'coupon_id'=>7 ,'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '02/04/2022', 'date_end'=> '03/05/2022' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc' => self::DESCPROD,'comp_name'=>'Tiffany & Co'],
+            [ 'coupon_id'=>8,'name'=>'CHANEL-N°5','date_Start'=> '30/11/2019', 'date_end'=> '01/01/2020' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc' => self::DESCPROD,'comp_name'=>'Chanel S.A.'],
+            [ 'coupon_id'=>9,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc' => self::DESCPROD,'comp_name'=>'Spotify'],
+            [ 'coupon_id'=>10,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>35.00 ,'discountPerc'=>15,'image'=>'Apple2.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'coupon_id'=>11,'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>40.00 ,'discountPerc'=>40,'image'=>'Amazon1.jpg','desc' => self::DESCPROD,'comp_name'=>'Amazon']
 
 
         ]);
@@ -93,19 +93,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('company')->insert([
-            ['comp_Id'=>1, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.', 'promo_Id'=>1,'location'=>'','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'promo_Id'=>2,'location'=>'','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify', 'promo_Id'=>4,'location'=>'','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.', 'promo_Id'=>5,'location'=>'','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co', 'promo_Id'=>6,'location'=>'','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'promo_Id'=>3,'location'=>'','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon', 'promo_Id'=>7,'location'=>'','image'=>'Amazon.jpg'],
+            ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
+            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','image'=>'Amazon.jpg'],
         ]);
 
     }

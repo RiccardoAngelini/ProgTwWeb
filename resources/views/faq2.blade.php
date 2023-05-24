@@ -14,5 +14,10 @@
             </div>
         </div>
     </div>
+    
 @endforeach
+@isset($listafaq)
+@include('pagination.paginator',['paginator'=>$listafaq])
+@endisset
+
 @endsection

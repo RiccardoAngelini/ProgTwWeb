@@ -16,7 +16,7 @@
                     <i class="fa-solid fa-chevron-left"></i>
                     Visualizza Aziende
                   </div>
-                  <li class="item"><a href="">Lista Aziende</a></li>
+                  <li class="item"><a href="{{route('admin.listaziende')}}">Lista Aziende</a></li>
             </ul>
           </li>
           <li class="item">
@@ -44,7 +44,7 @@
                   <i class="fa-solid fa-chevron-left"></i>
                 Visualizza Catalogo
               </div>
-              <li class="item"><a href="#">Lista Offerte</a></li>
+              <li class="item"><a href="{{route('catalogo')}}">Lista Offerte</a></li>
           </ul>
         </li>
         <li class="item">
