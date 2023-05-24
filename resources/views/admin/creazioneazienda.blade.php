@@ -4,7 +4,17 @@
    <div class="container">
       <h2>Inserisci Azienda</h2>
       <div class="content-registrazione">
-         {{ Form::open(array('route' => 'newCompany.store')) }}
+      @if (Session::has('success'))
+<div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+        {{Session::get('success')}}
+    </div>
+    @endif
+    @if (Session::has('error'))
+    <div class="alert alert-danger" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+            {{ Session::get('error')}}
+        </div>
+    @endif
+         {{ Form::open(array('route' => 'newCompany.store','files' => true)) }}
          <div class="user-details">
             <div class="input-box">
                {{ Form::label('name', 'Nome azienda', ['class' => 'details']) }}

@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 @section('content')
 <div class="faq-header"></div>
+
+
     
 <div class="title" style="margin-top: 50px;">
-     <table><h1 style="text-align: center; font-size:50px;">LISTA AZIENDE</h1>
+     <table><h1 style="text-align: center; font-size:50px;">LISTA AZIENDE </h1>
 </div>
 <div  style="margin-left: 17%; font-size;20px; margin-top:25px; text-decoration:none;">
     <a class="creat" href="{{route('newCompany' )}}">Crea nuova AZIENDA</a>

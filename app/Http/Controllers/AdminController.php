@@ -125,16 +125,17 @@ public function destroyCompany($comp_Id) {
               $company = new Company();
               $company ->name = $request->name;
               $company ->location = $request->location;
-              $company ->image = $request->image;
+              $company ->image = $imageName;
               $company ->save();
 
               if (!is_null($imageName)) {
-                $destinationPath = public_path() . '/images/promotions';
+                $destinationPath = public_path() . '/images/companies';
                 $image->move($destinationPath, $imageName);
             };
 
 
-              return redirect()->route('admin.listaziende')->with('status', 'Azienda creata con sucesso!');
+              return redirect()->route('admin.listaziende')->with('success', 'Azienda creata con sucesso!')
+              ->with('company',$company);
             }else{
                 return redirect()->route('newCompany')->withErrors($validator)->withInput();
             }
@@ -158,7 +159,7 @@ public function destroyCompany($comp_Id) {
         $company ->name = $request->name;
         $company ->location = $request->location;
         $company ->save();
-        return redirect()->route('admin.listaziende')->with('status', 'Azienda modificata con sucesso!');
+        return redirect()->route('admin.listaziende')->with('success', 'Azienda modificata con sucesso!');
     }else{
         return redirect()->route('adminCompany.edit', $comp_Id)->withErrors($validator)->withInput();
     }
