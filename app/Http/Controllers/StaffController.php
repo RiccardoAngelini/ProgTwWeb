@@ -32,8 +32,13 @@ class StaffController extends Controller {
     }
 
     public function store(PromotionRequest $request){
-        $validator = $request->validated();
-        dd($request->all());
+        // $validator = $request->validated();
+        
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images/promotions');
+            $image = basename($imagePath);
+        }
+
         Promotion::create([
             'name' => $request -> input('name'),
             'price' => $request -> input('price'),
@@ -41,6 +46,7 @@ class StaffController extends Controller {
             'date_start' => $request -> input('date_start'),
             'date_end' => $request -> input('date_end'),
             'discountPerc' => $request -> input('discountPerc'),
+            'image' => $request ->input('image'),
             'desc' => $request -> input('desc'),
         ]);
         return redirect()->route('product.index');

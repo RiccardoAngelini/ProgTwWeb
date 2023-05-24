@@ -1,7 +1,7 @@
 @extends('layouts.staff')
 @section('content')
 <div class="content1-registrazione">  
-<!--<a class="btn2" href="{{route('product.index')}}">Back</a>-->
+{{-- <a class="btn2" href="{{route('product.index')}}">Back</a> --}}
 <div class="container">
     <h1 >Agggiungi una nuova promozione</h1>
     <div class="content-registrazione">
@@ -58,6 +58,18 @@
             </div>
 
             <div class="input-box">
+              {{ Form::label('discountPerc', 'Sconto', ['class' => 'details']) }}
+              {{ Form::text('discountPerc', null, ['placeholder' => 'Inserisci lo sconto']) }}
+              @if ($errors->first('discountPerc'))
+               <ul class="errors">
+                   @foreach ($errors->get('discountPerc') as $message)
+                   <li>{{ $message }}</li>
+                   @endforeach
+               </ul>
+               @endif
+           </div>
+
+            <div class="input-box">
                {{ Form::label('date_start', 'Data inizio promozione :', ['class' => 'details']) }}
                {{ Form::date('date_start', null, ['placeholder' => 'Inserisci la data di inizio']) }}
                @if ($errors->first('date_start'))
@@ -75,18 +87,6 @@
                @if ($errors->first('date_end'))
                 <ul class="errors">
                     @foreach ($errors->get('date_end') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-
-            <div class="input-box">
-               {{ Form::label('discountPerc', 'Sconto', ['class' => 'details']) }}
-               {{ Form::text('discountPerc', null, ['placeholder' => 'Inserisci lo sconto']) }}
-               @if ($errors->first('discountPerc'))
-                <ul class="errors">
-                    @foreach ($errors->get('discountPerc') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>

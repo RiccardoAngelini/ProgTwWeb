@@ -21,9 +21,8 @@
           
         </section>
         <div style="display:flex; justify-content:center; align-items:center;">
-        <a class="p" href="{{ route('newDatiStaff') }}">Modifica Dati Personali</a>
- 
-     
+        <a class="p1" href="{{ route('newDatiStaff') }}">Modifica Dati Personali</a>
+        <br>
         <a class="p" href="{{ route('newPasswordStaff') }}">Modifica password</a></div>
 </div>
 
