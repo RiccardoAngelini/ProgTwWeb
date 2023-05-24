@@ -7,7 +7,11 @@
     font-family: 'Ubuntu', sans-serif;
 }
 /* navbar */
-
+html, body{
+  height: 100%;
+  display: grid;
+  /* grid-template-rows: auto 1fr auto; */
+}
 .navbar {
     background-color: whitesmoke;
     display: flex;
@@ -104,6 +108,7 @@ ul{
 	background-color: #24262b;
     padding: 70px 0;
     clear: both;
+    flex-grow: 1;
 }
 .footer-col{
    width: 25%;
@@ -142,7 +147,7 @@ ul{
 .footer-col ul li a:hover{
 	color: #ffffff;
 	padding-left: 8px;
-}
+} 
 
 /*responsive*//*
 @media(max-width: 805px){
