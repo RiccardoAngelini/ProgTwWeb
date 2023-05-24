@@ -1,6 +1,6 @@
 .p{
     background-color: #4CAF50;
-    width: 250px;
+    width: 210px;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -11,8 +11,25 @@
     cursor: pointer;
     border-radius: 1em; 
     margin-top: 2em;
-    
+    justify-content:center; 
+    align-items:center;
   }
+  .p1{
+    background-color: #4CAF50;
+    width: 265px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 1em; 
+    margin-top: 2em;
+    justify-content:center; 
+    align-items:center;
+  } 
   
   h1{
     font-family: 'Lato', sans-serif;

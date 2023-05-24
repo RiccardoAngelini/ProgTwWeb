@@ -34,16 +34,16 @@ class StaffController extends Controller {
     }
 
     public function store(PromotionRequest $request){
-        $validator = Validator::make($request -> all(),[
+        $validator = $request->validated();
 
-            'name' => 'required',
-            'price' => 'required',
-            'image' => 'required',
-            'comp_name' => 'required',
-            'date_start' => 'required',
-            'date_end' => 'required',
-            'discountPerc'=>'required',
-            'desc'=>'required'
+        Promotion::create([
+            'name' => $request -> input('name'),
+            'price' => $request -> input('price'),
+            'comp_name' => $request -> input('comp_name'),
+            'date_start' => $request -> input('date_start'),
+            'date_end' => $request -> input('date_end'),
+            'discountPerc' => $request -> input('discountPerc'),
+            'desc' => $request -> input('desc'),
         ]);
         if($validator -> passes())
         {

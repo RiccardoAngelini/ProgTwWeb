@@ -67,18 +67,17 @@
         </div>
                 <div class="cont-data">
                     <div class="data">
-                   Scade il {{ DateTime::createFromFormat('d/m/Y', $promotion->date_end)->format('d/m/Y') }}
+                        Scade il {{ DateTime::createFromFormat('d/m/Y', $promotion->date_end)->format('d/m/Y') }}
                     </div>
-                   @include('helpers/remainingDays',['expirationDate' => $promotion->date_end])
-                    <div class="nome">
-                    {{$promotion->name }}
-                    </div>
-                    <div calss="scopri-off">
-                    <a href="{{route('offerta',[$promotion->promo_Id])}}"><button class="scopri" >
-                        Scopri l'offerta
-                </button></a></div>
-                </div>
-                
+                        @include('helpers/remainingDays',['expirationDate' => $promotion->date_end])
+                        <div class="nome">
+                            {{$promotion->name }}
+                        </div>
+                        <div calss="scopri-off">
+                            <a href="{{route('offerta',[$promotion->promo_Id])}}"><button class="scopri" >
+                                Scopri l'offerta
+                            </button></a></div>
+                        </div>
                 </div>
             @endforeach 
             

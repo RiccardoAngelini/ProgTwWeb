@@ -3,9 +3,9 @@
 <div class="button-back">
 <a class="btn2" href="{{route('product.index')}}">Indietro</a></div>
 <div class="content1-registrazione">  
-
-<div class="container-modifica-off">
-    <h1 >Aggiungi una nuova promozione</h1>
+<!--<a class="btn2" href="{{route('product.index')}}">Back</a>-->
+<div class="container">
+    <h1 >Agggiungi una nuova promozione</h1>
     <div class="content-registrazione">
     @if (Session::has('success'))
 <div class="alert alert-success2" role="alert">
@@ -60,6 +60,18 @@
             </div>
 
             <div class="input-box">
+              {{ Form::label('discountPerc', 'Sconto', ['class' => 'details']) }}
+              {{ Form::text('discountPerc', null, ['placeholder' => 'Inserisci lo sconto']) }}
+              @if ($errors->first('discountPerc'))
+               <ul class="errors">
+                   @foreach ($errors->get('discountPerc') as $message)
+                   <li>{{ $message }}</li>
+                   @endforeach
+               </ul>
+               @endif
+           </div>
+
+            <div class="input-box">
                {{ Form::label('date_start', 'Data inizio promozione :', ['class' => 'details']) }}
                {{ Form::date('date_start', null, ['placeholder' => 'Inserisci la data di inizio']) }}
                @if ($errors->first('date_start'))
@@ -77,18 +89,6 @@
                @if ($errors->first('date_end'))
                 <ul class="errors">
                     @foreach ($errors->get('date_end') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-
-            <div class="input-box">
-               {{ Form::label('discountPerc', 'Sconto', ['class' => 'details']) }}
-               {{ Form::text('discountPerc', null, ['placeholder' => 'Inserisci lo sconto']) }}
-               @if ($errors->first('discountPerc'))
-                <ul class="errors">
-                    @foreach ($errors->get('discountPerc') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
