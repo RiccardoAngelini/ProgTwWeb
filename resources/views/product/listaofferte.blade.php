@@ -32,8 +32,9 @@
                 <th>Data Inizio</th>
                 <th>Data fine</th>
                 {{-- <th>Azienda</th> --}}
-                <th style="width: 40px">Show</th>
-                <th style="width: 40px">Delete</th>
+                <th style="width: 40px">Modifica</th>
+                <th style="width: 40px">Visualizza</th>
+                <th style="width: 40px">Elimina</th>
             </tr>
         </thead>
         <tbody>
@@ -49,11 +50,13 @@
                         <td>{{$promotions->comp_name}}</td>
                         <td>{{$promotions->date_start}}</td>
                         <td>{{$promotions->date_end}}</td>
-                        <td><a class="btn1" href="{{route('product.show',[$promotions->promo_Id])}}">Visualizza</a></td>
+                        <td><a class="btn1" href="{{route('product.edit', $promotions -> promo_Id)}}">Modifica</a></td>
+
+                        <td><a class="btn2" href="{{route('offerta',[$promotions->promo_Id])}}">Visualizza</a></td>
                         <td>
                             <form action="{{route('product.delete', $promotions -> promo_Id)}}"
                                 onclick="return confirm('Sei sicuro di voler cancellare questa promozione ?') " method="POST">
-                                <button class="btn3" type="submit">Cancelli</button>
+                                <button class="btn3" type="submit">Elimina</button>
                                 @method('DELETE')
                                 @csrf 
                                  
