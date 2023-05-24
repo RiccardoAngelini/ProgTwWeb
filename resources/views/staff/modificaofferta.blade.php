@@ -1,7 +1,7 @@
 @extends('layouts.staff')
 @section('content')
 <div class="button-back">
-    <a class="btn2" href="{{route('product.index')}}" >Indietro</a></div>
+    <a class="btn2" href="{{route('staff.index')}}" >Indietro</a></div>
     <div class="content1-registrazione">
 <div class="container-modifica-off">
     <h1 >Modifica promozione</h1>
@@ -16,7 +16,7 @@
             {{ Session::get('error')}}
         </div>
     @endif
-    {{ Form::open(['route' => ['product.update', $promotion->promo_Id], 'role' => 'form']) }}
+    {{ Form::open(['route' => ['staff.update', $promotion->promo_Id], 'role' => 'form']) }}
     {{ csrf_field() }}
     <div class="user-details">
     <div class="input-box">

@@ -49,9 +49,9 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
 //ROUTE PROFILO STAFF
 
 Route::middleware('auth')->group(function(){
-        Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
-        Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('staff.show');
+        Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('staff.edit');
+        Route::put('/profile/update', [ProfileController::class, 'update'])->name('staff.update');
 });
 
 Route::get('/user', [UserController::class, 'index']);
@@ -96,12 +96,12 @@ Route::get('/user', [UserController::class, 'index'])->name('user')->middleware(
 
 Route::prefix('staff')->group(function(){
         Route::get('/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
-        Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
-        Route::get('/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
-        Route::post('/product/store', [StaffController::class, 'store'])->name('product.store');
-        Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
-        Route::post('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
-        Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
+        Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('staff.index');
+        Route::get('/product/creaofferta', [StaffController::class, 'creapromo'])->name('staff.create');
+        Route::post('/product/store', [StaffController::class, 'store'])->name('staff.store');
+        Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('staff.edit');
+        Route::post('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('staff.update');
+        Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('staff.delete');
 
 
         Route::get('/updatePsw', [StaffController::class, 'changePasswordStaff'])->name('newPasswordStaff');

@@ -4,11 +4,12 @@
 
 @section('content')
 
-<a class="btn2" href="{{route('staff')}}" >Back</a>
+<div class="button-back2">
+<a class="btn2" href="{{route('staff')}}" >Indietro</a></div>
 <div class="content1-registrazione">
-   <div class="container">
+   <div class="container-modifica-off">
    
-      <h2>Modifica Password</h2>
+      <h2>Modifica Dati Personali</h2>
     <div class="content-registrazione">
     @if (session('status'))
        <div class="alert alert-success" role="alert">
@@ -19,13 +20,13 @@
          {{ session('error') }}
          </div>
      @endif
-         {{ Form::open(array('route' => 'newPasswordStaff.store')) }}
+     {{ Form::open(array('route' => 'newDatiStaff.store')) }}
         <div class="user-details">
             
             <div class="input-box">
-               {{ Form::label('password', 'Password', ['class' => 'details']) }}
-               {{ Form::text('password', null, ['placeholder' => 'Enter your password']) }}
-               @error('password')
+               {{ Form::label('name', 'Nome', ['class' => 'details']) }}
+               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome']) }}
+               @error('name')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
@@ -36,9 +37,9 @@
         </div>
         <div class="user-details">
             <div class="input-box">
-               {{ Form::label('newpassword', 'Nuova Password', ['class' => 'details']) }}
-               {{ Form::text('newpassword', null, ['placeholder' => 'Enter your new password']) }}
-               @error('newpassword')
+               {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
+               {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
+               @error('surname')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
@@ -55,21 +56,4 @@
    </div>
 </div>
 
-<style>
-      .btn2 {
-        background-color: #ff7a57;
-        border: none;
-        color: white;
-        padding: 5px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 0.5px 0px;
-        cursor: pointer;
-        border-radius: 0.3em;
-        margin-top: 1em;
-        margin-left:50%;
-    }
-</style>
 @endsection

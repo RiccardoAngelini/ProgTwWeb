@@ -18,19 +18,19 @@ use Illuminate\Support\Facades\Validator;
 class StaffController extends Controller {
 
     public function staff() {
-        return view('profile.staff');
+        return view('staff.staff');
     }    
 
     public function listapromo(Request $promotion){
         $promotion = Promotion::all();
         $promotion = Promotion::paginate(6);
-        return view('product.listaofferte',[
+        return view('staff.listaofferte',[
             'promotion' => $promotion
         ]);
     }
 
     public function creapromo(){
-        return view('product.creaofferta');
+        return view('staff.creaofferta');
     }
 
     public function store(PromotionRequest $request){
@@ -73,14 +73,14 @@ class StaffController extends Controller {
             $destinationPath = public_path() . '/images/promotions';
             $image->move($destinationPath, $imageName);
         };
-        return redirect()->route('product.index')->with('status', 'Promozione creata con sucesso');
+        return redirect()->route('staff.index')->with('status', 'Promozione creata con sucesso');
     }
 }
     
 
      public function modificapromo($promo_Id){
         $promotion = Promotion::find($promo_Id);
-        return view('product.modificaofferta',[
+        return view('staff.modificaofferta',[
             'promotion' => $promotion
         ]);
     }
@@ -96,16 +96,16 @@ class StaffController extends Controller {
         $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
         $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
         $promotion->save();
-        return redirect()->route('product.index')->with('Promozione modificata con successo.');
+        return redirect()->route('staff.index')->with('Promozione modificata con successo.');
     }
 
     public function delete(Promotion $promotion){
         // dd($promotion);
         $promotion -> delete();
-        return redirect()->route('product.index')->with('status', 'Promozione cancellata con sucesso');
+        return redirect()->route('staff.index')->with('status', 'Promozione cancellata con sucesso');
     }
     public function changePasswordStaff(){
-        return view('profile.updatePasswordStaff');
+        return view('staff.updatePasswordStaff');
     }
     
     public function storePasswordStaff(NewPasswordRequest $request)
@@ -127,7 +127,7 @@ class StaffController extends Controller {
         }
 
         public function changeDatiStaff(){
-            return view('profile.updateDatiStaff');
+            return view('staff.updateDatiStaff');
         }
         
         public function storeDatiStaff(NewDatiStaffRequest $request)

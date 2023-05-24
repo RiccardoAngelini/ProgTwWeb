@@ -5,7 +5,7 @@
 <a class="btn2" href="{{route('admin.listaziende')}}">Indietro</a></div>
 <div class="content1-registrazione"> 
                                                                                                    
-   <div class="container-modifica-off"">
+   <div class="container">
       <h2>Inserisci Azienda</h2>
       <div class="content-registrazione">
       @if (Session::has('success'))
