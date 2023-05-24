@@ -1,101 +1,129 @@
 @extends('layouts.staff')
 @section('content')
-
-<a class="btn2" href="{{route('product.index')}}">Back</a>
+<div class="content1-registrazione">  
+<!--<a class="btn2" href="{{route('product.index')}}">Back</a>-->
+<div class="container">
     <h1 >Agggiungi una nuova promozione</h1>
-
-    <div class="container">
-        <form action="{{route('product.store')}}" method="POST">
-            @csrf
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname"> Nome prodotto: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="name" name="name"  placeholder="Nome del prodotto">
-                    @error('name')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="price">Prezzo: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="price" name="price" placeholder="prezzo del prodotto">
-                    @error('price')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="categoria">Categoria</label>
-                </div>
-                <div class="col-75">
-                    <select id="categoria" name="categoria">
-                        <option value="">cat1</option>
-                        <option value="">cat2</option>
-                        <option value="">cat3</option>
-                    </select>
-                    @error('comp_name')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Data Inizio Promozione: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="data1" name="data1" placeholder="Data Inizio Promozione">
-                    @error('date_start')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Data Fine Promozione: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="data2" name="data2" placeholder="Data Fine Promozione">
-                    @error('date_end')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Sconto Promozione: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="sconto" name="sconto" placeholder="Inserisci lo sconto Promozione">
-                    @error('discountPerc')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="desc">Descrizione</label>
-                </div>
-                <div class="col-75">
-                    <textarea id="desc" name="desc" placeholder="Descrizione del prodotto" style="height:200px"></textarea>
-                    @error('desc')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row1">
-                {{-- <a class="btn11" href="">Salva</a> --}}
-                <button class="btn11" type="submit">Aguingi</button>
-            </div>
-        </form>
+    <div class="content-registrazione">
+    @if (Session::has('success'))
+<div class="alert alert-success" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+        {{Session::get('success')}}
     </div>
+    @endif
+    @if (Session::has('error'))
+    <div class="alert alert-danger" role="alert" style="display:flex; justify-content:center; margin-left:260px;">
+            {{ Session::get('error')}}
+        </div>
+    @endif
 
+    {{ Form::open(array('route' => 'product.store','files' => true)) }}
+    {{ csrf_field() }}
+    <div class="user-details">
 
+            <div class="input-box">
+               {{ Form::label('name', 'Nome prodotto', ['class' => 'details']) }}
+               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome prodotto']) }}
+               @if ($errors->first('name'))
+                <ul class="errors">
+                    @foreach ($errors->get('name') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            
+            <div class="input-box">
+               {{ Form::label('price', 'Prezzo', ['class' => 'details']) }}
+               {{ Form::text('price', null, ['placeholder' => 'Inserisci il prezzo']) }}
+               @if ($errors->first('price'))
+                <ul class="errors">
+                    @foreach ($errors->get('price') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div class="input-box">
+               {{ Form::label('comp_name', 'Azienda', ['class' => 'details']) }}
+               {{ Form::text('comp_name', null, ['placeholder' => 'Inserisci l azienda']) }}
+               @if ($errors->first('comp_name'))
+                <ul class="errors">
+                    @foreach ($errors->get('comp_name') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div class="input-box">
+               {{ Form::label('date_start', 'Data inizio promozione :', ['class' => 'details']) }}
+               {{ Form::date('date_start', null, ['placeholder' => 'Inserisci la data di inizio']) }}
+               @if ($errors->first('date_start'))
+                <ul class="errors">
+                    @foreach ($errors->get('date_start') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div class="input-box">
+               {{ Form::label('date_end', 'Data fine promozione :', ['class' => 'details']) }}
+               {{ Form::date('date_end', null, ['placeholder' => 'Inserisci la data di fine']) }}
+               @if ($errors->first('date_end'))
+                <ul class="errors">
+                    @foreach ($errors->get('date_end') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div class="input-box">
+               {{ Form::label('discountPerc', 'Sconto', ['class' => 'details']) }}
+               {{ Form::text('discountPerc', null, ['placeholder' => 'Inserisci lo sconto']) }}
+               @if ($errors->first('discountPerc'))
+                <ul class="errors">
+                    @foreach ($errors->get('discountPerc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div  class="input-box0">
+                {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('image', [ 'id' => 'image']) }}
+                @if ($errors->first('image'))
+                <ul class="errors">
+                    @foreach ($errors->get('image') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+            <div class="input-box">
+               {{ Form::label('desc', 'Descrizione :', ['class' => 'details']) }}
+               {{ Form::textarea('desc', null, ['placeholder' => 'Inserisci la descrizione']) }}
+               @if ($errors->first('desc'))
+                <ul class="errors">
+                    @foreach ($errors->get('desc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                </div>
+            {{ Form::submit('Registra promozione',['class' => 'button-login']) }}
+         </div>
+         {{ Form::close() }}
+      </div>
+   </div>
+</div>
+
+<!--
       <style>
         * {
           box-sizing: border-box;
@@ -204,5 +232,5 @@
             margin-top: 0;
           }
         }
-        </style>
+        </style>-->
  @endsection

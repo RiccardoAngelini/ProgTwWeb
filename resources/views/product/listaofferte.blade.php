@@ -31,6 +31,7 @@
                 <th>Azienda</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
+                <th style="width: 40px">Edit</th>
                 <th style="width: 40px">Show</th>
                 <th style="width: 40px">Delete</th>
 

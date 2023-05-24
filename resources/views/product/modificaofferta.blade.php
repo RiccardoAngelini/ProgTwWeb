@@ -5,97 +5,84 @@
 
     <h1 >Modifica promozione</h1>
 
-    <div class="container">
-        <form action="{{route('product.update', [$promotion->promo_Id])}}" method="POST">
-            @method('put')
-            @csrf 
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname"> Nome prodotto: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="name" value="{{$promotion->name}}" name="name"  placeholder="Nome del prodotto">
-                    @error('name')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="price">Prezzo: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="price" value="{{$promotion->price}}" name="price" placeholder="prezzo del prodotto">
-                    @error('price')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="categoria">Azienda : </label>
-                </div>
-                <div class="col-75">
-                    <select id="categoria"  name="categoria">
-                        <option value="australia">cat1</option>
-                        <option value="canada">cat2</option>
-                        <option value="usa">cat3</option>
-                    </select>
-                    @error('comp_name')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Data Inizio Promozione: </label> 
-                    <input type="date" id="data1" value="{{$promotion->date_start}}" name="data1" placeholder="Data Inizio Promozione">
-                </div>
-                <div class="col-75">
-                    @error('date_start')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Data Fine Promozione: </label>
-                    <input type="date" id="data2" value="{{$promotion->date_end}}" name="data2" placeholder="Data Fine Promozione">
-                </div>
-                <div class="col-75">
-                    @error('date_end')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="data">Sconto Promozione: </label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="sconto" value="{{$promotion->discountPerc}}" name="sconto" placeholder="Inserisci lo sconto Promozione">
-                    @error('discountPerc')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="desc">Descrizione</label>
-                </div>
-                <div class="col-75">
-                    <textarea id="desc" name="desc" placeholder="Descrizione del prodotto" style="height:200px">{{$promotion->desc}}</textarea>
-                    @error('desc')
-                        <span role="alert"> <strong>{{$message}}</strong></span>
-                    @enderror
-                </div>
-            </div>
-            <div class="row1">
-                {{-- <a  href="">Salva</a> --}}
-                <button class="btn11" type="submit">Salva</button>
-            </div>
-        </form>
+<div class="container">
+    {{ Form::open('route' => ['product.update', $promotion->promo_Id], 'role' => 'form']) }}
+    {{ csrf_field() }}
+    
+    <div class="input-box">
+        {{ Form::label('name', 'Nome Prodotto :') }}
+        {{ Form::text('name', old('name', $promotion->name), ['id' => 'name']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('name') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
     </div>
+
+    <div class="input-box">
+        {{ Form::label('price', 'Prezzo :') }}
+        {{ Form::text('price', old('price', $promotion->price), ['id' => 'price']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('price') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
+        {{ Form::label('comp_name', 'Azienda :') }}
+        {{ Form::text('comp_name', old('comp_name', $promotion->comp_name), ['id' => 'comp_name']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('comp_name') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
+        {{ Form::label('date_start', 'Data Inizio Promozione:') }}
+        {{ Form::date('date_start', old('date_start', $promotion->date_start), ['id' => 'date_start']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('date_start') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+    <div class="input-box">
+        {{ Form::label('date_end', 'Data Fine Promozione:') }}
+        {{ Form::date('date_end', old('date_end', $promotion->date_end), ['id' => 'date_end']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('date_end') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
+        {{ Form::label('discountPerc', 'Sconto :') }}
+        {{ Form::text('discountPerc', old('discountPerc', $promotion->discountPerc), ['id' => 'discountPerc']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('discountPerc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
+        {{ Form::label('desc', 'Descrizione :') }}
+        {{ Form::textarea('desc', old('desc', $promotion->desc), ['id' => 'desc']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('desc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+            <div class="row1">
+                {{ Form::submit('Salva',['class' => 'button-login']) }}
+            </div>
+    {{ Form::close() }}
+</div>
 
 
       <style>

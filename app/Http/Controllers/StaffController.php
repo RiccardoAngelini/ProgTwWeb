@@ -36,7 +36,7 @@ class StaffController extends Controller {
         dd($request->all());
         Promotion::create([
             'name' => $request -> input('name'),
-            'price' => $request -> input('pice'),
+            'price' => $request -> input('price'),
             'comp_name' => $request -> input('comp_name'),
             'date_start' => $request -> input('date_start'),
             'date_end' => $request -> input('date_end'),
@@ -56,7 +56,7 @@ class StaffController extends Controller {
     public function updatepromo($promo_Id, Request $request){
         $promotion = Promotion::find($promo_Id);
         $promotion ->name =$request->name;
-        $promotion -> price = $request->pice;
+        $promotion -> price = $request->price;
         $promotion -> comp_name = $request->comp_name;
         $promotion -> date_start = $request->date_start;
         $promotion -> date_end = $request->date_end;

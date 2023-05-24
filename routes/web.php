@@ -101,7 +101,7 @@ Route::prefix('staff')->group(function(){
         Route::post('/product/store', [StaffController::class, 'store'])->name('product.store');
         Route::get('/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
         Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
-        Route::put('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
+        Route::post('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
         Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
 
 
