@@ -16,7 +16,7 @@
             {{ Session::get('error')}}
         </div>
     @endif
-    {{ Form::open(['route' => ['staff.update', $promotion->promo_Id], 'role' => 'form']) }}
+    {{ Form::open(['route' => ['staff.update', $promotion->promo_Id], 'files'=>true]) }}
     {{ csrf_field() }}
     <div class="user-details">
     <div class="input-box">
@@ -77,6 +77,18 @@
                     @endforeach
                 </ul>  
     </div>
+
+    <div  class="input-box0">
+                {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('image', [ 'id' => 'image']) }}
+                @if ($errors->first('image'))
+                <ul class="errors">
+                    @foreach ($errors->get('image') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
 
     <div class="row1">
         {{ Form::label('desc', 'Descrizione :') }}

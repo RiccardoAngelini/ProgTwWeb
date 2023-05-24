@@ -9,7 +9,7 @@
 
     <h2 style="margin-left: 25%; margin-top:70px;">Inserisci azienda</h2>
     <div class="faq-form" style="margin-top: 30px;">
-    {{ Form::open(['route' => ['adminCompany.update', $company->comp_Id], 'role' => 'form']) }}
+    {{ Form::open(['route' => ['adminCompany.update', $company->comp_Id], 'files'=>true]) }}
     {{ csrf_field() }}
 
     <div class="input-box">
@@ -31,6 +31,19 @@
                     @endforeach
                 </ul>  
     </div>
+
+    <div  class="input-box0">
+                {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('image', [ 'id' => 'image']) }}
+                @if ($errors->first('image'))
+                <ul class="errors">
+                    @foreach ($errors->get('image') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
 
     {{ Form::submit('Salva',['class' => 'button-login']) }}
     {{ Form::close() }}

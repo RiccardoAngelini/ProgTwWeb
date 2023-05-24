@@ -65,9 +65,6 @@ class StaffController extends Controller {
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
           $promotion ->image = $imageName;
           $promotion->save();
-        
- 
-          
 
           if (!is_null($imageName)) {
             $destinationPath = public_path() . '/images/promotions';
@@ -86,6 +83,12 @@ class StaffController extends Controller {
     }
     public function updatepromo($promo_Id, Request $request){
         $promotion = Promotion::find($promo_Id);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
         $promotion ->name =$request->name;
         $promotion -> price = $request->price;
         $promotion -> comp_name = $request->comp_name;
@@ -95,7 +98,12 @@ class StaffController extends Controller {
         $promotion -> desc = $request-> desc;
         $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
         $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
+        $promotion ->image = $imageName;
         $promotion->save();
+        if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/promotions';
+            $image->move($destinationPath, $imageName);
+        };
         return redirect()->route('staff.index')->with('Promozione modificata con successo.');
     }
 
