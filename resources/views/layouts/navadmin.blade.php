@@ -88,7 +88,7 @@
                 </div>
                 <li class="item"><a href="{{route('admin.numcouponemessi')}}">Numero coupon emessi</a></li>
                 <li class="item"><a href="{{route('admin.listautentistats')}}">Statistiche Utente</a></li>
-                <li class="item"><a href="#">Statistiche Promozione</a></li>
+                <li class="item"><a href="{{route('admin.listapromozionistats')}}">Statistiche Promozione</a></li>
             </ul>
           </li>
           <li class="item"><a href="{{route('chisiamo')}}">Chi siamo</a></li>
