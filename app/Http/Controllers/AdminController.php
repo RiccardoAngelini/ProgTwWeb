@@ -286,10 +286,8 @@ public function listaUserStats(){
 }
 
 public function couponTotali(){
-    $coupontotali = Coupon::count();
-    // return response()->json([
-    //     'numero_coupon_totali' => $couponTotali
-    // ]);
+    $coupontotali = $this->_couponModel->count();
+    // $coupontotali = Coupon::count();
     return view('admin.coupon_totali', [
         'coupontotali' => $coupontotali
     ]);
