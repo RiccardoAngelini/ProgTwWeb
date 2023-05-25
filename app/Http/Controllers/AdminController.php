@@ -212,7 +212,8 @@ public function destroyCompany($comp_Id) {
              'username' => ['required', 'string', 'min:8', 'unique:users'],
              'age' => ['required','int','min:18'],
              'gender' => ['required','string','min:1'],
-             'password' => ['required', 'min:3'],
+             'password' => ['required','confirmed','min:3'],
+            
      
          ]);
      
@@ -225,6 +226,7 @@ public function destroyCompany($comp_Id) {
              'age' =>$request->age,
              'gender' => $request->gender,
              'password' => Hash::make($request->password),
+             
              
          ]);
      
@@ -251,6 +253,7 @@ public function destroyCompany($comp_Id) {
              $user->password = $request->input('password');
              $user->surname = $request->input('surname');
              $user->phone = $request->input('phone');
+             
              
              
              $user->save();

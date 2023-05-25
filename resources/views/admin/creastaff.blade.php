@@ -88,17 +88,28 @@
                                       </ul>
                                       @enderror
                                     </div>
+                                    <div class="input-box">
+                                      {{ Form::label('password_confirmation', 'Conferma password', ['class' => 'details']) }}
+                                      {{ Form::text( 'password_confirmation', ['placeholder' => 'Password']) }}
+                                      @error('password_confirmation')
+                                       <ul class="errors">
+                                           
+                                           <li>{{ $message }}</li>
+                                      
+                                       </ul>
+                                       @enderror
+                                     </div>
       </div>
                                      <div class="gender-details"> 
                                       {{ Form::label('gender', 'Genere',['class' => 'gender-title']) }}
                                        
                                        <div class="category">
                                      <div class="male">
-                                     {{ Form::radio('gender', 'male', true, ['id' => 'dot-1', 'class' => 'dot-1']) }}
+                                     {{ Form::radio('gender', 'M', true, ['id' => 'dot-1', 'class' => 'dot-1']) }}
                                      {{ Form::label('dot-1', 'Maschio',['class' => 'gender-label', 'for' => 'dot-2']) }}
                                      </div>
                                      <div class="female">
-                                     {{ Form::radio('gender', 'female', ['id' => 'dot-2', 'class' => 'dot-2']) }}
+                                     {{ Form::radio('gender', 'F', ['id' => 'dot-2', 'class' => 'dot-2']) }}
                                      {{ Form::label('dot-2', 'Femmina',['class' => 'gender-label', 'for' => 'dot-2']) }}
                                      </div>
                                      </div>

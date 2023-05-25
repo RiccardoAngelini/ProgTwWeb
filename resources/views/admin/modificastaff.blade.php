@@ -77,7 +77,7 @@
                             </div>
                             <div class="input-box">
                              {{ Form::label('password', 'Password', ['class' => 'details']) }}
-                             {{ Form::text('password', $staff->password, ['placeholder' => 'Password']) }}
+                             {{ Form::password('password', $staff->password, ['placeholder' => 'Password']) }}
                              @error('password')
                               <ul class="errors">
                                   
