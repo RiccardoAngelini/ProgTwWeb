@@ -23,5 +23,12 @@ class Company extends Model {
   public function getcompanyId($comp_Id) {
       return Company::find($comp_Id);
   }
+
+  public function getCompanyArray(){
+
+        $companies = Company::pluck('name', 'name')->toArray();
+        return $companies;
+}
+
   
 }

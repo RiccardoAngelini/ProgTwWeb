@@ -17,6 +17,12 @@ use App\Http\Requests\NewDatiStaffRequest;
 use Illuminate\Support\Facades\Validator;
 class StaffController extends Controller {
 
+    protected $_companyModel;
+
+    public function __construct() {
+        $this->_companyModel = new Company;
+    }
+
     public function staff() {
         return view('staff.staff');
     }    
@@ -30,31 +36,34 @@ class StaffController extends Controller {
     }
 
     public function creapromo(){
-        return view('staff.creaofferta');
+        $companies=$this->_companyModel->getCompanyArray();
+        return view('staff.creaofferta')
+                ->with('companies',$companies);
     }
 
     public function store(PromotionRequest $request){
-        $validator = $request->validated();
+       
+    $validator = Validator::make($request -> all(),[
 
-        Promotion::create([
-            'name' => $request -> input('name'),
-            'price' => $request -> input('price'),
-            'comp_name' => $request -> input('comp_name'),
-            'date_start' => $request -> input('date_start'),
-            'date_end' => $request -> input('date_end'),
-            'discountPerc' => $request -> input('discountPerc'),
-            'desc' => $request -> input('desc'),
-        ]);
-        if($validator -> passes())
-        {
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = $image->getClientOriginalName();
-        } else {
-            $imageName = NULL;
-        }
+        'name' => 'required',
+        'price' => 'required',
+        'comp_name' => 'required',
+        'date_start' => 'required',
+        'date_end' => 'required',
+        'discountPerc'=> 'required',
+        'desc'=> 'required',
+        'image'=> 'required',
+    ]);
+    if($validator -> passes())
+    {
+       if ($request->hasFile('image')) {
+           $image = $request->file('image');
+           $imageName = $image->getClientOriginalName();
+       } else {
+           $imageName = NULL;
+       }
           $promotion = new Promotion();
-          $promotion ->name =$request->name;
+          $promotion -> name = $request->name;
           $promotion -> price = $request->price;
           $promotion -> comp_name = $request->comp_name;
           $promotion -> date_start = $request->date_start;
@@ -76,19 +85,32 @@ class StaffController extends Controller {
     
 
      public function modificapromo($promo_Id){
+        $companies=$this->_companyModel->getCompanyArray();
+
         $promotion = Promotion::find($promo_Id);
         return view('staff.modificaofferta',[
             'promotion' => $promotion
-        ]);
+        ])->with('companies',$companies);
     }
     public function updatepromo($promo_Id, Request $request){
-        $promotion = Promotion::find($promo_Id);
+        $validator = Validator::make($request -> all(),[
+
+            'name' => 'required',
+            'price' => 'required',
+            'comp_name' => 'required',
+            'date_start' => 'required',
+            'date_end' => 'required',
+            'discountPerc'=> 'required',
+            'desc'=> 'required',
+            'image'=> 'required',
+        ]);   
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
         } else {
             $imageName = NULL;
         }
+        $promotion = Promotion::find($promo_Id);
         $promotion ->name =$request->name;
         $promotion -> price = $request->price;
         $promotion -> comp_name = $request->comp_name;
