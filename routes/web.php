@@ -89,11 +89,14 @@ Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
 Route::put('/user/{userId}', [UserController::class, 'update']);
 Route::delete('/user/{userId}', [UserController::class, 'destroy']);
 
-Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])->name('coupon');
+//Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])->name('coupon');
 
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
+
+Route::get('/coupon/acquista/{coupon_Id}', [UserController::class, 'showCoupon'])->name('coupon.vedi');
+Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoupon'])->name('coupon.acquista');
 
 
 

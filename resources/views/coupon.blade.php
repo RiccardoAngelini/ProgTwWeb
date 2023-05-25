@@ -14,10 +14,16 @@
 
     <link rel="stylesheet" href="{{ asset('css/coupon.css')}}">
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/staff.css')}}">
 </head>
 <body>
 
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+<button class="button-back2"><a class="btn2" href="{{route('catalogo')}}">Torna al catalogo</a></button>
 <div class="content1">
 <div class="content2">
 <div class="text">
@@ -25,7 +31,9 @@
       </div>
       <div class="info">
       <div class="field_coupon">
-      <b>Codice coupon</b>: {{ $coupon->code}}
+        @foreach($coupon as $coup)
+      <b>Codice coupon</b>: {{ $coup->code}}
+      @endforeach
 </div>
 <div class="field_coupon">
 
@@ -42,3 +50,5 @@
 </div>
 </div>
 </div>
+</body>
+</html>

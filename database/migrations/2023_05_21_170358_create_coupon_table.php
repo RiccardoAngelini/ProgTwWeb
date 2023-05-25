@@ -18,6 +18,8 @@ class CreateCouponTable extends Migration
             $table->string('code')->unique()->default(Str::random(15));   
             $table->unsignedBigInteger('promotion_id')->nullable();
             $table->foreign('promotion_id')->references('promo_Id')->on('promotion');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

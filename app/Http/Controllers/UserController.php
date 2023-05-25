@@ -12,6 +12,8 @@ use App\Http\Requests\NewEmailRequest;
 use App\Http\Requests\NewNameSurnameRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller {
 
@@ -30,20 +32,44 @@ class UserController extends Controller {
         return view('user');
     }
 
-   /* public function showCoupon($promo_Id, $coupon_Id)
+    public function showCoupon($coupon_Id)
     {
-
-        $promo_byid=$this->_promotionModel->getPromotionId($promo_Id);
-        $scelta_coupon = $this->_couponModel->getCouponIdByProm($coupon_Id);
-
-        $coupon=$this->_couponModel->getCouponById($scelta_coupon)->first();
-
-        return view('coupon')
-        ->with('coupon', $coupon)
-        ->with('promo_byid', $promo_byid)
-            ->with('scelta_coupon', $scelta_coupon);
+        $coupon = $this->_couponModel->getCouponById($coupon_Id);
+        return view('coupon')->with('coupon', $coupon);
     }
-    */
+    
+    public function acquistaCoupon(Request $request,$promo_Id)
+{
+    $userId = auth()->id();
+    $promotion = $this->_promotionModel->getPromotionId($promo_Id)->first();
+    $promotionId=$promotion->promo_Id;
+    
+    // Verifica se l'utente ha già un coupon per la promozione corrente
+    $existingCoupon = Coupon::where('promotion_id', $promotionId)
+                            ->where('user_id', $userId)
+                            ->first();
+
+    if ($existingCoupon) {
+        // L'utente ha già un coupon per questa promozione
+        // Puoi gestire l'errore o mostrare un messaggio all'utente
+return redirect()->back()->with('error', 'Hai già un coupon per questa promozione');
+
+    }
+
+    // Genera un codice casuale per il coupon
+    $couponCode = strtoupper(Str::random(8));
+
+    // Salva il coupon nel database
+    $coupon = new Coupon();
+    $coupon->code = $couponCode;
+    $coupon->user_id = $userId;
+    $coupon->promotion_id = $promotionId;
+    $coupon->save();
+
+    // Reindirizza l'utente alla vista "coupon" con il coupon appena creato
+    return redirect()->route('coupon.vedi', ['coupon_Id' => $coupon->coupon_Id])->with('success','Coupon acquistato con successo!');
+}
+
     public function changeUsername(){
         return view('users.updateUsername');
     }

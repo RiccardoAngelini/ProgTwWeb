@@ -15,13 +15,17 @@
         }
     
 @endphp
-@if ($remainingDays !== 'Offerta scaduta!')
-    
-        <div class="ottieni-coup">
-            <a href="" target="_blank">
-                <button class="button-ottieni">
-                    Acquista Coupon
-                </button>
-            </a>
-        </div>
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
 @endif
+
+<form action="{{ route('coupon.acquista',$promo_Id) }}" method="POST">
+    @csrf
+    <div class="ottieni-coup">
+    <button class="button-ottieni" type="submit">Acquista Coupon</button>
+    </div>
+</form>
+
+
