@@ -168,5 +168,15 @@ Route::post('/listaAzienze/update/{azienda_Id}', [AdminController::class, 'updat
 
 Route::get('/admin/listaAziende/azienda/{comp_Id}',[AdminController::class,'showAzienda'])->name('azienda');
 
+//crud staff admin
+Route::get('/admin/listastaff',[AdminController::class ,'listaStaff'])->name('admin.listastaff');
+Route::get('/admin/listastaff/new',[AdminController::class ,'addStaff'])->name('admin.newStaff');
+Route::post('/admin/listastaff/store',[AdminController::class ,'store'])->name('admin.create');
+Route::get('/admin/listastaff/{id}',[AdminController::class ,'modificaStaff'])->name('admin.modStaff');
+Route::post('/admin/listastaff/{id}',[AdminController::class ,'update'])->name('admin.updateStaff');
+Route::delete('/admin/listastaff/delete',[AdminController::class,'deleteStaff'])->name('admin.deleteStaff');
+
+
+
 require __DIR__.'/auth.php';
 

@@ -11,6 +11,7 @@ use App\Models\Resources\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Helper\Table;
 use Illuminate\Support\Facades\Validator;
 
@@ -182,7 +183,82 @@ public function destroyCompany($comp_Id) {
         return view('admin.azienda')
             ->with('azienda',$azienda);
      }
-
+     Public function listaStaff()
+     {
+         $staffs = User::where('role','staff')->get();
+         return view('admin.listastaff', ['staffs' => $staffs]);
+     }
+     
+     public function deleteStaff(Request $request)
+     {
+         $staffIds = $request->input('staff_ids', []);
+     
+             if (!empty($staffIds)) {
+                 User::whereIn('id', $staffIds)->delete();
+             }
+         return redirect()->route('admin.listastaff')->with('success', 'Eliminazione avvenuta con successo.');
+     }
+     
+     public function addStaff(){
+         return view('admin.creastaff');
+     }
+     
+     public function store(Request $request){
+         $request->validate([
+             'name' => ['required', 'string', 'max:255'],
+             'surname' => ['required', 'string', 'max:255'],
+             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+             'phone' => ['required', 'int', 'phone', 'min:10'],
+             'username' => ['required', 'string', 'min:8', 'unique:users'],
+             'age' => ['required','int','min:18'],
+             'gender' => ['required','string','min:1'],
+             'password' => ['required', 'min:3'],
+     
+         ]);
+     
+         $user = User::create([
+             'name' => $request->name,
+             'surname'=>$request->surname,
+             'phone' => $request->phone,
+             'email' => $request->email,
+             'username' => $request->username,
+             'age' =>$request->age,
+             'gender' => $request->gender,
+             'password' => Hash::make($request->password),
+             
+         ]);
+     
+         $user->role='staff';
+         $user->save();
+             return redirect()->route('admin.listastaff')->with('success','Creazione membro dello staff avvenuta con successo');
+         }
+         
+         public function modificaStaff($id){
+             $staff = User::findOrFail($id);
+           
+             return view('admin.modificastaff',['staff'=>$staff]);
+     
+         }
+         public function update(Request $request, $id)
+         {
+             $user = User::findOrFail($id);
+           
+             $user->name = $request->input('name');
+             $user->email = $request->input('email');
+             $user->username = $request->input('username');
+             $user->age = $request->input('age');
+             $user->gender = $request->input('gender');
+             $user->password = $request->input('password');
+             $user->surname = $request->input('surname');
+             $user->phone = $request->input('phone');
+             
+             
+             $user->save();
+             
+             
+         
+             return redirect()->route('admin.listastaff')->with('success','Modifica dei dati avvenuta con successo');
+         }
 }
 
 

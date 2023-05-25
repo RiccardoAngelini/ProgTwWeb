@@ -58,7 +58,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
               Visualizza Membri Staff
             </div>
-            <li class="item"><a href="#">Lista Membri Staff</a></li>
+            <li class="item"><a href="{{route('admin.listastaff')}}">Lista Membri Staff</a></li>
         </ul>
               </li>
               <li class="item">

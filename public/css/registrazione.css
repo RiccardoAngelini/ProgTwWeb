@@ -132,7 +132,11 @@ form .details{
   background: 660000;
   }
 
-
+  .crud-staff-create{
+    text-align: center; 
+    padding-top: 200px;
+    
+  }
 /*
  @media(max-width: 584px){
  .container{
