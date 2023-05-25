@@ -25,8 +25,10 @@
         <tr>
             <th>Staff_id</th>
             <th>Nome</th> 
-            <th style="width: 40px">Update</th>
-            <th style="width: 40px">Delete</th>
+            <th>Cognome</th>
+            <th>Email</th>  
+            <th style="width: 40px">Modifica</th>
+            <th style="width: 40px">Cancella</th>
         </tr>
     </thead>
     <tbody>

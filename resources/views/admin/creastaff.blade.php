@@ -1,16 +1,18 @@
 @extends('layouts.admin')
 @section('content')
-
-
 <div class="crud-staff-create"><h1>AGGIUNGI UN MEMBRO</h1>
 
+<div class="button-back2">
+<a class="btn2" href="{{route('admin.listastaff')}}">Indietro</a></div>
 
+</div>
    
         
   <div class="content1-registrazione">
-    <div class="container">
+    <div class="container-modifica-off">
       <h3>Inserisci i dati del nuovo membro</h3>
       {{ Form::open(['route' => 'admin.create', 'method' => 'POST']) }}
+      @csrf
       <div class="user-details">
         <div class="input-box">
  {{ Form::label('name', 'Nome', ['class' => 'details']) }}
@@ -90,7 +92,7 @@
                                     </div>
                                     <div class="input-box">
                                       {{ Form::label('password_confirmation', 'Conferma password', ['class' => 'details']) }}
-                                      {{ Form::text( 'password_confirmation', ['placeholder' => 'Password']) }}
+                                      {{ Form::password( 'password_confirmation', ['placeholder' => 'Password']) }}
                                       @error('password_confirmation')
                                        <ul class="errors">
                                            
@@ -99,18 +101,18 @@
                                        </ul>
                                        @enderror
                                      </div>
-      </div>
+                                  </div>
                                      <div class="gender-details"> 
                                       {{ Form::label('gender', 'Genere',['class' => 'gender-title']) }}
                                        
                                        <div class="category">
-                                     <div class="male">
-                                     {{ Form::radio('gender', 'M', true, ['id' => 'dot-1', 'class' => 'dot-1']) }}
-                                     {{ Form::label('dot-1', 'Maschio',['class' => 'gender-label', 'for' => 'dot-2']) }}
+                                     <div class="uomo">
+                                     {{ Form::radio('gender', 'M', false, ['id' => 'dot-1', 'class' => 'dot-1']) }}
+                                    {{ Form::label('dot-1', 'Uomo', ['class' => 'gender-label', 'for' => 'dot-1']) }}
                                      </div>
-                                     <div class="female">
-                                     {{ Form::radio('gender', 'F', ['id' => 'dot-2', 'class' => 'dot-2']) }}
-                                     {{ Form::label('dot-2', 'Femmina',['class' => 'gender-label', 'for' => 'dot-2']) }}
+                                     <div class="donna">
+                                     {{ Form::radio('gender', 'F', false, ['id' => 'dot-2', 'class' => 'dot-2']) }}
+               {{ Form::label('dot-2', 'Donna', ['class' => 'gender-label', 'for' => 'dot-2']) }}
                                      </div>
                                      </div>
                                      </div>

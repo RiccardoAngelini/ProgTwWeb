@@ -256,7 +256,7 @@ public function destroyCompany($comp_Id) {
              $user->username = $request->input('username');
              $user->age = $request->input('age');
              $user->gender = $request->input('gender');
-             $user->password = $request->input('password');
+             $user->password = Hash::make($request->input('password'));
              $user->surname = $request->input('surname');
              $user->phone = $request->input('phone');
              
