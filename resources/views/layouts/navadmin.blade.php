@@ -86,27 +86,28 @@
                     <i class="fa-solid fa-chevron-left"></i>
                   Visualizza Statistiche
                 </div>
-                <li class="item"><a href="#">Numero coupon emessi</a></li>
+                <li class="item"><a href="{{route('admin.numcouponemessi')}}">Numero coupon emessi</a></li>
                 <li class="item"><a href="{{route('admin.listautentistats')}}">Statistiche Utente</a></li>
-                <li class="item"><a href="#">Statistiche Coupon</a></li>
-                <li class="item"><a href="{{route('admin.listapromozionistats')}}">Statistiche Promozione</a></li>
+                <li class="item"><a href="#">Statistiche Promozione</a></li>
             </ul>
           </li>
+          <li class="item"><a href="{{route('chisiamo')}}">Chi siamo</a></li>
+          <li class="item"><a href="{{route('dovesiamo')}}">Dove siamo</a></li>
+          <li class="item"><a href="{{route('faq2')}}">FAQ</a></li>
+          <li class="item"><a href="{{route('contatti')}}">Contatti</a></li>
+
             <li class="item">
                 
                 @auth
-        <li><a href="" class="item" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
-    @endauth 
-                </div>
+                  <li class="item"><a href="" class="item" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                @endauth 
+                         
             </li>
-            
-            
-            
       </div>
-    
+     </div>
   </nav>
 
 <nav class="navbara">

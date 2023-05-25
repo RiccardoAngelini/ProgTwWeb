@@ -74,6 +74,18 @@
     border-bottom-width: 2px;
     transition: all 0.3s ease;
   }
+  .user-details select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-color: #ff7a57;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
   .input-box0 input{
     height: 45px;
     width: 100%;

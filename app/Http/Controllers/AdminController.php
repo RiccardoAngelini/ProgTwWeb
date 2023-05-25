@@ -304,5 +304,12 @@ public function promoStatistiche($promotion_Id)
              return view('admin.promo_statistiche')->with('couponStats', $couponStats)->with('promo', $promo);
          }
 
+public function couponTotali(){
+    $coupontotali = $this->_couponModel->count();
+    // $coupontotali = Coupon::count();
+    return view('admin.coupon_totali', [
+        'coupontotali' => $coupontotali
+    ]);
+}
 
 }

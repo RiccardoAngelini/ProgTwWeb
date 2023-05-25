@@ -48,7 +48,7 @@
 
             <div class="input-box">
                {{ Form::label('comp_name', 'Azienda', ['class' => 'details']) }}
-               {{ Form::text('comp_name', null, ['placeholder' => 'Inserisci l azienda']) }}
+               {{ Form::select('comp_name',$companies,null, ['placeholder' => 'Scegli l azienda']) }}
                @if ($errors->first('comp_name'))
                 <ul class="errors">
                     @foreach ($errors->get('comp_name') as $message)
