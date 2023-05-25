@@ -47,6 +47,16 @@
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>  
+    </div>  
+    
+    <div class="input-box">
+        {{ Form::label('discountPerc', 'Sconto :') }}
+        {{ Form::text('discountPerc', old('discountPerc', $promotion->discountPerc), ['id' => 'discountPerc']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('discountPerc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
     </div>
 
     <div class="input-box">
@@ -68,15 +78,7 @@
                 </ul>  
     </div>
 
-    <div class="input-box">
-        {{ Form::label('discountPerc', 'Sconto :') }}
-        {{ Form::text('discountPerc', old('discountPerc', $promotion->discountPerc), ['id' => 'discountPerc']) }}
-        <ul class="errors">
-                    @foreach ($errors->get('discountPerc') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>  
-    </div>
+  
 
     <div  class="input-box0">
                 {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
