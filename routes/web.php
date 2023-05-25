@@ -94,6 +94,9 @@ Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'sho
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
+
+
+
 Route::prefix('staff')->group(function(){
         Route::get('/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
         Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('staff.index');

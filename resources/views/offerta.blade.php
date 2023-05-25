@@ -30,7 +30,7 @@ $(document).ready(function() {
         </div>
         <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
         @can('isUser')
-      @include('helpers/promotionCoupon',['expirationDate' => $sel_promId->date_end])
+      @include('helpers/promotionCoupon',['expirationDate' => $sel_promId->date_end,'promo_Id'=>$sel_promId->promo_Id])
       @endcan
          <div style=" clear:right"></div>
     </div>

@@ -10,6 +10,9 @@ use App\Models\Resources\Promotion;
 use App\Models\Resources\Coupon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Redirect;
+
 
 
 
@@ -142,4 +145,13 @@ class PublicController extends Controller
             'listafaq' => $listafaq,
         ]);
     }
+
+
+
+    
+
+
+
+
+
 }

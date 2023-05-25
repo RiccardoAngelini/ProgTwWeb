@@ -9,6 +9,14 @@ class Coupon extends Model {
     protected $table = 'coupon';
     protected $primaryKey = 'coupon_Id';
 
+    protected $fillable = ['code'];
+    public $timestamps= false;
+
+
+
+    public function getCoupons(){
+        return Coupon::all();
+    }
 
 public function getCouponId(){
     return Coupon::select('coupon_Id')->get();
@@ -23,6 +31,9 @@ public function getCouponById($coupon_Id)
 {
     return Coupon::where('coupon_Id', $coupon_Id)->get();
 }
-
+public function promotion()
+{
+    return $this->belongsTo(Promotion::class);
+}
 
 }

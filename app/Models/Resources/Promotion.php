@@ -57,4 +57,11 @@ class Promotion extends Model {
         return Promotion::select('name')->get();
     }
 
+    public function coupon()
+{
+    return $this->hasOne(Coupon::class);
+}
+
+
+ 
 }
