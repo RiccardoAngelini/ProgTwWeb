@@ -6,8 +6,9 @@ use App\Http\Requests\NewProductRequest;
 use App\Http\Requests\UpadateCompanyRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
-use APP\Models\User;
+use App\Models\User;
 use App\Models\Resources\Company;
+use App\Models\Resources\Coupon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,9 @@ class AdminController extends Controller {
 
     protected $_adminModel;
     protected $_companyModel;
+
+    protected $_couponModel;
+    protected $_userModel;
     
     // public function __construct() {
     //     $this->_adminModel = new Admin;
@@ -30,6 +34,8 @@ class AdminController extends Controller {
     public function __construct(){
         $this->_adminModel = new Admin;
         $this->_companyModel = new Company;
+        $this->_couponModel = new Coupon;
+        $this->_userModel = new User;
         $this->middleware('can:isAdmin');
             
         }
@@ -259,6 +265,22 @@ public function destroyCompany($comp_Id) {
          
              return redirect()->route('admin.listastaff')->with('success','Modifica dei dati avvenuta con successo');
          }
+
+         public function couponStatistiche($user_id)
+         {
+            $couponStats = $this->_couponModel->getCouponCountByUserId($user_id);
+         
+             $user =$this->_userModel->getUserById($user_id); // Recupera le informazioni dell'utente
+         
+             return view('admin.coupon_statistiche')->with('couponStats', $couponStats)->with('user', $user);
+         }
+
+public function listaUserStats(){
+
+    $users = $this->_userModel->getUser();
+    return view('admin.listastatsutenti', ['users' => $users]);
+
 }
 
 
+}

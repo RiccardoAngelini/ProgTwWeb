@@ -178,8 +178,9 @@ Route::post('/admin/listastaff/store',[AdminController::class ,'store'])->name('
 Route::get('/admin/listastaff/{id}',[AdminController::class ,'modificaStaff'])->name('admin.modStaff');
 Route::post('/admin/listastaff/{id}',[AdminController::class ,'update'])->name('admin.updateStaff');
 Route::delete('/admin/listastaff/delete',[AdminController::class,'deleteStaff'])->name('admin.deleteStaff');
-
-
+//Rotte statistiche
+Route::get('/coupon/statistiche/{user_id}', [AdminController::class, 'couponStatistiche'])->name('coupon.statistiche');
+Route::get('/admin/listautenti/statistiche',[AdminController::class ,'listaUserStats'])->name('admin.listautentistats');
 
 require __DIR__.'/auth.php';
 

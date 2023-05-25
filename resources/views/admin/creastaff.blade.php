@@ -111,5 +111,3 @@
  </div>
 </div>
 @endsection
-
-<!-- il relativo file css -> registrazione.css -->

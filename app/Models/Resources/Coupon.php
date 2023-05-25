@@ -36,4 +36,12 @@ public function promotion()
     return $this->belongsTo(Promotion::class);
 }
 
+
+public function getCouponCountByUserId($user_id)
+{
+    return $this->where('user_id', $user_id)->selectRaw('count(*) as total')->first();
+}
+
+
+
 }

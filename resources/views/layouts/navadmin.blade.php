@@ -87,13 +87,13 @@
                   Visualizza Statistiche
                 </div>
                 <li class="item"><a href="#">Numero coupon emessi</a></li>
-                <li class="item"><a href="#">Statistiche Utente</a></li>
+                <li class="item"><a href="{{route('admin.listautentistats')}}">Statistiche Utente</a></li>
                 <li class="item"><a href="#">Statistiche Coupon</a></li>
                 <li class="item"><a href="#">Statistiche Promozione</a></li>
             </ul>
           </li>
             <li class="item">
-                <div class="submenu-item">
+                
                 @auth
         <li><a href="" class="item" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

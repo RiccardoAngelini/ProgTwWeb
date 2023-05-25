@@ -51,6 +51,22 @@ class User extends Authenticatable
      * 
      * è un array perchè posso vedere se un utente è o admin o user
      */
+
+     public function getUsers(){
+        return User::all();
+     }
+
+     public function getUserById($user_id){
+        return User::where('id',$user_id)->get();
+     }
+    
+     public function getUser(){
+        return User::where('role','user')->get();
+     }
+
+     public function getUserId(){
+        return User::select('id')->get();
+     }
     
     public function hasRole($role) {
         $role = (array)$role;

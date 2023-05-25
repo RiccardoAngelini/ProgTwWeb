@@ -2,9 +2,9 @@
 @section('title', 'Promozione')
 @section('content')
 
-
+<div class="button-back">
 <a class="btn2" href="{{route('catalogo')}}" >Indietro</a>
-
+</div>
 <div class="cont-off">
 <div id="imageContainer" class="cont-img-off">
 @include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
