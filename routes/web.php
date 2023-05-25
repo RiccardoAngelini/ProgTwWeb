@@ -182,5 +182,8 @@ Route::delete('/admin/listastaff/delete',[AdminController::class,'deleteStaff'])
 Route::get('/coupon/statistiche/{user_id}', [AdminController::class, 'couponStatistiche'])->name('coupon.statistiche');
 Route::get('/admin/listautenti/statistiche',[AdminController::class ,'listaUserStats'])->name('admin.listautentistats');
 
+Route::get('/coupon/statistiche/promo/{promo_id}', [AdminController::class, 'promoStatistiche'])->name('promo.statistiche');
+Route::get('/admin/listautenti/statistiche/promo',[AdminController::class ,'listaPromoStats'])->name('admin.listapromozionistats');
+
 require __DIR__.'/auth.php';
 

@@ -63,5 +63,10 @@ class Promotion extends Model {
 }
 
 
+
+public function getPromoById($promo_Id)
+{
+    return Promotion::where('promo_Id', $promo_Id)->get();
+}
  
 }

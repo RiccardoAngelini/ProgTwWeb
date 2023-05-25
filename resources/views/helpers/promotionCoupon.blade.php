@@ -20,12 +20,14 @@
         {{ session('error') }}
     </div>
 @endif
+@if ($remainingDays !== 'Offerta scaduta!')
+
 
 <form action="{{ route('coupon.acquista',$promo_Id) }}" method="POST">
     @csrf
     <div class="ottieni-coup">
     <button class="button-ottieni" type="submit">Acquista Coupon</button>
     </div>
-</form>
-
+</form> 
+@endif
 
