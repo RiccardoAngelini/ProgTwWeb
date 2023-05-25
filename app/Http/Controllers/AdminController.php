@@ -285,5 +285,14 @@ public function listaUserStats(){
 
 }
 
+public function couponTotali(){
+    $coupontotali = Coupon::count();
+    // return response()->json([
+    //     'numero_coupon_totali' => $couponTotali
+    // ]);
+    return view('admin.coupon_totali', [
+        'coupontotali' => $coupontotali
+    ]);
+}
 
 }

@@ -181,6 +181,7 @@ Route::delete('/admin/listastaff/delete',[AdminController::class,'deleteStaff'])
 //Rotte statistiche
 Route::get('/coupon/statistiche/{user_id}', [AdminController::class, 'couponStatistiche'])->name('coupon.statistiche');
 Route::get('/admin/listautenti/statistiche',[AdminController::class ,'listaUserStats'])->name('admin.listautentistats');
+Route::get('/admin/statistiche/coupon_totali',[AdminController::class, 'couponTotali'])->name('admin.numcouponemessi');
 
 require __DIR__.'/auth.php';
 

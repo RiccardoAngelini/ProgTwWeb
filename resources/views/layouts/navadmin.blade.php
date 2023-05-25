@@ -86,7 +86,7 @@
                     <i class="fa-solid fa-chevron-left"></i>
                   Visualizza Statistiche
                 </div>
-                <li class="item"><a href="#">Numero coupon emessi</a></li>
+                <li class="item"><a href="{{route('admin.numcouponemessi')}}">Numero coupon emessi</a></li>
                 <li class="item"><a href="{{route('admin.listautentistats')}}">Statistiche Utente</a></li>
                 <li class="item"><a href="#">Statistiche Coupon</a></li>
                 <li class="item"><a href="#">Statistiche Promozione</a></li>
