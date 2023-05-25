@@ -34,6 +34,8 @@
         <tr> 
             <td>{{$staff->id}}</td>
             <td>{{$staff->name}}</td>
+            <td>{{$staff->surname}}</td>
+            <td>{{$staff->email}}</td>
              <td><a class="btn1" href="{{route('admin.modStaff', [$staff->id])}}">Modifica</a></td> 
              <form action="{{route('admin.deleteStaff')}}" method="post">
                <td> <button class="btn3" name="staff_ids[]" value="{{ $staff->id }}" type="submit">Cancella</button> </td> 
