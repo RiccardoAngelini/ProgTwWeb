@@ -24,9 +24,18 @@
                 {{$prom->price}} &#8364;<br>
                 Sconto del {{$prom->discountPerc}} &#37;
             </div>
-            <div class="cont-img">
+            {{-- <div class="cont-img">
                     @include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $prom->image])
+            </div> --}}
+
+                <div class="cont-img">
+                    @if (file_exists(public_path('images/promotions/' . $prom->image)))
+                        @include('helpers/promotionImg', ['attrs' => 'imagefrm', 'imgFile' => $prom->image])
+                    @else
+                        <img src="{{ asset('images/promotions/default.jpg') }}" class="img">
+                    @endif
                 </div>
+
                 <div class="cont-data">
                     <div class="data">
                     Inizia il {{ DateTime::createFromFormat('d/m/Y', $prom->date_start)->format('d/m/Y') }}
