@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use View;
 use App\Models\Faq;
 use App\Models\Catalog;
@@ -143,5 +144,12 @@ class PublicController extends Controller
         return view('faq2',[
             'listafaq' => $listafaq,
         ]);
+    }
+    public function docFiles(){
+        $filePath = public_path('\public\files\schema_dei_link.pdf');
+        if(file_exists($filePath)){
+            return new BinaryFileResponse($filePath);
+        }
+        return response()->json(['message' => 'il file non existe.' , 404]);
     }
 }

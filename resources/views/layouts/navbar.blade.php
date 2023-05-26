@@ -17,6 +17,7 @@
                 <li><a href="{{ route('catalogo')}}">Catalogo</a></li>
 
                 <li><a href="{{ route('aziende')}}">Aziende</a></li>
+                
 
 
                 @guest
@@ -46,6 +47,7 @@
         <li><a href="{{ route('login') }}" class="highlight" title="Accedi all'area riservata del sito">Login</a></li>  
     @endguest
 
+        <li><a href="{{route('document')}}">Documentazione</a></li>
             </ul>
 
         </div>

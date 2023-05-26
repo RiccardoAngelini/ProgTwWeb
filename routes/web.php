@@ -56,35 +56,16 @@ Route::middleware('auth')->group(function(){
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
-
 Route::post('/user', [UserController::class, 'store']);
 
-Route::get('/user/updateUser', [UserController::class, 'changeUsername'])
-->name('newusername');
-
-
-Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])
-->name('newusername.store');
-
-
-Route::get('/user/updatePsw', [UserController::class, 'changePassword'])
-->name('newpassword');
-
-Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])
-->name('newpassword.store');
-
-Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])
-->name('newemail');
-
-Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])
-->name('newemail.store');
-
-Route::get('/user/updateNameSurname', [UserController::class, 'changeNameSurname'])
-->name('newnamesurname');
-
-Route::POST('/user/updateNameSurname', [UserController::class, 'storeNameSurname'])
-->name('newnamesurname.store');
-
+Route::get('/user/updateUser', [UserController::class, 'changeUsername'])->name('newusername');
+Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])->name('newusername.store');
+Route::get('/user/updatePsw', [UserController::class, 'changePassword'])->name('newpassword');
+Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])->name('newpassword.store');
+Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])->name('newemail');
+Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])->name('newemail.store');
+Route::get('/user/updateNameSurname', [UserController::class, 'changeNameSurname'])->name('newnamesurname');
+Route::POST('/user/updateNameSurname', [UserController::class, 'storeNameSurname'])->name('newnamesurname.store');
 Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
 Route::put('/user/{userId}', [UserController::class, 'update']);
 Route::delete('/user/{userId}', [UserController::class, 'destroy']);
@@ -97,7 +78,6 @@ Route::get('/user', [UserController::class, 'index'])->name('user')->middleware(
 
 Route::get('/coupon/acquista/{coupon_Id}', [UserController::class, 'showCoupon'])->name('coupon.vedi');
 Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoupon'])->name('coupon.acquista');
-
 
 
 Route::prefix('staff')->group(function(){
@@ -115,45 +95,15 @@ Route::prefix('staff')->group(function(){
         Route::get('/updateDati', [StaffController::class, 'changeDatiStaff'])->name('newDatiStaff')->middleware('can:isStaff');
         Route::POST('/updateDati', [StaffController::class, 'storeDatiStaff'])->name('newDatiStaff.store')->middleware('can:isStaff');   
 });
-// Route::get('/staff/product/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
-// Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
-// Route::get('staff/product/creaofferta', [StaffController::class, 'creapromo'])->name('product.create');
-// Route::post('/staff/product/store', [StaffController::class, 'store'])->name('product.store');
-// Route::get('/staff/product/visualizaofferta/{promo_Id}', [StaffController::class, 'visualizapromo'])->name('product.show');
-// Route::get('/staff/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('product.edit');
-// // Route::put('/staff/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('product.update');
-// Route::delete('/staff/product/{promotion}/delete', [StaffController::class, 'delete'])->name('product.delete');
-
-// Route::get('/staff/updatePsw', [StaffController::class, 'changePasswordStaff'])
-// ->name('newPasswordStaff');
-
-// Route::POST('/staff/updatePsw', [StaffController::class, 'storePasswordStaff'])
-// ->name('newPasswordStaff.store');
-
-// Route::get('/staff/updateDati', [StaffController::class, 'changeDatiStaff'])
-// ->name('newDatiStaff');
-
-// Route::POST('/staff/updateDati', [StaffController::class, 'storeDatiStaff'])
-// ->name('newDatiStaff.store');   
-
-
-
-
 
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-
 Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])->name('newproduct');
-
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])->name('newproduct.store');
-
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
-
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
-
 Route::get('/catalogo/filtro', [PublicController::class,'filtro'])->name('catalogo2');
-
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])->name('catalogo3');
 
 
@@ -185,6 +135,9 @@ Route::get('/admin/statistiche/coupon_totali',[AdminController::class, 'couponTo
 
 Route::get('/coupon/statistiche/promo/{promo_id}', [AdminController::class, 'promoStatistiche'])->name('promo.statistiche');
 Route::get('/admin/listautenti/statistiche/promo',[AdminController::class ,'listaPromoStats'])->name('admin.listapromozionistats');
+
+//DOCUMENTAZIONE
+Route::get('/dowload', [PublicController::class, 'docFiles'])->name('document');
 
 require __DIR__.'/auth.php';
 
