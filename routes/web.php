@@ -101,19 +101,19 @@ Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoup
 
 
 Route::prefix('staff')->group(function(){
-        Route::get('/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
-        Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('staff.index');
-        Route::get('/product/creaofferta', [StaffController::class, 'creapromo'])->name('staff.create');
-        Route::post('/product/store', [StaffController::class, 'store'])->name('staff.store');
-        Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('staff.edit');
-        Route::post('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('staff.update');
-        Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('staff.delete');
+        Route::get('/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff')->middleware('can:isStaff');
+        Route::get('/product/listaofferte',[StaffController::class, 'listapromo'])->name('staff.index')->middleware('can:isStaff');
+        Route::get('/product/creaofferta', [StaffController::class, 'creapromo'])->name('staff.create')->middleware('can:isStaff');
+        Route::post('/product/store', [StaffController::class, 'store'])->name('staff.store')->middleware('can:isStaff');
+        Route::get('/product/{promo_Id}/modificaofferta', [StaffController::class, 'modificapromo'])->name('staff.edit')->middleware('can:isStaff');
+        Route::post('/promo_Id/{promo_Id}', [StaffController::class, 'updatepromo'])->name('staff.update')->middleware('can:isStaff');
+        Route::delete('/product/{promotion}/delete', [StaffController::class, 'delete'])->name('staff.delete')->middleware('can:isStaff');
 
 
-        Route::get('/updatePsw', [StaffController::class, 'changePasswordStaff'])->name('newPasswordStaff');
-        Route::POST('/updatePsw', [StaffController::class, 'storePasswordStaff'])->name('newPasswordStaff.store');
-        Route::get('/updateDati', [StaffController::class, 'changeDatiStaff'])->name('newDatiStaff');
-        Route::POST('/updateDati', [StaffController::class, 'storeDatiStaff'])->name('newDatiStaff.store');   
+        Route::get('/updatePsw', [StaffController::class, 'changePasswordStaff'])->name('newPasswordStaff')->middleware('can:isStaff');
+        Route::POST('/updatePsw', [StaffController::class, 'storePasswordStaff'])->name('newPasswordStaff.store')->middleware('can:isStaff');
+        Route::get('/updateDati', [StaffController::class, 'changeDatiStaff'])->name('newDatiStaff')->middleware('can:isStaff');
+        Route::POST('/updateDati', [StaffController::class, 'storeDatiStaff'])->name('newDatiStaff.store')->middleware('can:isStaff');   
 });
 // Route::get('/staff/product/', [StaffController::class, 'staff'])->name('staff')->middleware('can:isStaff');
 // Route::get('/staff/product/listaofferte',[StaffController::class, 'listapromo'])->name('product.index');
