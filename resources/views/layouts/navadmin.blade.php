@@ -93,7 +93,6 @@
           </li>
           <li class="item"><a href="{{route('chisiamo')}}">Chi siamo</a></li>
           <li class="item"><a href="{{route('dovesiamo')}}">Dove siamo</a></li>
-          <li class="item"><a href="{{route('faq2')}}">FAQ</a></li>
           <li class="item"><a href="{{route('contatti')}}">Contatti</a></li>
 
             <li class="item">
