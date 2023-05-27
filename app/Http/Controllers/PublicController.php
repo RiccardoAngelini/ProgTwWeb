@@ -22,11 +22,13 @@ class PublicController extends Controller
     protected $_companyModel;
     protected $_promotionModel;
     protected $_couponModel;
+    protected $_faqModel;
 
     public function __construct() {
         $this->_companyModel = new Company;
         $this->_promotionModel = new Promotion;
         $this->_couponModel= new Coupon;
+        $this->_faqModel= new Faq;
     }
 
     public function showHome(){
@@ -57,13 +59,7 @@ class PublicController extends Controller
     public function showOfferta($promo_Id){ 
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();
-
-
-
-        
-       // $scelta_coupon=$this->_couponModel->getCouponIdByProm($promo_Id);
         return view('offerta')
-      //  ->with('scelta_coupon',$scelta_coupon)
                  ->with('sel_promId',$sel_promId);
                  
 
@@ -139,7 +135,7 @@ class PublicController extends Controller
 
 
     public function faq(){
-        $listafaq = Faq::all();
+        $listafaq = $this->_faqModel->getFaq();
         $listafaq = Faq::paginate(6);
         return view('faq2',[
             'listafaq' => $listafaq,

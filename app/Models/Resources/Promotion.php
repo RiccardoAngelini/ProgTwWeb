@@ -62,6 +62,9 @@ class Promotion extends Model {
     return $this->hasOne(Coupon::class);
 }
 
+public function findPromotion($promo_Id){
+    return Promotion::find($promo_Id);
+}
 
 
 public function getPromoById($promo_Id)

@@ -19,9 +19,13 @@ use Illuminate\Support\Facades\Validator;
 class StaffController extends Controller {
 
     protected $_companyModel;
+    protected $_promotionModel;
+    protected $_couponModel;
 
     public function __construct() {
         $this->_companyModel = new Company;
+        $this->_promotionModel = new Promotion;
+        $this->_couponModel = new Coupon;
     }
 
     public function staff() {
@@ -29,7 +33,7 @@ class StaffController extends Controller {
     }    
 
     public function listapromo(Request $promotion){
-        $promotion = Promotion::all();
+        $promotion = $this->_promotionModel->getPromotion();
         $promotion = Promotion::paginate(6);
         return view('staff.listaofferte',[
             'promotion' => $promotion
@@ -88,7 +92,7 @@ class StaffController extends Controller {
      public function modificapromo($promo_Id){
         $companies=$this->_companyModel->getCompanyArray();
 
-        $promotion = Promotion::find($promo_Id);
+        $promotion = $this->_promotionModel->findPromotion($promo_Id);
         return view('staff.modificaofferta',[
             'promotion' => $promotion
         ])->with('companies',$companies);
@@ -104,14 +108,16 @@ class StaffController extends Controller {
             'discountPerc'=> 'required',
             'desc'=> 'required',
             'image'=> 'required',
-        ]);   
+        ]);  
+        if($validator -> passes())
+        { 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
         } else {
             $imageName = NULL;
         }
-        $promotion = Promotion::find($promo_Id);
+        $promotion = $this->_promotionModel->findPromotion($promo_Id);
         $promotion ->name =$request->name;
         $promotion -> price = $request->price;
         $promotion -> comp_name = $request->comp_name;
@@ -129,11 +135,13 @@ class StaffController extends Controller {
         };
         return redirect()->route('staff.index')->with('Promozione modificata con successo.');
     }
+}
 
     public function delete(Promotion $promotion)
     {
         // Trova i coupon correlati alla promozione
-        $coupons = Coupon::where('promotion_id', $promotion->promo_Id)->get();
+        $coupons = $this->_couponModel->getPromoCoupon($promotion->promo_Id);
+       
     
         // Elimina i coupon correlati
         foreach ($coupons as $coupon) {

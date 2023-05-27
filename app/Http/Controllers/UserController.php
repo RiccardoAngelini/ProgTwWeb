@@ -45,9 +45,7 @@ class UserController extends Controller {
     $promotionId=$promotion->promo_Id;
     
     // Verifica se l'utente ha già un coupon per la promozione corrente
-    $existingCoupon = Coupon::where('promotion_id', $promotionId)
-                            ->where('user_id', $userId)
-                            ->first();
+    $existingCoupon = $this->_couponModel->existingCoupon($promotionId,$userId);
 
     if ($existingCoupon) {
         // L'utente ha già un coupon per questa promozione

@@ -46,6 +46,14 @@ public function getPromotionCountByPromoId($promo_id)
 {
     return $this->where('promotion_id', $promo_id)->selectRaw('count(*) as total')->first();
 }
+public function existingCoupon($promotionId,$userId){
+return Coupon::where('promotion_id', $promotionId)
+                            ->where('user_id', $userId)
+                            ->first();
+}
 
+public function getPromoCoupon($promo_Id){
+return Coupon::where('promotion_id', $promo_Id)->get();
+}
 
 }
