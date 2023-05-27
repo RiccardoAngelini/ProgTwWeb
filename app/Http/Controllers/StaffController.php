@@ -6,6 +6,7 @@ use App\Models\Catalog;
 use Illuminate\Http\Request;
 use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
+use App\Models\Resources\Coupon;
 use App\Http\Requests\PromotionRequest;
 use App\Http\Requests\NewNameSurnameRequest;
 use App\Http\Requests\NewPasswordRequest;
@@ -129,11 +130,22 @@ class StaffController extends Controller {
         return redirect()->route('staff.index')->with('Promozione modificata con successo.');
     }
 
-    public function delete(Promotion $promotion){
-        // dd($promotion);
-        $promotion -> delete();
-        return redirect()->route('staff.index')->with('status', 'Promozione cancellata con sucesso');
+    public function delete(Promotion $promotion)
+    {
+        // Trova i coupon correlati alla promozione
+        $coupons = Coupon::where('promotion_id', $promotion->promo_Id)->get();
+    
+        // Elimina i coupon correlati
+        foreach ($coupons as $coupon) {
+            $coupon->delete();
+        }
+    
+        // Elimina la promozione
+        $promotion->delete();
+    
+        return redirect()->route('staff.index')->with('status', 'Promozione cancellata con successo');
     }
+
     public function changePasswordStaff(){
         return view('staff.updatePasswordStaff');
     }

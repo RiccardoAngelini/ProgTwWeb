@@ -88,9 +88,16 @@ public function deleteUser(Request $request)
 {
     $userIds = $request->input('user_ids', []);
 
-        if (!empty($userIds)) {
-            User::whereIn('id', $userIds)->delete();
+    if (!empty($userIds)) {
+        foreach ($userIds as $userId) {
+            // Elimina i coupon associati all'utente
+            Coupon::where('user_id', $userId)->delete();
         }
+
+        // Elimina l'utente
+        User::whereIn('id', $userIds)->delete();
+    }
+
     return redirect()->route('admin.listautenti')->with('success', 'Utenti eliminati con successo.');
 }
 //lista aziende
