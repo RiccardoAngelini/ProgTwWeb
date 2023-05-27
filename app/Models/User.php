@@ -64,6 +64,10 @@ class User extends Authenticatable
         return User::where('role','user')->get();
      }
 
+     public function getStaff(){
+        return User::where('role','staff')->get();
+     }
+
      public function getUserId(){
         return User::select('id')->get();
      }
@@ -71,6 +75,14 @@ class User extends Authenticatable
     public function hasRole($role) {
         $role = (array)$role;
         return in_array($this->role, $role);
+    }
+
+    public function getStaffByIds($staffIds){
+        return User::whereIn('id', $staffIds);
+    }
+
+    public function findOrfailUser($id){
+return User::findOrFail($id);
     }
 
 }

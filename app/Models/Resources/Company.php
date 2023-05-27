@@ -30,5 +30,9 @@ class Company extends Model {
         return $companies;
 }
 
+public function findCompany($comp_Id){
+    return Company::find($comp_Id);
+}
+
   
 }

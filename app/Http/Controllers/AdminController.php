@@ -80,7 +80,7 @@ class AdminController extends Controller {
    
   Public function listaUser()
 {
-    $users = User::where('role','user')->get();
+    $users = $this->_userModel->getUser();
     return view('admin.listautenti', ['users' => $users]);
 }
 
@@ -120,7 +120,7 @@ public function destroyCompany($comp_Id) {
 
  public function createCompany(Request $request)
  {
-      $company =  Company::all();
+      $company =  $this->_companyModel->getCompany();
      return view('admin.creazioneazienda',[ 'company' => $company]);
  }
 
@@ -180,7 +180,7 @@ public function destroyCompany($comp_Id) {
         } else {
             $imageName = NULL;
         }
-        $company = Company::find($comp_Id);
+        $company = $this->_companyModel->findCompany($comp_Id);
         $company ->name = $request->name;
         $company ->location = $request->location;
         $company->image=$imageName;
@@ -202,7 +202,7 @@ public function destroyCompany($comp_Id) {
      }
      Public function listaStaff()
      {
-         $staffs = User::where('role','staff')->get();
+         $staffs = $this->_userModel->getStaff();
          return view('admin.listastaff', ['staffs' => $staffs]);
      }
      
@@ -211,7 +211,7 @@ public function destroyCompany($comp_Id) {
          $staffIds = $request->input('staff_ids', []);
      
              if (!empty($staffIds)) {
-                 User::whereIn('id', $staffIds)->delete();
+                $this->_userModel->getStaffByIds($staffIds)->delete();
              }
          return redirect()->route('admin.listastaff')->with('success', 'Eliminazione avvenuta con successo.');
      }
@@ -234,18 +234,15 @@ public function destroyCompany($comp_Id) {
      
          ]);
      
-         $user = User::create([
-             'name' => $request->name,
-             'surname'=>$request->surname,
-             'phone' => $request->phone,
-             'email' => $request->email,
-             'username' => $request->username,
-             'age' =>$request->age,
-             'gender' => $request->gender,
-             'password' => Hash::make($request->password),
-             
-             
-         ]);
+         $user = new User;
+         $user->name=$request->name;
+         $user->surname=$request->surname;
+         $user->phone = $request->phone;
+         $user->email = $request->email;
+         $user->username = $request->username;
+         $user->age = $request->age;
+         $user->gender = $request->gender;
+         $user->password = Hash::make($request->password);
      
          $user->role='staff';
          $user->save();
@@ -253,14 +250,14 @@ public function destroyCompany($comp_Id) {
          }
          
          public function modificaStaff($id){
-             $staff = User::findOrFail($id);
+             $staff = $this->_userModel->findOrfailUser($id);
            
              return view('admin.modificastaff',['staff'=>$staff]);
      
          }
          public function update(Request $request, $id)
          {
-             $user = User::findOrFail($id);
+             $user = $this->_userModel->findOrfailUser($id);
            
              $user->name = $request->input('name');
              $user->email = $request->input('email');
@@ -313,7 +310,6 @@ public function promoStatistiche($promotion_Id)
 
 public function couponTotali(){
     $coupontotali = $this->_couponModel->count();
-    // $coupontotali = Coupon::count();
     return view('admin.coupon_totali', [
         'coupontotali' => $coupontotali
     ]);
