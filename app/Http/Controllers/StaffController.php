@@ -97,7 +97,7 @@ class StaffController extends Controller {
             'promotion' => $promotion
         ])->with('companies',$companies);
     }
-    public function updatepromo($promo_Id, Request $request){
+    public function updatepromo($promo_Id, PromotionRequest $request){
         $validator = Validator::make($request -> all(),[
 
             'name' => 'required',
