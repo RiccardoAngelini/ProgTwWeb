@@ -20,6 +20,7 @@ class CreateCouponTable extends Migration
             $table->foreign('promotion_id')->references('promo_Id')->on('promotion');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 

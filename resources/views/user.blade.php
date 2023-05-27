@@ -16,6 +16,7 @@
 
 
 <ul class="list-user">
+    <li><a href="{{ route('viewprofillo') }}">Visualizza Profillo</a></li>
     <li><a href="{{ route('newpassword') }}">Cambia Password</a></li>
     <li><a href="{{ route('newusername') }}">Modifica nome utente</a></li>
     <li><a href="{{ route('newemail') }}">Modifica email</a></li>

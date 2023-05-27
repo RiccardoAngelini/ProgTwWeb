@@ -61,6 +61,7 @@ Route::post('/user', [UserController::class, 'store']);
 Route::get('/user/updateUser', [UserController::class, 'changeUsername'])->name('newusername');
 Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])->name('newusername.store');
 Route::get('/user/updatePsw', [UserController::class, 'changePassword'])->name('newpassword');
+Route::get('/user/viewProfillo', [UserController::class, 'viewProfile'])->name('viewprofillo');
 Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])->name('newpassword.store');
 Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])->name('newemail');
 Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])->name('newemail.store');
@@ -74,7 +75,6 @@ Route::delete('/user/{userId}', [UserController::class, 'destroy']);
 
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
-
 
 Route::get('/coupon/acquista/{coupon_Id}', [UserController::class, 'showCoupon'])->name('coupon.vedi');
 Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoupon'])->name('coupon.acquista');

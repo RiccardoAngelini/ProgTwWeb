@@ -12,7 +12,7 @@
                     @foreach ($users as $user)
                         <li>
                             {{ Form::checkbox('user_ids[]', $user->id, false, ['id' => 'user_'.$user->id]) }}
-                            {{ Form::label('user_'.$user->id, $user->name . ' - ' .$user->surname. ' - '.$user->username. ' - ' . $user->email. ' - ' .$user->phone) }}
+                            {{ Form::label('user_'.$user->id, $user->name . ' - ' .$user->surname. ' - '.$user->username. ' - ' . $user->email. ' - ' . $user->age. ' - ' . $user->gender. ' - ' .$user->phone) }}
                         </li>
                     @endforeach
                 </ul>

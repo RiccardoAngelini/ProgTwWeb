@@ -162,6 +162,10 @@ public function storeNameSurname(NewNameSurnameRequest $request){
 
 }
 
+    public function viewProfile(){
+        return view('users.viewProfillo');
+    }
+
 }
 
 

@@ -26,6 +26,9 @@
             <th>Staff_id</th>
             <th>Nome</th> 
             <th>Cognome</th>
+            <th>Genere</th>  
+            <th>Età</th>
+            <th>Telefono</th>    
             <th>Email</th>  
             <th style="width: 40px">Modifica</th>
             <th style="width: 40px">Cancella</th>
@@ -37,6 +40,9 @@
             <td>{{$staff->id}}</td>
             <td>{{$staff->name}}</td>
             <td>{{$staff->surname}}</td>
+            <td>{{$staff->gender}}</td>
+            <td>{{$staff->age}}</td>
+            <td>{{$staff->phone}}</td>
             <td>{{$staff->email}}</td>
              <td><a class="btn1" href="{{route('admin.modStaff', [$staff->id])}}">Modifica</a></td> 
              <form action="{{route('admin.deleteStaff')}}" method="post">
