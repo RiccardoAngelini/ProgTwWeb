@@ -90,8 +90,8 @@ input.button-reset, input.button-submit {
         width: 100%;
         background-color: white;
         text-align: center;
-        height: 500px;
-        width: 270px;
+        height: 570px;
+        width: 280px;
         float: left;
         margin: 30px;
         margin-top: 0;
@@ -154,11 +154,12 @@ input.button-reset, input.button-submit {
     width: 100%;
     background-color: #393c44;
     color: white;
-    height: 200px;
+    height: 250px;
     border-radius: 15px;
     margin-top: 10px;
     text-align: center;
 }
+
 
 .data{
     text-align: center;
@@ -173,7 +174,12 @@ input.button-reset, input.button-submit {
     height: 35px;
     width: 130px;
     cursor: pointer;
+    margin-top: 50px;
 }
+.desc{
+    margin-top: 7px;
+}
+
 .scopri:hover{
     background-color: #dbdee5;
     color: #201f1f;
