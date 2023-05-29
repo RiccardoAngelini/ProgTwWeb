@@ -51,20 +51,20 @@ public function getPromoById($promo_Id)
 
 public function getPromotionByDescShort($descrizione)
 {
-    return $this->where('desc', 'LIKE', '%' . $descrizione . '%')
+    return $this->where('desc_short', 'LIKE', '%' . $descrizione . '%')
         ->get();
 }
 
 public function getPromotionByDescAndCompany($descrizione, $comp_name)
 {
-    return $this->where('desc', 'LIKE', '%' . $descrizione . '%')
+    return $this->where('desc_short', 'LIKE', '%' . $descrizione . '%')
         ->where('comp_name', $comp_name)
         ->get();
 }
 
 public function getDescByPartialName($desc)
 {
-    return $this->where('desc', 'LIKE', '%' . $desc . '%')->get();
+    return $this->where('desc_short', 'LIKE', '%' . $desc . '%')->get();
 }
  
 }

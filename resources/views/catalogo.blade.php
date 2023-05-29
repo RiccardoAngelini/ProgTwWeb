@@ -76,6 +76,9 @@
                     <div class="nome">
                     {{$promo->name}}
                     </div>
+                    <div class="nome">
+                        {{$promo->desc_short}}
+                        </div>
                     <div calss="scopri-off">
                     <a href="{{route('offerta',[$promo->promo_Id])}}"><button class="scopri" >
                         Scopri l'offerta
