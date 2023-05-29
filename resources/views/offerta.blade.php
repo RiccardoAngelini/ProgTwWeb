@@ -19,7 +19,7 @@ $(document).ready(function() {
 <div class="descrizione"> 
 
     <div><h3><u>Descrizione</u></h3></div><br>
-{!!$sel_promId->desc!!}
+{{$sel_promId->desc}}
 </div>
     <div class="dettagli">
         <div class="nome-off">{{$sel_promId->name}}
