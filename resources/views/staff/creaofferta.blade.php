@@ -37,7 +37,6 @@
 
 
     {{ Form::open(array('route' => 'staff.store','id' => 'storepromotion','files' => true)) }}
-    {{ csrf_field() }}
     <div class="user-details">
 
             <div class="input-box">
