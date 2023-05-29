@@ -92,6 +92,16 @@
                 @endif
             </div>
 
+            <div class="row1">
+               {{ Form::label('desc_short', 'Descrizione Corta :', ['class' => 'details']) }}
+               {{ Form::textarea('desc_short', null, ['placeholder' => 'Inserisci la descrizione']) }}
+               <ul class="errors">
+                    @foreach ($errors->get('desc_short') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+                </div>
+                
     <div class="row1">
         {{ Form::label('desc', 'Descrizione :') }}
         {{ Form::textarea('desc', old('desc', $promotion->desc), ['id' => 'desc']) }}

@@ -30,11 +30,11 @@ class PromotionRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:50',
-            'price' => 'required',
+            'price' => 'required|numeric|min:0',
             'comp_name' => 'required',
             'date_start' => 'required',
             'date_end' => 'required',
-            'discountPerc' => 'required',
+            'discountPerc' => 'required|integer|min:0|max:100',
             'desc' => 'required',
             'image'=> 'required',
         ];
