@@ -90,7 +90,7 @@ input.button-reset, input.button-submit {
         width: 100%;
         background-color: white;
         text-align: center;
-        height: 570px;
+        height: 580px;
         width: 280px;
         float: left;
         margin: 30px;
@@ -163,7 +163,7 @@ input.button-reset, input.button-submit {
 
 .data{
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     padding-top: 20px;
 }
 
@@ -175,6 +175,9 @@ input.button-reset, input.button-submit {
     width: 130px;
     cursor: pointer;
     margin-top: 50px;
+}
+a{
+    margin-top:10px;
 }
 .desc{
     margin-top: 7px;
