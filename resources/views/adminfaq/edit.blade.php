@@ -14,13 +14,21 @@
     <div class="form-group">
         {{ Form::label('question', 'Question :') }}
         {{ Form::text('question', old('question', $faq->question), ['id' => 'question', 'placeholder' => 'Inserire la domanda', 'class' => 'form-control' . ($errors->has('question') ? ' is-invalid' : '')]) }}
-        {{ $errors->first('question', '<p class="invalid-feedback">:message</p>') }}
+        <ul class="errors">
+                    @foreach ($errors->get('question') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
     </div>
 
     <div class="form-group">
         {{ Form::label('answer', 'Answer :') }}
         {{ Form::textarea('answer', old('answer', $faq->answer), ['id' => 'answer', 'rows' => 4, 'placeholder' => 'Inserire una risposta', 'class' => 'form-control' . ($errors->has('answer') ? ' is-invalid' : '')]) }}
-        {{ $errors->first('answer', '<div class="invalid-feedback">:message</div>') }}
+        <ul class="errors">
+                    @foreach ($errors->get('answer') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
     </div>
 
     {{ Form::submit('Salva', ['class' => 'button-login']) }}

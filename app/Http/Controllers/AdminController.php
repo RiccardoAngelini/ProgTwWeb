@@ -3,6 +3,7 @@
 namespace App\Http\Controllers; 
 
 use App\Http\Requests\NewProductRequest;
+use App\Http\Requests\NewCompanyRequest;
 use App\Http\Requests\UpadateCompanyRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
@@ -124,22 +125,15 @@ public function destroyCompany($comp_Id) {
      return view('admin.creazioneazienda',[ 'company' => $company]);
  }
 
- public function storeCompany(Request $request){
+ public function storeCompany(NewCompanyRequest $request){
 
-    $validator = Validator::make($request -> all(),[
-
-             'name' => 'required',
-             'location' => 'required',
-             'image' => 'required',
-         ]);
-         if($validator -> passes())
-         {
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = $image->getClientOriginalName();
             } else {
                 $imageName = NULL;
             }
+
               $company = new Company();
               $company ->name = $request->name;
               $company ->location = $request->location;
@@ -149,14 +143,8 @@ public function destroyCompany($comp_Id) {
               if (!is_null($imageName)) {
                 $destinationPath = public_path() . '/images/companies';
                 $image->move($destinationPath, $imageName);
-            };
-
-
-              return redirect()->route('admin.listaziende')->with('success', 'Azienda creata con sucesso!')
-              ->with('company',$company);
-            }else{
-                return redirect()->route('newCompany')->withErrors($validator)->withInput();
             }
+            return response()->json(['redirect' => route('admin.listaziende')]);
       }
 
  public function editCompany($comp_Id){

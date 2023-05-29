@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpFoundation\Response;
+
+
 class PromotionRequest extends FormRequest
 {
     /**
@@ -25,13 +30,24 @@ class PromotionRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:50',
-            'price' => 'required',
+            'price' => 'required|numeric|min:0',
             'comp_name' => 'required',
             'date_start' => 'required',
             'date_end' => 'required',
-            'discountPerc' => 'required',
+            'discountPerc' => 'required|integer|min:0|max:100',
             'desc' => 'required',
+            'desc_short' => 'required',
             'image'=> 'required',
         ];
     }
+
+
+        /**
+     * Override: response in formato JSON
+    */
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
+    }
+
 }

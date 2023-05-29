@@ -48,19 +48,7 @@ class StaffController extends Controller {
 
     public function store(PromotionRequest $request){
        
-    $validator = Validator::make($request -> all(),[
-
-        'name' => 'required',
-        'price' => 'required',
-        'comp_name' => 'required',
-        'date_start' => 'required',
-        'date_end' => 'required',
-        'discountPerc'=> 'required',
-        'desc'=> 'required',
-        'image'=> 'required',
-    ]);
-    if($validator -> passes())
-    {
+    
        if ($request->hasFile('image')) {
            $image = $request->file('image');
            $imageName = $image->getClientOriginalName();
@@ -75,6 +63,7 @@ class StaffController extends Controller {
           $promotion -> date_end = $request->date_end;
           $promotion -> discountPerc = $request->discountPerc;
           $promotion -> desc = $request-> desc;
+          $promotion -> desc_short = $request-> desc_short;
           $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
           $promotion ->image = $imageName;
@@ -84,8 +73,7 @@ class StaffController extends Controller {
             $destinationPath = public_path() . '/images/promotions';
             $image->move($destinationPath, $imageName);
         };
-        return redirect()->route('staff.index')->with('status', 'Promozione creata con sucesso');
-    }
+        return response()->json(['redirect'=> route('staff.index')]);
 }
     
 

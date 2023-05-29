@@ -29,7 +29,8 @@
 
 
     
-
+     @section('scripts')
+     @show
     <script src="js/script.js" defer></script>
     <script src="js/JS_FAQ.js" defer></script>
 
