@@ -185,10 +185,10 @@ input.button-reset, input.button-submit {
 }
 #menu{
     border-radius: 25px;
-    height: 20px;
+    height: 30px;
     padding: 0;
     padding-left: 10px;
-    width: 20px;
+    width: 120px;
   }
 
   .menu-sel{
