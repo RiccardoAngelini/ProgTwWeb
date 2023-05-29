@@ -38,30 +38,7 @@ class Promotion extends Model {
     public function getPromotionByComp($comp_name){
         return Promotion::where('comp_name',$comp_name)->get();
     }
-
-    public function getPromotionByName($name)
-    {
-        return Promotion::where('name', 'LIKE', '%' . $name . '%')->orWhere('name', 'LIKE', $name . '%')->get();
-    }
     
-    public function getPromotionByCompName($name, $comp) {
-        return Promotion::where('name', 'LIKE', '%' . $name . '%')
-                        ->where(function ($query) use ($comp) {
-                            $query->where('comp_name', 'LIKE', '%' . $comp . '%');
-                        })
-                        ->get();
-    }
-    
-
-    public function getPromotionname(){
-        return Promotion::select('name')->get();
-    }
-
-    public function coupon()
-{
-    return $this->hasOne(Coupon::class);
-}
-
 public function findPromotion($promo_Id){
     return Promotion::find($promo_Id);
 }
@@ -70,6 +47,24 @@ public function findPromotion($promo_Id){
 public function getPromoById($promo_Id)
 {
     return Promotion::where('promo_Id', $promo_Id)->get();
+}
+
+public function getPromotionByDescShort($descrizione)
+{
+    return $this->where('desc', 'LIKE', '%' . $descrizione . '%')
+        ->get();
+}
+
+public function getPromotionByDescAndCompany($descrizione, $comp_name)
+{
+    return $this->where('desc', 'LIKE', '%' . $descrizione . '%')
+        ->where('comp_name', $comp_name)
+        ->get();
+}
+
+public function getDescByPartialName($desc)
+{
+    return $this->where('desc', 'LIKE', '%' . $desc . '%')->get();
 }
  
 }

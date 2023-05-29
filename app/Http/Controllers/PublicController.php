@@ -65,73 +65,38 @@ class PublicController extends Controller
 
     }
     
-    
-    public function filtro(Request $request)
+    public function ricercaPerAziendaDesc(Request $request)
     {
-        $aziendeSelezionate = $request->input('aziende');
-        $comp_names = $this->_companyModel->getcompanyname();
-        $proms_by_comp = [];
+        $descrizione = $request->input('ricerca_desc');
+        $azienda = $request->input('ricerca_azienda');
+    
+        $company = $this->_companyModel->getCompanyByPartialName($azienda)->first();
 
-        if (is_null($aziendeSelezionate)) {
-        return view('errore2');
-        }else {
-            foreach ($aziendeSelezionate as $aziendaSelezionata) {
-            foreach ($comp_names as $comp_name) {
-                if ($aziendaSelezionata == $comp_name->name) {
-                    $proms = $this->_promotionModel->getPromotionByComp($comp_name->name)->toArray();
-                    foreach ($proms as $prom) {
-                        if (!in_array($prom, $proms_by_comp)) {
-                            $proms_by_comp[] = $prom;
-                        }
-                    }
-                }
-            }
+        $desc = $this->_promotionModel->getDescByPartialName($descrizione)->toArray();
+        if (!$company||($descrizione==null&&$azienda==null)||empty($desc)) {
+            return view('errore');
         }
-        $company_namesids=$this->_companyModel->getCompanyNameId();
-        $proms_by_comp = json_decode(json_encode($proms_by_comp));
-
-        return view('catalogo')
-            ->with('proms_by_comp', $proms_by_comp)
-            ->with('company_namesids',$company_namesids);
-    }
-
-       }
-
-       public function ricercaPerAziendaNome(Request $request)
-       {
-           $aziendaSelezionata = $request->input('opzioni');
-           $ricerca = $request->input('ricerca');
-           $matched = false;
-           $company_namesids = $this->_companyModel->getCompanyNameId();
-           
-           $names = $this->_promotionModel->getPromotionByName($ricerca);
-           $proms_by_name = $this->_promotionModel->getPromotionByCompName($ricerca, $aziendaSelezionata);
-
-
-           foreach ($names as $name) {
-            if (stripos($name->name, $ricerca) !== false) {
-                $matched = true;
-                break; 
-            }
+    
+        if ($descrizione && $azienda) {
+            $promo_by_desc_and_comp = $this->_promotionModel->getPromotionByDescAndCompany($descrizione, $company->name);
+    
+            return view('catalogo')
+                ->with('promo_by_comp', $promo_by_desc_and_comp);
+        } elseif ($azienda) {
+            $promo_by_comp = $this->_promotionModel->getPromotionByComp($company->name);
+    
+            return view('catalogo')
+                ->with('promo_by_comp', $promo_by_comp);
+        } elseif ($descrizione) {
+            $promo_by_desc = $this->_promotionModel->getPromotionByDescShort($descrizione);
+    
+            return view('catalogo')
+            ->with('desc',$desc)
+                ->with('promo_by_comp', $promo_by_desc);
         }
-
-         if(!$matched){
-         return view('errore');
-         }
-
-
-          elseif (!empty($proms_by_name)) {
-               return view('catalogo')
-                   ->with('proms_by_name', $proms_by_name)
-                   ->with('company_namesids', $company_namesids);
-           }
-        else{
-           return view('catalogo')
-               ->with('proms_by_name', $proms_by_name)
-               ->with('company_namesids', $company_namesids);
-       }
-
- }
+        }
+    
+    
 
 
     public function faq(){

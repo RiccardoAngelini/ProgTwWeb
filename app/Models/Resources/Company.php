@@ -34,5 +34,10 @@ public function findCompany($comp_Id){
     return Company::find($comp_Id);
 }
 
+public function getCompanyByPartialName($name)
+{
+    return $this->whereRaw('LOWER(name) LIKE ?', ['%' . $name . '%']);
+}
+
   
 }

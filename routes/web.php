@@ -103,8 +103,7 @@ Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])->name('n
 Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])->name('newproduct.store');
 Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
-Route::get('/catalogo/filtro', [PublicController::class,'filtro'])->name('catalogo2');
-Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaNome'])->name('catalogo3');
+Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaDesc'])->name('catalogo2');
 
 
 //elimina utenti admin
