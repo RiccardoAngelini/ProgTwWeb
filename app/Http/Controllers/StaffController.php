@@ -8,6 +8,7 @@ use App\Models\Resources\Company;
 use App\Models\Resources\Promotion;
 use App\Models\Resources\Coupon;
 use App\Http\Requests\PromotionRequest;
+use App\Http\Requests\UpdatePromoRequest;
 use App\Http\Requests\NewNameSurnameRequest;
 use App\Http\Requests\NewPasswordRequest;
 use Illuminate\Support\Facades\Auth;
@@ -85,7 +86,7 @@ class StaffController extends Controller {
             'promotion' => $promotion
         ])->with('companies',$companies);
     }
-    public function updatepromo($promo_Id, PromotionRequest $request){
+    public function updatepromo($promo_Id, UpdatePromoRequest $request){
         $validator = Validator::make($request -> all(),[
 
             'name' => 'required',

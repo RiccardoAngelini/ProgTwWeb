@@ -51,7 +51,7 @@
     
     <div class="input-box">
         {{ Form::label('discountPerc', 'Sconto :') }}
-        {{ Form::text('discountPerc', old('discountPerc', $promotion->discountPerc), ['id' => 'discountPerc']) }}
+        {{ Form::text('discountPerc', old('discountPerc', $promotion->discountPerc),null, ['id' => 'discountPerc']) }}
         <ul class="errors">
                     @foreach ($errors->get('discountPerc') as $message)
                     <li>{{ $message }}</li>
@@ -94,7 +94,7 @@
 
             <div class="row1">
                {{ Form::label('desc_short', 'Descrizione Corta :', ['class' => 'details']) }}
-               {{ Form::textarea('desc_short', null, ['placeholder' => 'Inserisci la descrizione']) }}
+               {{ Form::textarea('desc_short',old('desc_short', $promotion->desc_short), null, ['placeholder' => 'Inserisci la descrizione corta']) }}
                <ul class="errors">
                     @foreach ($errors->get('desc_short') as $message)
                     <li>{{ $message }}</li>
