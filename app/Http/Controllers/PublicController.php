@@ -116,10 +116,12 @@ class PublicController extends Controller
         ]);
     }
     public function docFiles(){
-        $filePath = public_path('\public\files\schema_dei_link.pdf');
-        if(file_exists($filePath)){
+        $filePath = public_path('files/schema_dei_link.pdf');
+        
+        if (file_exists($filePath)) {
             return new BinaryFileResponse($filePath);
         }
-        return response()->json(['message' => 'il file non existe.' , 404]);
-    }
+        
+        return 'File PDF non trovato.';
+        }
 }
