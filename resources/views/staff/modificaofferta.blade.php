@@ -100,7 +100,7 @@
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>  
-                </div>
+            </div>
                 
     <div class="row1">
         {{ Form::label('desc', 'Descrizione :') }}
