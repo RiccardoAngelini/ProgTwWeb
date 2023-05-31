@@ -75,18 +75,16 @@ class DatabaseSeeder extends Seeder
         
         DB::table('company')->insert([
             ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'Milano','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'San Francisco','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'California','image'=>'Airbnb.jpg'],
             ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
             ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','image'=>'Amazon.jpg'],
+            ['comp_Id'=>7, 'name'=>'Adidas','location'=>'Berlino','image'=>'adidas.jpg'],
+            ['comp_Id'=>8, 'name'=>'Samsung.', 'location'=>'Suwon-si','image'=>'samsung.jpg'],
+            ['comp_Id'=>9, 'name'=>'Trivago', 'location'=>'Monaco','image'=>'Trivago.jpg'],
+            ['comp_Id'=>10, 'name'=>'Amazon', 'location'=>'Miami','image'=>'Amazon.jpg'],
+            ['comp_Id'=>11, 'name'=>'Ebay', 'location'=>'San Jose','image'=>'ebay.jpg'],
         ]);
 
     }
