@@ -47,10 +47,13 @@ class DatabaseSeeder extends Seeder
         
         DB::table('promotion')->insert([
             [ 'name'=>'Apple iPhone 13 Pro, chip M2', 'date_Start'=> '24/05/2023', 'date_end'=> '24/06/2023', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc'=>'Telefono Display Super Retina XDR con ProMotion da 8.6','comp_name'=>'Apple Inc.'],
+            [ 'name'=>'Samsung Galaxy S22', 'date_Start'=> '27/05/2023', 'date_end'=> '28/06/2023', 'price'=>860,'discountPerc'=>20 ,'image'=>'s22.jpg','desc'=>'Telefono display da 6,1 pollici in tecnologia Dynamic AMOLED, risoluzione Full HD+.','comp_name'=>'Samsung'],
             [ 'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '02/05/2023', 'date_end'=> '20/06/2023' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc'=>'Tablet Display Super Retina XDR con ProMotion da 6.7','comp_name'=>'Apple Inc.' ],
+            [ 'name'=>'Samsung Galaxy Tab A8', 'date_Start'=> '05/05/2023', 'date_end'=> '25/06/2023' ,'price'=>320,'discountPerc'=>15,'image'=>'s8.jpg','desc'=>'Tabel display  11″ , RAM e 128/256GB','comp_name'=>'Samsung' ],
             [ 'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '10/05/2023', 'date_end'=> '10/07/2023' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc'=>'Computer Display Super Retina XDR con ProMotion da 7.8','comp_name'=>'Apple Inc.'],
             [ 'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '07/02/2022', 'date_end'=> '20/03/2022' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','comp_name'=>'Nike Inc.'],
-            [ 'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','comp_name'=>'Nike Inc.'],
+            [ 'name'=>'Adidas Yeezy', 'date_Start'=> '08/02/2022', 'date_end'=> '28/07/2022' ,'price'=>300 ,'discountPerc'=>25,'image'=>'yeezy.jpg','desc'=>'Scarpa sportiva,stravagante','comp_name'=>'Adidas'],
+            [ 'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>25 ,'image'=>'Nike2.jpg','desc'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','comp_name'=>'Nike Inc.'],
             [ 'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc'=>'Appartamento per passare un soggiorno di gioia con la famiglia.','comp_name'=>'Airbnb Inc.'],
             [ 'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '02/04/2022', 'date_end'=> '03/05/2022' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc'=>'Bracciale per donne , utilizzato per eventi e battesimi...','comp_name'=>'Tiffany & Co'],
             [ 'name'=>'CHANEL-N°5','date_Start'=> '30/11/2019', 'date_end'=> '01/01/2020' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc'=>'Miglior profumo per donne e uomini, usato per abbigliamento di lusso','comp_name'=>'Chanel S.A.'],
@@ -81,7 +84,7 @@ class DatabaseSeeder extends Seeder
             ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
             ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
             ['comp_Id'=>7, 'name'=>'Adidas','location'=>'Berlino','image'=>'adidas.jpg'],
-            ['comp_Id'=>8, 'name'=>'Samsung.', 'location'=>'Suwon-si','image'=>'samsung.jpg'],
+            ['comp_Id'=>8, 'name'=>'Samsung', 'location'=>'Suwon-si','image'=>'samsung.jpg'],
             ['comp_Id'=>9, 'name'=>'Trivago', 'location'=>'Monaco','image'=>'Trivago.jpg'],
             ['comp_Id'=>10, 'name'=>'Amazon', 'location'=>'Miami','image'=>'Amazon.jpg'],
             ['comp_Id'=>11, 'name'=>'Ebay', 'location'=>'San Jose','image'=>'ebay.jpg'],
