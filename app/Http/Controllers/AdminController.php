@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewProductRequest;
 use App\Http\Requests\NewCompanyRequest;
-use App\Http\Requests\UpadateCompanyRequest;
+use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Admin;
 use App\Models\Resources\Product;
 use App\Models\Resources\Promotion;
@@ -126,7 +126,7 @@ public function destroyCompany($comp_Id) {
         ->with('company',$company);
  }
 //
- public function  updateCompany($comp_Id,UpadateCompanyRequest $request){
+ public function  updateCompany($comp_Id,UpdateCompanyRequest $request){
         
     $validator = Validator::make($request -> all(),[
 

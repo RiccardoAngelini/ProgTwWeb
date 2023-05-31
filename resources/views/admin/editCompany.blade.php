@@ -34,7 +34,7 @@
 
     <div class="input-box" style="width: 100%;">
         {{ Form::label('ragione_sociale', 'Ragione Sociale :') }}
-        {{ Form::text('ragione_sociale', old('ragione_sociale', $company->ragione_saciale), ['id' => 'ragione_sociale']) }}
+        {{ Form::text('ragione_sociale', old('ragione_sociale', $company->ragione_sociale), ['id' => 'ragione_sociale']) }}
         <ul class="errors">
                     @foreach ($errors->get('ragione_sociale') as $message)
                     <li>{{ $message }}</li>

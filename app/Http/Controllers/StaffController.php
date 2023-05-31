@@ -64,7 +64,6 @@ class StaffController extends Controller {
           $promotion -> date_end = $request->date_end;
           $promotion -> discountPerc = $request->discountPerc;
           $promotion -> desc = $request-> desc;
-          $promotion -> desc_short = $request-> desc_short;
           $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
           $promotion ->image = $imageName;

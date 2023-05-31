@@ -8,6 +8,7 @@ class Company extends Model {
 
     protected $table = 'company';
     protected $primaryKey = 'comp_Id';
+    protected $fillable = ['name', 'ragione_sociale', 'location', 'desc'];
     public $timestamps = false;
 
     public function getCompany(){
