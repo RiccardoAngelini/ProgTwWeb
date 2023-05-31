@@ -132,7 +132,8 @@ public function destroyCompany($comp_Id) {
 
         'name' => 'required',
         'location' => 'required',
-        
+        'ragione_sociale' => 'required',
+        'desc' => 'required',
     ]);
     if($validator -> passes()){
         if ($request->hasFile('image')) {
