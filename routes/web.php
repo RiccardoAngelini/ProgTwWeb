@@ -36,13 +36,13 @@ Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende')
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
 //Acesso admin, vincolli di acesso non ancore definito
- Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
- Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create');
- Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store');
- Route::get('/faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit');
- Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update');
- Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show');
- Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy');
+ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index')->middleware('can:isAdmin');;
+ Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create')->middleware('can:isAdmin');;
+ Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store')->middleware('can:isAdmin');;
+ Route::get('/faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit')->middleware('can:isAdmin');;
+ Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update')->middleware('can:isAdmin');;
+ Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show')->middleware('can:isAdmin');;
+ Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy')->middleware('can:isAdmin');;
 
 
 
