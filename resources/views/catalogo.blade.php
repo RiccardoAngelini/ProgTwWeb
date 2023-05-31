@@ -41,8 +41,9 @@
                         <div class="nome">
                             {{$promotion->name }}
                         </div>
+                        <hr>
                         <div class="nome">
-                            {{$promotion->desc_short }}
+                            {{$promotion->desc }}
                         </div>
                         
                         </div>
@@ -83,7 +84,7 @@
                     {{$promo->name}}
                     </div>
                     <div class="nome">
-                        {{$promo->desc_short}}
+                        {{$promo->desc}}
                         </div>
                     </div>
                     <div calss="scopri-off">
