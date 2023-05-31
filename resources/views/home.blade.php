@@ -1,7 +1,6 @@
 @extends('layouts.public')
 @section('title', 'Home')
 @section('content')
-<div class="offerte">SCOPRI LE OFFERTE</div>
 
  <div class="logos">
       <div class="logos-slide">
@@ -13,12 +12,7 @@
       </div>
     </div>
 
-   <script>
-    var copy = document.querySelector(".logos-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
-</script>
-
-   <h2 class="testo">Offerte più recenti</h2>
+    <div class="offerte">SCOPRI LE OFFERTE</div>
    <div class="coupon-home">
    @foreach($proms as $prom)     
             <div class="coupon1">

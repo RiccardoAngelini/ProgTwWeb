@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-     const DESCPROD = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor posuere odio, vitae cursus enim luctus non. Fusce efficitur est ut fringilla facilisis. Curabitur at dui tincidunt, finibus mauris sed, pulvinar tellus. Nulla at condimentum mauris, at sollicitudin nulla. Nunc interdum dolor id ligula auctor, a sagittis mauris volutpat. Proin vel rutrum dui. Aliquam erat volutpat. Fusce semper sollicitudin risus, nec finibus enim blandit nec. Suspendisse potenti. Nullam ultrices, sapien sed tincidunt varius, turpis dolor vulputate velit, vel luctus felis tortor sed sem.';
-
     public function run()
     {         
         DB::table('users')->insert([
@@ -55,6 +53,7 @@ class DatabaseSeeder extends Seeder
             [ 'name'=>'Adidas Yeezy', 'date_Start'=> '08/02/2022', 'date_end'=> '28/07/2022' ,'price'=>300 ,'discountPerc'=>25,'image'=>'yeezy.jpg','desc'=>'Scarpa sportiva,stravagante','comp_name'=>'Adidas'],
             [ 'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','comp_name'=>'Nike Inc.'],
             [ 'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc'=>'Appartamento per passare un soggiorno di gioia con la famiglia.','comp_name'=>'Airbnb Inc.'],
+            [ 'name'=>'Appartamento Roma Trivago', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc'=>'Appartamento per passare un soggiorno di gioia con la famiglia.','comp_name'=>'Trivago'],
             [ 'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '02/04/2022', 'date_end'=> '03/05/2022' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc'=>'Bracciale per donne , utilizzato per eventi e battesimi...','comp_name'=>'Tiffany & Co'],
             [ 'name'=>'CHANEL-N°5','date_Start'=> '30/11/2019', 'date_end'=> '01/01/2020' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc'=>'Miglior profumo per donne e uomini, usato per abbigliamento di lusso','comp_name'=>'Chanel S.A.'],
             [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc'=>'Intrattenimento e musica da ballo, disponibile su Spotify  ','comp_name'=>'Spotify'],
