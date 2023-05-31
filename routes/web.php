@@ -90,9 +90,6 @@ Route::prefix('staff')->group(function(){
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])->name('newproduct');
-Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])->name('newproduct.store');
-Route::get('/admin/updateproduct', [AdminController::class, 'updateProduct'])->name('updateproduct');
 Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
 Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaDesc'])->name('catalogo2');
 
