@@ -124,7 +124,7 @@ Route::get('/coupon/statistiche/promo/{promo_id}', [AdminController::class, 'pro
 Route::get('/admin/listautenti/statistiche/promo',[AdminController::class ,'listaPromoStats'])->name('admin.listapromozionistats');
 
 //DOCUMENTAZIONE
-Route::get('/download', [PublicController::class, 'docFiles'])->name('document');
+Route::get('/Documentazione', [PublicController::class, 'docFiles'])->name('document');
 
 require __DIR__.'/auth.php';
 
