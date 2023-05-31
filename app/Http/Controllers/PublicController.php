@@ -72,13 +72,19 @@ class PublicController extends Controller
     
         $company = $this->_companyModel->getCompanyByPartialName($azienda)->first();
 
-        $desc = $this->_promotionModel->getDescByPartialName($descrizione)->toArray();
+        //divide una stringa $descrizione in un array di parole utilizzando lo spazio come delimitatore.
+        $keywords = explode(' ', $descrizione);
+
+        $desc = $this->_promotionModel->getDescByPartialName($keywords)->toArray();
+
+ 
+
         if (!$company||($descrizione==null&&$azienda==null)||empty($desc)) {
             return view('errore');
         }
     
-        if ($descrizione && $azienda) {
-            $promo_by_desc_and_comp = $this->_promotionModel->getPromotionByDescAndCompany($descrizione, $company->name);
+        if ($keywords && $azienda) {
+            $promo_by_desc_and_comp = $this->_promotionModel->getPromotionByDescAndCompany($keywords, $company->name);
     
             return view('catalogo')
                 ->with('promo_by_comp', $promo_by_desc_and_comp);
@@ -87,11 +93,10 @@ class PublicController extends Controller
     
             return view('catalogo')
                 ->with('promo_by_comp', $promo_by_comp);
-        } elseif ($descrizione) {
-            $promo_by_desc = $this->_promotionModel->getPromotionByDescShort($descrizione);
+        } elseif ($keywords) {
+            $promo_by_desc = $this->_promotionModel->getPromotionByDescShort($keywords);
     
             return view('catalogo')
-            ->with('desc',$desc)
                 ->with('promo_by_comp', $promo_by_desc);
         }
         }

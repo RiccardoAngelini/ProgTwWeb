@@ -49,22 +49,46 @@ public function getPromoById($promo_Id)
     return Promotion::where('promo_Id', $promo_Id)->get();
 }
 
-public function getPromotionByDescShort($descrizione)
+public function getPromotionByDescShort($keywords)
 {
-    return $this->where('desc_short', 'LIKE', '%' . $descrizione . '%')
-        ->get();
+    $query = $this->query();
+    
+    foreach ($keywords as $index => $keyword) {
+        if ($index === 0) {
+            $query->where('desc_short', 'LIKE', '%' . $keyword . '%');
+        } else {
+            $query->where('desc_short', 'LIKE', '%' . $keyword . '%', 'AND', function ($query) use ($keyword) {
+                $query->where('desc_short', 'LIKE', '%' . $keyword . '%');
+            });
+        }
+    }
+    
+    return $query->get();
 }
+
+
 
 public function getPromotionByDescAndCompany($descrizione, $comp_name)
 {
-    return $this->where('desc_short', 'LIKE', '%' . $descrizione . '%')
-        ->where('comp_name', $comp_name)
-        ->get();
+    return $this->where(function ($query) use ($descrizione) {
+        foreach ($descrizione as $desc) {
+            $query->orWhere('desc_short', 'LIKE', '%' . $desc . '%');
+        }
+    })->where('comp_name', $comp_name)->get();
 }
 
-public function getDescByPartialName($desc)
+
+
+
+public function getDescByPartialName($keywords)
 {
-    return $this->where('desc_short', 'LIKE', '%' . $desc . '%')->get();
+    return $this->where(function ($query) use ($keywords) {
+        foreach ($keywords as $keyword) {
+            $query->orWhere('desc_short', 'LIKE', '%' . $keyword . '%');
+        }
+    })->get();
 }
+
+
  
 }

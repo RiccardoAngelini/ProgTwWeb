@@ -35,7 +35,7 @@ Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende')
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
-//Acesso admin, vincolli di acesso non ancore definito
+//Acesso admin
  Route::get('/faq', [FaqController::class, 'index'])->name('faq.index')->middleware('can:isAdmin');;
  Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create')->middleware('can:isAdmin');;
  Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store')->middleware('can:isAdmin');;
@@ -44,15 +44,6 @@ Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso pu
  Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show')->middleware('can:isAdmin');;
  Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy')->middleware('can:isAdmin');;
 
-
-
-//ROUTE PROFILO STAFF
-
-Route::middleware('auth')->group(function(){
-        Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('staff.show');
-        Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('staff.edit');
-        Route::put('/profile/update', [ProfileController::class, 'update'])->name('staff.update');
-});
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
