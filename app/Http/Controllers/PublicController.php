@@ -35,8 +35,10 @@ class PublicController extends Controller
         $companies=$this->_companyModel->getCompany()->take(4);
         $promotionst=$this->_promotionModel->getPromotion();
         $proms=$this->_promotionModel->getPromotionByTime($promotionst);
+        $companies2=$this->_companyModel->getCompany();
         return view('home')
                 ->with('proms',$proms)
+                ->with('companies2',$companies2)
                 ->with('companies',$companies);
     }
     public function showCatalogo(){ 
