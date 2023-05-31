@@ -18,7 +18,8 @@
             <div class="content-catalogo">
             @isset($promotions)
            
-                <div class="coupon">
+                
+<div class="coupon">
                     
                 @foreach($promotions as $promotion)
     <div class="coupon1">
@@ -43,16 +44,21 @@
                         <div class="nome">
                             {{$promotion->desc_short }}
                         </div>
+                        
+                        </div>
                         <div calss="scopri-off">
                             <a href="{{route('offerta',[$promotion->promo_Id])}}"><button class="scopri" >
                                 Scopri l'offerta
                             </button></a></div>
-                        </div>
+                            
                 </div>
-            @endforeach 
-            
-            @endisset
+           
+                @endforeach 
+    </div>
 
+</div>
+
+@endisset
 
 @isset($promo_by_comp)
 
@@ -79,15 +85,17 @@
                     <div class="nome">
                         {{$promo->desc_short}}
                         </div>
+                    </div>
                     <div calss="scopri-off">
                     <a href="{{route('offerta',[$promo->promo_Id])}}"><button class="scopri" >
                         Scopri l'offerta
                 </button></a></div>
                 </div>
                 
+        @endforeach
                 </div>
+</div>
 
-@endforeach
 
 @endisset
 
