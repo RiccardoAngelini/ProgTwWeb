@@ -116,7 +116,7 @@ class PublicController extends Controller
         ]);
     }
     public function docFiles(){
-        $filePath = public_path('files/schema_dei_link.pdf');
+        $filePath = public_path().'/files/documentazione.pdf';
         
         if (file_exists($filePath)) {
             return new BinaryFileResponse($filePath);
