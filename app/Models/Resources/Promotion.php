@@ -55,10 +55,10 @@ public function getPromotionByDescShort($keywords)
     
     foreach ($keywords as $index => $keyword) {
         if ($index === 0) {
-            $query->where('desc_short', 'LIKE', '%' . $keyword . '%');
+            $query->where('desc', 'LIKE', '%' . $keyword . '%');
         } else {
-            $query->where('desc_short', 'LIKE', '%' . $keyword . '%', 'AND', function ($query) use ($keyword) {
-                $query->where('desc_short', 'LIKE', '%' . $keyword . '%');
+            $query->where('desc', 'LIKE', '%' . $keyword . '%', 'AND', function ($query) use ($keyword) {
+                $query->where('desc', 'LIKE', '%' . $keyword . '%');
             });
         }
     }
@@ -72,7 +72,7 @@ public function getPromotionByDescAndCompany($descrizione, $comp_name)
 {
     return $this->where(function ($query) use ($descrizione) {
         foreach ($descrizione as $desc) {
-            $query->orWhere('desc_short', 'LIKE', '%' . $desc . '%');
+            $query->orWhere('desc', 'LIKE', '%' . $desc . '%');
         }
     })->where('comp_name', $comp_name)->get();
 }
@@ -84,7 +84,7 @@ public function getDescByPartialName($keywords)
 {
     return $this->where(function ($query) use ($keywords) {
         foreach ($keywords as $keyword) {
-            $query->orWhere('desc_short', 'LIKE', '%' . $keyword . '%');
+            $query->orWhere('desc', 'LIKE', '%' . $keyword . '%');
         }
     })->get();
 }

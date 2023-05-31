@@ -83,12 +83,6 @@
             </div>
 
             <div class="row1">
-               {{ Form::label('desc_short', 'Descrizione Corta :', ['class' => 'details']) }}
-               {{ Form::textarea('desc_short', null, ['placeholder' => 'Inserisci la descrizione']) }}
-             
-                </div>
-
-            <div class="row1">
                {{ Form::label('desc', 'Descrizione :', ['class' => 'details']) }}
                {{ Form::textarea('desc', null, ['placeholder' => 'Inserisci la descrizione']) }}
              

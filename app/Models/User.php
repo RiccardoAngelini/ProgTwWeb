@@ -85,4 +85,8 @@ class User extends Authenticatable
 return User::findOrFail($id);
     }
 
+    public function getUserByUsername($username){
+        return User::where('username', $username);
+    }
+
 }
