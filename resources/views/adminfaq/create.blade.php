@@ -25,11 +25,12 @@
     <div class="form-group">
         {{ Form::label('answer', 'Risposta :',['class' => 'details' ]) }}
         {{ Form::textarea('answer', old('answer'), ['id' => 'answer', 'rows' => 4, 'placeholder' => 'Inserire una risposta' ]) }}
-<ul class="errors">
+        <ul class="errors">
                     @foreach ($errors->get('answer') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
-                </ul>    </div>
+        </ul>    
+    </div>
 
     {{ Form::submit('Aggiungi', ['class' => 'button-login']) }}
 {{ Form::close() }}

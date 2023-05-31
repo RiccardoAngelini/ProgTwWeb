@@ -26,6 +26,9 @@ class UpadateCompanyRequest extends FormRequest
         return [
             'name' => 'required',
             'location' => 'required',
+            'ragione_sociale' => 'required',
+            'desc' => 'required',
+            'image' => 'required',
         ];
     }
 }

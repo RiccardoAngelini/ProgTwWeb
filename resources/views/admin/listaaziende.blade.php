@@ -27,6 +27,8 @@
                 <th>Azienda_Id</th>
                 <th>Nome Azienda</th>
                 <th>Location</th>
+                <th>Ragione Sociale</th>
+                <th>Descrizione</th>
                 <th>Immagine</th> 
                 <th style="width: 40px">modifica</th>
                 <th style="width: 40px">visualizza</th>
@@ -40,6 +42,8 @@
                         <td>{{$companies->comp_Id}}</td>
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
+                        <td>{{$companies->ragione_sociale}}</td>
+                        <td>{{$companies->desc}}</td>
                         <td>{{$companies->image}}</td>
                         <td><a class="btn1" href="{{route('adminCompany.edit',$companies->comp_Id)}}">Modifica</a></td> 
                         <td><a class="btn2" href="{{route('azienda',$companies->comp_Id)}}">Visualizza</a></td>

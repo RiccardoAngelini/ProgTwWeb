@@ -12,7 +12,7 @@
     {{ Form::open(['route' => ['adminCompany.update', $company->comp_Id], 'files'=>true]) }}
     {{ csrf_field() }}
 
-    <div class="input-box">
+    <div class="input-box" style="width: 100%;">
         {{ Form::label('name', 'Nome :') }}
         {{ Form::text('name', old('name', $company->name), ['id' => 'name']) }}
         <ul class="errors">
@@ -22,7 +22,7 @@
                 </ul>  
     </div>
 
-    <div class="input-box">
+    <div class="input-box" style="width: 100%;">
         {{ Form::label('location', 'Città :') }}
         {{ Form::text('location', old('location', $company->location), ['id' => 'location']) }}
         <ul class="errors">
@@ -30,6 +30,26 @@
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>  
+    </div>
+
+    <div class="input-box" style="width: 100%;">
+        {{ Form::label('ragione_sociale', 'Ragione Sociale :') }}
+        {{ Form::text('ragione_sociale', old('ragione_sociale', $company->ragione_saciale), ['id' => 'ragione_sociale']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('ragione_sociale') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('desc', 'Descrizione :') }}
+        {{ Form::textarea('desc', old('desc', $company->desc), ['id' => 'desc', 'rows' => 4, 'placeholder' => 'Inserire una descrizione', 'class' => 'form-control' . ($errors->has('desc') ? ' is-invalid' : '')]) }}
+        <ul class="errors">
+                    @foreach ($errors->get('desc') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
     </div>
 
     <div  class="input-box0">
@@ -42,7 +62,9 @@
                     @endforeach
                 </ul>
                 @endif
-            </div>
+    </div>
+
+
 
 
     {{ Form::submit('Salva',['class' => 'button-login']) }}

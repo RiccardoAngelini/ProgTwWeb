@@ -74,19 +74,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('company')->insert([
-            ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','image'=>'Amazon.jpg'],
+            ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
+            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Amazon.jpg'],
         ]);
 
     }

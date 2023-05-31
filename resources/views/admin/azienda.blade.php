@@ -3,7 +3,7 @@
 @section('content')
 
 
-<a class="btn2" href="{{route('admin.listaziende')}}" >Indietro</a>
+<a class="btn2" href="{{route('admin.listaziende')}}" style="margin-left: 50%; margin-top:10px;" >Indietro</a>
 
 <div class="cont-azienda">
     
@@ -23,6 +23,10 @@ $(document).ready(function() {
         </div>
         <br>
         <div class="prezzo-off">{{$azienda->location}}</div>
+        <br>
+        <div class="prezzo-off"><strong>Ragione Sociale: </strong> {{$azienda->ragione_sociale}}</div>
+        <br>
+        <div class="prezzo-off" > {{$azienda->desc}}</div>
         
         
          <div style=" clear:right"></div>

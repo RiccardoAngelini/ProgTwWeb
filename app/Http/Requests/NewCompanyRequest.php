@@ -33,6 +33,8 @@ public function rules() {
     return [
              'name' => 'required',
              'location' => 'required',
+             'ragione_sociale' => 'required',
+             'desc' => 'required',
              'image' => 'required',
     ];
 }

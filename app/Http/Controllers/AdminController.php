@@ -108,6 +108,8 @@ public function destroyCompany($comp_Id) {
               $company = new Company();
               $company ->name = $request->name;
               $company ->location = $request->location;
+              $company ->ragione_sociale = $request->ragione_sociale;
+              $company ->desc = $request->desc;
               $company ->image = $imageName;
               $company ->save();
 
@@ -142,6 +144,8 @@ public function destroyCompany($comp_Id) {
         $company = $this->_companyModel->findCompany($comp_Id);
         $company ->name = $request->name;
         $company ->location = $request->location;
+        $company ->ragione_sociale = $request->ragione_sociale;
+        $company ->desc = $request->desc;
         $company->image=$imageName;
         $company ->save();
         if (!is_null($imageName)) {
