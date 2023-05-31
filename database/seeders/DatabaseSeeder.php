@@ -46,19 +46,17 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('promotion')->insert([
-            [ 'name'=>'Apple iPhone 13 Pro, chip M2', 'date_Start'=> '24/05/2023', 'date_end'=> '24/06/2023', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc_short'=>'Telefono Display Super Retina XDR con ProMotion da 8.6','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '02/05/2023', 'date_end'=> '20/06/2023' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc_short'=>'Tablet Display Super Retina XDR con ProMotion da 6.7','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.' ],
-            [ 'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '10/05/2023', 'date_end'=> '10/07/2023' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc_short'=>'Computer Display Super Retina XDR con ProMotion da 7.8','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '07/02/2022', 'date_end'=> '20/03/2022' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc_short'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
-            [ 'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc_short'=>'Scarpa sportiva, utile per gite ed eventi di sport di gruppo','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
-            [ 'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc_short'=>'Appartamento per passare un soggiorno di gioia con la famiglia.','desc' => self::DESCPROD,'comp_name'=>'Airbnb Inc.'],
-            [ 'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '02/04/2022', 'date_end'=> '03/05/2022' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc_short'=>'Bracciale per donne , utilizzato per eventi e battesimi...','desc' => self::DESCPROD,'comp_name'=>'Tiffany & Co'],
-            [ 'name'=>'CHANEL-N°5','date_Start'=> '30/11/2019', 'date_end'=> '01/01/2020' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc_short'=>'Miglior profumo per donne e uomini, usato per abbigliamento di lusso','desc' => self::DESCPROD,'comp_name'=>'Chanel S.A.'],
-            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc_short'=>'Intrattenimento e musica da ballo, disponibile su Spotify  ','desc' => self::DESCPROD,'comp_name'=>'Spotify'],
-            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>35.00 ,'discountPerc'=>15,'image'=>'Apple2.jpg','desc_short'=>'Intrattenimento e musica, disponibile su Apple Music ','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
-            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>40.00 ,'discountPerc'=>40,'image'=>'Amazon1.jpg','desc_short'=>' Musica da ballo di tutti i generi, disponibile su Amazon Music ','desc' => self::DESCPROD,'comp_name'=>'Amazon']
-
-
+            [ 'name'=>'Apple iPhone 13 Pro, chip M2', 'date_Start'=> '24/05/2023', 'date_end'=> '24/06/2023', 'price'=>220.15,'discountPerc'=>50 ,'image'=>'Iphone.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'name'=>'APPLE iPad Pro 11" Chip M2', 'date_Start'=> '02/05/2023', 'date_end'=> '20/06/2023' ,'price'=>1299.99,'discountPerc'=>20,'image'=>'Ipad.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.' ],
+            [ 'name'=>'Apple MacBook Pro 13" M2','date_Start'=> '10/05/2023', 'date_end'=> '10/07/2023' , 'price'=>159.00,'discountPerc'=>10 ,'image'=>'Mac.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'name'=>'Nike Air Jordan 1 Retro Chicago (2015)', 'date_Start'=> '07/02/2022', 'date_end'=> '20/03/2022' ,'price'=>520.15 ,'discountPerc'=>60,'image'=>'Nike1.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
+            [ 'name'=>'Nike Dunk Low Off-White University Red', 'date_Start'=> '14/12/2023', 'date_end'=> '05/08/2023', 'price'=>399.99,'discountPerc'=>30 ,'image'=>'Nike2.jpg','desc' => self::DESCPROD,'comp_name'=>'Nike Inc.'],
+            [ 'name'=>'Appartamento Milano AirBnb', 'date_Start'=> '16/10/2020', 'date_end'=> '17/11/2020' , 'price'=>90.00 ,'discountPerc'=>15,'image'=>'Appartamento.jpg','desc' => self::DESCPROD,'comp_name'=>'Airbnb Inc.'],
+            [ 'name'=>'Bracciale Bead Heart Tag Tiffany' ,'date_Start'=> '02/04/2022', 'date_end'=> '03/05/2022' , 'price'=>700.00 ,'discountPerc'=>15,'image'=>'Collana.jpg','desc' => self::DESCPROD,'comp_name'=>'Tiffany & Co'],
+            [ 'name'=>'CHANEL-N°5','date_Start'=> '30/11/2019', 'date_end'=> '01/01/2020' , 'price'=>100.00 ,'discountPerc'=>15,'image'=>'Chanel1.jpg','desc' => self::DESCPROD,'comp_name'=>'Chanel S.A.'],
+            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>50.00 ,'discountPerc'=>15,'image'=>'Spotify1.jpg','desc' => self::DESCPROD,'comp_name'=>'Spotify'],
+            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>35.00 ,'discountPerc'=>15,'image'=>'Apple2.jpg','desc' => self::DESCPROD,'comp_name'=>'Apple Inc.'],
+            [ 'name'=>'Abbonamento 6 mesi di musica', 'date_Start'=> '19/07/2022', 'date_end'=> '23/09/2023' , 'price'=>40.00 ,'discountPerc'=>40,'image'=>'Amazon1.jpg','desc' => self::DESCPROD,'comp_name'=>'Amazon']
         ]);
 
         DB::table('faq')->insert([
@@ -74,19 +72,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('company')->insert([
-            ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
-            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
-            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
-            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
-            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
-            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
-            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
-            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
-            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
-            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
-            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','ragione_sociale'=> 'ragine sociale','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Amazon.jpg'],
+            ['comp_Id'=>1, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'Estetista SS di Chiara Neri','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
+            ['comp_Id'=>2, 'name'=>'Nike Inc.','location'=>'milano','ragione_sociale'=> 'Estetista SS di Chiara Neri','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
+            ['comp_Id'=>3, 'name'=>'Spotify','location'=>'san Francisco','ragione_sociale'=> 'Estetista SS di Chiara Neri','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
+            ['comp_Id'=>4, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>5, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>6, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
+            ['comp_Id'=>7, 'name'=>'Apple Inc.','location'=>'New York','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Apple.jpg'],
+            ['comp_Id'=>8, 'name'=>'Nike Inc.', 'location'=>'milano','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Nike.jpg'],
+            ['comp_Id'=>9, 'name'=>'Spotify', 'location'=>'san Francisco','ragione_sociale'=> 'società in nome collettivo – SNC','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Spotify.jpg'],
+            ['comp_Id'=>10, 'name'=>'Airbnb Inc.','location'=>'california','ragione_sociale'=> 'società in accomandita semplice','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Airbnb.jpg'],
+            ['comp_Id'=>11, 'name'=>'Tiffany & Co','location'=>'Parigi','ragione_sociale'=> 'società in accomandita semplice','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Tiffany.jpg'],
+            ['comp_Id'=>12, 'name'=>'Chanel S.A.', 'location'=>'Parigi','ragione_sociale'=> 'società in accomandita semplice','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Chanel.jpg'],
+            ['comp_Id'=>13, 'name'=>'Amazon', 'location'=>'miami','ragione_sociale'=> 'società in accomandita semplice','desc'=> 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa.','image'=>'Amazon.jpg'],
         ]);
 
     }
