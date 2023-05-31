@@ -11,7 +11,7 @@
                     <div class="nome-az">
                         {{$company->name}}  
                     </div>
-                    <div class="cont-img">
+                    <div class="cont-az">
                         @include('helpers/companyImg', ['imgFile' => $company->image])
                     </div>
                 </div>

@@ -30,18 +30,30 @@
         
     }
 
+    .cont-az{
+        border-top: 3px solid #ff7a57;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
 .cont-img{
     border-top: 3px solid #ff7a57;
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    height: 165px;
 }
     .img{
         margin-top: 10px;
-        height: 150px;
+        max-height: 150px;
         border-radius: 15px;
         max-width: 190px;
+        height: auto;
+        width: auto;
+
     }
+
 
     .nome-az{
         width: 100%;
