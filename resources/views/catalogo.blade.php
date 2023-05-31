@@ -83,6 +83,7 @@
                     <div class="nome">
                     {{$promo->name}}
                     </div>
+                    <hr>
                     <div class="nome">
                         {{$promo->desc}}
                         </div>

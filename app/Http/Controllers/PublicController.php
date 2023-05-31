@@ -35,8 +35,10 @@ class PublicController extends Controller
         $companies=$this->_companyModel->getCompany()->take(4);
         $promotionst=$this->_promotionModel->getPromotion();
         $proms=$this->_promotionModel->getPromotionByTime($promotionst);
+        $companies2=$this->_companyModel->getCompany();
         return view('home')
                 ->with('proms',$proms)
+                ->with('companies2',$companies2)
                 ->with('companies',$companies);
     }
     public function showCatalogo(){ 
@@ -72,33 +74,35 @@ class PublicController extends Controller
     
         $company = $this->_companyModel->getCompanyByPartialName($azienda)->first();
 
+        $promo=$this->_promotionModel->getPromotionByComp($company->name)->toArray();
+
         //divide una stringa $descrizione in un array di parole utilizzando lo spazio come delimitatore.
         $keywords = explode(' ', $descrizione);
 
         $desc = $this->_promotionModel->getDescByPartialName($keywords)->toArray();
 
- 
-
-        if (!$company||($descrizione==null&&$azienda==null)||empty($desc)) {
+        if (!$company||($descrizione==null&&$azienda==null)||empty($desc)||empty($promo)) {
             return view('errore');
         }
     
         if ($keywords && $azienda) {
             $promo_by_desc_and_comp = $this->_promotionModel->getPromotionByDescAndCompany($keywords, $company->name);
-    
+            dump($promo_by_desc_and_comp);
             return view('catalogo')
                 ->with('promo_by_comp', $promo_by_desc_and_comp);
         } elseif ($azienda) {
             $promo_by_comp = $this->_promotionModel->getPromotionByComp($company->name);
-    
+           
             return view('catalogo')
                 ->with('promo_by_comp', $promo_by_comp);
         } elseif ($keywords) {
             $promo_by_desc = $this->_promotionModel->getPromotionByDescShort($keywords);
-    
+            
+         
             return view('catalogo')
                 ->with('promo_by_comp', $promo_by_desc);
         }
+      
         }
     
     
@@ -112,10 +116,12 @@ class PublicController extends Controller
         ]);
     }
     public function docFiles(){
-        $filePath = public_path('\public\files\schema_dei_link.pdf');
-        if(file_exists($filePath)){
+        $filePath = public_path().'/files/documentazione.pdf';
+        
+        if (file_exists($filePath)) {
             return new BinaryFileResponse($filePath);
         }
-        return response()->json(['message' => 'il file non existe.' , 404]);
-    }
+        
+        return 'File PDF non trovato.';
+        }
 }
