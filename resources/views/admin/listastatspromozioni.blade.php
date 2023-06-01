@@ -4,7 +4,7 @@
 
 <main class="maina">
     <h1>Lista Promozioni</h1>
-    <p>Seleziona la promozione</p>
+
     <div class="side_wrapper_utenti">
         <section class="about-dev-utenti">
                 <ul class="lista_utenti">
