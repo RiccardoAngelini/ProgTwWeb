@@ -57,29 +57,3 @@
     </div>
 </table>
     @endsection
-<style>
-
-.crud-staff-header{
- padding-top: 100px; 
- padding-bottom: 10px;
-text-align: center;
-
-}
-.crud-staff-create{
-    margin-left: 17%; 
-    font-size:20px; 
-    margin-top:50px; 
-    text-decoration:none;
-    padding-top: 30px;
-    padding-right: 30px;
-    text-align: right;
-
-}
-
-.crud-staff-body{
-    text-align: right;
-    margin-left: 30px;
-    padding-left: 50px; 
-}
-
-</style>
