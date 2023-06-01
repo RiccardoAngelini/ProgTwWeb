@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="faq-header"></div>
-<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Back</a></div>
+<div class="btn" style="text-align: center; ;margin-top: 50px;"><a href="{{route('faq.index')}}">Indietro</a></div>
 <div class="title" style="margin-top: 50px;">
     <table><h1 style="text-align: center; font-size:50px;">Modifica Faq</h1>
 </div>
