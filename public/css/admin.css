@@ -209,3 +209,26 @@
      margin-left: 30px;
      padding-left: 50px; 
  }
+ .creat2 {
+  background-color: #2854e3;
+  border: none;
+  color: white;
+  padding: 5px 20px; 
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+ 
+  }
+  .crud-staff-create2{
+    margin-left: 17%; 
+    font-size:20px; 
+    margin-top:50px; 
+    text-decoration:none;
+    padding-top: 30px;
+    padding-right: 30px;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+
+}

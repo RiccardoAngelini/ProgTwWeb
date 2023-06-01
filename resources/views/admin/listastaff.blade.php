@@ -5,7 +5,7 @@
      <h1> LISTA MEMBRI STAFF </h1>
     </div>
 
-    <div class="crud-staff-create">  <a class="creat" href="{{route('admin.newStaff')}}">Aggiungi un membro</a> </div>
+    <div class="crud-staff-create2">  <a class="creat2" href="{{route('admin.newStaff')}}">Aggiungi un membro</a> </div>
     <div class="crud-staff-body">
     <table>
     @if (session('status'))
