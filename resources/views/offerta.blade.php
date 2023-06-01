@@ -20,9 +20,13 @@ $(document).ready(function() {
 
     <div><h3><u>Descrizione</u></h3></div><br>
     {{$sel_promId->desc}} <br><br><br><br><br>
-    <div><h3><u><strong>Metodo di fruizione: </strong></u></h3></div><br>
-     {{$sel_promId->metodo_di_fruizione}}
+    <div><h3><u>Metodo di fruizione: </u></h3></div><br>
+    {{$sel_promId->metodo_di_fruizione}}<br><br><br> 
+
+    <div><h3><u>Luogo di fruizione:</u></h3></div><br>
+     {{$sel_promId->luogo_di_fruizione}}
 </div>
+
     <div class="dettagli">
         <div class="nome-off">{{$sel_promId->name}}
         </div>
@@ -30,7 +34,6 @@ $(document).ready(function() {
         <div class="prezzo-off">Scade il {{ DateTime::createFromFormat('d/m/Y', $sel_promId->date_end)->format('d/m/Y') }} </div>
         
         <div class="prezzo-off"><strong>Prezzo: </strong> {{$sel_promId->price}}  &#8364;</div>
-        <div class="prezzo-off"> <strong>Locazione: </strong> {{$sel_promId->location}}</div>
 
         <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
         @can('isUser')
