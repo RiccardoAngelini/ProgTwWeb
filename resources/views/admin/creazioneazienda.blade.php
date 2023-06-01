@@ -52,19 +52,19 @@ $(function () {
                {{ Form::label('location', 'Residenza', ['class' => 'details']) }}
                {{ Form::text('location', null, ['placeholder' => 'Inserisci la residenza azienda']) }}
             </div>
-            <div class="input-box" style="width: 100%;">
+            <div class="input-box">
                 {{ Form::label('ragione_sociale', 'Ragione Sociale', ['class' => 'details']) }}
                 {{ Form::text('ragione_sociale', null, ['placeholder' => 'Inserisci la ragione sociale']) }}
              </div>
 
+             <div class="input-box">
+                {{ Form::label('tipologia', 'Tipologia', ['class' => 'details']) }}
+                {{ Form::text('tipologia', null, ['placeholder' => 'Inserisci la tipologia']) }}
+             </div>
+
              <div class="form-group" style="width: 100%;">
                 {{ Form::label('desc', 'Descrizione :',['class' => 'details' ]) }}
-                {{ Form::textarea('desc', old('desc'), ['id' => 'desc', 'rows' => 4, 'placeholder' => 'Inserire una descrizione' ]) }}
-                <ul class="errors">
-                            @foreach ($errors->get('desc') as $message)
-                            <li>{{ $message }}</li>
-                            @endforeach
-                </ul>    
+                {{ Form::textarea('desc', old('desc'), ['id' => 'desc', 'rows' => 4, 'placeholder' => 'Inserire una descrizione' ]) }}   
             </div>
 
             <div  class="input-box0">

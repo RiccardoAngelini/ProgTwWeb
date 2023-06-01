@@ -28,6 +28,7 @@
                 <th>Nome Azienda</th>
                 <th>Location</th>
                 <th>Ragione Sociale</th>
+                <th>Tipologia</th>
                 <th>Descrizione</th>
                 <th>Immagine</th> 
                 <th style="width: 40px">modifica</th>
@@ -43,6 +44,7 @@
                         <td>{{$companies->name}}</td>
                         <td>{{$companies->location}}</td>
                         <td>{{$companies->ragione_sociale}}</td>
+                        <td>{{$companies->tipologia}}</td>
                         <td>{{$companies->desc}}</td>
                         <td>{{$companies->image}}</td>
                         <td><a class="btn1" href="{{route('adminCompany.edit',$companies->comp_Id)}}">Modifica</a></td> 

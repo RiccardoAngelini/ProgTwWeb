@@ -17,7 +17,7 @@ class CreatePromotionTable extends Migration
             $table->string('name');
             $table->bigIncrements('promo_Id');
             $table->string('desc',600);
-            $table->string('location',50);
+            $table->string('luogo_di_fruizione',50);
             $table->string('metodo_di_fruizione',100);
             $table->string('date_start');
             $table->string('date_end');

@@ -26,6 +26,8 @@ $(document).ready(function() {
         <br>
         <div class="prezzo-off"><strong>Ragione Sociale: </strong> {{$azienda->ragione_sociale}}</div>
         <br>
+        <div class="prezzo-off"><strong>Tipologia: </strong> {{$azienda->tipologia}}</div>
+        <br>
         <div class="prezzo-off" > {{$azienda->desc}}</div>
         
         
