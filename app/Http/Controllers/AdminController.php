@@ -109,6 +109,7 @@ public function destroyCompany($comp_Id) {
               $company ->name = $request->name;
               $company ->location = $request->location;
               $company ->ragione_sociale = $request->ragione_sociale;
+              $company ->tipologia = $request->tipologia;
               $company ->desc = $request->desc;
               $company ->image = $imageName;
               $company ->save();
@@ -133,6 +134,7 @@ public function destroyCompany($comp_Id) {
         'name' => 'required',
         'location' => 'required',
         'ragione_sociale' => 'required',
+        'tipologia' => 'required',
         'desc' => 'required',
     ]);
     if($validator -> passes()){
@@ -146,6 +148,7 @@ public function destroyCompany($comp_Id) {
         $company ->name = $request->name;
         $company ->location = $request->location;
         $company ->ragione_sociale = $request->ragione_sociale;
+        $company ->tipologia = $request->tipologia;
         $company ->desc = $request->desc;
         $company->image=$imageName;
         $company ->save();

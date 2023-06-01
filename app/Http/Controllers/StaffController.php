@@ -64,7 +64,7 @@ class StaffController extends Controller {
           $promotion -> date_end = $request->date_end;
           $promotion -> discountPerc = $request->discountPerc;
           $promotion -> desc = $request-> desc;
-          $promotion -> location = $request-> location;
+          $promotion -> luogo_di_fruizione = $request-> luogo_di_fruizione;
           $promotion -> metodo_di_fruizione = $request-> metodo_di_fruizione;
           $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
@@ -97,7 +97,7 @@ class StaffController extends Controller {
             'date_end' => 'required',
             'discountPerc'=> 'required',
             'desc'=> 'required',
-            'location'=> 'required',
+            'luogo_di_fruizione'=> 'required',
             'metodo_di_fruizione'=> 'required',
             'image'=> 'required',
         ]);  
@@ -117,7 +117,7 @@ class StaffController extends Controller {
         $promotion -> date_end = $request->date_end;
         $promotion -> discountPerc = $request->discountPerc;
         $promotion -> desc = $request-> desc;
-        $promotion -> location = $request-> location;
+        $promotion -> luogo_di_fruizione = $request-> luogo_di_fruizione;
         $promotion -> metodo_di_fruizione = $request-> metodo_di_fruizione;
         $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
         $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');

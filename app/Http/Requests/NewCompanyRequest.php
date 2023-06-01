@@ -34,6 +34,7 @@ public function rules() {
              'name' => 'required',
              'location' => 'required',
              'ragione_sociale' => 'required',
+             'tipologia' => 'required',
              'desc' => 'required',
              'image' => 'required',
     ];
