@@ -13,12 +13,20 @@ class Faq extends Model
     public $timestamps = false;
     protected $filllable = ['question', 'answer'];
 
-    public function getFaqBuIds(int $id){
-        $faq = Faq::where('id', $id);
-        return $faq;
+    public function orderFaq(){
+        return Faq::orderBy('id', 'DESC')->get();;
     }
 
     public function getFaq() {
         return Faq::all();
     }
+
+    public function findFaq($id){
+        return Faq::find($id);
+    }
+    public function findorfailFaq($id){
+        return Faq::findOrFail($id);
+    }
 }
+
+

@@ -15,11 +15,15 @@ class FaqController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
+     protected $_faqModel;
+ 
+     public function __construct() {
+         $this->_faqModel = new Faq;
+     }
 
     public function index(Request $faq)
     {
-         
-         $faq = Faq::orderBy('id', 'DESC')->get();
+         $faq = $this->_faqModel->orderFaq();
          $faq = Faq::paginate(7);
          return view('adminfaq.listafaq', [
              'faq' => $faq
@@ -34,7 +38,7 @@ class FaqController extends Controller
      */
     public function create(Request $request)
     {
-         $faq =  Faq::all();
+         $faq =  $this->_faqModel->getFaq();
         return view('adminfaq.create',[ 'faq' => $faq]);
     }
 
@@ -72,7 +76,7 @@ class FaqController extends Controller
      public function edit($id)
      {
        
-         $faq = Faq::find($id);
+         $faq = $this->_faqModel->findFaq($id);
         //  $faq = Faq::where('faq_Id', $faq_Id);
          return view('adminfaq.edit', ['faq' => $faq]);
      }
@@ -92,7 +96,7 @@ class FaqController extends Controller
             'answer' => 'required',
         ]);
         if($validator -> passes()){
-            $faq = Faq::find($id);
+            $faq = $this->_faqModel->findFaq($id);
             $faq ->question = $request->question;
             $faq ->answer = $request->answer;
             $faq ->save();
@@ -111,7 +115,7 @@ class FaqController extends Controller
      */
     public function destroy($id, Request $request)
       {
-         $faq = Faq::findOrFail($id);
+         $faq = $this->_faqModel->findorfailFaq($id);
          $faq -> delete();
          return redirect()->route('faq.index')->with('status', 'Faq cancellata con sucesso!');
      }
