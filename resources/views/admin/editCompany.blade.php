@@ -42,6 +42,16 @@
                 </ul>  
     </div>
 
+    <div class="input-box" style="width: 100%;">
+        {{ Form::label('tipologia', 'Tipologia :') }}
+        {{ Form::text('tipologia', old('tipologia', $company->tipologia), ['id' => 'tipologia']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('tipologia') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
     <div class="form-group">
         {{ Form::label('desc', 'Descrizione :') }}
         {{ Form::textarea('desc', old('desc', $company->desc), ['id' => 'desc', 'rows' => 4, 'placeholder' => 'Inserire una descrizione', 'class' => 'form-control' . ($errors->has('desc') ? ' is-invalid' : '')]) }}
@@ -63,9 +73,6 @@
                 </ul>
                 @endif
     </div>
-
-
-
 
     {{ Form::submit('Salva',['class' => 'button-login']) }}
     {{ Form::close() }}

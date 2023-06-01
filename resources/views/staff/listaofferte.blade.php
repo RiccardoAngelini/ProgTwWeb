@@ -29,7 +29,7 @@
                 <th>Sconto</th>
                 <th>Imagine</th>
                 <th>Azienda</th>
-                <th>Locazione</th>
+                <th>Luogo di Fruizione</th>
                 <th>Metodo di fruizione</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
@@ -50,7 +50,7 @@
                         <td>{{$promotions->discountPerc}}%</td>
                         <td>{{$promotions->image}}</td>
                         <td>{{$promotions->comp_name}}</td>
-                        <td>{{$promotions->location}}</td>
+                        <td>{{$promotions->luogo_di_fruizione}}</td>
                         <td>{{$promotions->metodo_di_fruizione}}</td>
                         <td>{{$promotions->date_start}}</td>
                         <td>{{$promotions->date_end}}</td>
