@@ -19,15 +19,20 @@ $(document).ready(function() {
 <div class="descrizione"> 
 
     <div><h3><u>Descrizione</u></h3></div><br>
-{{$sel_promId->desc}}
+    {{$sel_promId->desc}} <br><br><br><br><br>
+    <div><h3><u><strong>Metodo di fruizione: </strong></u></h3></div><br>
+     {{$sel_promId->metodo_di_fruizione}}
 </div>
     <div class="dettagli">
         <div class="nome-off">{{$sel_promId->name}}
         </div>
         <br>
         <div class="prezzo-off">Scade il {{ DateTime::createFromFormat('d/m/Y', $sel_promId->date_end)->format('d/m/Y') }} </div>
-        <div class="prezzo-off">Prezzo: {{$sel_promId->price}}  &#8364;
-        </div>
+        
+        <div class="prezzo-off"><strong>Prezzo: </strong> {{$sel_promId->price}}  &#8364;</div>
+        <div class="prezzo-off"> <strong>Luogo: </strong> {{$sel_promId->luogo}}</div>
+        <div class="prezzo-off"></div>
+
         <div class="sconto-off">Sconto del {{$sel_promId->discountPerc}} &#37 </div>
         @can('isUser')
       @include('helpers/promotionCoupon',['expirationDate' => $sel_promId->date_end,'promo_Id'=>$sel_promId->promo_Id])

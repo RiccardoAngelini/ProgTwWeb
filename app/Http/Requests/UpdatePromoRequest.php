@@ -36,6 +36,8 @@ class UpdatePromoRequest extends FormRequest
             'date_end' => 'required',
             'discountPerc' => 'required|integer|min:0|max:100',
             'desc' => 'required',
+            'luogo' => 'required',
+            'metodo_di_fruizione' => 'required',
             'image'=> 'required',
         ];
     }

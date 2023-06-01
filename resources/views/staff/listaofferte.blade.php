@@ -29,6 +29,8 @@
                 <th>Sconto</th>
                 <th>Imagine</th>
                 <th>Azienda</th>
+                <th>Luogo</th>
+                <th>Metodo di fruizione</th>
                 <th>Data Inizio</th>
                 <th>Data fine</th>
                 <th style="width: 40px">Modifica</th>
@@ -48,6 +50,8 @@
                         <td>{{$promotions->discountPerc}}%</td>
                         <td>{{$promotions->image}}</td>
                         <td>{{$promotions->comp_name}}</td>
+                        <td>{{$promotions->luogo}}</td>
+                        <td>{{$promotions->metodo_di_fruizione}}</td>
                         <td>{{$promotions->date_start}}</td>
                         <td>{{$promotions->date_end}}</td>
                         <td><a class="btn1" href="{{route('staff.edit', $promotions -> promo_Id)}}">Modifica</a></td>

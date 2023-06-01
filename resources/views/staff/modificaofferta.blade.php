@@ -60,6 +60,26 @@
     </div>
 
     <div class="input-box">
+        {{ Form::label('luogo', 'Luogo :') }}
+        {{ Form::text('luogo', old('luogo', $promotion->luogo), ['id' => 'luogo']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('luogo') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
+        {{ Form::label('metodo_di_fruizione', 'Metodo di fruizione :') }}
+        {{ Form::text('metodo_di_fruizione', old('metodo_di_fruizione', $promotion->metodo_di_fruizione), ['id' => 'metodo_di_fruizione']) }}
+        <ul class="errors">
+                    @foreach ($errors->get('metodo_di_fruizione') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>  
+    </div>
+
+    <div class="input-box">
         {{ Form::label('date_start', 'Data Inizio Promozione:') }}
         {{ Form::date('date_start', old('date_start', $promotion->date_start), ['id' => 'date_start']) }}
         <ul class="errors">

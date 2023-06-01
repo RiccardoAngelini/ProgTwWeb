@@ -10,7 +10,7 @@ class Promotion extends Model {
     protected $table = 'promotion';
     protected $primaryKey = 'promo_Id';
     public $timestamps= false;
-    protected $fillable = ['name', 'price', 'comp_name', 'date_start', 'date_end', 'discountPerc', 'desc'];
+    protected $fillable = ['name', 'price', 'comp_name', 'luogo', 'matodo_di_fruizione','date_start', 'date_end', 'discountPerc', 'desc'];
     public function getPromotion(){
         return Promotion::all();
     }

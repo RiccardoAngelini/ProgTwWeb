@@ -64,6 +64,18 @@
              
            </div>
 
+           <div class="input-box">
+            {{ Form::label('luogo', 'Luogo', ['class' => 'details']) }}
+            {{ Form::text('luogo', null, ['placeholder' => 'Inserisci la postazione della promozione']) }}
+           
+         </div>
+
+         <div class="input-box">
+            {{ Form::label('metodo_di_fruizione', 'Metodo di fruizione', ['class' => 'details']) }}
+            {{ Form::text('metodo_di_fruizione', null, ['placeholder' => 'Inserisci il metodo di fruizione del prodotto']) }}
+           
+         </div>
+
             <div class="input-box">
                {{ Form::label('date_start', 'Data inizio promozione :', ['class' => 'details']) }}
                {{ Form::date('date_start', null, ['placeholder' => 'Inserisci la data di inizio']) }}
@@ -82,7 +94,7 @@
                
             </div>
 
-            <div class="row1">
+            <div class="row1" style="width: 90%; ">
                {{ Form::label('desc', 'Descrizione :', ['class' => 'details']) }}
                {{ Form::textarea('desc', null, ['placeholder' => 'Inserisci la descrizione']) }}
              

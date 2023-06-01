@@ -64,6 +64,8 @@ class StaffController extends Controller {
           $promotion -> date_end = $request->date_end;
           $promotion -> discountPerc = $request->discountPerc;
           $promotion -> desc = $request-> desc;
+          $promotion -> luogo = $request-> luogo;
+          $promotion -> metodo_di_fruizione = $request-> metodo_di_fruizione;
           $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
           $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
           $promotion ->image = $imageName;
@@ -95,6 +97,8 @@ class StaffController extends Controller {
             'date_end' => 'required',
             'discountPerc'=> 'required',
             'desc'=> 'required',
+            'luogo'=> 'required',
+            'metodo_di_fruizione'=> 'required',
             'image'=> 'required',
         ]);  
         if($validator -> passes())
@@ -113,6 +117,8 @@ class StaffController extends Controller {
         $promotion -> date_end = $request->date_end;
         $promotion -> discountPerc = $request->discountPerc;
         $promotion -> desc = $request-> desc;
+        $promotion -> luogo = $request-> luogo;
+        $promotion -> metodo_di_fruizione = $request-> metodo_di_fruizione;
         $promotion -> date_start = Carbon::createFromFormat('Y-m-d', $promotion->date_start)->format('d/m/Y');
         $promotion -> date_end = Carbon::createFromFormat('Y-m-d', $promotion->date_end)->format('d/m/Y');
         $promotion ->image = $imageName;
