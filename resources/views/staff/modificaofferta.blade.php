@@ -60,10 +60,10 @@
     </div>
 
     <div class="input-box">
-        {{ Form::label('luogo', 'Luogo :') }}
-        {{ Form::text('luogo', old('luogo', $promotion->luogo), ['id' => 'luogo']) }}
+        {{ Form::label('location', 'Locazione :') }}
+        {{ Form::text('location', old('location', $promotion->luogo), ['id' => 'location']) }}
         <ul class="errors">
-                    @foreach ($errors->get('luogo') as $message)
+                    @foreach ($errors->get('location') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>  

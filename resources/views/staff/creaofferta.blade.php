@@ -65,8 +65,8 @@
            </div>
 
            <div class="input-box">
-            {{ Form::label('luogo', 'Luogo', ['class' => 'details']) }}
-            {{ Form::text('luogo', null, ['placeholder' => 'Inserisci la postazione della promozione']) }}
+            {{ Form::label('location', 'Locazione', ['class' => 'details']) }}
+            {{ Form::text('location', null, ['placeholder' => 'Inserisci la postazione della promozione']) }}
            
          </div>
 
