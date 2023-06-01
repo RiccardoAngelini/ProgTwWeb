@@ -68,6 +68,10 @@
                     <div class="cont-img">
                     @include('helpers/companyImg', ['imgFile' => $company->image])
                 </div>
+                <div class="colore">.</div>
+                    <div class="nome-az2">
+                        {{$company->location}}  
+                    </div>
                 </div>   
                 @endforeach
 

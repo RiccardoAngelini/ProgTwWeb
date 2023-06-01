@@ -20,13 +20,14 @@
         width: 100%;
         background-color: white;
         text-align: center;
-        height: 250px;
+        height: 300px;
         width: 250px;
         float: left;
         margin: 30px;
         color:white;
         padding: 30px;
         border-radius: 15px;
+        position: relative;
         
     }
 
@@ -60,4 +61,22 @@
         background-color: #ff7a57;
         border-radius: 15px;
         padding: 5px;
+    }
+
+    .nome-az2{
+        width: 190px;
+        background-color: #ff7a57;
+        border-radius: 15px;
+        position: relative;
+        padding: 5px;
+        position: absolute;
+    bottom: 10px;
+    right: 30px;
+    
+    }
+    .colore{
+        position: absolute;
+        border-top: 3px solid #ff7a57;
+width: 190px;
+        bottom : 30px ;
     }
