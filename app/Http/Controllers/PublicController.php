@@ -82,11 +82,12 @@ class PublicController extends Controller
 
         //divide una stringa $descrizione in un array di parole utilizzando lo spazio come delimitatore.
         $keywords = explode(' ', $descrizione);
-        $promo_desc_comp = $this->_promotionModel->getPromotionByDescAndCompany($keywords, $company->name)->toArray();
-
+       
         $desc = $this->_promotionModel->getDescByPartialName($keywords)->toArray();
         
-        if (!$company||($descrizione==null&&$azienda==null)||empty($desc)||empty($promo)||empty($promo_desc_comp)) {
+
+
+        if (!$company||($descrizione==null&&$azienda==null)||empty($desc)||empty($promo)) {
             return view('errore');
         }
     
