@@ -32,10 +32,15 @@ class UserController extends Controller {
         return view('user');
     }
 
-    public function showCoupon($coupon_Id)
+    public function showCoupon($coupon_Id,$promo_Id)
     {
+        $promotion=$this->_promotionModel->getPromoById($promo_Id);
+        $user=Auth::user();
         $coupon = $this->_couponModel->getCouponById($coupon_Id);
-        return view('coupon')->with('coupon', $coupon);
+        return view('coupon')
+        ->with('user', $user)
+        ->with('promotion', $promotion)
+        ->with('coupon', $coupon);
     }
     
     public function acquistaCoupon(Request $request,$promo_Id)
@@ -65,7 +70,7 @@ return redirect()->back()->with('error', 'Hai già un coupon per questa promozio
     $coupon->save();
 
     // Reindirizza l'utente alla vista "coupon" con il coupon appena creato
-    return redirect()->route('coupon.vedi', ['coupon_Id' => $coupon->coupon_Id])->with('success','Coupon acquistato con successo!');
+    return redirect()->route('coupon.vedi', ['coupon_Id' => $coupon->coupon_Id, 'promo_Id' => $promo_Id])->with('success','Coupon acquistato con successo!');
 }
 
     public function changeUsername(){

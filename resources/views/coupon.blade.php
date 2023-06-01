@@ -28,14 +28,26 @@
 <div class="content2">
       <div class="info">
       <div class="field_coupon">
+
+      @foreach($promotion as $promo)
+      <b>Descrizione</b>: {{$promo->desc}}
+@endforeach
+</div>
+<br>
+<div class="field_coupon">
+      <b>Utente</b>: {{ $user->name}} {{$user->surname}}
+   
+</div>
+<div class="field_coupon">
+@foreach($promotion as $promo)
+      <b>Metodo di fruizione</b>: {{$promo->metodo_di_fruizione}}
+@endforeach
+</div>
+      <div class="field_coupon">
         @foreach($coupon as $coup)
       <b>Codice coupon</b>: {{ $coup->code}}
       @endforeach
 </div>
-<div class="field_coupon">
-    <p>Il buono è usufruibile sia in negozio che online </p>
-</div>
-
 
 <div class="stampa"><a href="">Stampa</a>
 </div>

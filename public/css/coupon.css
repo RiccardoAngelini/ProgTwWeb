@@ -10,7 +10,7 @@
  
    .content2{
    width: 50vw;
-   height: 250px;
+   height: auto;
    padding: 50px;
    background: white;
    border-radius: 50px;
@@ -32,7 +32,6 @@
     padding-top: 30px;
     font-size: 18px;
      display: flex;
-   align-items: center;
    height: 50px;
    width: 100%;
    display: flex;
