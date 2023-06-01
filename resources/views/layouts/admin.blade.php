@@ -32,7 +32,7 @@
      @section('scripts')
      @show
     <script src="js/script.js" defer></script>
-    <script src="js/JS_FAQ.js" defer></script>
+    <script src="{{ asset('js/admin.js') }}" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -50,7 +50,7 @@
     <div id="content">
         @yield('content')
     </div>
-    <script src="{{ asset('js/admin.js') }}"></script>
+   
 
 </body>
 </html>

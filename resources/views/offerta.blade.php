@@ -43,23 +43,5 @@ $(document).ready(function() {
     </div>
    
     </div>
-<script>
-   function handleResponsiveLayout() {
-        var windowWidth = $(window).width();
-        
-        if (windowWidth < 768) {
-            $('.cont-img-off').css('font-size', '14px');
-            $('.descrizione').addClass('mobile-style');
-        } else {
-            $('.cont-img-off').css('font-size', '16px');
-            $('.descrizione').removeClass('mobile-style');
-        }
-    }
-        $(window).on('resize', handleResponsiveLayout);
-
-        $(document).ready(function() {
-        handleResponsiveLayout();
-    });
-</script>
 @endsection
 
