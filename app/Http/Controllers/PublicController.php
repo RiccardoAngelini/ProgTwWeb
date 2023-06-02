@@ -42,11 +42,9 @@ class PublicController extends Controller
                 ->with('companies',$companies);
     }
     public function showCatalogo(){ 
-        $company_namesids=$this->_companyModel->getCompanyNameId();
         $promotions=$this->_promotionModel->getPromotion();
         $promotions=Promotion::paginate(8);
         return view('catalogo')
-                 ->with('company_namesids',$company_namesids)
                  ->with('promotions',$promotions);
     }
 
@@ -81,8 +79,17 @@ class PublicController extends Controller
         
 
 
-        if (!$company||($descrizione==null&&$azienda==null)) {
+        if (!$company) {
             return view('errore');
+        }
+
+        //se la ricerca è vuota mostra l'intero catalogo
+        $promotions=$this->_promotionModel->getPromotion();
+        $promotions=Promotion::paginate(8);
+        
+        if(($descrizione==null&&$azienda==null)){
+            return view('catalogo')
+                 ->with('promotions',$promotions);
         }
     
         if ($keywords && $azienda) {
