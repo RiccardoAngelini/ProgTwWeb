@@ -89,7 +89,7 @@ public function storePassword(NewPasswordRequest $request)
             $user->password = Hash::make($newPassword);
             $user->save();
 
-            return redirect()->back()->with("status", "Password cambiata correttamente!");
+            return redirect()->route('viewprofillo')->with("status", "Password cambiata correttamente!");
         } else {
             return redirect()->back()->with("error", "La password inserita non è corretta!");
         }
@@ -112,10 +112,12 @@ public function storePassword(NewPasswordRequest $request)
             $user->email = $newEmail;
             $user->save();
     
-            return redirect()->back()->with("status", "Email cambiata correttamente!");
-        }
+            return redirect()->route('viewprofillo')->with("status", "Email cambiata correttamente!");
+        } else {
+            return redirect()->back()->with("error", "L'email inserita non è corretta!");
     
 }
+    }
 
 
 public function changeNameSurname(){
@@ -129,6 +131,7 @@ public function storeNameSurname(NewNameSurnameRequest $request){
     $nameIns = $validatedData['name'];
     $surnameIns = $validatedData['surname'];
     $phoneIns = $validatedData['phone'];
+    $ageIns = $validatedData['age'];
     
     $user = Auth::user();
 
@@ -136,9 +139,10 @@ public function storeNameSurname(NewNameSurnameRequest $request){
         $user->name = $nameIns;
         $user->surname = $surnameIns;
         $user->phone=$phoneIns;
+        $user->age=$ageIns;
         $user->save();
 
-        return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+        return redirect()->route('viewprofillo')->with("status", "Dati Personali cambiati correttamente!");
     
 
 }

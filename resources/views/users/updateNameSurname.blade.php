@@ -9,15 +9,6 @@
    
       <h2>Modifica Dati Personali</h2>
     <div class="content-registrazione">
-    @if (session('status'))
-       <div class="alert alert-success" role="alert">
-         {{ session('status') }}
-        </div>
-          @elseif (session('error'))
-        <div class="alert alert-danger" role="alert">
-         {{ session('error') }}
-         </div>
-     @endif
          {{ Form::open(array('route' => 'newnamesurname.store')) }}
         <div class="user-details">
             
@@ -51,6 +42,19 @@
                {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
                {{ Form::text('phone', null, ['placeholder' => 'Inserisci il numero di telefono']) }}
                @error('phone')
+                <ul class="errors">
+                    
+                    <li>{{ $message }}</li>
+               
+                </ul>
+                @enderror
+            </div>
+        </div>
+        <div class="user-details">
+            <div class="input-box">
+               {{ Form::label('age', 'Età', ['class' => 'details']) }}
+               {{ Form::text('age', null, ['placeholder' => 'Inserisci l\'età']) }}
+               @error('age')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>

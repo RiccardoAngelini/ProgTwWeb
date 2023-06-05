@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="area">
+
     <h1>Area Utente</h1>
 </div>
 <div class="benvenuto">

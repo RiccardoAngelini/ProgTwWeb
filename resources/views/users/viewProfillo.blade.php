@@ -1,7 +1,12 @@
 @extends('layouts.user')
 @section('title', 'Area User')
 @section('content')
-    <h1 style="text-align: center; margin-top:2em;">DATTI PROFILO</h1>
+@if (session('status'))
+       <div class="alert alert-success" role="alert">
+         {{ session('status') }}
+        </div>
+     @endif
+    <h1 style="text-align: center; margin-top:2em;">DATI PROFILO</h1>
     <div class="cont"></div>
     <div class="side_wrapper">
         <section class="about-dev">

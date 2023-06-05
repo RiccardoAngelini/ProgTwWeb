@@ -15,9 +15,11 @@ class NewNameSurnameRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'surname' => 'required',
-            'phone' => 'required',
+            'name' => 'required|string',
+            'surname' => 'required|string',
+            'phone' => 'required|phone|min:10',
+            'age' => 'required|integer',
         ];
     }
+    
 }
