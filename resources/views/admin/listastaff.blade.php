@@ -26,6 +26,7 @@
             <th>Staff_id</th>
             <th>Nome</th> 
             <th>Cognome</th>
+            <th>Username</th>
             <th>Genere</th>  
             <th>Età</th>
             <th>Telefono</th>    
@@ -40,6 +41,7 @@
             <td>{{$staff->id}}</td>
             <td>{{$staff->name}}</td>
             <td>{{$staff->surname}}</td>
+            <td>{{$staff->username}}</td>
             <td>{{$staff->gender}}</td>
             <td>{{$staff->age}}</td>
             <td>{{$staff->phone}}</td>
