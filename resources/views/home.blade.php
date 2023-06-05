@@ -5,9 +5,7 @@
  <div class="logos">
       <div class="logos-slide">
       @foreach($companies2 as $company)
-      <a href="{{route('aziende')}}">
         <img src="{{ asset('images/companies/'. $company->image) }}" />
-    </a>
         @endforeach
       </div>
     </div>
@@ -61,6 +59,7 @@
     <div class="content-catalogo">
         <div class="azienda2">
         @foreach ($companies as $company)
+        <a class="dettagli-az" href="{{route('aziendaPublic',$company->comp_Id)}}">
                 <div class="azienda1">
                 <div class="nome-az">
                     {{$company->name}}  
@@ -73,6 +72,7 @@
                         {{$company->location}}  
                     </div>
                 </div>   
+            </a>
                 @endforeach
 
     <div class="clear"></div>

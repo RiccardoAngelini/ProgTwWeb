@@ -228,7 +228,7 @@ public function destroyCompany($comp_Id) {
            
              $user->name = $request->input('name');
              $user->email = $request->input('email');
-             $user->username = $request->input('username');
+             $user->username;
              $user->age = $request->input('age');
              $user->gender = $request->input('gender');
              $user->password = Hash::make($request->input('password'));
@@ -262,6 +262,7 @@ public function listaUserStats(){
 public function listaPromoStats(){
 
     $promos = $this->_promotionModel->getPromotion();
+    $promos = Promotion::paginate(10);
     return view('admin.listastatspromozioni', ['promos'=> $promos]);
 
 }

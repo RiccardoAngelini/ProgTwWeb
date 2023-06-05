@@ -18,6 +18,9 @@
                 
         </section>
     </div>
+    @isset($promos)
+@include('pagination.paginator',['paginator'=>$promos])
+@endisset
 </main>
 
 

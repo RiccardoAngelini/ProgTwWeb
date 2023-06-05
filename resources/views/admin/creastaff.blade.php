@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="crud-staff-create"><h1>AGGIUNGI UN MEMBRO</h1>
+<div class="crud-staff-create">
 
 <div class="button-back2">
 <a class="btn2" href="{{route('admin.listastaff')}}">Indietro</a></div>

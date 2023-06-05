@@ -73,33 +73,6 @@ return redirect()->back()->with('error', 'Hai già un coupon per questa promozio
     return redirect()->route('coupon.vedi', ['coupon_Id' => $coupon->coupon_Id, 'promo_Id' => $promo_Id])->with('success','Coupon acquistato con successo!');
 }
 
-    public function changeUsername(){
-        return view('users.updateUsername');
-    }
-
-    public function storeUsername(NewUsernameRequest $request){
-
-        $validatedData = $request->validated();
- 
-        $usernameIns = $validatedData['username'];
-        $newUsername = $validatedData['newusername'];
-        
-        $user=Auth::user();
-      
-        if ($user->username === $usernameIns){
-
-                // Verifica se esiste già un altro utente con lo stesso username
-                $existingUser = $this->_userModel->getUserByUsername($newUsername)->first();
-                if (!$existingUser) {
-                    $user->username = $newUsername;
-                    $user->save();
-                    return redirect()->back()->with("status", "Username cambiato correttamente!");
-            }
-        
-            return redirect()->back()->withErrors(['newusername' => 'L\'username inserito è già in uso.']);
-        }
-    }
-
 public function changePassword(){
     return view('users.updatePassword');
 }

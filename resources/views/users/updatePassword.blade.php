@@ -22,7 +22,7 @@
         <div class="user-details">
             
             <div class="input-box">
-               {{ Form::label('password', 'Password', ['class' => 'details']) }}
+               {{ Form::label('password', 'Vecchia Password', ['class' => 'details']) }}
                {{ Form::text('password', null, ['placeholder' => 'Enter your password']) }}
                @error('password')
                 <ul class="errors">

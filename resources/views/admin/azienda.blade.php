@@ -2,9 +2,10 @@
 @section('title', 'Azienda')
 @section('content')
 
+@can('isAdmin')
 
 <a class="btn2" href="{{route('admin.listaziende')}}" style="margin-left: 50%; margin-top:10px;" >Indietro</a>
-
+@endcan
 <div class="cont-azienda">
     
 <div id="imageContainer" class="cont-img-off">

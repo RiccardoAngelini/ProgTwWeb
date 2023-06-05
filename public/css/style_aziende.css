@@ -14,6 +14,7 @@
         margin-left: 35px;
     }
     .azienda1{ 
+        cursor: pointer;
         font-weight: bold;
         font-size: 20px;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
@@ -74,9 +75,16 @@
     right: 30px;
     
     }
+
+    a.dettagli-az {
+        text-decoration: none;
+        color: white;
+    }
+    
     .colore{
         position: absolute;
         border-top: 3px solid #ff7a57;
 width: 190px;
         bottom : 30px ;
     }
+  

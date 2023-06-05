@@ -4,7 +4,6 @@
 <div class="crud-staff-create">
 <div class="button-back2">
 <a class="btn2" href="{{route('admin.listastaff')}}">Indietro</a></div>
-    <h1>MODIFICA DATI DI UN MEMBRO</h1>
 </div>
 
 <div class="content1-registrazione">
@@ -45,17 +44,6 @@
                  </ul>
                  @enderror
                 </div>
-                 <div class="input-box">
-                    {{ Form::label('username', 'Username', ['class' => 'details']) }}
-                    {{ Form::text('username', $staff->username, ['placeholder' => 'Username']) }}
-                    @error('username')
-                     <ul class="errors">
-                         
-                         <li>{{ $message }}</li>
-                    
-                     </ul>
-                     @enderror
-                 </div>
                      <div class="input-box">
                         {{ Form::label('age', 'Age', ['class' => 'details']) }}
                         {{ Form::text('age', $staff->age, ['placeholder' => 'Eta']) }}

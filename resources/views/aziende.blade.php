@@ -8,6 +8,7 @@
                     <div class="azienda">
                     @foreach ($aziende as $company)
                 <div class="azienda1">
+                    <a class="dettagli-az" href="{{route('aziendaPublic',$company->comp_Id)}}">
                     <div class="nome-az">
                         {{$company->name}}  
                     </div>
@@ -17,7 +18,7 @@
                     <div class="colore">.</div>
                     <div class="nome-az2">
                         {{$company->location}}  
-                    </div>
+                    </div></a>
                 </div>
                 
                 

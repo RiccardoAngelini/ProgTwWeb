@@ -56,6 +56,12 @@ class PublicController extends Controller
                 ->with('aziende',$aziende);
     }
 
+    public function showAziendaPublic($comp_Id){
+        $azienda=$this->_companyModel->getcompanyId($comp_Id);
+        return view('admin.azienda')
+            ->with('azienda',$azienda);
+     }
+
     public function showOfferta($promo_Id){ 
 
         $sel_promId=$this->_promotionModel->getPromotionId($promo_Id)->first();

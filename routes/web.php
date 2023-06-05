@@ -29,7 +29,7 @@ Route::get('/catalogo', [PublicController::class,'showCatalogo'])->name('catalog
 
 Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende');
         
-
+Route::get('/azienda/{comp_Id}',[PublicController::class,'showAziendaPublic'])->name('aziendaPublic');
 
         
 // GESTIONE FAQ
@@ -49,8 +49,6 @@ Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create']);
 Route::post('/user', [UserController::class, 'store']);
 
-Route::get('/user/updateUser', [UserController::class, 'changeUsername'])->name('newusername');
-Route::POST('/user/updateUser', [UserController::class, 'storeUsername'])->name('newusername.store');
 Route::get('/user/updatePsw', [UserController::class, 'changePassword'])->name('newpassword');
 Route::get('/user/viewProfillo', [UserController::class, 'viewProfile'])->name('viewprofillo');
 Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])->name('newpassword.store');
