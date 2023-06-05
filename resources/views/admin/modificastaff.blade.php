@@ -66,19 +66,23 @@
                              </ul>
                              @enderror
                             </div>
-                            <div class="input-box">
-                            {{ Form::label('password', 'Password', ['class' => 'details']) }}
-                            {{ Form::text('password', null, ['placeholder' => 'Enter your password']) }}
-                        @error('password')
-                             <ul class="errors">
-                    
-                                 <li>{{ $message }}</li>
-               
-                            </ul>
-                         @enderror
+                                                <div class="input-box">
+                                {{ Form::label('password', 'Password', ['class' => 'details']) }}
+                                {{ Form::password('password', ['placeholder' => 'Inserici la password']) }}
+                                @if ($errors->first('password'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('password') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </div>
+                                <div class="input-box">
+                                {{ Form::label('password-confirm', 'Conferma Password', ['class' => 'details']) }}
+                                {{ Form::password('password_confirmation', ['placeholder' => 'Conferma Password']) }}
+                                </div>
                             </div>
-</div>
-                            <div class="gender-details"> 
+                                                <div class="gender-details"> 
                                 {{ Form::label('gender', 'Genere',['class' => 'gender-title']) }}
                                  
                                  <div class="category">

@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Helper\Table;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules;
 
 
 
@@ -192,7 +194,7 @@ public function destroyCompany($comp_Id) {
              'name' => ['required', 'string', 'max:255'],
              'surname' => ['required', 'string', 'max:255'],
              'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-             'phone' => ['required', 'int', 'phone', 'min:10'],
+             'phone' => ['required', 'phone', 'min:10'],
              'username' => ['required', 'string', 'min:8', 'unique:users'],
              'age' => ['required','int','min:18'],
              'gender' => ['required','string','min:1'],
@@ -225,6 +227,16 @@ public function destroyCompany($comp_Id) {
          public function update(Request $request, $id)
          {
              $user = $this->_userModel->findOrfailUser($id);
+             $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'surname' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255',Rule::unique('users')->ignore($user->id)],
+                'phone' => ['required', 'phone', 'min:10'],
+                'age' => ['required','int','min:18'],
+                'gender' => ['required','string','min:1'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        
+            ]);
            
              $user->name = $request->input('name');
              $user->email = $request->input('email');
