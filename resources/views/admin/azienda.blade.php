@@ -4,7 +4,7 @@
 
 @can('isAdmin')
 
-<a class="btn2" href="{{route('admin.listaziende')}}" style="margin-left: 50%; margin-top:10px;" >Indietro</a>
+<a class="btn2" href="{{route('admin.listaziende')}}" style="margin-left: 50%; margin-top:10px;" >Lista Aziende</a>
 @endcan
 <div class="cont-azienda">
     
