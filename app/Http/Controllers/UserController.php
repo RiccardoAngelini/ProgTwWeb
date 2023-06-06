@@ -103,8 +103,8 @@ public function storePassword(NewPasswordRequest $request)
 
         $validatedData = $request->validated();
  
-        $emailIns = $validatedData['email'];
-        $newEmail = $validatedData['newemail'];
+        $emailIns = $validatedData['old-email'];
+        $newEmail = $validatedData['email'];
         
         $user = Auth::user();
 
@@ -121,7 +121,8 @@ public function storePassword(NewPasswordRequest $request)
 
 
 public function changeNameSurname(){
-    return view('users.updateNameSurname');
+    $user=Auth::user();
+    return view('users.updateNameSurname')->with('user',$user);
 }
 
 public function storeNameSurname(NewNameSurnameRequest $request){

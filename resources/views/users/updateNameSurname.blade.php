@@ -14,7 +14,7 @@
             
             <div class="input-box">
                {{ Form::label('name', 'Nome', ['class' => 'details']) }}
-               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome']) }}
+               {{ Form::text('name', old('name', $user->name), ['placeholder' => 'Inserisci il nome']) }}
                @error('name')
                 <ul class="errors">
                     
@@ -27,7 +27,7 @@
         <div class="user-details">
             <div class="input-box">
                {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
-               {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
+               {{ Form::text('surname', old('surname', $user->surname), ['placeholder' => 'Inserisci il cognome']) }}
                @error('surname')
                 <ul class="errors">
                     
@@ -40,7 +40,7 @@
         <div class="user-details">
             <div class="input-box">
                {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
-               {{ Form::text('phone', null, ['placeholder' => 'Inserisci il numero di telefono']) }}
+               {{ Form::text('phone', old('phone', $user->phone), ['placeholder' => 'Inserisci il numero di telefono']) }}
                @error('phone')
                 <ul class="errors">
                     
@@ -53,7 +53,7 @@
         <div class="user-details">
             <div class="input-box">
                {{ Form::label('age', 'Età', ['class' => 'details']) }}
-               {{ Form::text('age', null, ['placeholder' => 'Inserisci l\'età']) }}
+               {{ Form::text('age', old('age', $user->age), ['placeholder' => 'Inserisci l\'età']) }}
                @error('age')
                 <ul class="errors">
                     

@@ -25,8 +25,8 @@ class NewEmailRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'email'=>'required|email',
-            'newemail'=>'required|email'
+            'old-email'=>'required|email',
+            'email'=>'required|email|unique:users'
         ];
     }
 

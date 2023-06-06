@@ -18,9 +18,9 @@
         <div class="user-details">
             
             <div class="input-box">
-               {{ Form::label('email', 'Email', ['class' => 'details']) }}
-               {{ Form::text('email', null, ['placeholder' => 'Inserisci l\'email']) }}
-               @error('email')
+               {{ Form::label('old-email', 'Email', ['class' => 'details']) }}
+               {{ Form::text('old-email', null, ['placeholder' => 'Inserisci l\'email']) }}
+               @error('old-email')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
@@ -31,9 +31,9 @@
         </div>
         <div class="user-details">
             <div class="input-box">
-               {{ Form::label('newemail', 'Nuova Email', ['class' => 'details']) }}
-               {{ Form::text('newemail', null, ['placeholder' => 'Inserisci la nuova email']) }}
-               @error('newemail')
+               {{ Form::label('email', 'Nuova Email', ['class' => 'details']) }}
+               {{ Form::text('email', null, ['placeholder' => 'Inserisci la nuova email']) }}
+               @error('email')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>
