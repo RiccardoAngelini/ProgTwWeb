@@ -146,6 +146,16 @@ public function destroyCompany($comp_Id) {
         } else {
             $imageName = NULL;
         }
+        $old_name=$this->_companyModel->getcompanyId($comp_Id);
+        
+        $promo=$this->_promotionModel->getPromotionByComp($old_name->name);
+   
+       
+        foreach($promo as $pr){
+        $pr->comp_name=$request->name;
+        $pr->save();
+    }
+  
         $company = $this->_companyModel->findCompany($comp_Id);
         $company ->name = $request->name;
         $company ->location = $request->location;
