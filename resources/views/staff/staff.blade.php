@@ -1,6 +1,11 @@
 @extends('layouts.staff')
 @section('title', 'Staff')
 @section('content')
+@if (session('status'))
+       <div class="alert alert-success" role="alert">
+         {{ session('status') }}
+        </div>
+        @endif
     <h1 style="text-align: center; margin-top:2em;">PROFILO PERSONALE</h1>
     <div class="side_wrapper">
         <section class="about-dev">

@@ -11,11 +11,7 @@
    
       <h2>Modifica Dati Personali</h2>
     <div class="content-registrazione">
-    @if (session('status'))
-       <div class="alert alert-success" role="alert">
-         {{ session('status') }}
-        </div>
-          @elseif (session('error'))
+          @if (session('error'))
         <div class="alert alert-danger" role="alert">
          {{ session('error') }}
          </div>
@@ -23,9 +19,9 @@
      {{ Form::open(array('route' => 'newDatiStaff.store')) }}
         <div class="user-details">
             
-            <div class="input-box">
+        <div class="input-box">
                {{ Form::label('name', 'Nome', ['class' => 'details']) }}
-               {{ Form::text('name', null, ['placeholder' => 'Inserisci il nome']) }}
+               {{ Form::text('name', old('name', $user->name), ['placeholder' => 'Inserisci il nome']) }}
                @error('name')
                 <ul class="errors">
                     
@@ -38,8 +34,34 @@
         <div class="user-details">
             <div class="input-box">
                {{ Form::label('surname', 'Cognome', ['class' => 'details']) }}
-               {{ Form::text('surname', null, ['placeholder' => 'Inserisci il cognome']) }}
+               {{ Form::text('surname', old('surname', $user->surname), ['placeholder' => 'Inserisci il cognome']) }}
                @error('surname')
+                <ul class="errors">
+                    
+                    <li>{{ $message }}</li>
+               
+                </ul>
+                @enderror
+            </div>
+        </div>
+        <div class="user-details">
+            <div class="input-box">
+               {{ Form::label('phone', 'Telefono', ['class' => 'details']) }}
+               {{ Form::text('phone', old('phone', $user->phone), ['placeholder' => 'Inserisci il numero di telefono']) }}
+               @error('phone')
+                <ul class="errors">
+                    
+                    <li>{{ $message }}</li>
+               
+                </ul>
+                @enderror
+            </div>
+        </div>
+        <div class="user-details">
+            <div class="input-box">
+               {{ Form::label('age', 'Età', ['class' => 'details']) }}
+               {{ Form::text('age', old('age', $user->age), ['placeholder' => 'Inserisci l\'età']) }}
+               @error('age')
                 <ul class="errors">
                     
                     <li>{{ $message }}</li>

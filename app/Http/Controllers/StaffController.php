@@ -164,14 +164,15 @@ class StaffController extends Controller {
                 $staff->password = Hash::make($newPassword);
                 $staff->save();
     
-                return redirect()->back()->with("status", "Password cambiata correttamente!");
+                return redirect()->route('staff')->with("status", "Password cambiata correttamente!");
             } else {
                 return redirect()->back()->with("error", "La password inserita non è corretta!");
             }
         }
 
         public function changeDatiStaff(){
-            return view('staff.updateDatiStaff');
+            $user=Auth::user();
+            return view('staff.updateDatiStaff')->with('user',$user);
         }
         
         public function storeDatiStaff(NewDatiStaffRequest $request)
@@ -179,14 +180,18 @@ class StaffController extends Controller {
             $validatedData = $request->validated();
             $nameIns = $validatedData['name'];
             $surnameIns = $validatedData['surname'];
+            $phoneIns = $validatedData['phone'];
+            $ageIns = $validatedData['age'];
             
             $staff = auth()->user();
             
             $staff->name = $nameIns;
             $staff->surname = $surnameIns;
+            $staff->phone = $phoneIns;
+            $staff->age = $ageIns;
             $staff->save();
             
-            return redirect()->back()->with("status", "Dati Personali cambiati correttamente!");
+            return redirect()->route('staff')->with("status", "Dati Personali cambiati correttamente!");
         }
         
 
