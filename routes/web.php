@@ -31,42 +31,35 @@ Route::get('/aziende', [PublicController::class,'showAziende'])->name('aziende')
         
 Route::get('/azienda/{comp_Id}',[PublicController::class,'showAziendaPublic'])->name('aziendaPublic');
 
+Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
+Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaDesc'])->name('catalogo2');
         
 // GESTIONE FAQ
 Route::get('/FAQ', [PublicController::class, 'faq'])->name('faq2'); //accesso publico
 
 //Acesso admin
- Route::get('/faq', [FaqController::class, 'index'])->name('faq.index')->middleware('can:isAdmin');;
- Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create')->middleware('can:isAdmin');;
- Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store')->middleware('can:isAdmin');;
- Route::get('/faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit')->middleware('can:isAdmin');;
- Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update')->middleware('can:isAdmin');;
- Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show')->middleware('can:isAdmin');;
- Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy')->middleware('can:isAdmin');;
+ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index')->middleware('can:isAdmin');
+ Route::get('/faq/create', [FaqController::class, 'create'])->name('adminfaq.create')->middleware('can:isAdmin');
+ Route::post('/faq', [FaqController::class, 'store'])->name('adminfaq.store')->middleware('can:isAdmin');
+ Route::get('/faq/{id}/edit', [FaqController::class, 'edit'])->name('adminfaq.edit')->middleware('can:isAdmin');
+ Route::put('/faq/{id}', [FaqController::class, 'update'])->name('adminfaq.update')->middleware('can:isAdmin');
+ Route::get('/faq/show/{id}', [FaqController::class, 'show'])->name('show')->middleware('can:isAdmin');
+ Route::delete('/faq/{id}', [FaqController::class, 'destroy'])->name('adminfaq.destroy')->middleware('can:isAdmin');
 
+//Accesso User
+Route::get('/user', [UserController::class, 'index'])->middleware('can:isUser');
 
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class, 'create']);
-Route::post('/user', [UserController::class, 'store']);
-
-Route::get('/user/updatePsw', [UserController::class, 'changePassword'])->name('newpassword');
-Route::get('/user/viewProfillo', [UserController::class, 'viewProfile'])->name('viewprofillo');
-Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])->name('newpassword.store');
-Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])->name('newemail');
-Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])->name('newemail.store');
-Route::get('/user/updateNameSurname', [UserController::class, 'changeNameSurname'])->name('newnamesurname');
-Route::POST('/user/updateNameSurname', [UserController::class, 'storeNameSurname'])->name('newnamesurname.store');
-Route::get('/user/{userId}/edit', [UserController::class, 'edit']);
-Route::put('/user/{userId}', [UserController::class, 'update']);
-Route::delete('/user/{userId}', [UserController::class, 'destroy']);
-
-//Route::get('/offerta/{promo_Id}/coupon/{coupon_Id}', [UserController::class,'showCoupon'])->name('coupon');
-
-
+Route::get('/user/updatePsw', [UserController::class, 'changePassword'])->name('newpassword')->middleware('can:isUser');
+Route::POST('/user/updatePsw', [UserController::class, 'storePassword'])->name('newpassword.store')->middleware('can:isUser');
+Route::get('/user/viewProfillo', [UserController::class, 'viewProfile'])->name('viewprofillo')->middleware('can:isUser');
+Route::get('/user/updateEmail', [UserController::class, 'changeEmail'])->name('newemail')->middleware('can:isUser');
+Route::POST('/user/updateEmail', [UserController::class, 'storeEmail'])->name('newemail.store')->middleware('can:isUser');
+Route::get('/user/updateNameSurname', [UserController::class, 'changeNameSurname'])->name('newnamesurname')->middleware('can:isUser');
+Route::POST('/user/updateNameSurname', [UserController::class, 'storeNameSurname'])->name('newnamesurname.store')->middleware('can:isUser');
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('can:isUser');
 
-Route::get('/coupon/{promo_Id}/acquista/{coupon_Id}', [UserController::class, 'showCoupon'])->name('coupon.vedi');
-Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoupon'])->name('coupon.acquista');
+Route::get('/coupon/{promo_Id}/acquista/{coupon_Id}', [UserController::class, 'showCoupon'])->name('coupon.vedi')->middleware('can:isUser');
+Route::POST('/coupon/{promo_Id}/acquista', [UserController::class, 'acquistaCoupon'])->name('coupon.acquista')->middleware('can:isUser');
 
 
 Route::prefix('staff')->group(function(){
@@ -88,8 +81,7 @@ Route::prefix('staff')->group(function(){
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/offerta/{promo_Id}', [PublicController::class,'showOfferta'])->name('offerta');
-Route::get('/catalogo/ricerca', [PublicController::class,'ricercaPerAziendaDesc'])->name('catalogo2');
+
 
 
 //elimina utenti admin

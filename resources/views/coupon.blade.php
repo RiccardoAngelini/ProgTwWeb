@@ -34,10 +34,12 @@
 @endforeach
 </div>
 <br>
+@isset($user)
 <div class="field_coupon">
       <b>Utente</b>: {{ $user->name}} {{$user->surname}}
    
 </div>
+@endisset
 <div class="field_coupon">
 @foreach($promotion as $promo)
       <b>Metodo di fruizione</b>: {{$promo->metodo_di_fruizione}}
