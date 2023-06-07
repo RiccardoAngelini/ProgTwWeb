@@ -32,7 +32,7 @@ class UserController extends Controller {
         return view('user');
     }
 
-    public function showCoupon($coupon_Id,$promo_Id)
+    public function showCoupon($promo_Id,$coupon_Id)
     {
         $promotion=$this->_promotionModel->getPromoById($promo_Id);
         $user=Auth::user();
