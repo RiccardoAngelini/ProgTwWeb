@@ -30,8 +30,12 @@
 
         <div class="cont-img">
             <div class="cont-img-catalogo" id="cont-img-catalogo-{{$promotion->promo_Id}}">
-                @include('helpers/promotionImg', ['imgFile' => $promotion->image])
-            </div>
+            @if (file_exists(public_path('images/promotions/' . $promotion->image)))
+            @include('helpers/promotionImg', ['imgFile' => $promotion->image])
+            @else
+            <img src="{{ asset('images/promotions/default.jpg') }}" class="img">
+            @endif
+                        </div>
         </div>
                 <div class="cont-data">
                     <div class="data">
@@ -73,7 +77,12 @@
                 Sconto del {{$promo->discountPerc}} &#37;
 </div>
 <div class="cont-img">
+@if (file_exists(public_path('images/promotions/' . $promo->image)))
 @include('helpers/promotionImg', ['imgFile' => $promo->image])
+@else
+<img src="{{ asset('images/promotions/default.jpg') }}" class="img">
+@endif
+
 </div>
 <div class="cont-data">
                     <div class="data">

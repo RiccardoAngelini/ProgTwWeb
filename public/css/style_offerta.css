@@ -117,3 +117,7 @@ max-height: auto;
 .dettagli-azienda{
   float: left;
 }
+
+.cont-img-off{
+  min-width:300px;
+}

@@ -7,7 +7,12 @@
 </div>
 <div class="cont-off">
 <div id="imageContainer" class="cont-img-off">
-@include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
+            @if (file_exists(public_path('images/promotions/' . $sel_promId->image)))
+            @include('helpers/promotionImg', ['imgFile' => $sel_promId->image])
+            @else
+            <img src="{{ asset('images/promotions/default.jpg') }}" class="img">
+            @endif
+
 </div>
 <script>
 $(document).ready(function() {

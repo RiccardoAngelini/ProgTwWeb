@@ -13,7 +13,13 @@
                         {{$company->name}}  
                     </div>
                     <div class="cont-az">
-                        @include('helpers/companyImg', ['imgFile' => $company->image])
+                    @if (file_exists(public_path('images/companies/' . $company->image)))
+                    @include('helpers/companyImg', ['imgFile' => $company->image])
+                    @else
+                    <img src="{{ asset('images/companies/default.jpg') }}" class="img">
+
+                    @endif
+                        
                     </div>
                     <div class="colore">.</div>
                     <div class="nome-az2">

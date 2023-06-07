@@ -9,7 +9,12 @@
 <div class="cont-azienda">
     
 <div id="imageContainer" class="cont-img-off">
+@if (file_exists(public_path('images/companies/' . $azienda->image)))
 @include('helpers/companyImg', ['imgFile' => $azienda->image])
+@else
+<img src="{{ asset('images/companies/default.jpg') }}" class="img">
+@endif
+
 
 </div>
 <script>

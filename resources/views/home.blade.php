@@ -5,7 +5,12 @@
  <div class="logos">
       <div class="logos-slide">
       @foreach($companies2 as $company)
-        <img src="{{ asset('images/companies/'. $company->image) }}" />
+      @if (file_exists(public_path('images/companies/' . $company->image)))
+      <img src="{{ asset('images/companies/'. $company->image) }}" />
+    @else
+    <img src="{{ asset('images/promotions/default.jpg') }}" class="img">
+     @endif
+       
         @endforeach
       </div>
     </div>
@@ -18,9 +23,6 @@
                 {{$prom->price}} &#8364;<br>
                 Sconto del {{$prom->discountPerc}} &#37;
             </div>
-            {{-- <div class="cont-img">
-                    @include('helpers/promotionImg', ['attrs' => 'imagefrm','imgFile' => $prom->image])
-            </div> --}}
 
                 <div class="cont-img">
                     @if (file_exists(public_path('images/promotions/' . $prom->image)))
@@ -65,7 +67,12 @@
                     {{$company->name}}  
                 </div>
                     <div class="cont-img">
+                    @if (file_exists(public_path('images/companies/' . $company->image)))
                     @include('helpers/companyImg', ['imgFile' => $company->image])
+                    @else
+                    <img src="{{ asset('images/companies/default.jpg') }}" class="img">
+
+                    @endif
                 </div>
                 <div class="colore">.</div>
                     <div class="nome-az2">
