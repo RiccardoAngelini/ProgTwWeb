@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="button-back">
-<a class="btn2" href="{{route('catalogo')}}" >Indietro</a>
+<a class="btn2" href="{{route('catalogo')}}" >Torna al catalogo</a>
 </div>
 <div class="cont-off">
 <div id="imageContainer" class="cont-img-off">
