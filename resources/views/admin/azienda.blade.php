@@ -28,13 +28,13 @@ $(document).ready(function() {
         <div class="nome-off">{{$azienda->name}}
         </div>
         <br>
-        <div class="prezzo-off">{{$azienda->location}}</div>
+        <div class="prezzo-off"> <strong>Località: </strong> {{$azienda->location}}</div>
         <br>
         <div class="prezzo-off"><strong>Ragione Sociale: </strong> {{$azienda->ragione_sociale}}</div>
         <br>
         <div class="prezzo-off"><strong>Tipologia: </strong> {{$azienda->tipologia}}</div>
         <br>
-        <div class="prezzo-off" > {{$azienda->desc}}</div>
+        <div class="prezzo-off" ><strong>Descrizione: </strong> {{$azienda->desc}}</div>
         
         
          <div style=" clear:right"></div>
