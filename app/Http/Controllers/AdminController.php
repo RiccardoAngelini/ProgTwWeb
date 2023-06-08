@@ -84,6 +84,14 @@ public function deleteUser(Request $request)
 
 public function destroyCompany($comp_Id) {
     $company = $this->_companyModel->getcompanyId($comp_Id);
+    
+    //promozioni che hanno comp_name=name
+    $promotions= $this->_promotionModel->getPromotionByComp($company->name);
+    //elimino tutte le promozioni che hanno comp_name=name
+    foreach($promotions as $promo){
+        $promo->delete();
+    }
+    
     if ($company) {
     $company -> delete();
      return redirect()->route('admin.listaziende')->with('success', 'Azienda cancelata con sucesso.');
