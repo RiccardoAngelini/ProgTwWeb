@@ -19,9 +19,17 @@
         margin-bottom: 10px;
         font-size: 20px;
         padding: 20px;
-        
-        
+        color:#2c2c2a;
+        text-decoration: none;  
     }
+    .contatti_indirizzo_numero a{
+      color:#2c2c2a;
+      text-decoration: none;
+      cursor:pointer;
+    }
+    .contatti_indirizzo_numero a:hover{
+      color:#ff7a57;
+        }
     
     .contatti_modulo{
     color:#2c2c2a;

@@ -7,6 +7,7 @@
 
             <div class="contatti_indirizzo_nome">Indirizzo: Via Brecce Bianche, 12, 60131 Ancona </div>
             <div class="contatti_indirizzo_numero">Telefono: 071 220 4708 </div>
+            <div class="contatti_indirizzo_numero"> Email: <a href="mailto:help@coupon.com">help@coupon.com </a></div>
     </div>
         <div class="riga"></div>
             <p class="contatti_modulo">
